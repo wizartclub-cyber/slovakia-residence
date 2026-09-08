@@ -1,0 +1,78 @@
+.route-page__back {
+  font-size: 13px;
+}
+
+.route-page__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-bottom: 20px;
+}
+
+.route-page__basis {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.route-page__section {
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+  margin-top: 24px;
+}
+
+.route-page__missing {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.route-page__warning {
+  background: var(--warning-soft);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+.route-page__note {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.route-page__form,
+.route-page__fee,
+.route-page__authority {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  background: var(--surface);
+}
+
+.route-page__form h3,
+.route-page__authority h3 {
+  margin-top: 0;
+}
+
+.route-page__fee-amount {
+  font-size: 22px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+
+.route-page__open li,
+.route-page__sources li {
+  margin-bottom: 8px;
+}
+
+.route-page__url {
+  display: block;
+  font-size: 11px;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+.print-only {
+  display: none;
+}

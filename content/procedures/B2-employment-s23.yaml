@@ -29,6 +29,7 @@ eligibilityRules:
     when: { field: purpose, equals: employment }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
 authorityIds: [ocp-pz, zastupitelsky-urad]
 feeRuleIds: [fee-tr-employment-first]
 documentIds: []

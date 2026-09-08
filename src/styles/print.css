@@ -1,0 +1,71 @@
+/**
+ * Друк на A4. Головне правило: на папері не можна клікнути посилання,
+ * тому адреси джерел і бланків друкуються текстом (клас .print-only),
+ * а навігація, кнопки й перемикач мови зникають.
+ */
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm;
+  }
+
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .no-print,
+  .button {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .main {
+    padding: 0;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .card,
+  .route-page__form,
+  .route-page__fee,
+  .route-page__authority,
+  .disclaimer,
+  .baseline {
+    border: 1px solid #999;
+    box-shadow: none;
+    background: #fff;
+    break-inside: avoid;
+  }
+
+  .route-page__section {
+    break-inside: avoid;
+  }
+
+  h1 {
+    font-size: 18pt;
+  }
+
+  h2 {
+    font-size: 14pt;
+    margin-top: 16pt;
+  }
+
+  h3 {
+    font-size: 12pt;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}

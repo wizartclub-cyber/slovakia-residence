@@ -26,6 +26,7 @@ eligibilityRules:
     when: { field: location, equals: abroad }
     localizedContentKey: null
     sourceIds: [mzv-national-visa-guidance]
+formSourceIds: [mzv-national-visa-sk, mzv-national-visa-en]
 authorityIds: [zastupitelsky-urad]
 feeRuleIds: []
 documentIds: []

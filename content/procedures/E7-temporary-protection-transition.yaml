@@ -21,6 +21,7 @@ eligibilityRules:
     when: { field: citizenshipGroup, equals: ua_temporary_protection }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
+formSourceIds: []
 authorityIds: [ocp-pz]
 feeRuleIds: []
 documentIds: []
@@ -28,6 +29,7 @@ steps: []
 transitionRules: []
 relatedProcedureIds: [B2-employment-s23, C4-longterm-s52]
 openQuestions:
+  - 'Офіційний бланк для цієї процедури не встановлений — потрібне джерело.'
   - 'SOURCE_AUDIT застерігає: §131o стосується ПРИПИНЕННЯ тимчасового захисту і сам по собі не доводить, що захист уже закінчився. Правову підставу переходу треба підтвердити за текстом закону, перш ніж описувати кроки.'
   - 'Вказівка ÚHCP P PZ від 08.04.2026 (зарахування періодів захисту) не внесена в реєстр — джерела немає.'
   - 'Міністерство внутрішніх справ оголосило продовження захисту до 04.03.2027 (18.02.2026) — джерело в реєстрі відсутнє.'

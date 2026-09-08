@@ -142,6 +142,9 @@ export const ProcedureSchema = z
     documentIds: z.array(nonEmpty).default([]),
     feeRuleIds: z.array(nonEmpty).default([]),
     authorityIds: z.array(nonEmpty).default([]),
+    // Офіційні бланки цієї процедури — id ресурсів реєстру. Не «наш» документ:
+    // ми лише посилаємося на файл органу (CLAUDE.md §2.5).
+    formSourceIds: z.array(nonEmpty).default([]),
     transitionRules: z.array(TransitionRuleSchema).default([]),
     relatedProcedureIds: z.array(nonEmpty).default([]),
     openQuestions: z.array(nonEmpty).default([]),
@@ -213,6 +216,9 @@ export const SourceSchema = z
     pinnedUrl: z.string().url().nullable().default(null),
     staticUrl: z.string().url().nullable().default(null),
     formCode: nonEmpty.nullable().default(null),
+    // Мовою якою орган вимагає заповнювати бланк. Для 11-057 і 11-056 це
+    // словацька — підтверджено текстом самих бланків (SOURCE_AUDIT_v0.4 §1).
+    completionLanguage: nonEmpty.nullable().default(null),
     registryStatus: z.enum(registryStatusValues),
     // SOURCE_AUDIT_v0.4 §5: сторінка органу, оновлена до змін від 15.7.2026.
     potentiallyStale: z.boolean().default(false),

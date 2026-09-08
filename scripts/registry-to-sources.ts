@@ -25,6 +25,7 @@ type RegistryResource = {
   pinnedUrl?: string | null;
   staticUrl?: string | null;
   formCode?: string | null;
+  completionLanguage?: string | null;
   locale?: string | null;
   validFrom?: string | null;
   validTo?: string | null;
@@ -86,6 +87,7 @@ for (const res of registry.resources) {
     pinnedUrl: res.pinnedUrl ?? null,
     staticUrl: res.staticUrl ?? null,
     formCode: res.formCode ?? null,
+    completionLanguage: res.completionLanguage ?? null,
     // Статус зі spec §7. Скрипт ставить лише draft: підвищити до source_verified
     // може тільки людина, яка подивилася на збережений файл (CLAUDE.md §2.3).
     reviewStatus: 'draft',

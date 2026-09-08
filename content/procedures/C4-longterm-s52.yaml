@@ -20,6 +20,7 @@ eligibilityRules:
     when: { field: citizenshipGroup, equals: third_country }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-056]
 authorityIds: [ocp-pz]
 feeRuleIds: []
 documentIds: []

@@ -61,7 +61,7 @@ function SourceCard({ source }: { source: Source }) {
   if (source.url) links.push([t('sources.linkOriginal'), source.url]);
 
   return (
-    <li className="card source-card">
+    <li className="card source-card" id={source.id}>
       <h3 className="source-card__title">{source.title}</h3>
 
       <p className="source-card__meta">

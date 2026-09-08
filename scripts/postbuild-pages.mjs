@@ -12,7 +12,7 @@
  * 404.html лишається як запасний варіант для всіх інших адрес.
  * .nojekyll вимикає обробку Jekyll, яка ігнорує папки з підкресленням.
  */
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
@@ -23,9 +23,15 @@ const indexHtml = join(dist, 'index.html');
 
 const site = parse(readFileSync(join(root, 'content/ui/site.yaml'), 'utf8'));
 
-const routes = site.locales.flatMap((locale) =>
-  site.nav.map((item) => (item.path ? `${locale}/${item.path}` : locale)),
-);
+// Сторінки маршрутів: по одній на кожен файл content/procedures (крім шаблонів).
+const procedureIds = readdirSync(join(root, 'content/procedures'))
+  .filter((f) => f.endsWith('.yaml') && !f.startsWith('_'))
+  .map((f) => parse(readFileSync(join(root, 'content/procedures', f), 'utf8')).id);
+
+const routes = site.locales.flatMap((locale) => [
+  ...site.nav.map((item) => (item.path ? `${locale}/${item.path}` : locale)),
+  ...procedureIds.map((id) => `${locale}/route/${id}`),
+]);
 
 for (const route of routes) {
   const dir = join(dist, route);
@@ -36,4 +42,4 @@ for (const route of routes) {
 copyFileSync(indexHtml, join(dist, '404.html'));
 writeFileSync(join(dist, '.nojekyll'), '');
 
-console.log(`✓ Сторінки для GitHub Pages: ${routes.join(', ')} + 404.html + .nojekyll`);
+console.log(`✓ Сторінки для GitHub Pages: ${routes.length} шт. + 404.html + .nojekyll`);

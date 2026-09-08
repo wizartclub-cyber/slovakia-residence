@@ -181,7 +181,9 @@ function collectSourceIds(value: unknown, acc: string[] = []): string[] {
     for (const item of value) collectSourceIds(item, acc);
   } else if (value && typeof value === 'object') {
     for (const [key, v] of Object.entries(value as Record<string, unknown>)) {
-      if (key === 'sourceIds' && Array.isArray(v)) acc.push(...v.filter((x) => typeof x === 'string'));
+      if ((key === 'sourceIds' || key === 'formSourceIds') && Array.isArray(v)) {
+        acc.push(...v.filter((x) => typeof x === 'string'));
+      }
       else collectSourceIds(v, acc);
     }
   }

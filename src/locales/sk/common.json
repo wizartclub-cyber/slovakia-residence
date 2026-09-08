@@ -187,5 +187,33 @@
       "reviewed": "skontrolované právnikom",
       "incomplete": "neskontrolované právnikom"
     }
+  },
+  "route": {
+    "notFound": "Takáto cesta neexistuje",
+    "backToFinder": "← Späť na dotazník",
+    "disclaimer": "Táto stránka opisuje konanie a ukazuje, odkiaľ pochádza každý údaj. Nie je rozhodnutím vo vašej veci a nezaručuje právo na pobyt.",
+    "conditionsIncomplete": "Podmienky tejto cesty ešte nie sú zapísané úplne. Nepovažujte zoznam nižšie za úplný — orgán môže vyžadovať viac.",
+    "print": "Vytlačiť",
+    "steps": "Kroky",
+    "stepsMissing": "Kroky ešte nie sú opísané. Doplníme ich po vyhotovení kópií úradných zdrojov a ich kontrole právnikom.",
+    "documents": "Doklady",
+    "documentsMissing": "Zoznam dokladov ešte nie je zostavený. Vymýšľať ho nemožno: závisí od konkrétneho dôvodu a musí sa opierať o zákon a požiadavky orgánu.",
+    "form": "Úradné tlačivo",
+    "formNone": "Úradné tlačivo pre toto konanie zatiaľ nie je určené.",
+    "formLanguage": "Tlačivo sa vypĺňa V SLOVENČINE — vyžaduje to samotné tlačivo. Píšte paličkovým písmom alebo písacím strojom.",
+    "formOpen": "Otvoriť úradné tlačivo",
+    "formSnapshotMissing": "Kópia súboru zatiaľ nie je uložená, preto nevieme potvrdiť, že na stránke úradu je tá istá verzia, akú sme videli. Pred vyplnením skontrolujte dátum a kód tlačiva.",
+    "formFieldsPending": "Pomôcky „čo napísať do jednotlivých polí“ pribudnú po uložení kópie tlačiva.",
+    "fees": "Poplatky",
+    "feesNone": "Poplatok za toto konanie nie je určený. Pozrite sadzobník alebo sa spýtajte na úrade.",
+    "feesWarning": "Orientačné sumy zo zákona o správnych poplatkoch. Právnik ich ešte neskontroloval a nie sú konečným vyúčtovaním: suma závisí od vašej situácie a spôsobu podania.",
+    "feeExemptionsUnknown": "Oslobodenia od poplatku nie sú zapísané — overte ich samostatne: vek, rodinný vzťah a status môžu sumu zmeniť.",
+    "authority": "Kam sa podáva",
+    "openQuestions": "Čo v tejto ceste ešte nie je opísané",
+    "sources": "Zdroje",
+    "channel": {
+      "ocp_pz": "podanie na cudzineckej polícii",
+      "diplomatic_mission": "podanie na zastupiteľskom úrade SR"
+    }
   }
 }

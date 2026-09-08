@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { authorityById, procedureById } from '../../lib/content';
 import { offeredRoutes } from '../../lib/rules/evaluate';
@@ -73,6 +74,7 @@ function RouteCard({
   muted?: boolean;
 }) {
   const { t } = useTranslation();
+  const { lang } = useParams();
   const procedure = procedureById(match.procedureId);
   if (!procedure) return null;
 
@@ -80,7 +82,9 @@ function RouteCard({
 
   return (
     <li className={`card route-card${muted ? ' route-card--muted' : ''}`}>
-      <h3 className="route-card__title">{title}</h3>
+      <h3 className="route-card__title">
+        <Link to={`/${lang}/route/${procedure.id}`}>{title}</Link>
+      </h3>
 
       <p className="route-card__badges">
         <span className={`badge badge--${match.status === 'reviewed' ? 'success' : 'warning'}`}>
