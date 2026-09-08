@@ -19,9 +19,15 @@ describe('джерела', () => {
     }
   });
 
-  it('жодне ще не має статусу вище за draft — рев\'ю не було (CLAUDE.md §2.3)', () => {
+  it('жодне джерело не піднімалося вище за source_verified — юрист ще не працював', () => {
     for (const s of sources) {
-      expect(s.reviewStatus).toBe('draft');
+      expect(['draft', 'source_verified']).toContain(s.reviewStatus);
+    }
+  });
+
+  it('source_verified стоїть лише там, де є збережена копія з контрольною сумою', () => {
+    for (const s of sources) {
+      if (s.reviewStatus === 'source_verified') expect(s.sha256).not.toBeNull();
     }
   });
 

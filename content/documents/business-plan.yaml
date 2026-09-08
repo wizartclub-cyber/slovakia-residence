@@ -1,0 +1,27 @@
+# Джерело: 404/2011 §32 ods. 5 písm. a), §33 ods. 2 і 3.
+id: business-plan
+officialName: Podnikateľský zámer
+title:
+  uk: Бізнес-план (підприємницький намір)
+  sk: Podnikateľský zámer
+explanation:
+  uk: >-
+    Зразок оприлюднений на сайті Міністерства господарства СР. Крім самого
+    плану, подається документ, що доводить здійсненність і сталість
+    підприємницької діяльності. Альтернатива — бізнес-план на реалізацію
+    інноваційного проєкту. Поліція запитує висновок Міністерства господарства,
+    яке має 60 днів на відповідь (§33 ods. 2 і 3) — це впливає на строк розгляду.
+  sk: >-
+    Vzor je zverejnený na webovom sídle Ministerstva hospodárstva SR. Okrem
+    zámeru sa predkladá doklad preukazujúci realizovateľnosť a udržateľnosť
+    podnikateľskej činnosti. Alternatívou je zámer na realizáciu inovatívneho
+    projektu. Policajný útvar si vyžiada stanovisko ministerstva, ktoré má naň
+    60 dní (§33 ods. 2 a 3).
+requiredWhen:
+  uk: Для тимчасового проживання з метою підприємництва за §22.
+  sk: Pre prechodný pobyt na účel podnikania podľa §22.
+maxAgeDays: 90
+preparationType: prepare_locally
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

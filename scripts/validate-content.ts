@@ -45,6 +45,7 @@ const declaredIds: Record<string, Set<string>> = {
   fees: new Set(),
   procedures: new Set(),
   documents: new Set(),
+  thresholds: new Set(),
 };
 const references: Array<{ file: string; field: string; kind: string; id: string }> = [];
 
@@ -152,6 +153,16 @@ for (const [folder, schema] of Object.entries(SCHEMAS)) {
 
       // 3c. Запам'ятовуємо id і посилання, щоб звірити їх після обходу всіх файлів.
       if (typeof data.id === 'string') declaredIds[folder]?.add(data.id);
+      // Порогові посилання лежать усередині документів, тому збираються окремо.
+      if (Array.isArray(data.thresholds)) {
+        for (const ref of data.thresholds) {
+          const id = (ref as { thresholdId?: unknown }).thresholdId;
+          if (typeof id === 'string') {
+            references.push({ file: rel, field: 'thresholds.thresholdId', kind: 'thresholds', id });
+          }
+        }
+      }
+
       for (const [field, kind] of Object.entries(REFERENCE_FIELDS)) {
         const value = data[field];
         if (Array.isArray(value)) {

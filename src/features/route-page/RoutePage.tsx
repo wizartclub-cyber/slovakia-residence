@@ -1,9 +1,10 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { usePageTitle } from '../../app/usePageTitle';
-import { authorityById, fees, procedureById, sourceById } from '../../lib/content';
+import { authorityById, documentById, fees, procedureById, sourceById, thresholds } from '../../lib/content';
 import { publicStatus } from '../../lib/content/schema';
-import type { FeeRule, Source } from '../../lib/content/schema';
+import type { Document, FeeRule, Source } from '../../lib/content/schema';
+import { derivedAmount } from '../../lib/content/thresholds';
 import './route-page.css';
 
 export function RoutePage() {
@@ -29,6 +30,12 @@ export function RoutePage() {
   const status = publicStatus(procedure.reviewStatus);
   const title = lang === 'sk' ? procedure.title.sk : procedure.title.uk;
   const routeFees = fees.filter((f) => procedure.feeRuleIds.includes(f.id));
+  const docs = procedure.documentIds.map((did) => documentById(did)).filter(isDocument);
+  const attachments = docs.filter((d) => !d.afterDecision);
+  const afterDecisionDocs = docs.filter((d) => d.afterDecision);
+  const steps = [...procedure.steps].sort((a, b) => a.order - b.order);
+  const stepsBefore = steps.filter((s) => !s.afterDecision);
+  const stepsAfter = steps.filter((s) => s.afterDecision);
   const forms = procedure.formSourceIds.map((sid) => sourceById(sid)).filter(isSource);
   const allSources = [...new Set([...procedure.sourceIds, ...procedure.formSourceIds])]
     .map((sid) => sourceById(sid))
@@ -62,21 +69,71 @@ export function RoutePage() {
         </button>
       </p>
 
+      {(procedure.grantedFor || procedure.decisionDeadline) && (
+        <Section title={t('route.keyFacts')}>
+          <dl className="route-page__facts">
+            {procedure.grantedFor && (
+              <div>
+                <dt>{t('route.grantedFor')}</dt>
+                <dd>{localized(procedure.grantedFor, lang)}</dd>
+              </div>
+            )}
+            {procedure.decisionDeadline && (
+              <div>
+                <dt>{t('route.decisionDeadline')}</dt>
+                <dd>{localized(procedure.decisionDeadline, lang)}</dd>
+              </div>
+            )}
+          </dl>
+        </Section>
+      )}
+
       <Section title={t('route.steps')}>
-        {procedure.steps.length === 0 ? (
+        {stepsBefore.length === 0 ? (
           <p className="route-page__missing">{t('route.stepsMissing')}</p>
         ) : (
-          <ol>
-            {procedure.steps.map((step) => (
-              <li key={step.id}>{step.localizedContentKey}</li>
+          <ol className="route-page__steps">
+            {stepsBefore.map((step) => (
+              <li key={step.id}>
+                <strong>{localized(step.title, lang)}</strong>
+                {step.body && <p>{localized(step.body, lang)}</p>}
+              </li>
             ))}
           </ol>
         )}
       </Section>
 
       <Section title={t('route.documents')}>
-        <p className="route-page__missing">{t('route.documentsMissing')}</p>
+        {attachments.length === 0 ? (
+          <p className="route-page__missing">{t('route.documentsMissing')}</p>
+        ) : (
+          <>
+            <p className="route-page__note">{t('route.documentsChecklistHint')}</p>
+            <ul className="checklist">
+              {attachments.map((doc) => (
+                <DocumentItem key={doc.id} doc={doc} lang={lang} />
+              ))}
+            </ul>
+          </>
+        )}
       </Section>
+
+      {(afterDecisionDocs.length > 0 || stepsAfter.length > 0) && (
+        <Section title={t('route.afterDecision')}>
+          <p className="route-page__note">{t('route.afterDecisionHint')}</p>
+          {stepsAfter.map((step) => (
+            <div key={step.id} className="route-page__after-step">
+              <strong>{localized(step.title, lang)}</strong>
+              {step.body && <p>{localized(step.body, lang)}</p>}
+            </div>
+          ))}
+          <ul className="checklist">
+            {afterDecisionDocs.map((doc) => (
+              <DocumentItem key={doc.id} doc={doc} lang={lang} />
+            ))}
+          </ul>
+        </Section>
+      )}
 
       <Section title={t('route.form')}>
         {forms.length === 0 ? (
@@ -152,6 +209,56 @@ export function RoutePage() {
       </Section>
     </article>
   );
+}
+
+function DocumentItem({ doc, lang }: { doc: Document; lang: string | undefined }) {
+  const { t } = useTranslation();
+
+  return (
+    <li className="checklist__item">
+      {/* Порожній квадрат, а не <input>: чеклист має бути придатним для друку. */}
+      <span className="checklist__box" aria-hidden="true" />
+      <div>
+        <p className="checklist__title">
+          {localized(doc.title, lang)}
+          {doc.maxAgeDays !== null && (
+            <span className="badge badge--warning">
+              {t('route.maxAge', { days: doc.maxAgeDays })}
+            </span>
+          )}
+        </p>
+        <p className="route-page__note checklist__official">{doc.officialName}</p>
+        {doc.explanation && <p>{localized(doc.explanation, lang)}</p>}
+        {doc.requiredWhen && (
+          <p className="route-page__note">
+            {t('route.requiredWhen')}: {localized(doc.requiredWhen, lang)}
+          </p>
+        )}
+        {doc.thresholds.map((ref, i) => {
+          const base = thresholds.find((th) => th.id === ref.thresholdId);
+          if (!base) return null;
+          return (
+            <p key={i} className="checklist__amount">
+              <strong>
+                {derivedAmount(base.baseValue, ref.multiplier).toFixed(2)} EUR
+              </strong>{' '}
+              <span className="route-page__note">
+                ({ref.multiplier} × {base.baseValue.toFixed(2)}) — {localized(ref.appliesWhen, lang)}
+              </span>
+            </p>
+          );
+        })}
+      </div>
+    </li>
+  );
+}
+
+function localized(value: { uk: string; sk: string }, lang: string | undefined): string {
+  return lang === 'sk' ? value.sk : value.uk;
+}
+
+function isDocument(value: Document | undefined): value is Document {
+  return value !== undefined;
 }
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {

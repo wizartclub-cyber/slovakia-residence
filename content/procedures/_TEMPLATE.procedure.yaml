@@ -35,15 +35,33 @@ eligibilityRules:
     localizedContentKey: proc.B2.rule.purpose
     sourceIds: [slovlex-404-2011]
 
+# На який строк надають і скільки закон дає органу на рішення — обидва з тексту закону.
+grantedFor:
+  uk: На передбачуваний час зайнятості, максимум п'ять років (§23 ods. 3).
+  sk: Na predpokladaný čas zamestnania, najviac päť rokov (§23 ods. 3).
+decisionDeadline:
+  uk: 60 днів від подання повної заяви (§33 ods. 8 písm. b).
+  sk: 60 dní od podania úplnej žiadosti (§33 ods. 8 písm. b).
+formSourceIds: [mzv-form-11-057]
 authorityIds: [ocp-pz, zastupitelsky-urad]
 feeRuleIds: [fee-tr-employment-first]
-documentIds: []
+# Документи описані у власних файлах content/documents/*.yaml і лише
+# перелічуються тут — той самий документ трапляється в багатьох маршрутах.
+documentIds: [travel-document, application-form]
+# Юридичний текст кроків живе тут, у даних, а не в локалях (CLAUDE.md §4):
+# юрист має правити його, не відкриваючи файли інтерфейсу.
 steps:
   - id: s1
     order: 1
-    localizedContentKey: proc.B2.s1   # текст у locales/uk та locales/sk
+    title:
+      uk: Що робить людина на цьому кроці
+      sk: Čo žiadateľ na tomto kroku robí
+    body:
+      uk: Пояснення з посиланням на конкретний § закону.
+      sk: Vysvetlenie s odkazom na konkrétny § zákona.
+    afterDecision: false    # true — якщо це обов'язок ПІСЛЯ рішення
     prerequisites: []
-    sourceIds: [mzv-residence-master-guidance]
+    sourceIds: [slovlex-404-2011]
 
 # Перехідні правила: спрацьовують додатково і додають попередження до маршруту.
 transitionRules: []

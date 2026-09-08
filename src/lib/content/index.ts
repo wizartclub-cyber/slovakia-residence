@@ -6,7 +6,15 @@
  * Дані вже перевірені схемами Zod у `pnpm validate` перед білдом, тому тут
  * лише типізація, без повторної валідації в браузері.
  */
-import type { Authority, FeeRule, FinderConfig, Procedure, Source, Threshold } from './schema';
+import type {
+  Authority,
+  Document,
+  FeeRule,
+  FinderConfig,
+  Procedure,
+  Source,
+  Threshold,
+} from './schema';
 import finderRaw from '../../../content/ui/finder.yaml';
 
 function loadAll<T>(modules: Record<string, unknown>): T[] {
@@ -39,6 +47,14 @@ export const procedures = loadAll<Procedure>(
 
 /** Питання опитувальника: склад і порядок — з content/ui/finder.yaml. */
 export const finder = finderRaw as FinderConfig;
+
+export const documents = loadAll<Document>(
+  import.meta.glob('../../../content/documents/*.yaml', { eager: true, import: 'default' }),
+).sort((a, b) => a.id.localeCompare(b.id));
+
+export function documentById(id: string): Document | undefined {
+  return documents.find((d) => d.id === id);
+}
 
 export function authorityById(id: string): Authority | undefined {
   return authorities.find((a) => a.id === id);

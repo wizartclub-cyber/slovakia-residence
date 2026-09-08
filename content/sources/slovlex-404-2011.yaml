@@ -8,7 +8,7 @@ pinnedUrl: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/20260
 staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2011/404/20260715.print.html
 formCode: null
 completionLanguage: null
-reviewStatus: draft
+reviewStatus: source_verified
 registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: ezbierky page needs JS; canonical resolves to 20260715 version. FLOATING URL — pin to temporal URL below

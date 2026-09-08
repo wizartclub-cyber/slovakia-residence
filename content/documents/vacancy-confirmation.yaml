@@ -1,0 +1,25 @@
+# Джерело: 404/2011 §23 ods. 1 і §32 ods. 1 (строк 180 днів).
+id: vacancy-confirmation
+officialName: Potvrdenie o možnosti obsadenia voľného pracovného miesta
+title:
+  uk: Підтвердження про можливість заповнення вільного робочого місця
+  sk: Potvrdenie o možnosti obsadenia voľného pracovného miesta
+explanation:
+  uk: >-
+    Видає управління праці, соціальних справ і родини (ÚPSVaR) і надсилає його
+    безпосередньо в поліцію або на закордонну установу — не заявникові. Заяву за
+    §23 ods. 1 не приймуть, якщо підтвердження не надійшло, якщо в ньому немає
+    згоди на заповнення місця, або якщо від його видачі минуло понад 180 днів.
+  sk: >-
+    Vydáva úrad práce, sociálnych vecí a rodiny a doručuje ho priamo policajnému
+    útvaru alebo zastupiteľskému úradu, nie žiadateľovi. Žiadosť podľa §23 ods. 1
+    neprijmú, ak potvrdenie nebolo doručené, ak neobsahuje súhlas s obsadením
+    miesta, alebo ak od jeho vydania uplynulo viac ako 180 dní.
+requiredWhen:
+  uk: Для тимчасового проживання з метою працевлаштування за §23 ods. 1.
+  sk: Pre prechodný pobyt na účel zamestnania podľa §23 ods. 1.
+maxAgeDays: 180
+preparationType: obtain_from_authority
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

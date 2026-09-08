@@ -1,0 +1,28 @@
+# Джерело: 404/2011 §32 ods. 10. Це ОБОВ'ЯЗОК ПІСЛЯ рішення, не додаток до заяви.
+id: medical-report-after
+officialName: Lekársky posudok o tom, že netrpí chorobou ohrozujúcou verejné zdravie
+title:
+  uk: Медичний висновок про відсутність хвороби, небезпечної для здоров'я населення
+  sk: Lekársky posudok o chorobe ohrozujúcej verejné zdravie
+explanation:
+  uk: >-
+    Подається в поліцію протягом 30 днів після отримання картки проживання.
+    Сам висновок не може бути старшим за 30 днів. За заявою людини поліція може
+    продовжити строк подання на 60 днів.
+  sk: >-
+    Odovzdáva sa policajnému útvaru do 30 dní od prevzatia dokladu o pobyte.
+    Posudok nesmie byť starší ako 30 dní. Na žiadosť môže policajný útvar lehotu
+    predĺžiť o 60 dní.
+requiredWhen:
+  uk: >-
+    Кожному, кому надано тимчасове проживання, окрім §28, §29, §30 і §62, окрім
+    осіб із проживанням в іншій державі-члені та окрім зміни виду або мети перебування.
+  sk: >-
+    Každému, komu bol udelený prechodný pobyt, okrem §28, §29, §30 a §62, okrem
+    osôb s pobytom v inom členskom štáte a okrem zmeny druhu alebo účelu pobytu.
+afterDecision: true
+maxAgeDays: 30
+preparationType: obtain_from_third_party
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

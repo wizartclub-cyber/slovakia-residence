@@ -1,7 +1,6 @@
-# МАРШРУТ-ВКАЗІВНИК. Внесено тільки те, що прямо випливає з назви процедури
-# в законі: кому вона адресована і для якої мети. Умови придатності, документи,
-# строки й обов'язки після рішення НЕ внесені — тому conditionsComplete: false
-# і движок ніколи не скаже «підходить», максимум «може підійти».
+# Маршрут заповнено з тексту закону (снапшот slovlex-404-2011, sha256 у реєстрі).
+# Умови придатності НЕ повні: §33 ods. 6 містить підстави для відмови, які ще не
+# внесені, тому conditionsComplete лишається false і сайт не каже «підходить».
 id: B2-employment-s23
 category: B
 title:
@@ -9,6 +8,8 @@ title:
   sk: Prechodný pobyt na účel zamestnania (§23)
 legalBasis:
   - '404/2011 §23'
+  - '404/2011 §32'
+  - '404/2011 §33 ods. 8'
 validFrom: '2026-07-15'
 validTo: null
 reviewStatus: draft
@@ -18,6 +19,24 @@ sourceIds:
   - slovlex-404-2011
   - mzv-residence-master-guidance
 conditionsComplete: false
+grantedFor:
+  uk: >-
+    На передбачуваний час зайнятості, але не більше ніж на п'ять років
+    (§23 ods. 3). Сезонна зайнятість — не більше 240 днів протягом 12 місяців
+    поспіль (§23 ods. 4).
+  sk: >-
+    Na predpokladaný čas zamestnania, najviac však na päť rokov (§23 ods. 3).
+    Sezónne zamestnanie najviac na 240 dní počas 12 po sebe nasledujúcich
+    mesiacov (§23 ods. 4).
+decisionDeadline:
+  uk: >-
+    60 днів від дня надходження заяви з усіма додатками за §32 — для §23 ods. 1.
+    30 днів, якщо йдеться про роботу за професією з нестачею робочої сили.
+    Загальний строк для інших випадків — 90 днів (§33 ods. 8).
+  sk: >-
+    60 dní odo dňa doručenia žiadosti so všetkými náležitosťami podľa §32 pri
+    §23 ods. 1. 30 dní, ak ide o zamestnanie s nedostatkom pracovnej sily.
+    Všeobecná lehota 90 dní (§33 ods. 8).
 eligibilityRules:
   - id: r-third-country
     effect: require
@@ -30,12 +49,123 @@ eligibilityRules:
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
 formSourceIds: [mzv-form-11-057]
-authorityIds: [ocp-pz, zastupitelsky-urad]
+authorityIds: [ocp-pz, zastupitelsky-urad, upsvr]
 feeRuleIds: [fee-tr-employment-first]
-documentIds: []
-steps: []
+documentIds:
+  - travel-document
+  - application-form
+  - criminal-record
+  - accommodation
+  - vacancy-confirmation
+  - medical-report-after
+steps:
+  - id: s1-vacancy
+    order: 1
+    title:
+      uk: Роботодавець отримує підтвердження про можливість заповнення місця
+      sk: Zamestnávateľ získa potvrdenie o možnosti obsadenia pracovného miesta
+    body:
+      uk: >-
+        Підтвердження видає управління праці (ÚPSVaR) і надсилає безпосередньо в
+        поліцію або на закордонну установу. Без нього заяву за §23 ods. 1 не
+        приймуть. Від видачі підтвердження до подання заяви має минути не більше
+        180 днів (§32 ods. 1).
+      sk: >-
+        Potvrdenie vydáva úrad práce a doručuje ho priamo policajnému útvaru alebo
+        zastupiteľskému úradu. Bez neho žiadosť podľa §23 ods. 1 neprijmú. Od jeho
+        vydania nesmie uplynúť viac ako 180 dní (§32 ods. 1).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-form
+    order: 2
+    title:
+      uk: Заповнити офіційний бланк словацькою мовою
+      sk: Vyplniť úradné tlačivo v slovenskom jazyku
+    body:
+      uk: >-
+        Заява подається на офіційному бланку (§32 ods. 1). Бланк T MV SR 11-057
+        за власною інструкцією заповнюється словацькою, друкованими літерами.
+      sk: >-
+        Žiadosť sa podáva na úradnom tlačive (§32 ods. 1). Tlačivo T MV SR 11-057
+        sa podľa vlastného pokynu vypĺňa v slovenčine, paličkovým písmom.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011, mzv-form-11-057]
+  - id: s3-documents
+    order: 3
+    title:
+      uk: Зібрати додатки, не старші за 90 днів
+      sk: Zhromaždiť náležitosti nie staršie ako 90 dní
+    body:
+      uk: >-
+        Для §23 ods. 1 мету перебування окремо доводити не треба — її замінює
+        підтвердження від управління праці (§32 ods. 2 písm. a). Потрібні
+        несудимість і забезпечення житлом, окрім винятків із §32 ods. 2 písm. e).
+      sk: >-
+        Pri §23 ods. 1 sa účel pobytu osobitne nepreukazuje — nahrádza ho potvrdenie
+        úradu práce (§32 ods. 2 písm. a). Vyžaduje sa bezúhonnosť a zabezpečenie
+        ubytovania, okrem výnimiek podľa §32 ods. 2 písm. e).
+    afterDecision: false
+    prerequisites: [s1-vacancy]
+    sourceIds: [slovlex-404-2011]
+  - id: s4-submit
+    order: 4
+    title:
+      uk: Подати заяву разом із дійсним проїзним документом
+      sk: Podať žiadosť spolu s platným cestovným dokladom
+    body:
+      uk: >-
+        Заяву приймають на закордонній установі або в поліції. Якщо чогось бракує,
+        орган зобов'язаний письмово повідомити, які документи треба донести, щоб
+        заяву прийняли (§32 ods. 1).
+      sk: >-
+        Žiadosť prijíma zastupiteľský úrad alebo policajný útvar. Ak niečo chýba,
+        orgán je povinný písomne oznámiť, ktoré doklady treba doložiť, aby žiadosť
+        prijal (§32 ods. 1).
+    afterDecision: false
+    prerequisites: [s2-form, s3-documents]
+    sourceIds: [slovlex-404-2011]
+  - id: s5-decision
+    order: 5
+    title:
+      uk: Рішення органу
+      sk: Rozhodnutie orgánu
+    body:
+      uk: >-
+        60 днів для §23 ods. 1, 30 днів для професій із нестачею робочої сили
+        (§33 ods. 8). Поліція враховує публічний інтерес, безпеку, господарські
+        інтереси, інтереси дитини, особисті та родинні обставини (§33 ods. 1).
+      sk: >-
+        60 dní pri §23 ods. 1, 30 dní pri zamestnaní s nedostatkom pracovnej sily
+        (§33 ods. 8). Policajný útvar prihliada na verejný záujem, bezpečnosť,
+        hospodárske záujmy, záujmy dieťaťa a rodinné pomery (§33 ods. 1).
+    afterDecision: false
+    prerequisites: [s4-submit]
+    sourceIds: [slovlex-404-2011]
+  - id: s6-medical
+    order: 6
+    title:
+      uk: Протягом 30 днів після картки — медичний висновок
+      sk: Do 30 dní od prevzatia dokladu — lekársky posudok
+    body:
+      uk: >-
+        Після отримання картки проживання треба здати в поліцію медичний висновок
+        про відсутність хвороби, небезпечної для здоров'я населення. Сам висновок
+        не старший за 30 днів; строк подання можна продовжити на 60 днів
+        (§32 ods. 10).
+      sk: >-
+        Po prevzatí dokladu o pobyte treba odovzdať policajnému útvaru lekársky
+        posudok, že netrpíte chorobou ohrozujúcou verejné zdravie. Posudok nesmie
+        byť starší ako 30 dní; lehotu možno predĺžiť o 60 dní (§32 ods. 10).
+    afterDecision: true
+    prerequisites: [s5-decision]
+    sourceIds: [slovlex-404-2011]
 transitionRules: []
 relatedProcedureIds: [A3-national-visa-120]
 openQuestions:
-  - 'Гілка §21b(4)(f) Act 5/2004 після національної візи: підтвердження ÚPSVaR доступне лише за тієї самої посади. Джерело slovlex-5-2004 без URL.'
-  - 'Не внесено: підтвердження про можливість заповнення вільного місця, дозвіл на роботу, винятки, сезонна зайнятість, документи, строки, збори за каналами подачі.'
+  - 'Підстави для відмови за §33 ods. 6 не внесені як умови — доки їх немає, перелік умов неповний.'
+  - 'Гілка §23 ods. 2 (дозвіл на роботу або підтвердження роботодавця) описана документом work-permit, але окремим маршрутом не виділена.'
+  - 'Гілка §21b(4)(f) Act 5/2004 після національної візи не перевірена — джерело slovlex-5-2004 без URL.'
+  - 'Обов''язок медичного страхування §32 ods. 9 стосується §22, §25, §26, §27 і §30 — §23 у переліку немає; варто підтвердити в юриста.'
+  - 'Вимоги до перекладу та легалізації іноземних документів у §32 не знайдені — перевірити за іншими нормами.'

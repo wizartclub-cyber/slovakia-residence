@@ -1,0 +1,22 @@
+# Джерело: 404/2011 §32 ods. 2 písm. c) і §32 ods. 6.
+id: financial-security-stay
+officialName: Potvrdenie o zostatku na účte vedenom v banke
+title:
+  uk: Підтвердження залишку на банківському рахунку (забезпечення перебування)
+  sk: Potvrdenie o zostatku na účte (finančné zabezpečenie pobytu)
+explanation:
+  uk: >-
+    Рахунок має бути відкритий на ім'я заявника. Це забезпечення ПЕРЕБУВАННЯ —
+    його не можна плутати з забезпеченням підприємницької діяльності, для якого
+    потрібен окремий рахунок.
+  sk: >-
+    Účet musí byť vedený na meno žiadateľa. Ide o zabezpečenie POBYTU — nezamieňať
+    so zabezpečením podnikateľskej činnosti, na ktoré je potrebný samostatný účet.
+requiredWhen:
+  uk: Для тимчасового проживання з метою підприємництва за §22.
+  sk: Pre prechodný pobyt na účel podnikania podľa §22.
+maxAgeDays: 90
+preparationType: obtain_from_third_party
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

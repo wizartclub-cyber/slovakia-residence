@@ -1,0 +1,25 @@
+# Джерело: 404/2011 §32 ods. 2 písm. b) і §32 ods. 3 (винятки).
+id: criminal-record
+officialName: Doklad potvrdzujúci bezúhonnosť
+title:
+  uk: Документ про несудимість
+  sk: Doklad potvrdzujúci bezúhonnosť
+explanation:
+  uk: Підтверджує відсутність судимості.
+  sk: Potvrdzuje bezúhonnosť žiadateľa.
+requiredWhen:
+  uk: >-
+    Потрібен, окрім випадків із §32 ods. 3: заявники за §24 ods. 1 písm. a), §28,
+    §30 та особи молодші за 14 років; також не потрібен при зміні виду або мети
+    перебування, якщо його вже подавали раніше, і для §29 при поданні протягом
+    60 днів від видачі посвідчення словака, що живе за кордоном.
+  sk: >-
+    Vyžaduje sa okrem prípadov podľa §32 ods. 3: žiadatelia podľa §24 ods. 1
+    písm. a), §28, §30 a osoby mladšie ako 14 rokov; nevyžaduje sa ani pri zmene
+    druhu alebo účelu pobytu, ak bol priložený skôr, a pri §29 do 60 dní od
+    vydania osvedčenia Slováka žijúceho v zahraničí.
+maxAgeDays: 90
+preparationType: obtain_from_authority
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

@@ -52,6 +52,7 @@ export const authorityTypeValues = [
 ] as const;
 
 const localizedText = z.object({ uk: nonEmpty, sk: nonEmpty }).strict();
+const localizedTextOptional = localizedText.nullable().default(null);
 
 // --- умови маршрутів -------------------------------------------------------
 // Мова умов навмисно крихітна: логічні зв'язки, порівняння відповіді та дати.
@@ -113,7 +114,11 @@ export const StepSchema = z
   .object({
     id: nonEmpty,
     order: z.number().int().positive(),
-    localizedContentKey: nonEmpty,
+    title: localizedText,
+    body: localizedTextOptional,
+    // Коли крок стосується періоду ПІСЛЯ рішення (обов'язки заявника).
+    afterDecision: z.boolean().default(false),
+    localizedContentKey: nonEmpty.nullable().default(null),
     prerequisites: z.array(nonEmpty).default([]),
     conditions: z.array(ConditionSchema).default([]),
     actions: z.array(z.unknown()).default([]),
@@ -137,6 +142,10 @@ export const ProcedureSchema = z
     // сказати «підходить» — максимум «може підійти». Ставить людина, яка звірила
     // перелік умов із текстом закону (CLAUDE.md §2.3).
     conditionsComplete: z.boolean().default(false),
+    // На який строк надається дозвіл і скільки закон дає органу на рішення —
+    // це перше, що питає людина, і воно прямо в законі.
+    grantedFor: localizedTextOptional,
+    decisionDeadline: localizedTextOptional,
     eligibilityRules: z.array(EligibilityRuleSchema).default([]),
     steps: z.array(StepSchema).default([]),
     documentIds: z.array(nonEmpty).default([]),
@@ -151,14 +160,35 @@ export const ProcedureSchema = z
   })
   .strict();
 
+// Поріг, прив'язаний до норми. Множник без норми показувати заборонено
+// (spec §5A), тому умова застосування — обов'язкове поле.
+export const ThresholdRefSchema = z
+  .object({
+    thresholdId: nonEmpty,
+    multiplier: z.number().positive(),
+    appliesWhen: localizedText,
+    sourceIds,
+  })
+  .strict();
+
 export const DocumentSchema = z
   .object({
     id: nonEmpty,
+    // Офіційна назва словацькою — так документ називає закон і так його
+    // проситиме орган.
     officialName: nonEmpty,
+    title: localizedText,
+    explanation: localizedTextOptional,
+    // Коли документ потрібен і коли не потрібен — текстом, із посиланням на §.
+    requiredWhen: localizedTextOptional,
+    // Максимальний вік документа в днях (§32 ods. 2 — «nie staršie ako 90 dní»).
+    maxAgeDays: z.number().int().positive().nullable().default(null),
+    // true — це не додаток до заяви, а обов'язок ПІСЛЯ рішення.
+    afterDecision: z.boolean().default(false),
+    thresholds: z.array(ThresholdRefSchema).default([]),
     sourceUrl: z.string().url().nullable().default(null),
     formVersion: nonEmpty.nullable().default(null),
     sourceHash: nonEmpty.nullable().default(null),
-    requiredWhen: z.unknown().nullable().default(null),
     preparationType: z.enum(preparationTypeValues),
     validityRule: nonEmpty.nullable().default(null),
     translationRule: nonEmpty.nullable().default(null),

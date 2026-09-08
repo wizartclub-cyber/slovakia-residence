@@ -1,18 +1,40 @@
 {
   "permissions": {
     "allow": [
-      "Read", "Edit", "Write", "Glob", "Grep",
-      "Bash(pnpm *)", "Bash(npx *)", "Bash(node *)", "Bash(python3 scripts/*)",
-      "Bash(git status*)", "Bash(git diff*)", "Bash(git log*)", "Bash(git add *)", "Bash(git commit *)",
-      "Bash(ls *)", "Bash(cat *)", "Bash(mkdir *)"
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep",
+      "Bash(pnpm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(python3 scripts/*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(mkdir *)"
     ],
     "ask": [
-      "Bash(git push*)", "Bash(pnpm add *)", "Bash(pnpm install *)", "Bash(rm *)", "Bash(curl *)"
+      "Bash(git push*)",
+      "Bash(pnpm add *)",
+      "Bash(pnpm install *)",
+      "Bash(rm *)",
+      "Bash(curl *)"
     ],
     "deny": [
-      "Read(./.env*)", "Read(./sources/snapshots/**)", "Edit(./sources/snapshots/**)",
-      "Edit(./document-registry-v0.3.yaml)", "Bash(git push --force*)", "Bash(sudo *)"
+      "Read(./.env*)",
+      "Edit(./sources/snapshots/**)",
+      "Edit(./document-registry-v0.3.yaml)",
+      "Bash(git push --force*)",
+      "Bash(sudo *)"
     ]
   },
-  "env": { "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "0" }
+  "env": {
+    "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "0"
+  }
 }

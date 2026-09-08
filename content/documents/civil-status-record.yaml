@@ -1,0 +1,25 @@
+# Джерело: 404/2011 §32 ods. 5 písm. n).
+id: civil-status-record
+officialName: Matričný doklad
+title:
+  uk: Документ РАЦС (свідоцтво про шлюб, народження)
+  sk: Matričný doklad
+explanation:
+  uk: >-
+    Доводить мету перебування при возз'єднанні родини. Для неодруженої дитини до
+    18 років, дитини до 18 років, переданої в особисту опіку, неутримуваної
+    дитини, батька або матері, залежних від опіки заявника, чи залежної особи за
+    міжнародним договором — додатково документ, що підтверджує цю обставину.
+  sk: >-
+    Preukazuje účel pobytu pri zlúčení rodiny. Pri slobodnom dieťati mladšom ako
+    18 rokov, dieťati zverenom do osobnej starostlivosti, nezaopatrenom dieťati,
+    rodičovi odkázanom na starostlivosť alebo závislej osobe podľa medzinárodnej
+    zmluvy aj doklad potvrdzujúci túto skutočnosť.
+requiredWhen:
+  uk: Для возз'єднання родини за §27.
+  sk: Pre zlúčenie rodiny podľa §27.
+maxAgeDays: 90
+preparationType: obtain_from_authority
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

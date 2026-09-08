@@ -1,0 +1,23 @@
+# Джерело: 404/2011 §32 ods. 1 — «na úradnom tlačive».
+id: application-form
+officialName: Žiadosť o udelenie prechodného pobytu na úradnom tlačive
+title:
+  uk: Заява на офіційному бланку
+  sk: Žiadosť na úradnom tlačive
+explanation:
+  uk: >-
+    Закон вимагає подавати заяву саме на офіційному бланку органу. Бланк
+    T MV SR 11-057 за власною інструкцією заповнюється словацькою мовою,
+    друкованими літерами або на друкарській машинці.
+  sk: >-
+    Zákon vyžaduje podať žiadosť na úradnom tlačive. Tlačivo T MV SR 11-057 sa
+    podľa vlastného pokynu vypĺňa v slovenskom jazyku, paličkovým písmom alebo
+    písacím strojom.
+requiredWhen:
+  uk: Завжди.
+  sk: Vždy.
+maxAgeDays: null
+preparationType: prepare_locally
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011, mzv-form-11-057]

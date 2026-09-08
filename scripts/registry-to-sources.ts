@@ -34,6 +34,7 @@ type RegistryResource = {
   notes?: string | null;
   addedNote?: string | null;
   urlCheck?: { checkedAt?: string; observed?: string } | null;
+  contentChecked?: { at?: string; by?: string; scope?: string; note?: string } | null;
   snapshot?: { ok?: boolean; sha256?: string; snapshotPath?: string; obtainedManually?: boolean } | null;
 };
 
@@ -88,9 +89,10 @@ for (const res of registry.resources) {
     staticUrl: res.staticUrl ?? null,
     formCode: res.formCode ?? null,
     completionLanguage: res.completionLanguage ?? null,
-    // Статус зі spec §7. Скрипт ставить лише draft: підвищити до source_verified
-    // може тільки людина, яка подивилася на збережений файл (CLAUDE.md §2.3).
-    reviewStatus: 'draft',
+    // Статус зі spec §7. source_verified означає лише «збережений файл
+    // прочитано і дані взяті з нього» — це не юридична перевірка (CLAUDE.md §2.3).
+    // Ставиться тільки там, де в реєстрі є запис contentChecked.
+    reviewStatus: snapshotOk && res.contentChecked ? 'source_verified' : 'draft',
     registryStatus: res.reviewStatus ?? 'fetch_pending',
     potentiallyStale: res.potentiallyStale ?? false,
     evidence: res.urlCheck?.observed ?? null,

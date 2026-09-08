@@ -1,0 +1,51 @@
+# Джерело: 404/2011 §32 ods. 2 písm. d), §32 ods. 7 písm. a)–c).
+# Суми НЕ зберігаються числами: вони обчислюються з життєвого мінімуму,
+# бо він змінюється щороку (spec §5A).
+id: financial-security-business
+officialName: Potvrdenie o zostatku na účte zriadenom na účely podnikania
+title:
+  uk: Забезпечення підприємницької діяльності на окремому рахунку
+  sk: Finančné zabezpečenie podnikateľskej činnosti
+explanation:
+  uk: >-
+    Рахунок має бути відкритий для цілей підприємництва і НЕ може збігатися з
+    рахунком, яким доводиться забезпечення перебування (§32 ods. 7). Не потрібне
+    для того, хто діє від імені значного іноземного інвестора (§32 ods. 2 písm. d).
+  sk: >-
+    Účet musí byť zriadený na účely podnikania a nesmie byť totožný s účtom, ktorým
+    sa preukazuje zabezpečenie pobytu (§32 ods. 7). Nevyžaduje sa od toho, kto koná
+    v mene významného zahraničného investora (§32 ods. 2 písm. d).
+requiredWhen:
+  uk: Для тимчасового проживання з метою підприємництва за §22.
+  sk: Pre prechodný pobyt na účel podnikania podľa §22.
+maxAgeDays: 90
+preparationType: obtain_from_third_party
+thresholds:
+  - thresholdId: zivotne-minimum-adult
+    multiplier: 20
+    appliesWhen:
+      uk: Підприємець — фізична особа (§22 ods. 1 písm. a), §32 ods. 7 písm. a).
+      sk: Podnikanie ako fyzická osoba (§22 ods. 1 písm. a), §32 ods. 7 písm. a).
+    sourceIds: [slovlex-404-2011]
+  - thresholdId: zivotne-minimum-adult
+    multiplier: 100
+    appliesWhen:
+      uk: >-
+        Дія від імені торгової компанії або кооперативу поза трудовими відносинами
+        (§22 ods. 1 písm. b), §32 ods. 7 písm. b).
+      sk: >-
+        Konanie v mene obchodnej spoločnosti alebo družstva mimo pracovnoprávneho
+        vzťahu (§22 ods. 1 písm. b), §32 ods. 7 písm. b).
+    sourceIds: [slovlex-404-2011]
+  - thresholdId: zivotne-minimum-adult
+    multiplier: 40
+    appliesWhen:
+      uk: >-
+        Те саме, що й попереднє, але подано бізнес-план на реалізацію інноваційного
+        проєкту (§32 ods. 7 písm. c).
+      sk: >-
+        To isté ako predchádzajúce, ale s podnikateľským zámerom na realizáciu
+        inovatívneho projektu (§32 ods. 7 písm. c).
+    sourceIds: [slovlex-404-2011]
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

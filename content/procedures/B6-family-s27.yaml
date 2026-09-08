@@ -1,4 +1,5 @@
-# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+# Маршрут заповнено з тексту закону (снапшот slovlex-404-2011).
+# Категорії родичів за §27 ще не внесені — тому умови неповні.
 id: B6-family-s27
 category: B
 title:
@@ -6,6 +7,8 @@ title:
   sk: Prechodný pobyt na účel zlúčenia rodiny (§27)
 legalBasis:
   - '404/2011 §27'
+  - '404/2011 §32'
+  - '404/2011 §33'
 validFrom: '2026-07-15'
 validTo: null
 reviewStatus: draft
@@ -15,6 +18,10 @@ sourceIds:
   - slovlex-404-2011
   - mzv-residence-master-guidance
 conditionsComplete: false
+grantedFor: null
+decisionDeadline:
+  uk: 90 днів (§33 ods. 8 písm. a).
+  sk: 90 dní (§33 ods. 8 písm. a).
 eligibilityRules:
   - id: r-third-country
     effect: require
@@ -29,9 +36,65 @@ eligibilityRules:
 formSourceIds: [mzv-form-11-057]
 authorityIds: [ocp-pz, zastupitelsky-urad]
 feeRuleIds: [fee-tr-family-first]
-documentIds: []
-steps: []
+documentIds:
+  - travel-document
+  - application-form
+  - criminal-record
+  - accommodation
+  - civil-status-record
+  - medical-report-after
+  - health-insurance-after
+steps:
+  - id: s1-sponsor
+    order: 1
+    title:
+      uk: Житло і згоду доводить той, з ким возз'єднується родина
+      sk: Ubytovanie a súhlas preukazuje ten, s kým sa rodina zlučuje
+    body:
+      uk: >-
+        За §32 ods. 11 виконання вимог про забезпечення житлом (§32 ods. 2 písm. e)
+        і про згоду (§32 ods. 2 písm. f) доводить не заявник, а особа, з якою він
+        возз'єднується. Житло має бути спільним (§32 ods. 8).
+      sk: >-
+        Podľa §32 ods. 11 splnenie podmienok o ubytovaní (§32 ods. 2 písm. e) a
+        o súhlase (§32 ods. 2 písm. f) preukazuje osoba, s ktorou sa rodina zlučuje.
+        Ubytovanie musí byť spoločné (§32 ods. 8).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-civil
+    order: 2
+    title:
+      uk: Підготувати документ РАЦС, що доводить родинний зв'язок
+      sk: Pripraviť matričný doklad preukazujúci rodinný vzťah
+    body:
+      uk: >-
+        Для дитини до 18 років, дитини в особистій опіці, неутримуваної дитини,
+        залежного батька чи матері або залежної особи за міжнародним договором
+        додається ще документ, що підтверджує цю обставину (§32 ods. 5 písm. n).
+      sk: >-
+        Pri dieťati mladšom ako 18 rokov, dieťati v osobnej starostlivosti,
+        nezaopatrenom dieťati, odkázanom rodičovi alebo závislej osobe podľa
+        medzinárodnej zmluvy sa prikladá aj doklad o tejto skutočnosti
+        (§32 ods. 5 písm. n).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-after
+    order: 3
+    title:
+      uk: Протягом 30 днів після картки — страхування і медичний висновок
+      sk: Do 30 dní od prevzatia dokladu — poistenie a lekársky posudok
+    body:
+      uk: Для §27 закон вимагає обидва (§32 ods. 9 і §32 ods. 10).
+      sk: Pri §27 zákon vyžaduje oboje (§32 ods. 9 a §32 ods. 10).
+    afterDecision: true
+    prerequisites: [s2-civil]
+    sourceIds: [slovlex-404-2011]
 transitionRules: []
 relatedProcedureIds: []
 openQuestions:
-  - 'Не внесено: категорії родичів (подружжя, діти, залежні родичі), вимоги до спонсора та обмеження. Маршрут §27 треба відрізняти від права ЄС на возз''єднання (категорія F).'
+  - 'Категорії родичів за §27 (подружжя, діти, залежні родичі, спеціальні категорії спонсорів) не внесені як умови.'
+  - 'Пільга §32 ods. 13 для возз''єднання з особою, якій надано притулок, протягом трьох місяців — не внесена.'
+  - 'Возз''єднання родини за правом ЄС (категорія F) — інший маршрут, тут не описаний.'
+  - 'Підстави для відмови за §33 ods. 6 не внесені.'

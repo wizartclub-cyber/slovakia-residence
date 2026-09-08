@@ -1,4 +1,5 @@
-# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+# Маршрут заповнено з тексту закону (снапшот slovlex-404-2011).
+# Умови неповні: підстави відмови за §33 ods. 6 не внесені.
 id: B1-business-s22
 category: B
 title:
@@ -6,6 +7,8 @@ title:
   sk: Prechodný pobyt na účel podnikania (§22)
 legalBasis:
   - '404/2011 §22'
+  - '404/2011 §32'
+  - '404/2011 §33'
 validFrom: '2026-07-15'
 validTo: null
 reviewStatus: draft
@@ -15,6 +18,17 @@ sourceIds:
   - slovlex-404-2011
   - mzv-residence-master-guidance
 conditionsComplete: false
+grantedFor:
+  uk: На три роки (§22 ods. 2).
+  sk: Na tri roky (§22 ods. 2).
+decisionDeadline:
+  uk: >-
+    90 днів (§33 ods. 8 písm. a). Додатково поліція запитує висновок Міністерства
+    господарства СР щодо бізнес-плану, і воно має на це 60 днів (§33 ods. 2 і 3).
+  sk: >-
+    90 dní (§33 ods. 8 písm. a). Policajný útvar si navyše vyžiada stanovisko
+    Ministerstva hospodárstva SR k podnikateľskému zámeru, ktoré má naň 60 dní
+    (§33 ods. 2 a 3).
 eligibilityRules:
   - id: r-third-country
     effect: require
@@ -29,9 +43,79 @@ eligibilityRules:
 formSourceIds: [mzv-form-11-057]
 authorityIds: [ocp-pz, zastupitelsky-urad]
 feeRuleIds: [fee-tr-business-first-ocp, fee-tr-business-first-mission]
-documentIds: []
-steps: []
+documentIds:
+  - travel-document
+  - application-form
+  - criminal-record
+  - accommodation
+  - business-plan
+  - financial-security-stay
+  - financial-security-business
+  - medical-report-after
+  - health-insurance-after
+steps:
+  - id: s1-plan
+    order: 1
+    title:
+      uk: Підготувати бізнес-план за зразком міністерства
+      sk: Pripraviť podnikateľský zámer podľa vzoru ministerstva
+    body:
+      uk: >-
+        Зразок оприлюднений на сайті Міністерства господарства СР. До плану
+        додається документ, що доводить здійсненність і сталість діяльності
+        (§32 ods. 5 písm. a).
+      sk: >-
+        Vzor je zverejnený na webovom sídle Ministerstva hospodárstva SR. K zámeru
+        sa prikladá doklad preukazujúci realizovateľnosť a udržateľnosť činnosti
+        (§32 ods. 5 písm. a).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-accounts
+    order: 2
+    title:
+      uk: Відкрити ДВА окремі банківські рахунки
+      sk: Zriadiť DVA samostatné bankové účty
+    body:
+      uk: >-
+        Один — на власне ім'я, для забезпечення перебування (§32 ods. 6). Другий —
+        для цілей підприємництва, і він НЕ може бути тим самим рахунком
+        (§32 ods. 7). Це найчастіша причина, чому заяву доводиться доповнювати.
+      sk: >-
+        Jeden na vlastné meno na zabezpečenie pobytu (§32 ods. 6). Druhý zriadený
+        na účely podnikania, ktorý nesmie byť totožný s prvým (§32 ods. 7).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-submit
+    order: 3
+    title:
+      uk: Подати заяву на офіційному бланку з усіма додатками
+      sk: Podať žiadosť na úradnom tlačive so všetkými náležitosťami
+    body:
+      uk: Додатки — не старші за 90 днів, окрім винятків §32 ods. 4.
+      sk: Náležitosti nie staršie ako 90 dní, okrem výnimiek podľa §32 ods. 4.
+    afterDecision: false
+    prerequisites: [s1-plan, s2-accounts]
+    sourceIds: [slovlex-404-2011]
+  - id: s4-after
+    order: 4
+    title:
+      uk: Протягом 30 днів після картки — страхування і медичний висновок
+      sk: Do 30 dní od prevzatia dokladu — poistenie a lekársky posudok
+    body:
+      uk: >-
+        Для §22 закон вимагає обидва: документ про медичне страхування
+        (§32 ods. 9) і медичний висновок (§32 ods. 10).
+      sk: >-
+        Pri §22 zákon vyžaduje oboje: doklad o zdravotnom poistení (§32 ods. 9)
+        a lekársky posudok (§32 ods. 10).
+    afterDecision: true
+    prerequisites: [s3-submit]
+    sourceIds: [slovlex-404-2011]
 transitionRules: []
 relatedProcedureIds: []
 openQuestions:
-  - 'Не внесено: підвиди (ФОП / участь у компанії), фінансове забезпечення діяльності окремо від забезпечення перебування, вимоги при обновленні та тест прибутковості (spec §5A).'
+  - 'Підстави для відмови за §33 ods. 6 не внесені як умови.'
+  - 'Виняток для того, хто діє від імені значного іноземного інвестора (§32 ods. 2 písm. d), не оформлений як умова.'
+  - 'Вимоги до перекладу та легалізації іноземних документів не знайдені в §32.'

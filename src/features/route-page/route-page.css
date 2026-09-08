@@ -76,3 +76,77 @@
 .print-only {
   display: none;
 }
+
+.route-page__facts {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.route-page__facts dt {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.route-page__facts dd {
+  margin: 4px 0 0;
+}
+
+.route-page__steps li {
+  margin-bottom: 16px;
+}
+
+.route-page__steps p {
+  margin: 4px 0 0;
+}
+
+.route-page__after-step {
+  margin-bottom: 16px;
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist__item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  break-inside: avoid;
+}
+
+/* Квадрат для галочки: на папері його ставлять ручкою. */
+.checklist__box {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 4px;
+}
+
+.checklist__title {
+  margin: 0 0 2px;
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.checklist__official {
+  margin: 0 0 6px;
+  font-style: italic;
+}
+
+.checklist__item p {
+  margin: 0 0 4px;
+}
+
+.checklist__amount {
+  font-variant-numeric: tabular-nums;
+}

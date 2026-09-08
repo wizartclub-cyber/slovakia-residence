@@ -369,6 +369,13 @@ resources:
   procedureIds: []
 - id: slovlex-404-2011
   title: Zákon č. 404/2011 Z. z. o pobyte cudzincov
+  contentChecked:
+    at: '2026-09-09'
+    by: claude-code
+    scope: '§22, §23, §27, §32, §33 — прочитано у знятому снапшоті'
+    note: >-
+      Дані маршрутів B1, B2, B6 і всіх файлів content/documents узяті з цього тексту.
+      Це НЕ юридична перевірка: юрист має звірити повноту умов і винятків.
   type: statute
   authority: Slov-Lex
   url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/

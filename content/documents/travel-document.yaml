@@ -1,0 +1,22 @@
+# Джерело: 404/2011 §32 ods. 1 (снапшот slovlex-404-2011, sha256 у реєстрі).
+id: travel-document
+officialName: Platný cestovný doklad
+title:
+  uk: Дійсний проїзний документ (закордонний паспорт)
+  sk: Platný cestovný doklad
+explanation:
+  uk: >-
+    Без нього заяву не приймуть узагалі. Для маршруту «працевлаштування» §23 ods. 1
+    це одна з двох єдиних підстав неприйняття заяви — друга стосується підтвердження
+    від управління праці.
+  sk: >-
+    Bez neho žiadosť vôbec neprijmú. Pri zamestnaní podľa §23 ods. 1 je to jeden
+    z dvoch jediných dôvodov neprijatia žiadosti — druhý sa týka potvrdenia z úradu práce.
+requiredWhen:
+  uk: Завжди, при поданні заяви.
+  sk: Vždy, pri podaní žiadosti.
+maxAgeDays: null
+preparationType: present_original
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

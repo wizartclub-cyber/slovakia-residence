@@ -1,0 +1,24 @@
+# Джерело: 404/2011 §32 ods. 9. Обов'язок ПІСЛЯ рішення.
+# Увага: перелік у законі — §22, §25, §26, §27 і §30. Маршрут §23
+# (працевлаштування) у цьому переліку ВІДСУТНІЙ.
+id: health-insurance-after
+officialName: Doklad potvrdzujúci zdravotné poistenie
+title:
+  uk: Документ про медичне страхування
+  sk: Doklad potvrdzujúci zdravotné poistenie
+explanation:
+  uk: Подається в поліцію протягом 30 днів після отримання картки проживання.
+  sk: Odovzdáva sa policajnému útvaru do 30 dní od prevzatia dokladu o pobyte.
+requiredWhen:
+  uk: >-
+    Для заявників за §22, §25, §26, §27 і §30. Для §23 (працевлаштування) цей
+    обов'язок у §32 ods. 9 не встановлений.
+  sk: >-
+    Pre žiadateľov podľa §22, §25, §26, §27 a §30. Pre §23 (zamestnanie) túto
+    povinnosť §32 ods. 9 neustanovuje.
+afterDecision: true
+maxAgeDays: null
+preparationType: obtain_from_third_party
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

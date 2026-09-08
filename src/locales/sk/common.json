@@ -215,6 +215,14 @@
     "channel": {
       "ocp_pz": "podanie na cudzineckej polícii",
       "diplomatic_mission": "podanie na zastupiteľskom úrade SR"
-    }
+    },
+    "keyFacts": "Podstatné",
+    "grantedFor": "Na aký čas sa udeľuje",
+    "decisionDeadline": "Lehota na rozhodnutie",
+    "documentsChecklistHint": "Vytlačte si tento zoznam a odškrtávajte. Lehota „nie starší ako N dní“ sa počíta k dátumu podania žiadosti.",
+    "afterDecision": "Po rozhodnutí",
+    "afterDecisionHint": "Tieto povinnosti prichádzajú až po prevzatí dokladu o pobyte. Zabúda sa na ne najčastejšie.",
+    "maxAge": "nie starší ako {{days}} dní",
+    "requiredWhen": "Kedy sa vyžaduje"
   }
 }

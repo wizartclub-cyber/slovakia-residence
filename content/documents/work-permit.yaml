@@ -1,0 +1,23 @@
+# Джерело: 404/2011 §23 ods. 2 і §32 ods. 5 písm. b).
+id: work-permit
+officialName: Povolenie na zamestnanie alebo potvrdenie zamestnávateľa
+title:
+  uk: Дозвіл на роботу або підтвердження роботодавця
+  sk: Povolenie na zamestnanie alebo potvrdenie zamestnávateľa
+explanation:
+  uk: >-
+    Альтернативна гілка §23 ods. 2: мета перебування доводиться дозволом на
+    роботу, або підтвердженням роботодавця, що дозвіл не потрібен для цієї
+    діяльності, або міжнародним договором.
+  sk: >-
+    Alternatívna vetva §23 ods. 2: účel pobytu sa preukazuje povolením na
+    zamestnanie, potvrdením zamestnávateľa, že povolenie sa nevyžaduje, alebo
+    medzinárodnou zmluvou.
+requiredWhen:
+  uk: Для маршруту §23 ods. 2 (не для §23 ods. 1).
+  sk: Pre postup podľa §23 ods. 2 (nie pre §23 ods. 1).
+maxAgeDays: 90
+preparationType: obtain_from_third_party
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]
