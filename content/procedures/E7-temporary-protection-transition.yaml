@@ -1,12 +1,15 @@
-# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
-# Найобережніший із семи: правова підстава переходу потребує перевірки.
+# Наповнено з тексту §131o (снапшот slovlex-404-2011, sha256 у реєстрі).
+# УВАГА: цей маршрут стає доступним лише ПІСЛЯ дня припинення тимчасового
+# захисту і діє один рік від того дня. Дата припинення в наших джерелах
+# не встановлена — див. openQuestions.
 id: E7-temporary-protection-transition
 category: E
 title:
-  uk: Перехід із тимчасового захисту (dočasné útočisko) на проживання
-  sk: Prechod z dočasného útočiska na pobyt
+  uk: Перехід із тимчасового захисту на документ про проживання (§131o)
+  sk: Prechod z dočasného útočiska na doklad o pobyte (§131o)
 legalBasis:
   - '404/2011 §131o'
+  - '404/2011 §21 ods. 1'
 validFrom: '2026-07-15'
 validTo: null
 reviewStatus: draft
@@ -15,22 +18,108 @@ reviewer: null
 sourceIds:
   - slovlex-404-2011
 conditionsComplete: false
+grantedFor:
+  uk: >-
+    Після припинення тимчасового захисту людина ще один рік вважається
+    відідентом (odídenec), і на цей рік продовжується чинність документа про
+    проживання (§131o ods. 1 і 2). Протягом цього року можна подати заяву; після
+    його закінчення треба виїхати, якщо немає іншої підстави перебування
+    (§131o ods. 3).
+  sk: >-
+    Po zániku dočasného útočiska sa osoba ešte jeden rok považuje za odídenca a
+    o rok sa predlžuje platnosť dokladu o pobyte (§131o ods. 1 a 2). Počas tohto
+    roka možno podať žiadosť; po jeho uplynutí treba vycestovať, ak niet inej
+    oprávnenosti na pobyt (§131o ods. 3).
+decisionDeadline:
+  uk: Поліція надсилає повідомлення протягом 60 днів від прийняття заяви (§131o ods. 10).
+  sk: Policajný útvar zašle oznámenie do 60 dní od prijatia žiadosti (§131o ods. 10).
 eligibilityRules:
   - id: r-temporary-protection
     effect: require
     when: { field: citizenshipGroup, equals: ua_temporary_protection }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
+  - id: x-already-has-residence
+    effect: exclude
+    when: { field: currentStatus, in: [temporary_residence, permanent_residence] }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
 formSourceIds: []
 authorityIds: [ocp-pz]
 feeRuleIds: []
-documentIds: []
-steps: []
-transitionRules: []
-relatedProcedureIds: [B2-employment-s23, C4-longterm-s52]
+documentIds:
+  - travel-document
+  - criminal-record-ukraine
+  - accommodation
+  - social-insurance-confirmation
+steps:
+  - id: s1-purpose-6-months
+    order: 1
+    title:
+      uk: Переконатися, що мета виконувалася щонайменше шість місяців
+      sk: Overiť, že účel sa vykonával najmenej šesť mesiacov
+    body:
+      uk: >-
+        Заяву можна подати лише щодо мети зі списку §21 ods. 1 písm. a)–f) —
+        підприємництво, працевлаштування, навчання, особлива діяльність,
+        дослідження, возз'єднання родини. Цю мету треба було виконувати
+        щонайменше шість місяців безпосередньо перед припиненням тимчасового
+        захисту і продовжувати виконувати на день подання заяви (§131o ods. 4).
+      sk: >-
+        Žiadosť možno podať len k účelu zo zoznamu §21 ods. 1 písm. a)–f) —
+        podnikanie, zamestnanie, štúdium, osobitná činnosť, výskum, zlúčenie
+        rodiny. Účel sa musel vykonávať najmenej šesť mesiacov bezprostredne pred
+        zánikom dočasného útočiska a musí sa vykonávať aj v deň podania žiadosti
+        (§131o ods. 4).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-purpose-document
+    order: 2
+    title:
+      uk: Підготувати документ, що доводить мету
+      sk: Pripraviť doklad preukazujúci účel
+    body:
+      uk: >-
+        Для працевлаштування це довідка Соціальної страхової компанії про
+        реєстрацію як працівника, не старша за 30 днів (§131o ods. 6 písm. a).
+        Для навчання, особливої діяльності, досліджень і возз'єднання родини —
+        документи за §32 ods. 5 písm. c) až n). Для підприємництва документ не
+        потрібен, якщо особа записана в торговому, ремісничому чи іншому
+        подібному реєстрі (§131o ods. 5 písm. a).
+      sk: >-
+        Pri zamestnaní je to potvrdenie Sociálnej poisťovne nie staršie ako 30 dní
+        (§131o ods. 6 písm. a). Pri štúdiu, osobitnej činnosti, výskume a zlúčení
+        rodiny doklady podľa §32 ods. 5 písm. c) až n). Pri podnikaní sa doklad
+        nevyžaduje, ak je osoba zapísaná v obchodnom, živnostenskom alebo inom
+        obdobnom registri (§131o ods. 5 písm. a).
+    afterDecision: false
+    prerequisites: [s1-purpose-6-months]
+    sourceIds: [slovlex-404-2011]
+  - id: s3-submit
+    order: 3
+    title:
+      uk: Подати заяву з усіма документами одразу
+      sk: Podať žiadosť naraz so všetkými dokladmi
+    body:
+      uk: >-
+        Якщо бракує хоча б одного документа, поліція заяву НЕ прийме, але
+        зобов'язана письмово повідомити, чого саме бракує (§131o ods. 9).
+      sk: >-
+        Ak chýba čo i len jeden doklad, policajný útvar žiadosť NEPRIJME, ale je
+        povinný písomne oznámiť, čo treba doložiť (§131o ods. 9).
+    afterDecision: false
+    prerequisites: [s2-purpose-document]
+    sourceIds: [slovlex-404-2011]
+transitionRules:
+  - id: t-131o-one-year-window
+    when: { onOrAfter: '2026-07-15' }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+relatedProcedureIds: [B2-employment-s23, B1-business-s22, B6-family-s27]
 openQuestions:
-  - 'Офіційний бланк для цієї процедури не встановлений — потрібне джерело.'
-  - 'SOURCE_AUDIT застерігає: §131o стосується ПРИПИНЕННЯ тимчасового захисту і сам по собі не доводить, що захист уже закінчився. Правову підставу переходу треба підтвердити за текстом закону, перш ніж описувати кроки.'
-  - 'Вказівка ÚHCP P PZ від 08.04.2026 (зарахування періодів захисту) не внесена в реєстр — джерела немає.'
-  - 'Міністерство внутрішніх справ оголосило продовження захисту до 04.03.2027 (18.02.2026) — джерело в реєстрі відсутнє.'
-  - 'Не внесено: на які саме види проживання можливий перехід і за яких умов.'
+  - 'Дата припинення тимчасового захисту в наших джерелах НЕ встановлена. Міністерство внутрішніх справ оголошувало продовження до 04.03.2027, але джерела цього оголошення в реєстрі немає. Доки захист триває, заяву за §131o подати не можна.'
+  - 'Винятки §131o ods. 1 písm. a)–d) (звернення за міжнародним захистом, притулок в іншій державі-члені, безстроковий пробут в іншій державі, тимчасовий захист в іншій державі) не внесені як умови.'
+  - 'Підстави відмови за §131o ods. 12 не внесені.'
+  - 'Вказівка ÚHCP P PZ від 08.04.2026 про зарахування періодів тимчасового захисту до п''яти років для §52 не внесена — джерела немає. Водночас §52 ods. 2 písm. e) прямо виключає відідента; співвідношення цих двох правил має з''ясувати юрист.'
+  - 'Збір за цю процедуру не встановлений.'

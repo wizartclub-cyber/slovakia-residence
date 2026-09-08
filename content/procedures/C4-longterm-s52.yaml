@@ -1,4 +1,4 @@
-# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+# Наповнено з тексту §52 (снапшот slovlex-404-2011).
 id: C4-longterm-s52
 category: C
 title:
@@ -6,6 +6,7 @@ title:
   sk: Dlhodobý pobyt EÚ (§52)
 legalBasis:
   - '404/2011 §52'
+  - '404/2011 §54 ods. 2'
 validFrom: '2026-07-15'
 validTo: null
 reviewStatus: draft
@@ -14,20 +15,96 @@ reviewer: null
 sourceIds:
   - slovlex-404-2011
 conditionsComplete: false
+grantedFor: null
+decisionDeadline: null
 eligibilityRules:
   - id: r-third-country
     effect: require
     when: { field: citizenshipGroup, equals: third_country }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
+  - id: r-lawful-residence
+    effect: require
+    when: { field: currentStatus, in: [temporary_residence, permanent_residence] }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: x-temporary-protection
+    effect: exclude
+    when:
+      any:
+        - { field: citizenshipGroup, equals: ua_temporary_protection }
+        - { field: currentStatus, equals: temporary_protection }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: x-protection-applicant
+    effect: exclude
+    when: { field: currentStatus, equals: international_protection_applicant }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: x-tolerated-stay
+    effect: exclude
+    when: { field: currentStatus, equals: tolerated_stay }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: x-purpose-study
+    effect: exclude
+    when: { field: purpose, equals: study }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
 formSourceIds: [mzv-form-11-056]
 authorityIds: [ocp-pz]
 feeRuleIds: []
 documentIds: []
-steps: []
+steps:
+  - id: s1-five-years
+    order: 1
+    title:
+      uk: П'ять років законного і безперервного перебування
+      sk: Päť rokov oprávneného a nepretržitého pobytu
+    body:
+      uk: >-
+        Основна підстава — п'ять років законного безперервного перебування в
+        Словаччині безпосередньо перед поданням заяви (§52 ods. 1 písm. a).
+        Окрема гілка — для власників синьої карти ЄС та деяких інших дозволів:
+        п'ять років у Словаччині або державах-членах, із них щонайменше два роки
+        як власник синьої карти безпосередньо перед поданням (§52 ods. 1 písm. c).
+      sk: >-
+        Základným dôvodom je päť rokov oprávneného nepretržitého pobytu na území
+        SR bezprostredne pred podaním žiadosti (§52 ods. 1 písm. a). Osobitná
+        vetva platí pre držiteľov modrej karty a niektorých ďalších povolení
+        (§52 ods. 1 písm. c).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-excluded
+    order: 2
+    title:
+      uk: Кого §52 не стосується
+      sk: Na koho sa §52 nevzťahuje
+    body:
+      uk: >-
+        §52 ods. 2 прямо виключає: заявників про міжнародний захист; осіб із
+        притулком або додатковим захистом на підставі возз'єднання родини та з
+        гуманітарним притулком; толероване перебування за §58 ods. 3; тих, хто
+        просив тимчасовий захист; ВІДІДЕНТІВ (осіб із тимчасовим захистом);
+        тимчасове проживання з метою навчання; окремі види особливої діяльності
+        (§25 ods. 1 písm. d–f); сезонну зайнятість; випадки §23 ods. 6 písm. b)
+        і c); та осіб із привілеями та імунітетами за міжнародним правом.
+      sk: >-
+        §52 ods. 2 výslovne vylučuje: žiadateľov o medzinárodnú ochranu; azyl
+        alebo doplnkovú ochranu na účel zlúčenia rodiny a humanitárny azyl;
+        tolerovaný pobyt podľa §58 ods. 3; toho, kto požiadal o dočasné útočisko;
+        ODÍDENCOV; prechodný pobyt na účel štúdia; osobitnú činnosť podľa §25
+        ods. 1 písm. d) až f); sezónne zamestnanie; prípady §23 ods. 6 písm. b)
+        a c); a osoby s výsadami a imunitami.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
 transitionRules: []
-relatedProcedureIds: [C3-permanent-s46]
+relatedProcedureIds: [C3-permanent-s46, E7-temporary-protection-transition]
 openQuestions:
-  - 'Не внесено: п''ятирічний строк і правила його обчислення, мобільність власників Синьої карти, зарахування періодів міжнародного захисту, винятки.'
-  - 'Вказівка ÚHCP P PZ від 08.04.2026 про зарахування періодів тимчасового захисту (dočasné útočisko) до п''яти років НЕ внесена — цього джерела немає в реєстрі.'
-  - 'Збір за цю процедуру не визначений: spec §5 називає 250 € для постійного проживання, чи діє це для §52 — не перевірено.'
+  - 'ВАЖЛИВО: §52 ods. 2 písm. e) виключає відідента (особу з тимчасовим захистом). Водночас SOURCE_AUDIT згадує вказівку ÚHCP P PZ від 08.04.2026 про зарахування періодів тимчасового захисту до п''яти років. Джерела цієї вказівки в реєстрі немає, і співвідношення двох правил має з''ясувати юрист. Доки цього немає, сайт показує маршрут як виключений для осіб із тимчасовим захистом.'
+  - 'Правила обчислення безперервності (§52 ods. 3–5) не внесені як умови.'
+  - 'Підстави відмови за §54 ods. 2 не внесені.'
+  - 'Перелік документів до заяви за §52 ще не прочитаний.'
+  - 'Збір за цю процедуру не встановлений: сума 250 € зі spec §5 стосується постійного проживання, для §52 не перевірена.'

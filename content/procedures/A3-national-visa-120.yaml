@@ -1,11 +1,12 @@
-# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+# Наповнено з тексту §15 (снапшот slovlex-404-2011).
 id: A3-national-visa-120
 category: A
 title:
-  uk: Національна віза на 120 днів для подачі заяви про проживання в СР (§15(3)(a))
-  sk: Národné vízum na 120 dní na podanie žiadosti o pobyt v SR (§15 ods. 3 písm. a)
+  uk: Національна віза на 120 днів для подачі заяви про проживання в СР (§15)
+  sk: Národné vízum na 120 dní na podanie žiadosti o pobyt v SR (§15)
 legalBasis:
-  - '404/2011 §15(3)(a)'
+  - '404/2011 §15 ods. 1 písm. b)'
+  - '404/2011 §15 ods. 3 písm. a)'
 validFrom: '2026-07-15'
 validTo: null
 reviewStatus: draft
@@ -15,6 +16,16 @@ sourceIds:
   - slovlex-404-2011
   - mzv-national-visa-guidance
 conditionsComplete: false
+grantedFor:
+  uk: >-
+    Національна віза надається на перебування довше за три місяці, максимум на
+    один рік. Для випадків, пов'язаних із наданим пробутом або з подачею заяви
+    про пробут, — на 120 днів (§15 ods. 3 písm. a).
+  sk: >-
+    Národné vízum sa udeľuje na pobyt dlhší ako tri mesiace, najviac na jeden rok.
+    Pri prípadoch súvisiacich s udeleným pobytom alebo s podaním žiadosti o pobyt
+    na 120 dní (§15 ods. 3 písm. a).
+decisionDeadline: null
 eligibilityRules:
   - id: r-third-country
     effect: require
@@ -26,14 +37,39 @@ eligibilityRules:
     when: { field: location, equals: abroad }
     localizedContentKey: null
     sourceIds: [mzv-national-visa-guidance]
+  - id: x-not-for-business-route
+    effect: exclude
+    when: { field: purpose, equals: business }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
 formSourceIds: [mzv-national-visa-sk, mzv-national-visa-en]
 authorityIds: [zastupitelsky-urad]
 feeRuleIds: []
 documentIds: []
-steps: []
+steps:
+  - id: s1-purpose
+    order: 1
+    title:
+      uk: Віза для подачі заяви про пробут — але НЕ для підприємництва
+      sk: Vízum na podanie žiadosti o pobyt — ale NIE pri podnikaní
+    body:
+      uk: >-
+        §15 ods. 1 písm. b) дозволяє національну візу, якщо вона потрібна у
+        зв'язку з подачею заяви про пробут за цим законом, і прямо додає:
+        це НЕ стосується заяви про тимчасове проживання за §22 (підприємництво).
+        Окремо §15 ods. 1 písm. a) — віза у зв'язку з уже наданим пробутом.
+      sk: >-
+        §15 ods. 1 písm. b) umožňuje národné vízum, ak je potrebné v súvislosti
+        s podaním žiadosti o pobyt podľa tohto zákona, a výslovne dodáva, že to
+        neplatí pri žiadosti o prechodný pobyt podľa §22 (podnikanie). Osobitne
+        §15 ods. 1 písm. a) — vízum v súvislosti s už udeleným pobytom.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
 transitionRules: []
-relatedProcedureIds: [B2-employment-s23]
+relatedProcedureIds: [B2-employment-s23, B6-family-s27]
 openQuestions:
-  - 'Не внесено: для яких саме випадків §15(1)(a)/(b) діє строк до 120 днів.'
-  - 'Збір не визначений: spec §5 розрізняє випадки 15 / 50 / 90 €, але не каже, якому призначенню відповідає кожна сума.'
-  - 'Сторінка MZV від 03.09.2026 датована пізніше за baseline; спиратися треба на §15(3)(a) в редакції від 15.07.2026, сторінку використовувати лише як роз''яснення.'
+  - 'Перелік документів до заяви про національну візу за §15 не прочитаний (окрема стаття).'
+  - 'Збір не встановлений: spec §5 розрізняє 15 / 50 / 90 €, але не каже, якому випадку відповідає кожна сума.'
+  - 'Інші підстави національної візи (§15 ods. 1 písm. c–e і ods. 2 — родина особи з притулком) окремими маршрутами не описані.'
+  - 'Сторінка MZV датована пізніше за baseline; спиратися треба на §15 у редакції від 15.07.2026.'

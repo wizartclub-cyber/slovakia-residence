@@ -1,7 +1,4 @@
-# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
-# УВАГА: у цього маршруту серйозні умови (строк попереднього проживання тощо),
-# яких у даних ще немає. Саме тому conditionsComplete: false — інакше сайт
-# показував би «підходить» людині, яка щойно приїхала.
+# Наповнено з тексту §46 (снапшот slovlex-404-2011).
 id: C3-permanent-s46
 category: C
 title:
@@ -9,6 +6,7 @@ title:
   sk: Trvalý pobyt na neobmedzený čas (§46)
 legalBasis:
   - '404/2011 §46'
+  - '404/2011 §48 ods. 2'
 validFrom: '2026-07-15'
 validTo: null
 reviewStatus: draft
@@ -17,18 +15,54 @@ reviewer: null
 sourceIds:
   - slovlex-404-2011
 conditionsComplete: false
+grantedFor:
+  uk: На необмежений час.
+  sk: Na neobmedzený čas.
+decisionDeadline: null
 eligibilityRules:
   - id: r-third-country
     effect: require
     when: { field: citizenshipGroup, equals: third_country }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
+  - id: r-prior-permanent-or-child
+    effect: require
+    when:
+      any:
+        - { field: currentStatus, equals: permanent_residence }
+        - { field: family, equals: child_of_resident }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
 formSourceIds: [mzv-form-11-056]
 authorityIds: [ocp-pz, zastupitelsky-urad]
 feeRuleIds: [fee-permanent-application]
 documentIds: []
-steps: []
+steps:
+  - id: s1-grounds
+    order: 1
+    title:
+      uk: Перевірити, чи є у вас одна з двох підстав
+      sk: Overiť, či máte jeden z dvoch dôvodov
+    body:
+      uk: >-
+        §46 ods. 1 знає лише дві підстави: щонайменше чотири роки постійного
+        проживання, наданого за §43, або дитина молодша за 18 років особи з
+        постійним проживанням на необмежений час (зокрема передана їй в особисту
+        опіку). Окремо §46 ods. 2 дозволяє Міністерству внутрішніх справ надати
+        такий пробут поза цими умовами — за поданням спецслужб із міркувань
+        безпеки держави.
+      sk: >-
+        §46 ods. 1 pozná len dva dôvody: najmenej štyri roky trvalého pobytu
+        podľa §43, alebo dieťa mladšie ako 18 rokov osoby s trvalým pobytom na
+        neobmedzený čas (aj zverené do osobnej starostlivosti). Osobitne §46
+        ods. 2 umožňuje ministerstvu udeliť pobyt aj bez týchto podmienok.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
 transitionRules: []
 relatedProcedureIds: [C4-longterm-s52]
 openQuestions:
-  - 'Не внесено ЖОДНОЇ статутної підстави §46 і жодного винятку. Показувати цей маршрут як придатний не можна, доки їх не внесено зі джерела.'
+  - 'Підстави надання постійного проживання за §43 (перший, п''ятирічний пробут) ще не внесені окремим маршрутом — без нього умова «чотири роки за §43» не має куди вести.'
+  - 'Підстави відмови за §48 ods. 2 не внесені.'
+  - 'Перелік документів до заяви за §46 ще не прочитаний (окрема стаття).'
+  - 'Опитувальник не питає, скільки років триває постійне проживання, тому умову «чотири роки» перевірити не може — показуємо маршрут як «варте уваги».'

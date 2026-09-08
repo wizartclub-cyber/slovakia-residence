@@ -268,3 +268,57 @@ describe('перелік маршрутів', () => {
     expect(offered).not.toContain('TEST-B-employment');
   });
 });
+
+/**
+ * Перевірки на СПРАВЖНІХ даних із content/procedures — не на фікстурах.
+ * Це найцінніші правила, знайдені в тексті закону: вони бережуть людину від
+ * маршруту, який їй заборонений.
+ */
+describe('справжні маршрути', () => {
+  it('§52 виключений для особи з тимчасовим захистом (§52 ods. 2 písm. e)', async () => {
+    const { procedures } = await import('../../src/lib/content/index.ts');
+    const matches = evaluate(procedures, answers({ citizenshipGroup: 'ua_temporary_protection' }));
+    const s52 = matches.find((m) => m.procedureId === 'C4-longterm-s52');
+    expect(s52?.outcome).toBe('excluded');
+  });
+
+  it('національна віза §15 не діє для підприємництва §22 (§15 ods. 1 písm. b)', async () => {
+    const { procedures } = await import('../../src/lib/content/index.ts');
+    const matches = evaluate(
+      procedures,
+      answers({ citizenshipGroup: 'third_country', location: 'abroad', purpose: 'business' }),
+    );
+    const visa = matches.find((m) => m.procedureId === 'A3-national-visa-120');
+    expect(visa?.outcome).toBe('excluded');
+  });
+
+  it('§46 не пропонується тому, хто не має постійного проживання', async () => {
+    const { procedures } = await import('../../src/lib/content/index.ts');
+    const matches = evaluate(
+      procedures,
+      answers({ citizenshipGroup: 'third_country', currentStatus: 'none', family: 'none' }),
+    );
+    const s46 = matches.find((m) => m.procedureId === 'C3-permanent-s46');
+    expect(s46?.outcome).toBe('not_eligible');
+  });
+
+  it('перехід за §131o не пропонується тому, хто вже має проживання', async () => {
+    const { procedures } = await import('../../src/lib/content/index.ts');
+    const matches = evaluate(
+      procedures,
+      answers({
+        citizenshipGroup: 'ua_temporary_protection',
+        currentStatus: 'temporary_residence',
+      }),
+    );
+    const e7 = matches.find((m) => m.procedureId === 'E7-temporary-protection-transition');
+    expect(e7?.outcome).toBe('excluded');
+  });
+
+  it('жоден справжній маршрут не заявляє повних умов — сайт не каже «підходить»', async () => {
+    const { procedures } = await import('../../src/lib/content/index.ts');
+    for (const p of procedures) expect(p.conditionsComplete).toBe(false);
+    const matches = evaluate(procedures, answers({ citizenshipGroup: 'third_country', purpose: 'employment' }));
+    expect(matches.every((m) => m.outcome !== 'eligible')).toBe(true);
+  });
+});

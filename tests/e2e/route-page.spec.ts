@@ -35,11 +35,16 @@ test('збір показано як довідковий, а не як підс
   await expect(page.getByText('Звільнення від збору не внесені', { exact: false })).toBeVisible();
 });
 
-test('маршрут без опису чесно каже, що кроків і документів немає', async ({ page }) => {
-  // §52 ще не наповнений із закону — і сторінка це визнає, а не мовчить.
+test('маршрут без переліку документів чесно про це каже', async ({ page }) => {
+  // У §52 кроки вже описані, а перелік документів ще ні — сторінка це визнає,
+  // а не лишає розділ порожнім (порожній розділ читався б як «нічого не треба»).
   await page.goto('./uk/route/C4-longterm-s52');
-  await expect(page.getByText('Кроки ще не описані', { exact: false })).toBeVisible();
   await expect(page.getByText('Перелік документів ще не складено', { exact: false })).toBeVisible();
+});
+
+test('виключення §52 для осіб із тимчасовим захистом описане на сторінці', async ({ page }) => {
+  await page.goto('./uk/route/C4-longterm-s52');
+  await expect(page.getByText('ВІДІДЕНТІВ', { exact: false })).toBeVisible();
 });
 
 test('кожне джерело веде на сторінку «Джерела»', async ({ page }) => {

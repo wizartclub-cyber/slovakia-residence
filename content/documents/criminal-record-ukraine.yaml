@@ -1,0 +1,23 @@
+# Джерело: 404/2011 §131o ods. 5 písm. b) і ods. 7.
+id: criminal-record-ukraine
+officialName: Výpis z registra trestov Ukrajiny
+title:
+  uk: Витяг із реєстру судимостей України
+  sk: Výpis z registra trestov Ukrajiny
+explanation:
+  uk: >-
+    Для переходу за §131o закон вимагає саме український витяг про несудимість,
+    не старший за 90 днів (§131o ods. 7). Не потрібен особам молодшим за 14 років.
+  sk: >-
+    Pri prechode podľa §131o zákon vyžaduje práve ukrajinský výpis z registra
+    trestov nie starší ako 90 dní (§131o ods. 7). Nevyžaduje sa od osôb mladších
+    ako 14 rokov.
+requiredWhen:
+  uk: Для заяви про видачу документа про проживання за §131o ods. 4.
+  sk: Pre žiadosť o vydanie dokladu o pobyte podľa §131o ods. 4.
+afterDecision: false
+maxAgeDays: 90
+preparationType: obtain_from_authority
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

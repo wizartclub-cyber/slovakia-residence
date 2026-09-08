@@ -1,0 +1,22 @@
+# Джерело: 404/2011 §131o ods. 6 písm. a).
+id: social-insurance-confirmation
+officialName: Potvrdenie Sociálnej poisťovne o evidovaní ako zamestnanca
+title:
+  uk: Довідка Соціальної страхової компанії про реєстрацію як працівника
+  sk: Potvrdenie Sociálnej poisťovne o evidovaní ako zamestnanca
+explanation:
+  uk: >-
+    Саме цим документом доводиться мета «працевлаштування» при переході за §131o.
+    Не старший за 30 днів.
+  sk: >-
+    Práve týmto dokladom sa preukazuje účel „zamestnanie“ pri prechode podľa §131o.
+    Nie starší ako 30 dní.
+requiredWhen:
+  uk: Якщо мета перебування — працевлаштування (§21 ods. 1 písm. b) при переході за §131o.
+  sk: Ak je účelom pobytu zamestnanie (§21 ods. 1 písm. b) pri prechode podľa §131o.
+afterDecision: false
+maxAgeDays: 30
+preparationType: obtain_from_authority
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]
