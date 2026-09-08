@@ -1,0 +1,7 @@
+id: zivotne-minimum-adult
+baseValue: 295.22
+unit: EUR/month
+validFrom: "2026-07-01"
+validTo: null
+sourceIds: [opatrenie-155-2026]   # додати в реєстр перед validate
+notes: Opatrenie 155/2026 Z. z. — životné minimum pre jednu plnoletú osobu. Похідні значення (×12, ×20, ×100) обчислюються, не зберігаються.

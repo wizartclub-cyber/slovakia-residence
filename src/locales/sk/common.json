@@ -1,0 +1,59 @@
+{
+  "site": {
+    "title": "Pobyt na Slovensku",
+    "subtitle": "Bezplatná príručka zákonných spôsobov vstupu, pobytu a bývania"
+  },
+  "nav": { "home": "Domov", "about": "O projekte", "privacy": "Súkromie" },
+  "lang": { "uk": "Українська", "sk": "Slovenčina" },
+  "a11y": {
+    "skipToContent": "Preskočiť na hlavný obsah",
+    "mainNav": "Hlavné menu",
+    "language": "Výber jazyka"
+  },
+  "baseline": {
+    "label": "Právny stav",
+    "reviewPending": "právna kontrola nie je dokončená",
+    "reviewDone": "skontrolované právnikom",
+    "warning": "Neskoršie zmeny zákona tu ešte nie sú zohľadnené."
+  },
+  "disclaimer": {
+    "title": "Toto nie je právne poradenstvo",
+    "body1": "Príručka vysvetľuje, ako fungujú úradné konania, a odkazuje na primárne zdroje. Nenahrádza konzultáciu s právnikom a nezaručuje výsledok vašej veci.",
+    "body2": "Nepodávame dokumenty za vás a nie sme sprostredkovateľ. Žiadosti podávate sami príslušnému úradu."
+  },
+  "home": {
+    "title": "Nájdite svoju zákonnú cestu",
+    "intro": "Vyberte svoju situáciu a dostanete postup krok za krokom s odkazmi na zákon, zoznam dokladov, výšku poplatku a úrad, ktorému sa žiadosť podáva.",
+    "statusTitle": "Čo je už hotové",
+    "statusBody": "Zatiaľ je zverejnená technická kostra stránky: dva jazyky, upozornenie a právny stav. Dotazník situácie, postupy a zoznamy dokladov pribudnú v ďalších aktualizáciách.",
+    "sourcesTitle": "Každé tvrdenie má zdroj",
+    "sourcesBody": "Zákon nereprodukujeme spamäti. Ak pre pravidlo neexistuje úradný zdroj, pole zostáva prázdne a postup je označený ako neúplný."
+  },
+  "about": {
+    "title": "O projekte",
+    "publisher": "Vydavateľ — [NÁZOV ORGANIZÁCIE], charitatívna organizácia.",
+    "purpose": "Cieľom je sprístupniť úradné pravidlá pobytu na Slovensku ľuďom, ktorí nemajú prístup k právnikovi. Používanie príručky je bezplatné a nevyžaduje registráciu.",
+    "notAffiliated": "Nie sme štátny orgán, nie sme prepojení s Ministerstvom vnútra, cudzineckou políciou ani iným úradom a nezastupujeme vás v konaní.",
+    "sourcesTitle": "Odkiaľ sú údaje",
+    "sourcesBody": "Základom sú texty zákonov zo Slov-Lexu, úradné usmernenia orgánov a úradné tlačivá. Každé vydanie príručky uchováva kópie zdrojov k dátumu kontroly."
+  },
+  "privacy": {
+    "title": "Súkromie",
+    "summary": "Príručka o vás nezbiera nič. Žiadne účty, žiadna databáza, žiadna analytika, žiadne reklamné merače.",
+    "noStorageTitle": "Údaje neopúšťajú váš prehliadač",
+    "noStorageBody": "Všetko, čo zadáte, existuje len v pamäti otvorenej karty. Zatvorenie alebo obnovenie stránky to nenávratne vymaže. Zámerne nepoužívame localStorage, cookies ani iné úložiská prehliadača.",
+    "noNetworkTitle": "Stránka nemôže nič odoslať",
+    "noNetworkBody": "V stránke je zabudované bezpečnostné pravidlo (Content Security Policy), ktoré prehliadaču zakazuje odoslať z tejto stránky akúkoľvek požiadavku. Je to technická záruka, nielen sľub.",
+    "hostingTitle": "Hosting",
+    "hostingBody": "Stránka je umiestnená na GitHub Pages. Ako každý webový server aj GitHub vidí technické údaje požiadavky (IP adresu, typ prehliadača). K týmto údajom nemáme prístup a nepoužívame ich."
+  },
+  "footer": {
+    "publisher": "[NÁZOV ORGANIZÁCIE] · charitatívna organizácia",
+    "notLegalAdvice": "Informačná služba, nie právne poradenstvo."
+  },
+  "notFound": {
+    "title": "Stránka sa nenašla",
+    "body": "Takáto stránka neexistuje. Adresa je pravdepodobne zadaná s chybou.",
+    "home": "Na úvod"
+  }
+}

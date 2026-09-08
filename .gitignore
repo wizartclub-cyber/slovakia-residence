@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.DS_Store
+*.local
+.vite/
+
+# тести
+playwright-report/
+test-results/
+coverage/
+
+# python
+__pycache__/
+*.pyc
+
+# снапшоти джерел — великі бінарні файли, зберігаються окремо
+sources/snapshots/*
+!sources/snapshots/.gitkeep
+
+# TypeScript build info
+*.tsbuildinfo

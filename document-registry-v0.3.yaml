@@ -1,0 +1,116 @@
+baselineDate: '2026-09-01'
+registryVersion: '0.3'
+checkedAt: '2026-09-07'
+sourcePriority:
+- Slov-Lex statute/statutory annex
+- competent authority current official guidance (MZV/MV/ÚPSVaR)
+- official forms pages/files
+- IOM MIC secondary guidance
+- older FAQ PDFs / embassy legacy guidance
+resources:
+- id: mzv-residence-master-guidance
+  type: official_guidance_html
+  authority: MZV SR
+  url: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
+  updated: '2026-08-16'
+  priority: high
+- id: mzv-form-11-057
+  type: official_form_pdf
+  authority: MZV SR / MV SR
+  url: https://www.mzv.sk/documents/30297/1912918/Application%2Bfor%2Bthe%2Btemporary%2Bresidence/12f647e7-5f64-4261-a98e-6ce4f895599f
+  formCode: T MV SR 11-057
+  fillMode: overlay
+- id: mzv-form-11-056
+  type: official_form_pdf
+  authority: MZV SR / MV SR
+  url: https://www.mzv.sk/documents/10182/16461384/004-Application-for-renewal-of-the-temporary-residence-Application-for-permanent-residence-for-an-unlimited-time-long-term-residence.pdf/4e0ef0eb-bc76-db80-b4ac-0f7af22e1daa
+  formCode: T MV SR 11-056
+  fillMode: overlay
+- id: mzv-national-visa-sk
+  type: official_form_pdf
+  authority: MZV SR
+  url: https://www.mzv.sk/documents/10182/16274933/002-ziadost-o-narodne-vizum-SK.pdf/d2c0d2c1-c498-176c-7fae-cd1083393266
+  pages: 4
+  fillMode: overlay
+- id: mzv-national-visa-en
+  type: official_form_pdf
+  authority: MZV SR
+  url: https://www.mzv.sk/documents/10182/16274933/004-ziadost-o-narodne-vizum-EN.pdf/3e457269-c704-45a0-3ec5-5ce02f650af9
+  pages: 4
+  fillMode: overlay
+- id: mzv-national-visa-guidance
+  type: official_guidance_html
+  authority: MZV SR
+  url: https://www.mzv.sk/en/services/information-for-foreigners/national-visa
+  updated: '2026-09-03'
+  notes: Confirms 120-day national visa for residence-application submission in Slovakia.
+- id: upsvr-foreign-employment-forms
+  type: official_forms_page
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/vzory-ziadosti-v-slovenskom-jazyku-a-inych-jazykoch/vzory-ziadosti-pre-oblast-sluzieb-zamestnanosti/zamestnavanie-cudzincov.html?lang=sk&page_id=281037
+  updated: '2026-02-20'
+- id: upsvr-work-permit-seasonal
+  type: official_form_doc
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/12_25/Priloha_1-doplnene_sezonne.doc
+- id: upsvr-employment-promise
+  type: official_form_docx
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/Priloha_7_.docx
+- id: upsvr-accommodation-employer
+  type: official_form_doc
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/Priloha_8.doc
+- id: upsvr-employer-declaration-70-7
+  type: official_form_doc
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/Priloha_10_.doc
+- id: upsvr-blue-card-guidance
+  type: official_guidance_html
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/generate_page.php?page_id=363520
+- id: upsvr-vpm-guidance
+  type: official_guidance_html
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/generate_page.php?page_id=363510
+- id: upsvr-2026-07-15-changes
+  type: official_guidance_html
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/sluzby-zamestnanosti/aktuality/legislativne-zmeny-v-zamestnavani-cudzincov-od-15.7.2026.html?page_id=1534308
+  priority: high
+- id: slovlex-404-2011
+  type: statute
+  authority: Slov-Lex
+  url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/
+  validFrom: '2026-07-15'
+  validTo: '2026-09-30'
+  priority: highest
+- id: slovlex-69-2026
+  type: statute
+  authority: Slov-Lex
+  url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/69/20260612
+  validFrom: '2026-06-12'
+  priority: highest
+- id: slovlex-69-annex-3
+  type: statutory_annex
+  authority: Slov-Lex
+  url: https://static.slov-lex.sk/static/SK/ZZ/2026/69/20260612.print.html
+  title: Príloha č. 3 – VYHLÁSENIE CUDZINCA
+  notes: Police records the declaration on this official form under §59(3); not a
+    normal download-and-submit workflow.
+- id: slovlex-128-2026
+  type: statute_amendment
+  authority: Slov-Lex
+  url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/128/20260715
+  validFrom: '2026-07-15'
+  priority: highest
+- id: iom-temp-residence
+  type: secondary_guidance
+  authority: IOM MIC
+  url: https://mic.iom.sk/en/residence/temporary-residence/233-application-for-temporary-residence.html
+  updated: '2026-07-23'
+- id: iom-fees
+  type: secondary_guidance
+  authority: IOM MIC
+  url: https://mic.iom.sk/en/residence/general-information/226-ake-vysoke-su-spravne-poplatky-pri-ziadosti.html
+  updated: '2026-07-16'

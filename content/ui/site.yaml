@@ -1,0 +1,21 @@
+# Конфігурація сайту: порядок пунктів меню та юридичний baseline.
+# Тексти пунктів меню — у src/locales/<мова>/common.json за ключем nav.<key>.
+# Змінювати тут, не в коді (CLAUDE.md §6).
+legalBaseline:
+  # Дата стану права, яку бачить відвідувач. Після першого юридичного рев'ю
+  # замінити на дату рев'ю і поставити reviewCompleted: true.
+  date: '2026-09-01'
+  edition: 1
+  reviewCompleted: false
+  reviewer: null
+nav:
+  - key: home
+    path: ''
+  - key: about
+    path: 'about'
+  - key: privacy
+    path: 'privacy'
+locales:
+  - uk
+  - sk
+defaultLocale: uk

@@ -1,0 +1,38 @@
+# Шаблон маршруту. Один файл = один маршрут. Копіювати як <code>.yaml (напр. B2-employment-s23.yaml).
+# Поля відповідають spec §7. Порожнє поле краще за вигадане.
+id: B2-employment-s23
+category: B            # A entry · B temporary · C permanent · D tolerated · E protection · F EU · G admin
+title:
+  uk: Тимчасове проживання (prechodný pobyt) — працевлаштування (§23)
+  sk: Prechodný pobyt na účel zamestnania (§23)
+legalBasis:
+  - "404/2011 §23"
+  - "5/2004 §21b"
+validFrom: "2026-07-15"
+validTo: null
+reviewStatus: draft    # draft | source_verified | legally_reviewed | published | superseded | blocked
+reviewedAt: null
+reviewer: null         # заповнює юрист; без нього published-маршрут не збирається
+# Поля "status" тут навмисно немає: бейдж «неповний маршрут» для користувача
+# обчислюється з reviewStatus (див. publicStatus() у src/lib/content/schema.ts).
+sourceIds:
+  - slovlex-404-2011
+  - mzv-residence-master-guidance
+eligibilityRules:
+  - id: third-country
+    when: { citizenshipGroup: third_country }
+  - id: has-job-offer
+    when: { purpose: employment }
+authorityIds: [ocp-pz-bratislava, zastupitelsky-urad]
+feeRuleIds: [fee-tr-employment-first]
+documentIds: [form-11-057, passport, criminal-record, accommodation-proof, health-insurance]
+steps:
+  - id: s1
+    order: 1
+    localizedContentKey: proc.B2.s1   # текст у locales/uk та locales/sk
+    prerequisites: []
+    sourceIds: [mzv-residence-master-guidance]
+transitionRules: []
+relatedProcedureIds: [A3-national-visa-120]
+openQuestions:
+  - "Підтвердити гілку §21b(4)(f) Act 5/2004 після національної візи — джерело: пінована темпоральна версія 5/2004"

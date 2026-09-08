@@ -1,0 +1,396 @@
+baselineDate: '2026-09-01'
+registryVersion: '0.4'
+checkedAt: '2026-09-07'
+sourcePriority:
+- Slov-Lex statute/statutory annex
+- competent authority current official guidance (MZV/MV/ÚPSVaR)
+- official forms pages/files
+- IOM MIC secondary guidance
+- older FAQ PDFs / embassy legacy guidance
+resources:
+- id: mzv-residence-master-guidance
+  type: official_guidance_html
+  authority: MZV SR
+  url: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
+  updated: '2026-08-16'
+  priority: high
+  reviewStatus: url_verified
+  locale: en
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observedUpdated: '2026-08-16'
+    observed: 22 sections incl. fees, documents by purpose (§22–§30, Blue Card), national visa for submitting residence application
+  snapshot: null
+  procedureIds: []
+- id: mzv-form-11-057
+  type: official_form_pdf
+  authority: MZV SR / MV SR
+  url: https://www.mzv.sk/documents/30297/1912918/Application%2Bfor%2Bthe%2Btemporary%2Bresidence/12f647e7-5f64-4261-a98e-6ce4f895599f
+  formCode: T MV SR 11-057
+  fillMode: overlay
+  reviewStatus: url_verified
+  locale: sk+en
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observed: 'T MV SR 11-057; sk/en bilingual; instruction: must be completed by typewriter or block capitals IN SLOVAK;
+      covers temporary, 5-year permanent and tolerated residence'
+  completionLanguage: sk
+  fillModeNote: overlay assumed; confirm acroFormFields from snapshot before final choice
+  snapshot: null
+  procedureIds: []
+- id: mzv-form-11-056
+  type: official_form_pdf
+  authority: MZV SR / MV SR
+  url: https://www.mzv.sk/documents/10182/16461384/004-Application-for-renewal-of-the-temporary-residence-Application-for-permanent-residence-for-an-unlimited-time-long-term-residence.pdf/4e0ef0eb-bc76-db80-b4ac-0f7af22e1daa
+  formCode: T MV SR 11-056
+  fillMode: overlay
+  reviewStatus: url_verified
+  locale: sk+en
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observed: T MV SR 11-056 III/2019; renewal of temporary residence, permanent/long-term residence, EU-citizen registration,
+      family-member documents; Slovak completion required per note 2
+  completionLanguage: sk
+  snapshot: null
+  procedureIds: []
+- id: mzv-national-visa-sk
+  type: official_form_pdf
+  authority: MZV SR
+  url: https://www.mzv.sk/documents/10182/16274933/002-ziadost-o-narodne-vizum-SK.pdf/d2c0d2c1-c498-176c-7fae-cd1083393266
+  pages: null
+  fillMode: overlay
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observed: ŽIADOSŤ O NÁRODNÉ VÍZUM, Slovak only, MZV data-controller notice; no form code visible; NOT a Ukrainian/Slovak
+      form — earlier handoff claim of uk/sk form remains unconfirmed
+  snapshot: null
+  procedureIds: []
+- id: mzv-national-visa-en
+  type: official_form_pdf
+  authority: MZV SR
+  url: https://www.mzv.sk/documents/10182/16274933/004-ziadost-o-narodne-vizum-EN.pdf/3e457269-c704-45a0-3ec5-5ce02f650af9
+  pages: null
+  fillMode: overlay
+  reviewStatus: url_verified
+  locale: en+sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observed: APPLICATION FOR NATIONAL VISA, English with Slovak parentheticals; no form code visible
+  snapshot: null
+  procedureIds: []
+- id: mzv-national-visa-guidance
+  type: official_guidance_html
+  authority: MZV SR
+  url: https://www.mzv.sk/en/services/information-for-foreigners/national-visa
+  updated: '2026-09-03'
+  notes: Confirms 120-day national visa for residence-application submission in Slovakia.
+  reviewStatus: url_verified
+  locale: en
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observedUpdated: '2026-09-03'
+    observed: “for 120 days for submission of a residence permit application in the territory of the Slovak Republic” — page
+      postdates baseline; applicability to be tied to §15(3)(a) of 404/2011 as amended by 128/2026 (eff. 15.7.2026), not to
+      the page date
+  snapshot: null
+  procedureIds: []
+- id: upsvr-foreign-employment-forms
+  type: official_forms_page
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/vzory-ziadosti-v-slovenskom-jazyku-a-inych-jazykoch/vzory-ziadosti-pre-oblast-sluzieb-zamestnanosti/zamestnavanie-cudzincov.html?lang=sk&page_id=281037
+  updated: '2026-02-20'
+  reviewStatus: fetch_pending
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: blocked_from_sandbox
+    observed: upsvr.gov.sk robots.txt fetch timed out 3× from sandbox; verify from owner machine
+  snapshot: null
+  procedureIds: []
+- id: upsvr-work-permit-seasonal
+  type: official_form_doc
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/12_25/Priloha_1-doplnene_sezonne.doc
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observed: Príloha č. 1 — žiadosť o udelenie povolenia na zamestnanie (standard or seasonal), with applicant instructions
+  snapshot: null
+  procedureIds: []
+- id: upsvr-employment-promise
+  type: official_form_docx
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/Priloha_7_.docx
+  reviewStatus: fetch_pending
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: blocked_from_sandbox
+    observed: robots.txt failure 2×; expected Príloha č. 7 prísľub na zamestnanie — unconfirmed
+  snapshot: null
+  procedureIds: []
+- id: upsvr-accommodation-employer
+  type: official_form_doc
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/Priloha_8.doc
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observed: Príloha č. 8 — Potvrdenie zamestnávateľa/informujúcej organizácie o poskytnutí ubytovania…; states valid from
+      1.9.2025
+  snapshot: null
+  procedureIds: []
+- id: upsvr-employer-declaration-70-7
+  type: official_form_doc
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/Priloha_10_.doc
+  reviewStatus: fetch_pending
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: blocked_from_sandbox
+    observed: robots.txt failure; unconfirmed
+  snapshot: null
+  procedureIds: []
+- id: upsvr-blue-card-guidance
+  type: official_guidance_html
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/generate_page.php?page_id=363520
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observedCreated: '2014-01-08'
+    observedUpdated: '2024-07-15'
+    observed: Blue Card employer guidance; last update predates 15.7.2026 amendment — treat as potentially stale, cross-check
+      against upsvr-2026-07-15-changes
+  snapshot: null
+  procedureIds: []
+- id: upsvr-vpm-guidance
+  type: official_guidance_html
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/buxus/generate_page.php?page_id=363510
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observedCreated: '2014-01-08'
+    observedUpdated: '2023-01-09'
+    observed: VPM (voľné pracovné miesto) procedure guidance; 20-working-day vacancy notice rule; update predates 2026 amendments
+      — potentially stale
+  snapshot: null
+  procedureIds: []
+- id: upsvr-2026-07-15-changes
+  type: official_guidance_html
+  authority: ÚPSVaR
+  url: https://www.upsvr.gov.sk/sluzby-zamestnanosti/aktuality/legislativne-zmeny-v-zamestnavani-cudzincov-od-15.7.2026.html?page_id=1534308
+  priority: high
+  reviewStatus: fetch_pending
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: blocked_from_sandbox
+    observed: robots.txt failure 3×; high-priority page, verify first from owner machine
+  snapshot: null
+  procedureIds: []
+- id: slovlex-404-2011
+  type: statute
+  authority: Slov-Lex
+  url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/
+  validFrom: '2026-07-15'
+  validTo: '2026-09-30'
+  priority: highest
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok_js_required
+    observed: ezbierky page needs JS; canonical resolves to 20260715 version. FLOATING URL — pin to temporal URL below
+  pinnedUrl: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/20260715
+  staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2011/404/20260715.print.html
+  staticCheck: static print version loads; shows účinnosť 15.07.2026–30.09.2026
+  snapshot: null
+  procedureIds: []
+- id: slovlex-69-2026
+  type: statute
+  authority: Slov-Lex
+  url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/69/20260612
+  validFrom: '2026-06-12'
+  priority: highest
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok_js_required
+    observed: needs JS; act 69/2026 Zákon o medzinárodnej ochrane…, eff. 12.06.2026
+  staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/69/20260612.print.html
+  snapshot: null
+  procedureIds: []
+- id: slovlex-69-annex-3
+  type: statutory_annex
+  authority: Slov-Lex
+  url: https://static.slov-lex.sk/static/SK/ZZ/2026/69/20260612.print.html
+  title: Príloha č. 3 – VYHLÁSENIE CUDZINCA
+  notes: Police records the declaration on this official form under §59(3); not a normal download-and-submit workflow.
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: partial
+    observed: static print loads (act name + eff. 12.06.2026 confirmed) but the extracted text was cut before Prílohy — Annex
+      3 title and §59(3) wording NOT confirmed from sandbox; confirm from snapshot
+  snapshot: null
+  procedureIds: []
+- id: slovlex-128-2026
+  type: statute_amendment
+  authority: Slov-Lex
+  url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/128/20260715
+  validFrom: '2026-07-15'
+  priority: highest
+  reviewStatus: url_verified
+  locale: sk
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observed: 'Čl. V: účinnosť 15. júla 2026, okrem čl. I bodu 62 (1. októbra 2026) a čl. I bodu 67 (deň spustenia ETIAS)'
+  staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/128/20260715.print.html
+  amendmentBoundaries:
+  - '2026-10-01: čl. I bod 62'
+  - 'ETIAS start: čl. I bod 67'
+  snapshot: null
+  procedureIds: []
+- id: iom-temp-residence
+  type: secondary_guidance
+  authority: IOM MIC
+  url: https://mic.iom.sk/en/residence/temporary-residence/233-application-for-temporary-residence.html
+  updated: '2026-07-23'
+  reviewStatus: url_verified
+  locale: en
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observedUpdated: '2026-07-23'
+    observed: secondary; lists filing places, documents, 90-day decision (30–60 for some purposes), €295.22/month subsistence
+      reference
+  snapshot: null
+  procedureIds: []
+- id: iom-fees
+  type: secondary_guidance
+  authority: IOM MIC
+  url: https://mic.iom.sk/en/residence/general-information/226-ake-vysoke-su-spravne-poplatky-pri-ziadosti.html
+  updated: '2026-07-16'
+  reviewStatus: url_verified
+  locale: en
+  urlCheck:
+    checkedAt: '2026-09-07'
+    result: ok
+    observedUpdated: '2026-07-16'
+    observed: 'business 330, employment 250, seasonal 50, family 200, Blue Card 250, permanent 250 (200 electronic); exemptions:
+      spouses of SK citizens and under-18 for permanent; under-18 for temporary — VERIFY against Act 145/1995 tariff item
+      24 before use'
+  snapshot: null
+  procedureIds: []
+- id: opatrenie-155-2026
+  type: implementing_regulation
+  authority: MPSVR SR / Slov-Lex
+  url: null
+  priority: high
+  reviewStatus: fetch_pending
+  locale: sk
+  addedAt: '2026-09-08'
+  addedNote: Opatrenie 155/2026 Z. z. — zivotne minimum. Required by content/thresholds/zivotne-minimum.yaml
+    (295.22 EUR/month from 2026-07-01). Exact Slov-Lex URL NOT verified in this session; owner/lawyer must supply it
+    before a snapshot can be taken.
+  snapshot: null
+  procedureIds: []
+- id: slovlex-145-1995
+  type: statute
+  authority: Slov-Lex
+  url: https://static.slov-lex.sk/static/SK/ZZ/1995/145/20260901.print.html
+  validFrom: '2026-09-01'
+  priority: highest
+  reviewStatus: fetch_pending
+  locale: sk
+  addedAt: '2026-09-08'
+  addedNote: Act 145/1995 on administrative fees, tariff item 24 — fee baseline (spec section 5). URL copied from
+    spec section 2; NOT independently checked in this session.
+  snapshot: null
+  procedureIds: []
+- id: slovlex-5-2004
+  type: statute
+  authority: Slov-Lex
+  url: null
+  priority: highest
+  reviewStatus: fetch_pending
+  locale: sk
+  addedAt: '2026-09-08'
+  addedNote: Act 5/2004 on employment services as amended by 128/2026, needed for the section 21b(4)(f) branch after a
+    national visa. Spec section 2 requires pinning an exact temporal version; no verified URL available — do not guess
+    the temporal path, confirm on slov-lex.sk first.
+  snapshot: null
+  procedureIds: []
+- id: minv-residence-guides
+  type: official_guidance_html
+  authority: MV SR
+  url: https://www.minv.sk/
+  priority: high
+  reviewStatus: fetch_pending
+  locale: sk
+  addedAt: '2026-09-08'
+  addedNote: Listed as an official operational source in spec section 2 and as outstanding in SOURCE_AUDIT_v0.4.
+    Root URL only — the specific residence guidance pages still have to be identified and registered separately.
+  snapshot: null
+  procedureIds: []
+- id: slovensko-sk-eservices
+  type: official_guidance_html
+  authority: NASES / slovensko.sk
+  url: https://www.slovensko.sk/
+  priority: medium
+  reviewStatus: fetch_pending
+  locale: sk
+  addedAt: '2026-09-08'
+  addedNote: Electronic procedures (PES) referenced in spec section 2 and SOURCE_AUDIT_v0.4. Root URL only. Existence of
+    an electronic service does not establish availability or exclusivity for a given procedure — verify per procedure.
+  snapshot: null
+  procedureIds: []
+- id: minv-hlasenie-pobytu-form
+  type: official_form_pdf
+  authority: MV SR
+  url: null
+  priority: medium
+  reviewStatus: fetch_pending
+  locale: sk
+  addedAt: '2026-09-08'
+  addedNote: Hlasenie pobytu form — post-grant obligation. SOURCE_AUDIT_v0.4 requires retrieving and verifying the actual
+    PDF behind the reported page before registering a downloadable asset. No verified URL yet.
+  snapshot: null
+  procedureIds: []
+baselinePolicy: 'moving: legal baseline = date of last completed legal review; historical editions preserved (decision 2026-09-07)'
+reviewStatusEnum:
+- fetch_pending
+- url_verified
+- snapshot_taken
+- source_verified
+- legally_reviewed
+- published
+- superseded
+- blocked
+resourceFields:
+  urlCheck: remote check from sandbox on checkedAt (HTML text only, no bytes) — evidence that URL resolves and what it shows
+  snapshot: written by scripts/download_and_hash.py on the owner machine — sha256, bytes, signature, pages
+  locale: language(s) of the resource
+  procedureIds: to be filled when content/procedures exist

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <!--
+      CSP (Content Security Policy) — правило для браузера: що сторінці дозволено завантажувати.
+      connect-src 'none' означає, що сайт фізично не може надіслати нікуди жодного запиту —
+      це технічна гарантія обіцянки «нуль персональних даних поза браузером» (CLAUDE.md §2.1).
+      Під час `pnpm dev` цей рядок автоматично послаблюється, у зібраному сайті — діє як є.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; form-action 'none'; base-uri 'self'"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <title>Проживання в Словаччині / Pobyt na Slovensku</title>
+  </head>
+  <body>
+    <noscript>
+      Для роботи довідника потрібен увімкнений JavaScript. / Na fungovanie príručky je potrebný
+      zapnutý JavaScript.
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
