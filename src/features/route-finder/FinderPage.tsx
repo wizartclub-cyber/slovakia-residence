@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { usePageTitle } from '../../app/usePageTitle';
 import { finder, procedures } from '../../lib/content';
 import { site } from '../../lib/content/site';
 import { evaluate } from '../../lib/rules/evaluate';
@@ -12,6 +13,7 @@ type Draft = Omit<Partial<Answers>, 'asOfDate'>;
 
 export function FinderPage() {
   const { t } = useTranslation();
+  usePageTitle(t('finder.title'));
 
   // Відповіді живуть тільки тут, у пам'яті вкладки. Жодного localStorage,
   // жодного запису в адресу — перезавантаження сторінки їх стирає (CLAUDE.md §2.1).

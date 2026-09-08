@@ -180,15 +180,19 @@ a {
   line-height: 1.35;
   font-weight: 500;
   letter-spacing: 0.01em;
+  /* Фон білий, а не м'який кольоровий. Кольори --success/--warning у
+     DESIGN_SYSTEM_TZ.md перевірені на БІЛОМУ (4.9 і 5.9); на власному
+     м'якому фоні той самий зелений дає лише 4.29 і не проходить AA
+     (знайдено axe). Нових кольорів не вводимо — рамка нейтральна. */
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
 }
 
 .badge--warning {
-  background: var(--warning-soft);
   color: var(--warning);
 }
 
 .badge--success {
-  background: var(--success-soft);
   color: var(--success);
 }
 
@@ -197,8 +201,11 @@ a {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px 12px;
-  background: var(--warning-soft);
+  /* Фон білий, а не жовтий: жовтий бейдж на жовтому фоні дає контраст 4.18
+     замість потрібних 4.5 (знайдено axe). Акцент дає бічна риска. */
+  background: var(--surface);
   border: 1px solid var(--line);
+  border-inline-start: 3px solid var(--warning);
   border-radius: var(--radius);
   padding: 12px 16px;
   margin-bottom: 24px;

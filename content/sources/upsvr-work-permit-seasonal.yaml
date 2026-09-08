@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: Príloha č. 1 — žiadosť o udelenie povolenia na zamestnanie (standard or seasonal), with applicant
   instructions
@@ -22,5 +22,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: official_form
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/upsvr-work-permit-seasonal.doc
+sha256: 20473db9002f9b3813cbdc7c46b6af36f600480356e1ba9119eb882cc2264287

@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: robots.txt failure 2×; expected Príloha č. 7 prísľub na zamestnanie — unconfirmed
 notes: null
@@ -21,5 +21,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: official_form
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/upsvr-employment-promise.docx
+sha256: 6c9d93c2d385d20fe78af16fa490793b1e864f43ea3862b08e691350a3e3cb00

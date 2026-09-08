@@ -80,7 +80,8 @@
     "linkOriginal": "originál",
     "noUrl": "úradná adresa zatiaľ chýba — zdroj je zapísaný, ale nepotvrdený",
     "stale": "stránka je staršia ako zmeny od 15.07.2026",
-    "evidenceLabel": "Čo bolo na tejto adrese vidieť pri kontrole (technický záznam):"
+    "evidenceLabel": "Čo bolo na tejto adrese vidieť pri kontrole (technický záznam):",
+    "checksum": "SHA-256"
   },
   "sourceType": {
     "legislation": "Zákony",

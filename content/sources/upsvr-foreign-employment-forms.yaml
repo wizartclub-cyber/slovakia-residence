@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: upsvr.gov.sk robots.txt fetch timed out 3× from sandbox; verify from owner machine
 notes: null
@@ -21,5 +21,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: official_web_guidance
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/upsvr-foreign-employment-forms.html
+sha256: 255b4ca23faa88d2f7518023702cdcd1abe697ba1125594432f0bee41fa54ce0

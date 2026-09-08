@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: null
 notes: Electronic procedures (PES) referenced in spec section 2 and SOURCE_AUDIT_v0.4. Root URL only.
@@ -23,5 +23,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: null
 sourceType: official_web_guidance
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/slovensko-sk-eservices.html
+sha256: f9fb191799988cf1f1208ac39fde9b2b8e3cbe631fbdd3c5276e364abd92e275

@@ -101,9 +101,24 @@ def sha256_of(path: Path) -> str:
     return h.hexdigest()
 
 
+def snapshot_url(res: dict) -> tuple[str | None, str]:
+    """Adresa to snapshot, and which registry field it came from.
+
+    Slov-Lex `url` is the floating ezbierky page, which is a ~2 KB JavaScript
+    shell: downloading it yields no legal text at all. The real, citable text
+    lives at `staticUrl` (static.slov-lex.sk .print.html) or at the pinned
+    temporal `pinnedUrl`. Prefer those.
+    """
+    for field in ("staticUrl", "pinnedUrl", "url"):
+        value = res.get(field)
+        if value:
+            return value, field
+    return None, "url"
+
+
 def fetch(res: dict) -> dict:
-    url = res.get("url")
-    ev = {"retrievedAt": utc_now(), "requestedUrl": url}
+    url, field = snapshot_url(res)
+    ev = {"retrievedAt": utc_now(), "requestedUrl": url, "urlField": field}
     if not url:
         # Registered resource whose official URL is not confirmed yet: skip, never guess.
         ev.update({"ok": False, "error": "no url in registry — supply the official URL first"})
@@ -175,6 +190,9 @@ def main():
     ap.add_argument("--registry", default="document-registry-v0.4.yaml")
     ap.add_argument("--verify", action="store_true", help="re-hash local snapshots instead of downloading")
     ap.add_argument("--only", help="comma-separated resource ids to (re)download")
+    ap.add_argument("--local", action="store_true",
+                    help="record files already saved by hand in sources/snapshots/ (for sites that block scripts)")
+    ap.add_argument("--force-local", action="store_true", help="with --local: overwrite existing snapshot evidence")
     args = ap.parse_args()
 
     reg_path = ROOT / args.registry
@@ -183,6 +201,50 @@ def main():
     if args.verify:
         print(f"Verifying snapshots listed in {reg_path.name}")
         sys.exit(1 if verify(registry) else 0)
+
+    if args.local:
+        # Some authorities (mzv.sk) return 403 to every programmatic client,
+        # whatever the User-Agent. Those files must be saved by hand from a
+        # browser into sources/snapshots/<id>.<ext>; this mode records the same
+        # evidence for them, and marks that the file was obtained manually.
+        found = 0
+        for res in registry["resources"]:
+            existing = sorted(SNAP_DIR.glob(f"{res['id']}.*")) if SNAP_DIR.exists() else []
+            if not existing:
+                continue
+            snap = res.get("snapshot") or {}
+            if snap.get("ok") and not args.force_local:
+                continue
+            path = existing[0]
+            data = path.read_bytes()
+            ev = {
+                "retrievedAt": utc_now(),
+                "requestedUrl": snapshot_url(res)[0],
+                "obtainedManually": True,
+                "ok": True,
+                "signature": sniff(data),
+                "bytes": len(data),
+                "sha256": sha256_of(path),
+                "snapshotPath": str(path.relative_to(ROOT)),
+            }
+            if PdfReader and ev["signature"] == "pdf":
+                try:
+                    reader = PdfReader(str(path))
+                    ev["pdf"] = {
+                        "pages": len(reader.pages),
+                        "acroFormFields": len((reader.get_fields() or {})),
+                    }
+                except Exception as e:  # noqa: BLE001
+                    ev["warning"] = f"pdf parse failed: {e}"
+            res["snapshot"] = ev
+            if res.get("reviewStatus") in (None, "url_verified", "fetch_pending"):
+                res["reviewStatus"] = "snapshot_taken"
+            found += 1
+            print(f"→ {res['id']}: {ev['signature']} {ev['bytes']} B sha256={ev['sha256'][:16]}… (manual)")
+        registry["snapshotRunAt"] = utc_now()
+        reg_path.write_text(yaml.safe_dump(registry, sort_keys=False, allow_unicode=True, width=120), encoding="utf-8")
+        print(f"\nDone: {found} file(s) recorded from sources/snapshots/.")
+        sys.exit(0)
 
     wanted = set(args.only.split(",")) if args.only else None
     manifest = json.loads(MANIFEST.read_text()) if MANIFEST.exists() else {}

@@ -283,6 +283,7 @@ export const SiteConfigSchema = z
         reviewer: nonEmpty.nullable().default(null),
       })
       .strict(),
+    publicUrl: z.string().url(),
     nav: z.array(z.object({ key: nonEmpty, path: z.string() }).strict()).min(1),
     locales: z.array(nonEmpty).min(1),
     defaultLocale: nonEmpty,

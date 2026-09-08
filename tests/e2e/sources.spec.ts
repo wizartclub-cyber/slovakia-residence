@@ -1,4 +1,8 @@
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { expect, test } from '@playwright/test';
+import { parse } from 'yaml';
 
 test('сторінка «Джерела» показує понад 20 записів із датами перевірки', async ({ page }) => {
   await page.goto('./uk/sources');
@@ -26,9 +30,24 @@ test('джерело без офіційної адреси чесно позн�
   expect(await missing.count()).toBeGreaterThanOrEqual(1);
 });
 
-test('видно, що копії джерел ще не зняті', async ({ page }) => {
+test('кількість збережених копій відповідає даним', async ({ page }) => {
+  // Рахуємо з content/sources, а не хардкодимо: після кожного запуску
+  // download_and_hash.py число росте, і тест не має від цього падати.
+  const dir = fileURLToPath(new URL('../../content/sources', import.meta.url));
+  const withHash = readdirSync(dir).filter((f) => {
+    const data = parse(readFileSync(join(dir, f), 'utf8')) as { sha256: string | null };
+    return data.sha256 !== null;
+  }).length;
+
   await page.goto('./uk/sources');
-  await expect(page.getByText('збережено копію з контрольною сумою: 0')).toBeVisible();
+  await expect(page.getByText(`збережено копію з контрольною сумою: ${withHash}`)).toBeVisible();
+});
+
+test('джерело зі збереженою копією показує контрольну суму', async ({ page }) => {
+  await page.goto('./uk/sources');
+  const hashes = page.locator('.source-card__hash');
+  expect(await hashes.count()).toBeGreaterThan(0);
+  await expect(hashes.first()).toContainText('SHA-256');
 });
 
 test('сторінка джерел існує словацькою і доступна з меню', async ({ page }) => {

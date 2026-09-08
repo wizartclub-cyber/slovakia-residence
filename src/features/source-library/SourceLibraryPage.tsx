@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { usePageTitle } from '../../app/usePageTitle';
 import { sources } from '../../lib/content';
 import type { Source } from '../../lib/content/schema';
 import './source-library.css';
@@ -18,6 +19,7 @@ const GROUP_ORDER = [
 
 export function SourceLibraryPage() {
   const { t } = useTranslation();
+  usePageTitle(t('sources.title'));
 
   const groups = GROUP_ORDER.map((type) => ({
     type,
@@ -77,6 +79,11 @@ function SourceCard({ source }: { source: Source }) {
         </span>
         {source.potentiallyStale && (
           <span className="badge badge--warning">{t('sources.stale')}</span>
+        )}
+        {source.sha256 && (
+          <span className="source-card__hash" title={source.sha256}>
+            {t('sources.checksum')}: {source.sha256.slice(0, 12)}…
+          </span>
         )}
         {source.checkedAt && (
           <span className="source-card__checked">

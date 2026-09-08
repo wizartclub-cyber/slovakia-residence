@@ -1,9 +1,11 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { usePageTitle } from '../app/usePageTitle';
 import { Disclaimer } from '../components/Disclaimer';
 
 export function HomePage() {
   const { t } = useTranslation();
+  usePageTitle(t('home.title'));
   const { lang } = useParams();
 
   return (

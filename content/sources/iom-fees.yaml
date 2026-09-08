@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: "business 330, employment 250, seasonal 50, family 200, Blue Card 250, permanent 250 (200
   electronic); exemptions: spouses of SK citizens and under-18 for permanent; under-18 for temporary — VERIFY
@@ -23,5 +23,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: secondary_explanatory_source
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/iom-fees.html
+sha256: be90edea6aa82fa823c626443eaaaba042d289a272ea033ee7f141ec661b63bb

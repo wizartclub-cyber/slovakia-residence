@@ -19,6 +19,8 @@ nav:
     path: 'about'
   - key: privacy
     path: 'privacy'
+# Публічна адреса сайту — для карти сайту й robots.txt.
+publicUrl: https://wizartclub-cyber.github.io/slovakia-residence/
 locales:
   - uk
   - sk

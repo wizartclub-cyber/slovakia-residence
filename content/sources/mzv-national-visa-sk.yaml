@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: fetch_pending
 potentiallyStale: false
 evidence: ŽIADOSŤ O NÁRODNÉ VÍZUM, Slovak only, MZV data-controller notice; no form code visible; NOT a
   Ukrainian/Slovak form — earlier handoff claim of uk/sk form remains unconfirmed

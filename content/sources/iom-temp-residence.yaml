@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: secondary; lists filing places, documents, 90-day decision (30–60 for some purposes), €295.22/month
   subsistence reference
@@ -22,5 +22,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: secondary_explanatory_source
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/iom-temp-residence.html
+sha256: ee406eefb5e569ad0bfc9bce2bcb1343cd14309d23b67eba6960c7e9e87c006a

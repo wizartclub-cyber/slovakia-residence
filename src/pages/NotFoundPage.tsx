@@ -1,10 +1,12 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { usePageTitle } from '../app/usePageTitle';
 import { defaultLocale } from '../lib/content/site';
 
 export function NotFoundPage() {
   const { lang } = useParams();
   const { t } = useTranslation();
+  usePageTitle(t('notFound.title'));
 
   return (
     <>

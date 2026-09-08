@@ -11,6 +11,7 @@ export type LegalBaseline = {
 
 export type SiteConfig = {
   legalBaseline: LegalBaseline;
+  publicUrl: string;
   nav: NavItem[];
   locales: string[];
   defaultLocale: string;

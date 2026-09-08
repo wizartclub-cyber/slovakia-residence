@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: snapshot_taken
 potentiallyStale: true
 evidence: Blue Card employer guidance; last update predates 15.7.2026 amendment — treat as potentially stale,
   cross-check against upsvr-2026-07-15-changes
@@ -22,5 +22,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: official_web_guidance
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/upsvr-blue-card-guidance.html
+sha256: f123ab7f44c95c14c58983c395e9d05e641e11cb46031257c32d01283f579ae8

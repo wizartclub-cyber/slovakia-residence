@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: robots.txt failure; unconfirmed
 notes: null
@@ -21,5 +21,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: official_form
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/upsvr-employer-declaration-70-7.doc
+sha256: a775939a5451168c22b33d5b5deabff6b3d389ce4825ba59e973d6ecf8e3e38a

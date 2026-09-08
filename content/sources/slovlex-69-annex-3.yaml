@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: static print loads (act name + eff. 12.06.2026 confirmed) but the extracted text was cut before
   Prílohy — Annex 3 title and §59(3) wording NOT confirmed from sandbox; confirm from snapshot
@@ -22,5 +22,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: legislation
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/slovlex-69-annex-3.html
+sha256: f9de90249ef240aba2f3db8b44721114f260d0a8e08b3bfd5b51e30994e9f309

@@ -10,7 +10,7 @@ staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/128/20260715.print.html
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: "Čl. V: účinnosť 15. júla 2026, okrem čl. I bodu 62 (1. októbra 2026) a čl. I bodu 67 (deň spustenia ETIAS)"
 notes: null
@@ -22,5 +22,5 @@ effectiveFrom: 2026-07-15
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: legislation
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/slovlex-128-2026.html
+sha256: 21f5d988d95cb05b58f70021df2b33ebdebe0af76a7a5bac6abdef1e20b5fa30

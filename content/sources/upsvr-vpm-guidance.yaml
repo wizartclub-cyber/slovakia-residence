@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: snapshot_taken
 potentiallyStale: true
 evidence: VPM (voľné pracovné miesto) procedure guidance; 20-working-day vacancy notice rule; update predates
   2026 amendments — potentially stale
@@ -22,5 +22,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: official_web_guidance
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/upsvr-vpm-guidance.html
+sha256: 4de082f465f8b383ed942396fc9dd1012d572694de924b667dfa7f648a4b21f4

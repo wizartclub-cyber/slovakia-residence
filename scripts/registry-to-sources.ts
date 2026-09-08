@@ -34,7 +34,7 @@ type RegistryResource = {
   notes?: string | null;
   addedNote?: string | null;
   urlCheck?: { checkedAt?: string; observed?: string } | null;
-  snapshot?: { ok?: boolean; sha256?: string; path?: string } | null;
+  snapshot?: { ok?: boolean; sha256?: string; snapshotPath?: string; obtainedManually?: boolean } | null;
 };
 
 // Типи ресурсів у реєстрі описують формат файлу; sourceType зі spec §7 описує
@@ -103,7 +103,7 @@ for (const res of registry.resources) {
     effectiveTo: res.validTo ?? null,
     checkedAt: res.urlCheck?.checkedAt ?? null,
     sourceType,
-    snapshotPath: snapshotOk ? (res.snapshot?.path ?? null) : null,
+    snapshotPath: snapshotOk ? (res.snapshot?.snapshotPath ?? null) : null,
     sha256: snapshotOk ? (res.snapshot?.sha256 ?? null) : null,
   };
 

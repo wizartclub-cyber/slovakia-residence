@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: null
 notes: Act 145/1995 on administrative fees, tariff item 24 — fee baseline (spec section 5). URL copied from
@@ -22,5 +22,5 @@ effectiveFrom: 2026-09-01
 effectiveTo: null
 checkedAt: null
 sourceType: legislation
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/slovlex-145-1995.html
+sha256: f2ff8b36e8ad1e6968e094b8c2c58e649f261351c2191439d66e9b8dfaa5a60a

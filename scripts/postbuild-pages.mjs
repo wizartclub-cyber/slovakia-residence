@@ -42,4 +42,18 @@ for (const route of routes) {
 copyFileSync(indexHtml, join(dist, '404.html'));
 writeFileSync(join(dist, '.nojekyll'), '');
 
-console.log(`✓ Сторінки для GitHub Pages: ${routes.length} шт. + 404.html + .nojekyll`);
+// Карта сайту: пошуковим системам треба знати, що сторінки взагалі існують —
+// вони згенеровані статично саме заради цього.
+const base = site.publicUrl.replace(/\/$/, '');
+const urls = ['', ...routes.map((r) => `/${r}/`)]
+  .map((path) => `  <url><loc>${base}${path || '/'}</loc></url>`)
+  .join('\n');
+writeFileSync(
+  join(dist, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
+);
+writeFileSync(join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
+
+console.log(
+  `✓ Сторінки для GitHub Pages: ${routes.length} шт. + 404.html + .nojekyll + sitemap.xml + robots.txt`,
+);

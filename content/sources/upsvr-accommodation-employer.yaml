@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: url_verified
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: Príloha č. 8 — Potvrdenie zamestnávateľa/informujúcej organizácie o poskytnutí ubytovania…; states
   valid from 1.9.2025
@@ -22,5 +22,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-07
 sourceType: official_form
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/upsvr-accommodation-employer.doc
+sha256: 782600b7a095812386b69ccd325436db4d799bb1216077143c5323bc79b54fe6

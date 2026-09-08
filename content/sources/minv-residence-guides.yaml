@@ -9,7 +9,7 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: null
 notes: Listed as an official operational source in spec section 2 and as outstanding in SOURCE_AUDIT_v0.4.
@@ -22,5 +22,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: null
 sourceType: official_web_guidance
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/minv-residence-guides.html
+sha256: 587a9ba63973960ec2ac7744edfbb1ed8fe36a36ca8e9e623881fa3ffadd2099

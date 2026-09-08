@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { usePageTitle } from '../../app/usePageTitle';
 import { authorityById, fees, procedureById, sourceById } from '../../lib/content';
 import { publicStatus } from '../../lib/content/schema';
 import type { FeeRule, Source } from '../../lib/content/schema';
@@ -9,6 +10,10 @@ export function RoutePage() {
   const { lang, id } = useParams();
   const { t } = useTranslation();
   const procedure = id ? procedureById(id) : undefined;
+  const pageTitle = procedure
+    ? (lang === 'sk' ? procedure.title.sk : procedure.title.uk)
+    : t('route.notFound');
+  usePageTitle(pageTitle);
 
   if (!procedure) {
     return (
