@@ -4,7 +4,8 @@
       "Bash(python3 -)",
       "Bash(git add *)",
       "Bash(git -c user.name=Popov -c user.email=wizartclub@gmail.com commit -q -m 'CI: версія pnpm береться з package.json \\(усунено конфлікт версій\\) *)",
-      "Bash(gh api *)"
+      "Bash(gh api *)",
+      "Bash(git -c user.name=Popov -c user.email=wizartclub@gmail.com commit -q -m 'Журнал сесії: результат деплою і виправлення статусів сторінок *)"
     ]
   }
 }
