@@ -571,6 +571,12 @@ resources:
   procedureIds: []
 - id: slovlex-145-1995
   title: Zákon č. 145/1995 Z. z. o správnych poplatkoch (položka 24)
+  contentChecked:
+    at: '2026-09-09'
+    by: claude-code
+    scope: 'položka 24 (усі підпункти і розділ Oslobodenie), položka 26, §6 ods. 2'
+    note: >-
+      Суми і звільнення у content/fees взяті з цього тексту. Це НЕ юридична перевірка.
   type: statute
   authority: Slov-Lex
   url: https://static.slov-lex.sk/static/SK/ZZ/1995/145/20260901.print.html

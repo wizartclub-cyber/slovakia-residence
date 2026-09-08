@@ -8,7 +8,7 @@ pinnedUrl: null
 staticUrl: null
 formCode: null
 completionLanguage: null
-reviewStatus: draft
+reviewStatus: source_verified
 registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: null

@@ -150,7 +150,7 @@ export function RoutePage() {
           <>
             <p className="route-page__warning">{t('route.feesWarning')}</p>
             {routeFees.map((fee) => (
-              <FeeBlock key={fee.id} fee={fee} />
+              <FeeBlock key={fee.id} fee={fee} lang={lang} />
             ))}
           </>
         )}
@@ -302,7 +302,7 @@ function FormBlock({ form }: { form: Source }) {
   );
 }
 
-function FeeBlock({ fee }: { fee: FeeRule }) {
+function FeeBlock({ fee, lang }: { fee: FeeRule; lang: string | undefined }) {
   const { t } = useTranslation();
 
   return (
@@ -317,7 +317,35 @@ function FeeBlock({ fee }: { fee: FeeRule }) {
         </p>
       )}
       {fee.notes && <p className="route-page__note">{fee.notes}</p>}
-      <p className="route-page__note">{t('route.feeExemptionsUnknown')}</p>
+
+      {fee.reductionRule && (
+        <p className="route-page__fee-reduction">
+          <strong>
+            {t('route.feeReduction', {
+              amount: Math.max(
+                fee.amount - fee.reductionRule.maxReductionEur,
+                (fee.amount * fee.reductionRule.percent) / 100,
+              ).toFixed(2),
+            })}
+          </strong>{' '}
+          {localized(fee.reductionRule.condition, lang)}
+        </p>
+      )}
+
+      {fee.exemptions.length > 0 ? (
+        <div className="route-page__fee-exemptions">
+          <p className="route-page__fee-exemptions-title">{t('route.feeExemptions')}</p>
+          <ul>
+            {fee.exemptions.map((ex) => (
+              <li key={ex.id}>{localized(ex.description, lang)}</li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <p className="route-page__note">{t('route.feeExemptionsUnknown')}</p>
+      )}
+
+      {fee.waiverNote && <p className="route-page__note">{localized(fee.waiverNote, lang)}</p>}
     </div>
   );
 }

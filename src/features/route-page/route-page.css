@@ -150,3 +150,31 @@
 .checklist__amount {
   font-variant-numeric: tabular-nums;
 }
+
+.route-page__fee-reduction {
+  background: var(--accent-soft);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+.route-page__fee-exemptions {
+  border-top: 1px solid var(--line);
+  margin-top: 12px;
+  padding-top: 12px;
+  font-size: 13px;
+}
+
+.route-page__fee-exemptions-title {
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.route-page__fee-exemptions ul {
+  margin: 0;
+  padding-inline-start: 20px;
+}
+
+.route-page__fee-exemptions li {
+  margin-bottom: 6px;
+}

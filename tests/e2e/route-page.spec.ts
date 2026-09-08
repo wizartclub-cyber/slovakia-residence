@@ -28,11 +28,21 @@ test('блок офіційного бланка попереджає про с�
   );
 });
 
-test('збір показано як довідковий, а не як підсумковий рахунок', async ({ page }) => {
+test('збір показано з тарифом, знижкою і звільненнями', async ({ page }) => {
   await page.goto(B2);
+
   await expect(page.getByText('250.00 EUR')).toBeVisible();
+  await expect(page.getByText('145/1995 položka 24 písm. a) bod 2')).toBeVisible();
   await expect(page.getByText('Юрист їх ще не перевірив', { exact: false })).toBeVisible();
-  await expect(page.getByText('Звільнення від збору не внесені', { exact: false })).toBeVisible();
+
+  // Знижка за електронну подачу: 50 % від 250 = 125, але зниження не більше 50 € → 200.
+  await expect(page.getByText('Електронна подача: 200.00 EUR')).toBeVisible();
+
+  // Звільнення — головне, заради чого цей блок існує.
+  const exemptions = page.locator('.route-page__fee-exemptions li');
+  expect(await exemptions.count()).toBeGreaterThanOrEqual(3);
+  await expect(page.getByText('молодші за 18 років', { exact: false })).toBeVisible();
+  await expect(page.getByText('може відпустити збір', { exact: false }).first()).toBeVisible();
 });
 
 test('маршрут без переліку документів чесно про це каже', async ({ page }) => {

@@ -223,6 +223,8 @@
     "afterDecision": "Po rozhodnutí",
     "afterDecisionHint": "Tieto povinnosti prichádzajú až po prevzatí dokladu o pobyte. Zabúda sa na ne najčastejšie.",
     "maxAge": "nie starší ako {{days}} dní",
-    "requiredWhen": "Kedy sa vyžaduje"
+    "requiredWhen": "Kedy sa vyžaduje",
+    "feeExemptions": "Kto je od poplatku oslobodený",
+    "feeReduction": "Elektronické podanie: {{amount}} EUR."
   }
 }

@@ -200,6 +200,24 @@ export const DocumentSchema = z
   })
   .strict();
 
+export const ExemptionSchema = z
+  .object({
+    id: nonEmpty,
+    description: localizedText,
+    sourceIds,
+  })
+  .strict();
+
+export const ReductionRuleSchema = z
+  .object({
+    type: nonEmpty,
+    percent: z.number().positive().max(100),
+    maxReductionEur: z.number().positive(),
+    condition: localizedText,
+    sourceIds,
+  })
+  .strict();
+
 export const FeeRuleSchema = z
   .object({
     id: nonEmpty,
@@ -210,8 +228,11 @@ export const FeeRuleSchema = z
     currency: z.literal('EUR'),
     filingChannel: z.array(nonEmpty).default([]),
     applicantConditions: z.array(z.unknown()).default([]),
-    exemptions: z.array(z.unknown()).default([]),
-    reductionRule: z.unknown().nullable().default(null),
+    exemptions: z.array(ExemptionSchema).default([]),
+    reductionRule: ReductionRuleSchema.nullable().default(null),
+    // Орган може відпустити або знизити збір із гуманітарних підстав чи
+    // з міркувань взаємності (145/1995, položka 24, Splnomocnenie).
+    waiverNote: localizedTextOptional,
     validFrom: isoDate,
     validTo: isoDate.nullable().default(null),
     reviewStatus: reviewStatus.default('draft'),

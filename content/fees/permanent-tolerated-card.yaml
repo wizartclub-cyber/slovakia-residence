@@ -1,11 +1,197 @@
-# Постійне проживання, толероване перебування, картка проживання.
-# Довідкові суми зі spec §5. Звільнення від збору НЕ внесені: IOM повідомляє про
-# звільнення для осіб до 18 років і подружжя громадян СР при постійному проживанні,
-# але SOURCE_AUDIT_v0.4 §8 вимагає звірити це з тарифом 145/1995 положка 24
-# перед внесенням у поле exemptions.
+# Постійне проживання, толероване перебування, картки і паспорти.
+# Джерело: 145/1995 položka 24 (прочитано у снапшоті 2026-09-09).
 - id: fee-permanent-application
-  tariffItem: '145/1995 položka 24'
+  tariffItem: '145/1995 položka 24 písm. c)'
   amount: 250
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions:
+    - id: ex-under-18
+      description:
+        uk: >-
+          Звільнені особи, молодші за 18 років (положка 24, Oslobodenie 3).
+        sk: >-
+          Oslobodené sú osoby mladšie ako 18 rokov (položka 24, Oslobodenie 3).
+      sourceIds: [slovlex-145-1995]
+    - id: ex-permanent-s43-1a
+      description:
+        uk: >-
+          Звільнені особи за §43 ods. 1 písm. a) закону 404/2011 (положка 24, Oslobodenie 5).
+        sk: >-
+          Oslobodené sú osoby podľa §43 ods. 1 písm. a) zákona 404/2011 (položka 24, Oslobodenie 5).
+      sourceIds: [slovlex-145-1995]
+  reductionRule:
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition:
+      uk: >-
+        Ставка 50 % при поданні електронними засобами, зниження не більше ніж на
+        50 €. Якщо є додатки, знижка діє лише коли вони теж в електронній формі
+        (§6 ods. 2 закону 145/1995).
+      sk: >-
+        Sadzba 50 % pri elektronickom podaní, zníženie najviac o 50 eur. Ak sú
+        prílohy, znížená sadzba platí len ak sú v elektronickej podobe
+        (§6 ods. 2 zákona 145/1995).
+    sourceIds: [slovlex-145-1995]
+  waiverNote:
+    uk: >-
+      Орган може відпустити збір або знизити його з гуманітарних підстав чи з
+      міркувань взаємності (положка 24, Splnomocnenie). Це рішення органу, не право.
+    sk: >-
+      Správny orgán môže od vybratia poplatku upustiť alebo ho znížiť z humanitného
+      dôvodu alebo z dôvodu vzájomnosti (položka 24, Splnomocnenie).
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: source_verified
+  notes: >-
+    Заява про постійне проживання · Žiadosť o udelenie trvalého pobytu
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tolerated-first
+  tariffItem: '145/1995 položka 24 písm. h)'
+  amount: 140
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions:
+    - id: ex-under-18
+      description:
+        uk: >-
+          Звільнені особи, молодші за 18 років (положка 24, Oslobodenie 3).
+        sk: >-
+          Oslobodené sú osoby mladšie ako 18 rokov (položka 24, Oslobodenie 3).
+      sourceIds: [slovlex-145-1995]
+    - id: ex-tolerated-grounds
+      description:
+        uk: >-
+          Звільнені особи, які просять толерованого перебування за §58 ods. 1 písm. a) і c) та ods. 2 закону 404/2011 (положка 24, Oslobodenie 7).
+        sk: >-
+          Oslobodené sú osoby žiadajúce o tolerovaný pobyt podľa §58 ods. 1 písm. a) a c) a ods. 2 zákona 404/2011 (položka 24, Oslobodenie 7).
+      sourceIds: [slovlex-145-1995]
+  reductionRule:
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition:
+      uk: >-
+        Ставка 50 % при поданні електронними засобами, зниження не більше ніж на
+        50 €. Якщо є додатки, знижка діє лише коли вони теж в електронній формі
+        (§6 ods. 2 закону 145/1995).
+      sk: >-
+        Sadzba 50 % pri elektronickom podaní, zníženie najviac o 50 eur. Ak sú
+        prílohy, znížená sadzba platí len ak sú v elektronickej podobe
+        (§6 ods. 2 zákona 145/1995).
+    sourceIds: [slovlex-145-1995]
+  waiverNote:
+    uk: >-
+      Орган може відпустити збір або знизити його з гуманітарних підстав чи з
+      міркувань взаємності (положка 24, Splnomocnenie). Це рішення органу, не право.
+    sk: >-
+      Správny orgán môže od vybratia poplatku upustiť alebo ho znížiť z humanitného
+      dôvodu alebo z dôvodu vzájomnosti (položka 24, Splnomocnenie).
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: source_verified
+  notes: >-
+    Толероване перебування · Tolerovaný pobyt
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tolerated-extension
+  tariffItem: '145/1995 položka 24 písm. i)'
+  amount: 50
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions:
+    - id: ex-under-18
+      description:
+        uk: >-
+          Звільнені особи, молодші за 18 років (положка 24, Oslobodenie 3).
+        sk: >-
+          Oslobodené sú osoby mladšie ako 18 rokov (položka 24, Oslobodenie 3).
+      sourceIds: [slovlex-145-1995]
+    - id: ex-tolerated-grounds
+      description:
+        uk: >-
+          Звільнені особи, які просять толерованого перебування за §58 ods. 1 písm. a) і c) та ods. 2 закону 404/2011 (положка 24, Oslobodenie 7).
+        sk: >-
+          Oslobodené sú osoby žiadajúce o tolerovaný pobyt podľa §58 ods. 1 písm. a) a c) a ods. 2 zákona 404/2011 (položka 24, Oslobodenie 7).
+      sourceIds: [slovlex-145-1995]
+  reductionRule:
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition:
+      uk: >-
+        Ставка 50 % при поданні електронними засобами, зниження не більше ніж на
+        50 €. Якщо є додатки, знижка діє лише коли вони теж в електронній формі
+        (§6 ods. 2 закону 145/1995).
+      sk: >-
+        Sadzba 50 % pri elektronickom podaní, zníženie najviac o 50 eur. Ak sú
+        prílohy, znížená sadzba platí len ak sú v elektronickej podobe
+        (§6 ods. 2 zákona 145/1995).
+    sourceIds: [slovlex-145-1995]
+  waiverNote:
+    uk: >-
+      Орган може відпустити збір або знизити його з гуманітарних підстав чи з
+      міркувань взаємності (положка 24, Splnomocnenie). Це рішення органу, не право.
+    sk: >-
+      Správny orgán môže od vybratia poplatku upustiť alebo ho znížiť z humanitného
+      dôvodu alebo z dôvodu vzájomnosti (položka 24, Splnomocnenie).
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: source_verified
+  notes: >-
+    Продовження толерованого перебування · Predĺženie tolerovaného pobytu
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-residence-card-standard
+  tariffItem: '145/1995 položka 24 písm. f) bod 1'
+  amount: 10
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions:
+    - id: ex-card-not-applicant-fault
+      description:
+        uk: >-
+          Звільнені ті, хто просить новий документ про пробут, бо записи в ньому не відповідають дійсності з незалежної від них причини (зміна назви населеного пункту, вулиці, нумерації), і ті, кому надано притулок або додатковий захист і хто вперше просить документ про пробут (положка 24, Oslobodenie 6).
+        sk: >-
+          Oslobodené sú osoby žiadajúce nový doklad, ak záznamy nezodpovedajú skutočnosti z dôvodu nezávislého od žiadateľa, a azylanti alebo osoby s doplnkovou ochranou pri prvom doklade (položka 24, Oslobodenie 6).
+      sourceIds: [slovlex-145-1995]
+  reductionRule:
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition:
+      uk: >-
+        Ставка 50 % при поданні електронними засобами, зниження не більше ніж на
+        50 €. Якщо є додатки, знижка діє лише коли вони теж в електронній формі
+        (§6 ods. 2 закону 145/1995).
+      sk: >-
+        Sadzba 50 % pri elektronickom podaní, zníženie najviac o 50 eur. Ak sú
+        prílohy, znížená sadzba platí len ak sú v elektronickej podobe
+        (§6 ods. 2 zákona 145/1995).
+    sourceIds: [slovlex-145-1995]
+  waiverNote:
+    uk: >-
+      Орган може відпустити збір або знизити його з гуманітарних підстав чи з
+      міркувань взаємності (положка 24, Splnomocnenie). Це рішення органу, не право.
+    sk: >-
+      Správny orgán môže od vybratia poplatku upustiť alebo ho znížiť z humanitného
+      dôvodu alebo z dôvodu vzájomnosti (položka 24, Splnomocnenie).
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: source_verified
+  notes: >-
+    Видача документа про пробут із доставкою протягом 30 днів · Vydanie dokladu o pobyte s doručením do 30 dní
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-residence-card-expedited
+  tariffItem: '145/1995 položka 24 písm. f) bod 2'
+  amount: 39
   currency: EUR
   filingChannel: []
   applicantConditions: []
@@ -14,67 +200,132 @@
     type: electronic_filing
     percent: 50
     maxReductionEur: 50
-    condition: >-
-      Знижка діє, тільки якщо електронна подача законно доступна для цієї процедури.
-      IOM окремо згадує суму 200 € при електронній подачі — звірити з тарифом.
+    condition:
+      uk: >-
+        Ставка 50 % при поданні електронними засобами, зниження не більше ніж на
+        50 €. Якщо є додатки, знижка діє лише коли вони теж в електронній формі
+        (§6 ods. 2 закону 145/1995).
+      sk: >-
+        Sadzba 50 % pri elektronickom podaní, zníženie najviac o 50 eur. Ak sú
+        prílohy, znížená sadzba platí len ak sú v elektronickej podobe
+        (§6 ods. 2 zákona 145/1995).
+    sourceIds: [slovlex-145-1995]
+  waiverNote:
+    uk: >-
+      Орган може відпустити збір або знизити його з гуманітарних підстав чи з
+      міркувань взаємності (положка 24, Splnomocnenie). Це рішення органу, не право.
+    sk: >-
+      Správny orgán môže od vybratia poplatku upustiť alebo ho znížiť z humanitného
+      dôvodu alebo z dôvodu vzájomnosti (položka 24, Splnomocnenie).
   validFrom: '2026-09-01'
   validTo: null
-  reviewStatus: draft
-  notes: Заява про постійне проживання (довідкова сума).
-  sourceIds: [slovlex-145-1995, iom-fees]
+  reviewStatus: source_verified
+  notes: >-
+    Видача документа про пробут із доставкою протягом 2 робочих днів · Vydanie dokladu o pobyte do 2 pracovných dní
+  sourceIds: [slovlex-145-1995]
 
-- id: fee-tolerated-first
-  tariffItem: '145/1995 položka 24'
-  amount: 140
+- id: fee-residence-card-replacement
+  tariffItem: '145/1995 položka 24 písm. g) bod 1'
+  amount: 29
   currency: EUR
   filingChannel: []
   applicantConditions: []
   exemptions: []
-  reductionRule: null
+  reductionRule:
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition:
+      uk: >-
+        Ставка 50 % при поданні електронними засобами, зниження не більше ніж на
+        50 €. Якщо є додатки, знижка діє лише коли вони теж в електронній формі
+        (§6 ods. 2 закону 145/1995).
+      sk: >-
+        Sadzba 50 % pri elektronickom podaní, zníženie najviac o 50 eur. Ak sú
+        prílohy, znížená sadzba platí len ak sú v elektronickej podobe
+        (§6 ods. 2 zákona 145/1995).
+    sourceIds: [slovlex-145-1995]
+  waiverNote:
+    uk: >-
+      Орган може відпустити збір або знизити його з гуманітарних підстав чи з
+      міркувань взаємності (положка 24, Splnomocnenie). Це рішення органу, не право.
+    sk: >-
+      Správny orgán môže od vybratia poplatku upustiť alebo ho znížiť z humanitného
+      dôvodu alebo z dôvodu vzájomnosti (položka 24, Splnomocnenie).
   validFrom: '2026-09-01'
   validTo: null
-  reviewStatus: draft
-  notes: Толероване перебування (§58) — довідкова сума.
+  reviewStatus: source_verified
+  notes: >-
+    Заміна втраченого, знищеного, пошкодженого або викраденого документа · Náhrada za stratený, zničený, poškodený alebo odcudzený doklad
   sourceIds: [slovlex-145-1995]
 
-- id: fee-tolerated-extension
-  tariffItem: '145/1995 položka 24'
-  amount: 50
+- id: fee-residence-card-replacement-fast
+  tariffItem: '145/1995 položka 24 písm. g) bod 2'
+  amount: 54
   currency: EUR
   filingChannel: []
   applicantConditions: []
   exemptions: []
-  reductionRule: null
+  reductionRule:
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition:
+      uk: >-
+        Ставка 50 % при поданні електронними засобами, зниження не більше ніж на
+        50 €. Якщо є додатки, знижка діє лише коли вони теж в електронній формі
+        (§6 ods. 2 закону 145/1995).
+      sk: >-
+        Sadzba 50 % pri elektronickom podaní, zníženie najviac o 50 eur. Ak sú
+        prílohy, znížená sadzba platí len ak sú v elektronickej podobe
+        (§6 ods. 2 zákona 145/1995).
+    sourceIds: [slovlex-145-1995]
+  waiverNote:
+    uk: >-
+      Орган може відпустити збір або знизити його з гуманітарних підстав чи з
+      міркувань взаємності (положка 24, Splnomocnenie). Це рішення органу, не право.
+    sk: >-
+      Správny orgán môže od vybratia poplatku upustiť alebo ho znížiť z humanitného
+      dôvodu alebo z dôvodu vzájomnosti (položka 24, Splnomocnenie).
   validFrom: '2026-09-01'
   validTo: null
-  reviewStatus: draft
-  notes: Продовження толерованого перебування.
+  reviewStatus: source_verified
+  notes: >-
+    Те саме протягом 2 робочих днів · To isté do 2 pracovných dní
   sourceIds: [slovlex-145-1995]
 
-- id: fee-residence-card-standard
-  tariffItem: '145/1995 položka 24'
-  amount: 10
+- id: fee-residence-confirmation
+  tariffItem: '145/1995 položka 24 písm. j)'
+  amount: 4
   currency: EUR
   filingChannel: []
   applicantConditions: []
   exemptions: []
-  reductionRule: null
+  reductionRule:
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition:
+      uk: >-
+        Ставка 50 % при поданні електронними засобами, зниження не більше ніж на
+        50 €. Якщо є додатки, знижка діє лише коли вони теж в електронній формі
+        (§6 ods. 2 закону 145/1995).
+      sk: >-
+        Sadzba 50 % pri elektronickom podaní, zníženie najviac o 50 eur. Ak sú
+        prílohy, znížená sadzba platí len ak sú v elektronickej podobe
+        (§6 ods. 2 zákona 145/1995).
+    sourceIds: [slovlex-145-1995]
+  waiverNote:
+    uk: >-
+      Орган може відпустити збір або знизити його з гуманітарних підстав чи з
+      міркувань взаємності (положка 24, Splnomocnenie). Це рішення органу, не право.
+    sk: >-
+      Správny orgán môže od vybratia poplatku upustiť alebo ho znížiť z humanitného
+      dôvodu alebo z dôvodu vzájomnosti (položka 24, Splnomocnenie).
   validFrom: '2026-09-01'
   validTo: null
-  reviewStatus: draft
-  notes: Видача картки проживання у звичайному строку.
+  reviewStatus: source_verified
+  notes: >-
+    Підтвердження про перебування іноземця на території СР · Potvrdenie o pobyte cudzinca na území SR
   sourceIds: [slovlex-145-1995]
 
-- id: fee-residence-card-expedited
-  tariffItem: '145/1995 položka 24'
-  amount: 39
-  currency: EUR
-  filingChannel: []
-  applicantConditions: []
-  exemptions: []
-  reductionRule: null
-  validFrom: '2026-09-01'
-  validTo: null
-  reviewStatus: draft
-  notes: Прискорена видача картки проживання.
-  sourceIds: [slovlex-145-1995]

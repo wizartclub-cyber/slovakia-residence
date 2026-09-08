@@ -124,7 +124,20 @@ describe('збори', () => {
     expect(new Set(fees.map((f) => f.id)).size).toBe(fees.length);
   });
 
-  it('жоден збір ще не позначений як перевірений юристом', () => {
-    for (const f of fees) expect(f.reviewStatus).toBe('draft');
+  it('жоден збір не піднятий вище за source_verified — юрист ще не працював', () => {
+    for (const f of fees) expect(['draft', 'source_verified']).toContain(f.reviewStatus);
+  });
+
+  it('збір зі статусом source_verified має позицію тарифу', () => {
+    // source_verified означає «взято з тексту тарифу», отже позиція має бути відома.
+    for (const f of fees) {
+      if (f.reviewStatus === 'source_verified') expect(f.tariffItem).not.toBeNull();
+    }
+  });
+
+  it('звільнення від збору мають джерело', () => {
+    for (const f of fees) {
+      for (const ex of f.exemptions) expect(ex.sourceIds.length).toBeGreaterThan(0);
+    }
   });
 });
