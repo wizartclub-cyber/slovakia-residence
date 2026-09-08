@@ -8,7 +8,7 @@
 import type { Procedure } from '../content/schema';
 import { publicStatus } from '../content/schema';
 import { evaluateCondition, isInForce } from './conditions';
-import type { Answers, EligibilityRule, RouteMatch, TransitionRule } from './types';
+import type { Answers, EligibilityRule, MatchOutcome, RouteMatch, TransitionRule } from './types';
 
 export function evaluateProcedure(procedure: Procedure, answers: Answers): RouteMatch {
   const rules = procedure.eligibilityRules as unknown as EligibilityRule[];
@@ -27,8 +27,10 @@ export function evaluateProcedure(procedure: Procedure, answers: Answers): Route
     return {
       ...base,
       outcome: 'not_applicable',
+      cappedByIncompleteConditions: false,
       unresolvedRuleIds: [],
       failedRuleIds: [],
+      matchedRuleIds: [],
       transitionRuleIds: [],
       sourceIds: procedure.sourceIds,
     };
@@ -36,6 +38,7 @@ export function evaluateProcedure(procedure: Procedure, answers: Answers): Route
 
   const unresolved: string[] = [];
   const failed: string[] = [];
+  const matched: string[] = [];
   const usedSources = new Set<string>(procedure.sourceIds);
   let excluded = false;
 
@@ -55,6 +58,7 @@ export function evaluateProcedure(procedure: Procedure, answers: Answers): Route
 
     if (truth === 'no') failed.push(rule.id);
     else if (truth === 'unknown') unresolved.push(rule.id);
+    else matched.push(rule.id);
   }
 
   const transitionRuleIds: string[] = [];
@@ -65,7 +69,7 @@ export function evaluateProcedure(procedure: Procedure, answers: Answers): Route
     }
   }
 
-  const outcome = excluded
+  const raw = excluded
     ? 'excluded'
     : failed.length > 0
       ? 'not_eligible'
@@ -73,11 +77,18 @@ export function evaluateProcedure(procedure: Procedure, answers: Answers): Route
         ? 'possible'
         : 'eligible';
 
+  // Поки перелік умов маршруту не звірений із законом, «підходить» сказати не
+  // можна: у даних може бракувати саме тієї умови, яка людині не підходить.
+  const capped = raw === 'eligible' && !procedure.conditionsComplete;
+  const outcome: MatchOutcome = capped ? 'possible' : raw;
+
   return {
     ...base,
     outcome,
+    cappedByIncompleteConditions: capped,
     unresolvedRuleIds: unresolved,
     failedRuleIds: failed,
+    matchedRuleIds: matched,
     transitionRuleIds,
     sourceIds: [...usedSources].sort(),
   };
@@ -93,7 +104,22 @@ export function evaluate(procedures: Procedure[], answers: Answers): RouteMatch[
     .sort((a, b) => a.category.localeCompare(b.category) || a.procedureId.localeCompare(b.procedureId));
 }
 
-/** Маршрути, які має сенс показати людині першими. */
+/**
+ * Маршрути, які має сенс показати першими, впорядковані за тим, скільки
+ * відповідей людини маршрут реально використав.
+ *
+ * Це не ранжування «за шансами» (заборонено spec §8): маршрут, умови якого
+ * збіглися з трьома відповідями, просто конкретніше відповідає сказаному, ніж
+ * маршрут, який лише не суперечить одній. Без цього людині, яка приїхала
+ * працювати, «постійне проживання» стояло б поряд із маршрутом про роботу.
+ */
 export function offeredRoutes(matches: RouteMatch[]): RouteMatch[] {
-  return matches.filter((m) => m.outcome === 'eligible' || m.outcome === 'possible');
+  return matches
+    .filter((m) => m.outcome === 'eligible' || m.outcome === 'possible')
+    .sort(
+      (a, b) =>
+        b.matchedRuleIds.length - a.matchedRuleIds.length ||
+        a.category.localeCompare(b.category) ||
+        a.procedureId.localeCompare(b.procedureId),
+    );
 }

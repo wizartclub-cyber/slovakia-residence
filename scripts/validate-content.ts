@@ -14,6 +14,7 @@ import { parse } from 'yaml';
 import type { ZodTypeAny } from 'zod';
 import {
   AuthoritySchema,
+  FinderConfigSchema,
   DocumentSchema,
   FeeRuleSchema,
   ProcedureSchema,
@@ -37,6 +38,22 @@ const SCHEMAS: Record<string, ZodTypeAny> = {
 
 const errors: string[] = [];
 const fail = (file: string, message: string) => errors.push(`${file}: ${message}`);
+
+// Зібрані під час обходу id — щоб перевірити посилання між файлами (spec §10).
+const declaredIds: Record<string, Set<string>> = {
+  authorities: new Set(),
+  fees: new Set(),
+  procedures: new Set(),
+  documents: new Set(),
+};
+const references: Array<{ file: string; field: string; kind: string; id: string }> = [];
+
+const REFERENCE_FIELDS: Record<string, string> = {
+  authorityIds: 'authorities',
+  feeRuleIds: 'fees',
+  documentIds: 'documents',
+  relatedProcedureIds: 'procedures',
+};
 
 function walk(dir: string): string[] {
   if (!safeStat(dir)) return [];
@@ -73,6 +90,14 @@ if (!siteParsed.success) {
   }
 }
 const baseline = siteParsed.success ? siteParsed.data.legalBaseline.date : null;
+
+const finderFile = join(CONTENT, 'ui', 'finder.yaml');
+const finderParsed = FinderConfigSchema.safeParse(readYaml(finderFile));
+if (!finderParsed.success) {
+  for (const issue of finderParsed.error.issues) {
+    fail(relative(root, finderFile), `${issue.path.join('.') || '(корінь)'} — ${issue.message}`);
+  }
+}
 
 // --- 3. Юридичні дані ---------------------------------------------------------
 let checked = 0;
@@ -125,11 +150,29 @@ for (const [folder, schema] of Object.entries(SCHEMAS)) {
         if (!data.reviewedAt) fail(rel, `статус "${String(data.reviewStatus)}" без дати reviewedAt`);
       }
 
-      // 3c. Правило, що вже не діє на дату baseline (spec §10).
+      // 3c. Запам'ятовуємо id і посилання, щоб звірити їх після обходу всіх файлів.
+      if (typeof data.id === 'string') declaredIds[folder]?.add(data.id);
+      for (const [field, kind] of Object.entries(REFERENCE_FIELDS)) {
+        const value = data[field];
+        if (Array.isArray(value)) {
+          for (const id of value) {
+            if (typeof id === 'string') references.push({ file: rel, field, kind, id });
+          }
+        }
+      }
+
+      // 3d. Правило, що вже не діє на дату baseline (spec §10).
       if (baseline && typeof data.validTo === 'string' && data.validTo < baseline) {
         fail(rel, `validTo (${data.validTo}) раніший за baseline ${baseline}`);
       }
     }
+  }
+}
+
+// --- 4. Посилання між файлами -------------------------------------------------
+for (const ref of references) {
+  if (!declaredIds[ref.kind]?.has(ref.id)) {
+    fail(ref.file, `${ref.field}: "${ref.id}" — такого запису немає в content/${ref.kind}/`);
   }
 }
 
@@ -145,7 +188,7 @@ function collectSourceIds(value: unknown, acc: string[] = []): string[] {
   return acc;
 }
 
-// --- 4. Підсумок --------------------------------------------------------------
+// --- 5. Підсумок --------------------------------------------------------------
 if (errors.length > 0) {
   console.error(`\n✗ Контент не пройшов перевірку (${errors.length}):\n`);
   for (const e of errors) console.error(`  • ${e}`);

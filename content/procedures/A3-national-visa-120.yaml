@@ -1,0 +1,38 @@
+# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+id: A3-national-visa-120
+category: A
+title:
+  uk: Національна віза на 120 днів для подачі заяви про проживання в СР (§15(3)(a))
+  sk: Národné vízum na 120 dní na podanie žiadosti o pobyt v SR (§15 ods. 3 písm. a)
+legalBasis:
+  - '404/2011 §15(3)(a)'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+  - mzv-national-visa-guidance
+conditionsComplete: false
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-abroad
+    effect: require
+    when: { field: location, equals: abroad }
+    localizedContentKey: null
+    sourceIds: [mzv-national-visa-guidance]
+authorityIds: [zastupitelsky-urad]
+feeRuleIds: []
+documentIds: []
+steps: []
+transitionRules: []
+relatedProcedureIds: [B2-employment-s23]
+openQuestions:
+  - 'Не внесено: для яких саме випадків §15(1)(a)/(b) діє строк до 120 днів.'
+  - 'Збір не визначений: spec §5 розрізняє випадки 15 / 50 / 90 €, але не каже, якому призначенню відповідає кожна сума.'
+  - 'Сторінка MZV від 03.09.2026 датована пізніше за baseline; спиратися треба на §15(3)(a) в редакції від 15.07.2026, сторінку використовувати лише як роз''яснення.'

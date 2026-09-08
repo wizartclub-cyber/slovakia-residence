@@ -1,0 +1,33 @@
+# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+# УВАГА: у цього маршруту серйозні умови (строк попереднього проживання тощо),
+# яких у даних ще немає. Саме тому conditionsComplete: false — інакше сайт
+# показував би «підходить» людині, яка щойно приїхала.
+id: C3-permanent-s46
+category: C
+title:
+  uk: Постійне проживання на необмежений час (§46)
+  sk: Trvalý pobyt na neobmedzený čas (§46)
+legalBasis:
+  - '404/2011 §46'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: [fee-permanent-application]
+documentIds: []
+steps: []
+transitionRules: []
+relatedProcedureIds: [C4-longterm-s52]
+openQuestions:
+  - 'Не внесено ЖОДНОЇ статутної підстави §46 і жодного винятку. Показувати цей маршрут як придатний не можна, доки їх не внесено зі джерела.'

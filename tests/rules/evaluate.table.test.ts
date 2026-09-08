@@ -190,6 +190,30 @@ describe('статус для користувача', () => {
   });
 });
 
+describe('маршрут із неповними умовами', () => {
+  it('усі умови виконані, але сказати «підходить» не можна', () => {
+    const match = evaluateProcedure(f.pointerOnly, answers({ citizenshipGroup: 'third_country' }));
+    expect(match.outcome).toBe('possible');
+    expect(match.cappedByIncompleteConditions).toBe(true);
+    expect(match.unresolvedRuleIds).toEqual([]);
+  });
+
+  it('умова не виконана — це видно точно, обмеження не приховує «не підходить»', () => {
+    const match = evaluateProcedure(f.pointerOnly, answers({ citizenshipGroup: 'eu_eea_ch' }));
+    expect(match.outcome).toBe('not_eligible');
+    expect(match.cappedByIncompleteConditions).toBe(false);
+  });
+
+  it('маршрут із повними умовами обмеження не зачіпає', () => {
+    const match = evaluateProcedure(
+      f.employment,
+      answers({ citizenshipGroup: 'third_country', purpose: 'employment' }),
+    );
+    expect(match.outcome).toBe('eligible');
+    expect(match.cappedByIncompleteConditions).toBe(false);
+  });
+});
+
 describe('перелік маршрутів', () => {
   it('порядок детермінований: за категорією, потім за id', () => {
     const ids = evaluate(f.allProcedures, answers({})).map((m) => m.procedureId);
@@ -199,6 +223,26 @@ describe('перелік маршрутів', () => {
 
   it('повертає всі маршрути, включно з тими, що не підходять', () => {
     expect(evaluate(f.allProcedures, answers({})).length).toBe(f.allProcedures.length);
+  });
+
+  it('маршрут, що використав більше відповідей, стоїть вище', () => {
+    // Людина сказала: третя країна + працевлаштування. Маршрут, який спирається
+    // на обидві відповіді, має бути вище за той, що спирається лише на громадянство.
+    const offered = offeredRoutes(
+      evaluate([f.pointerOnly, f.employment], answers({
+        citizenshipGroup: 'third_country',
+        purpose: 'employment',
+      })),
+    );
+    expect(offered.map((m) => m.procedureId)).toEqual(['TEST-B-employment', 'TEST-C-pointer-only']);
+  });
+
+  it('кількість підтверджених умов рахується', () => {
+    const match = evaluateProcedure(
+      f.employment,
+      answers({ citizenshipGroup: 'third_country', purpose: 'employment' }),
+    );
+    expect(match.matchedRuleIds).toEqual(['r-third-country', 'r-purpose']);
   });
 
   it('offeredRoutes лишає тільки «підходить» і «можливо»', () => {

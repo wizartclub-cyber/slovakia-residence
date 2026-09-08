@@ -1,13 +1,21 @@
+import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Disclaimer } from '../components/Disclaimer';
 
 export function HomePage() {
   const { t } = useTranslation();
+  const { lang } = useParams();
 
   return (
     <>
       <h1>{t('home.title')}</h1>
       <p>{t('home.intro')}</p>
+
+      <p>
+        <Link className="button" to={`/${lang}/finder`}>
+          {t('home.cta')}
+        </Link>
+      </p>
 
       <Disclaimer />
 

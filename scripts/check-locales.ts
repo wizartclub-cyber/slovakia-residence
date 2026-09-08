@@ -49,6 +49,21 @@ for (const [locale, flat] of bundles) {
   }
 }
 
+// Кожне питання опитувальника і кожен варіант відповіді мають підпис в усіх мовах.
+// Без цього людина побачила б порожню кнопку замість варіанта.
+const finder = parse(readFileSync(join(root, 'content/ui/finder.yaml'), 'utf8')) as {
+  steps: Array<{ id: string; field: string; options: string[] }>;
+};
+
+for (const step of finder.steps) {
+  const needed = [`finder.q.${step.id}`, ...step.options.map((o) => `answer.${step.field}.${o}`)];
+  for (const key of needed) {
+    for (const [locale, flat] of bundles) {
+      if (!flat.has(key)) errors.push(`${locale}: опитувальник — немає ключа "${key}"`);
+    }
+  }
+}
+
 // Кожен пункт меню з content/ui/site.yaml має підпис в усіх мовах.
 for (const item of site.nav) {
   for (const [locale, flat] of bundles) {

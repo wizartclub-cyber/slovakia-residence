@@ -1,0 +1,34 @@
+# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+# Найобережніший із семи: правова підстава переходу потребує перевірки.
+id: E7-temporary-protection-transition
+category: E
+title:
+  uk: Перехід із тимчасового захисту (dočasné útočisko) на проживання
+  sk: Prechod z dočasného útočiska na pobyt
+legalBasis:
+  - '404/2011 §131o'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+eligibilityRules:
+  - id: r-temporary-protection
+    effect: require
+    when: { field: citizenshipGroup, equals: ua_temporary_protection }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+authorityIds: [ocp-pz]
+feeRuleIds: []
+documentIds: []
+steps: []
+transitionRules: []
+relatedProcedureIds: [B2-employment-s23, C4-longterm-s52]
+openQuestions:
+  - 'SOURCE_AUDIT застерігає: §131o стосується ПРИПИНЕННЯ тимчасового захисту і сам по собі не доводить, що захист уже закінчився. Правову підставу переходу треба підтвердити за текстом закону, перш ніж описувати кроки.'
+  - 'Вказівка ÚHCP P PZ від 08.04.2026 (зарахування періодів захисту) не внесена в реєстр — джерела немає.'
+  - 'Міністерство внутрішніх справ оголосило продовження захисту до 04.03.2027 (18.02.2026) — джерело в реєстрі відсутнє.'
+  - 'Не внесено: на які саме види проживання можливий перехід і за яких умов.'

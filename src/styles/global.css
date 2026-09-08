@@ -242,3 +242,37 @@ a {
 .disclaimer p:last-child {
   margin-bottom: 0;
 }
+
+/* ---------- кнопки (DESIGN_SYSTEM_TZ.md §4.1) ---------- */
+
+.button {
+  font: inherit;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.button:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.button--secondary {
+  background: var(--surface);
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.button--secondary:hover {
+  background: var(--surface-sunken);
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+}

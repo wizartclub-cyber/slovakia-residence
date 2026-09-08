@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { authorities, fees, sources, thresholds } from '../../src/lib/content/index.ts';
+import { authorities, fees, finder, procedures, sources, thresholds } from '../../src/lib/content/index.ts';
 
 const allSourceIds = new Set(sources.map((s) => s.id));
 
@@ -32,9 +32,62 @@ describe('джерела', () => {
   });
 });
 
+describe('маршрути', () => {
+  it('шаблон не потрапляє в дані сайту', () => {
+    for (const p of procedures) expect(p.id.startsWith('_')).toBe(false);
+  });
+
+  it('жоден маршрут ще не перевірений юристом', () => {
+    for (const p of procedures) {
+      expect(p.reviewStatus).toBe('draft');
+      expect(p.reviewer).toBeNull();
+    }
+  });
+
+  it('жоден маршрут не заявляє, що його умови повні — інакше сайт обіцяв би придатність', () => {
+    for (const p of procedures) expect(p.conditionsComplete).toBe(false);
+  });
+
+  it('кожен маршрут-вказівник чесно перелічує, чого в ньому бракує', () => {
+    for (const p of procedures) expect(p.openQuestions.length).toBeGreaterThan(0);
+  });
+
+  it('кожен маршрут має правову основу і орган', () => {
+    for (const p of procedures) {
+      expect(p.legalBasis.length).toBeGreaterThan(0);
+      expect(p.authorityIds.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('назва є обома мовами (CLAUDE.md §2.7)', () => {
+    for (const p of procedures) {
+      expect(p.title.uk.length).toBeGreaterThan(0);
+      expect(p.title.sk.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('кожне правило придатності має джерело', () => {
+    for (const p of procedures) {
+      for (const rule of p.eligibilityRules) expect(rule.sourceIds.length).toBeGreaterThan(0);
+    }
+  });
+});
+
+describe('опитувальник', () => {
+  it('не питає нічого, що ідентифікує людину (spec §8)', () => {
+    const allowed = ['citizenshipGroup', 'currentStatus', 'location', 'purpose', 'family'];
+    for (const step of finder.steps) expect(allowed).toContain(step.field);
+  });
+
+  it('кожне питання має щонайменше два варіанти', () => {
+    for (const step of finder.steps) expect(step.options.length).toBeGreaterThanOrEqual(2);
+  });
+});
+
 describe('посилання між даними', () => {
   const referencing = [
     ...authorities.map((a) => ['authority', a.id, a.sourceIds] as const),
+    ...procedures.map((p) => ['procedure', p.id, p.sourceIds] as const),
     ...fees.map((f) => ['fee', f.id, f.sourceIds] as const),
     ...thresholds.map((t) => ['threshold', t.id, t.sourceIds] as const),
   ];

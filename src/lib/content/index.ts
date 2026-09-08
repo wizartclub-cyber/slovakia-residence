@@ -6,7 +6,8 @@
  * Дані вже перевірені схемами Zod у `pnpm validate` перед білдом, тому тут
  * лише типізація, без повторної валідації в браузері.
  */
-import type { Authority, FeeRule, Source, Threshold } from './schema';
+import type { Authority, FeeRule, FinderConfig, Procedure, Source, Threshold } from './schema';
+import finderRaw from '../../../content/ui/finder.yaml';
 
 function loadAll<T>(modules: Record<string, unknown>): T[] {
   return Object.values(modules).flatMap((m) => (Array.isArray(m) ? (m as T[]) : [m as T]));
@@ -27,6 +28,25 @@ export const fees = loadAll<FeeRule>(
 export const thresholds = loadAll<Threshold>(
   import.meta.glob('../../../content/thresholds/*.yaml', { eager: true, import: 'default' }),
 );
+
+// Файли, що починаються з "_", — шаблони, а не маршрути.
+export const procedures = loadAll<Procedure>(
+  import.meta.glob(['../../../content/procedures/*.yaml', '!**/_*.yaml'], {
+    eager: true,
+    import: 'default',
+  }),
+).sort((a, b) => a.id.localeCompare(b.id));
+
+/** Питання опитувальника: склад і порядок — з content/ui/finder.yaml. */
+export const finder = finderRaw as FinderConfig;
+
+export function authorityById(id: string): Authority | undefined {
+  return authorities.find((a) => a.id === id);
+}
+
+export function procedureById(id: string): Procedure | undefined {
+  return procedures.find((p) => p.id === id);
+}
 
 export function sourceById(id: string): Source | undefined {
   return sources.find((s) => s.id === id);

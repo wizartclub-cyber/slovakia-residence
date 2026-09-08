@@ -133,6 +133,10 @@ export const ProcedureSchema = z
     reviewedAt: isoDate.nullable().default(null),
     reviewer: nonEmpty.nullable().default(null),
     sourceIds,
+    // Чи внесені умови придатності ПОВНІСТЮ. Поки false, движок не має права
+    // сказати «підходить» — максимум «може підійти». Ставить людина, яка звірила
+    // перелік умов із текстом закону (CLAUDE.md §2.3).
+    conditionsComplete: z.boolean().default(false),
     eligibilityRules: z.array(EligibilityRuleSchema).default([]),
     steps: z.array(StepSchema).default([]),
     documentIds: z.array(nonEmpty).default([]),
@@ -282,6 +286,26 @@ export const SiteConfigSchema = z
     message: 'defaultLocale має бути серед locales',
   });
 
+export const FinderConfigSchema = z
+  .object({
+    steps: z
+      .array(
+        z
+          .object({
+            id: nonEmpty,
+            field: answerField,
+            options: z.array(nonEmpty).min(2),
+          })
+          .strict()
+          .refine((step) => step.options.every((o) => valueAllowed(step.field, o)), {
+            message: 'варіант відповіді не входить у список дозволених (src/lib/rules/domain.ts)',
+          }),
+      )
+      .min(1),
+  })
+  .strict();
+
+export type FinderConfig = z.infer<typeof FinderConfigSchema>;
 export type Procedure = z.infer<typeof ProcedureSchema>;
 export type Document = z.infer<typeof DocumentSchema>;
 export type FeeRule = z.infer<typeof FeeRuleSchema>;

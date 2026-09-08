@@ -1,0 +1,165 @@
+.finder__privacy {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.finder__progress {
+  margin: 0 0 12px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.question {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.question__legend {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.question__options {
+  display: grid;
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    border-color var(--dur-fast) var(--ease),
+    background var(--dur-fast) var(--ease);
+}
+
+.option:hover {
+  background: var(--accent-soft);
+}
+
+.option--selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.option input {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex: none;
+}
+
+.option:has(input:focus-visible) {
+  box-shadow: var(--focus-ring);
+}
+
+.finder__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.finder__summary-title {
+  margin: 0 0 12px;
+  font-size: 17px;
+}
+
+.finder__summary {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.finder__summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 13px;
+}
+
+.finder__summary-row dt {
+  color: var(--text-secondary);
+  flex: 1 1 260px;
+}
+
+.finder__summary-row dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.results__asof {
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.results__list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.route-card__title {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.route-card--muted {
+  opacity: 0.72;
+}
+
+.route-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+}
+
+.route-card__outcome,
+.route-card__meta {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.route-card__meta {
+  margin: 0 0 8px;
+}
+
+.route-card__why {
+  margin: 0 0 8px;
+  padding: 8px 12px;
+  background: var(--warning-soft);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+}
+
+.route-card__open {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.route-card__open summary {
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.route-card__open ul {
+  margin: 4px 0 0;
+  padding-inline-start: 20px;
+}
+
+.route-card__open li {
+  margin-bottom: 4px;
+}

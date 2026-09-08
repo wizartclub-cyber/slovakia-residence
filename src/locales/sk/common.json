@@ -5,6 +5,7 @@
   },
   "nav": {
     "home": "Domov",
+    "finder": "Nájsť cestu",
     "sources": "Zdroje",
     "about": "O projekte",
     "privacy": "Súkromie"
@@ -35,7 +36,8 @@
     "statusTitle": "Čo je už hotové",
     "statusBody": "Zatiaľ je zverejnená technická kostra stránky: dva jazyky, upozornenie a právny stav. Dotazník situácie, postupy a zoznamy dokladov pribudnú v ďalších aktualizáciách.",
     "sourcesTitle": "Každé tvrdenie má zdroj",
-    "sourcesBody": "Zákon nereprodukujeme spamäti. Ak pre pravidlo neexistuje úradný zdroj, pole zostáva prázdne a postup je označený ako neúplný."
+    "sourcesBody": "Zákon nereprodukujeme spamäti. Ak pre pravidlo neexistuje úradný zdroj, pole zostáva prázdne a postup je označený ako neúplný.",
+    "cta": "Vyplniť dotazník"
   },
   "about": {
     "title": "O projekte",
@@ -99,5 +101,91 @@
     "published": "zverejnené",
     "superseded": "nahradené",
     "blocked": "zablokované"
+  },
+  "finder": {
+    "title": "Nájdite svoju cestu",
+    "intro": "Päť otázok o vašej situácii. Nepýtame sa na meno, číslo pasu ani adresu — na toto nie sú potrebné.",
+    "privacyNote": "Odpovede existujú len v pamäti tejto karty. Keď stránku obnovíte, zmiznú. Nikam ich neposielame a nikde neukladáme.",
+    "stepOf": "Otázka {{current}} z {{total}}",
+    "next": "Ďalej",
+    "back": "Späť",
+    "skip": "Neviem / preskočiť",
+    "seeResults": "Zobraziť cesty",
+    "restart": "Vymazať všetko a začať odznova",
+    "changeAnswers": "Zmeniť odpovede",
+    "notAnswered": "neuvedené",
+    "yourAnswers": "Vaše odpovede",
+    "q": {
+      "citizenship": "Aké máte občianstvo?",
+      "location": "Kde sa práve nachádzate?",
+      "purpose": "Za akým účelom chcete byť na Slovensku?",
+      "currentStatus": "Aký je váš právny status teraz?",
+      "family": "Máte rodinnú väzbu na Slovensku?"
+    }
+  },
+  "answer": {
+    "citizenshipGroup": {
+      "eu_eea_ch": "Krajina EÚ, EHP alebo Švajčiarsko",
+      "third_country": "Krajina mimo EÚ",
+      "ua_temporary_protection": "Ukrajina, mám dočasné útočisko"
+    },
+    "location": {
+      "in_slovakia": "Na Slovensku",
+      "abroad": "Mimo Slovenska"
+    },
+    "purpose": {
+      "employment": "Zamestnanie",
+      "business": "Podnikanie",
+      "study": "Štúdium",
+      "family": "Zlúčenie rodiny",
+      "research": "Výskum",
+      "special_activity": "Osobitná činnosť (dobrovoľníctvo, stáž)",
+      "protection": "Ochrana (azyl, dočasné útočisko)",
+      "other": "Iné"
+    },
+    "currentStatus": {
+      "none": "Žiadny",
+      "visa_free": "Bezvízový pobyt",
+      "schengen_visa": "Schengenské vízum",
+      "national_visa": "Národné vízum (D)",
+      "temporary_residence": "Prechodný pobyt",
+      "permanent_residence": "Trvalý pobyt",
+      "temporary_protection": "Dočasné útočisko",
+      "tolerated_stay": "Tolerovaný pobyt",
+      "international_protection_applicant": "Žiadateľ o medzinárodnú ochranu"
+    },
+    "family": {
+      "none": "Nemám",
+      "spouse_of_sk_citizen": "Manžel alebo manželka občana SR",
+      "spouse_of_resident": "Manžel alebo manželka osoby s pobytom v SR",
+      "child_of_resident": "Dieťa osoby s pobytom v SR",
+      "dependent_relative": "Odkázaný príbuzný"
+    }
+  },
+  "results": {
+    "title": "Čo pre vás môže prichádzať do úvahy",
+    "asOf": "Posúdené podľa právneho stavu k {{date}}",
+    "disclaimer": "Toto nie je rozhodnutie ani záruka práva na pobyt. S konečnou platnosťou rozhoduje príslušný orgán na základe úplného spisu.",
+    "offeredTitle": "Stojí za pozornosť",
+    "otherTitle": "Podľa vašich odpovedí neprichádza do úvahy",
+    "showOther": "Zobraziť, čo neprichádza do úvahy ({{count}})",
+    "hideOther": "Skryť",
+    "none": "Podľa týchto odpovedí nevyhovuje žiadna z dostupných ciest. Neznamená to, že zákonná cesta neexistuje: príručka zatiaľ opisuje len časť konaní.",
+    "authority": "Orgán",
+    "openQuestionsTitle": "Čo v tejto ceste ešte nie je opísané",
+    "sourcesTitle": "Zdroje",
+    "whyIncomplete": "Podmienky tejto cesty ešte nie sú zapísané úplne, preto nemôžeme povedať „vyhovuje“ — len „stojí za pozornosť“.",
+    "whyUnknown": "Preskočili ste otázky, od ktorých táto cesta závisí.",
+    "outcome": {
+      "eligible": "žiadna známa podmienka nie je porušená",
+      "possible": "stojí za pozornosť",
+      "not_eligible": "podmienka nie je splnená",
+      "excluded": "vylúčené vašou situáciou",
+      "not_applicable": "k tomuto dátumu neplatilo"
+    },
+    "status": {
+      "reviewed": "skontrolované právnikom",
+      "incomplete": "neskontrolované právnikom"
+    }
   }
 }

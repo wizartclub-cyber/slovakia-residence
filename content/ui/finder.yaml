@@ -1,0 +1,32 @@
+# Опитувальник: які питання, у якому порядку і які варіанти відповіді.
+# Тексти — у src/locales/<мова>/common.json:
+#   питання → finder.q.<id>   ·   варіант → answer.<field>.<значення>
+# Дозволені значення полів — src/lib/rules/domain.ts (білд падає на описці).
+#
+# ЖОДНОГО поля, що ідентифікує людину: ні імені, ні номера паспорта, ні адреси.
+# Додати таке поле сюди не вийде — схема приймає лише поля з domain.ts.
+steps:
+  - id: citizenship
+    field: citizenshipGroup
+    options: [eu_eea_ch, third_country, ua_temporary_protection]
+  - id: location
+    field: location
+    options: [in_slovakia, abroad]
+  - id: purpose
+    field: purpose
+    options: [employment, business, study, family, research, special_activity, protection, other]
+  - id: currentStatus
+    field: currentStatus
+    options:
+      - none
+      - visa_free
+      - schengen_visa
+      - national_visa
+      - temporary_residence
+      - permanent_residence
+      - temporary_protection
+      - tolerated_stay
+      - international_protection_applicant
+  - id: family
+    field: family
+    options: [none, spouse_of_sk_citizen, spouse_of_resident, child_of_resident, dependent_relative]

@@ -21,6 +21,7 @@ const src = ['slovlex-404-2011'];
 /** Проста кон'юнкція двох умов. */
 export const employment = fixture({
   id: 'TEST-B-employment',
+  conditionsComplete: true,
   category: 'B',
   title,
   validFrom: '2026-07-15',
@@ -45,6 +46,7 @@ export const employment = fixture({
 /** Єдина умова + статус «перевірено юристом». */
 export const euRegistration = fixture({
   id: 'TEST-F-eu-registration',
+  conditionsComplete: true,
   category: 'F',
   title,
   validFrom: '2026-07-15',
@@ -65,6 +67,7 @@ export const euRegistration = fixture({
 /** Вимога + виключення + часова умова всередині правила. */
 export const protectionTransition = fixture({
   id: 'TEST-E-protection-transition',
+  conditionsComplete: true,
   category: 'E',
   title,
   validFrom: '2026-07-15',
@@ -95,6 +98,7 @@ export const protectionTransition = fixture({
 /** Складені умови: any / all / not. */
 export const nationalVisa = fixture({
   id: 'TEST-A-national-visa',
+  conditionsComplete: true,
   category: 'A',
   title,
   validFrom: '2026-07-15',
@@ -125,6 +129,7 @@ export const nationalVisa = fixture({
 /** Маршрут, що діяв до змін 15.07.2026. */
 export const repealed = fixture({
   id: 'TEST-OLD-repealed',
+  conditionsComplete: true,
   category: 'G',
   title,
   validFrom: '2020-01-01',
@@ -136,6 +141,7 @@ export const repealed = fixture({
 /** Маршрут, що починає діяти 01.10.2026 (Act 128/2026, čl. I bod 62). */
 export const fromOctober = fixture({
   id: 'TEST-NEW-from-october',
+  conditionsComplete: true,
   category: 'G',
   title,
   validFrom: '2026-10-01',
@@ -150,6 +156,7 @@ export const fromOctober = fixture({
  */
 export const withTransitions = fixture({
   id: 'TEST-G-transitions',
+  conditionsComplete: true,
   category: 'G',
   title,
   validFrom: '2020-01-01',
@@ -175,6 +182,7 @@ export const withTransitions = fixture({
  */
 export const octoberCondition = fixture({
   id: 'TEST-B-october-condition',
+  conditionsComplete: true,
   category: 'B',
   title,
   validFrom: '2026-07-15',
@@ -190,6 +198,28 @@ export const octoberCondition = fixture({
   ],
 });
 
+/**
+ * Маршрут-вказівник: умови внесені не повністю, тому движок не має права
+ * сказати «підходить» — максимум «може підійти».
+ */
+export const pointerOnly = fixture({
+  id: 'TEST-C-pointer-only',
+  category: 'C',
+  title,
+  validFrom: '2026-07-15',
+  reviewStatus: 'draft',
+  conditionsComplete: false,
+  sourceIds: src,
+  eligibilityRules: [
+    {
+      id: 'r-third-country',
+      effect: 'require',
+      when: { field: 'citizenshipGroup', equals: 'third_country' },
+      sourceIds: ['slovlex-404-2011'],
+    },
+  ],
+});
+
 export const allProcedures = [
   employment,
   euRegistration,
@@ -199,4 +229,5 @@ export const allProcedures = [
   fromOctober,
   withTransitions,
   octoberCondition,
+  pointerOnly,
 ];

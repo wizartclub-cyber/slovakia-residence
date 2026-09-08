@@ -1,0 +1,36 @@
+# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+id: B1-business-s22
+category: B
+title:
+  uk: Тимчасове проживання — підприємницька діяльність (§22)
+  sk: Prechodný pobyt na účel podnikania (§22)
+legalBasis:
+  - '404/2011 §22'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+  - mzv-residence-master-guidance
+conditionsComplete: false
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-purpose-business
+    effect: require
+    when: { field: purpose, equals: business }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: [fee-tr-business-first-ocp, fee-tr-business-first-mission]
+documentIds: []
+steps: []
+transitionRules: []
+relatedProcedureIds: []
+openQuestions:
+  - 'Не внесено: підвиди (ФОП / участь у компанії), фінансове забезпечення діяльності окремо від забезпечення перебування, вимоги при обновленні та тест прибутковості (spec §5A).'

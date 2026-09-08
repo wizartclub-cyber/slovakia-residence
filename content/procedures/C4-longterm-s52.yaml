@@ -1,0 +1,32 @@
+# МАРШРУТ-ВКАЗІВНИК — див. пояснення в B2-employment-s23.yaml.
+id: C4-longterm-s52
+category: C
+title:
+  uk: Довгострокове проживання ЄС (§52)
+  sk: Dlhodobý pobyt EÚ (§52)
+legalBasis:
+  - '404/2011 §52'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+authorityIds: [ocp-pz]
+feeRuleIds: []
+documentIds: []
+steps: []
+transitionRules: []
+relatedProcedureIds: [C3-permanent-s46]
+openQuestions:
+  - 'Не внесено: п''ятирічний строк і правила його обчислення, мобільність власників Синьої карти, зарахування періодів міжнародного захисту, винятки.'
+  - 'Вказівка ÚHCP P PZ від 08.04.2026 про зарахування періодів тимчасового захисту (dočasné útočisko) до п''яти років НЕ внесена — цього джерела немає в реєстрі.'
+  - 'Збір за цю процедуру не визначений: spec §5 називає 250 € для постійного проживання, чи діє це для §52 — не перевірено.'

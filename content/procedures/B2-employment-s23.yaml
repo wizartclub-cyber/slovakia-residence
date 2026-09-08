@@ -1,0 +1,40 @@
+# МАРШРУТ-ВКАЗІВНИК. Внесено тільки те, що прямо випливає з назви процедури
+# в законі: кому вона адресована і для якої мети. Умови придатності, документи,
+# строки й обов'язки після рішення НЕ внесені — тому conditionsComplete: false
+# і движок ніколи не скаже «підходить», максимум «може підійти».
+id: B2-employment-s23
+category: B
+title:
+  uk: Тимчасове проживання — працевлаштування (§23)
+  sk: Prechodný pobyt na účel zamestnania (§23)
+legalBasis:
+  - '404/2011 §23'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+  - mzv-residence-master-guidance
+conditionsComplete: false
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-purpose-employment
+    effect: require
+    when: { field: purpose, equals: employment }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: [fee-tr-employment-first]
+documentIds: []
+steps: []
+transitionRules: []
+relatedProcedureIds: [A3-national-visa-120]
+openQuestions:
+  - 'Гілка §21b(4)(f) Act 5/2004 після національної візи: підтвердження ÚPSVaR доступне лише за тієї самої посади. Джерело slovlex-5-2004 без URL.'
+  - 'Не внесено: підтвердження про можливість заповнення вільного місця, дозвіл на роботу, винятки, сезонна зайнятість, документи, строки, збори за каналами подачі.'
