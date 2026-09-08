@@ -1,0 +1,15 @@
+id: zastupitelsky-urad
+type: DIPLOMATIC_MISSION
+officialName: Zastupiteľský úrad Slovenskej republiky
+territorialCompetence: null
+filingChannels: []
+bookingUrl: null
+infoUrl: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
+checkedAt: '2026-09-07'
+sourceIds:
+  - mzv-residence-master-guidance
+  - mzv-national-visa-guidance
+notes: >-
+  Посольство або консульство СР за кордоном: місце подачі заяви про пробут і про
+  національну візу. Перелік конкретних установ, їхня територіальна компетенція
+  та порядок запису не внесені — потрібні окремі джерела на кожну установу.

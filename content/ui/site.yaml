@@ -11,6 +11,8 @@ legalBaseline:
 nav:
   - key: home
     path: ''
+  - key: sources
+    path: 'sources'
   - key: about
     path: 'about'
   - key: privacy

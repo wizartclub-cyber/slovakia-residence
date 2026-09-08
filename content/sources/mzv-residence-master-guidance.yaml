@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: mzv-residence-master-guidance
+authority: MZV SR
+title: Residence of foreign nationals in Slovakia — usmernenie MZV SR
+url: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: 22 sections incl. fees, documents by purpose (§22–§30, Blue Card), national visa for submitting
+  residence application
+notes: null
+locale: en
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null

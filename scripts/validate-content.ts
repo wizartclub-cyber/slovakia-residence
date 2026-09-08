@@ -90,34 +90,45 @@ for (const [folder, schema] of Object.entries(SCHEMAS)) {
       continue;
     }
 
-    const parsed = schema.safeParse(raw);
-    if (!parsed.success) {
-      for (const issue of parsed.error.issues) {
-        fail(rel, `${issue.path.join('.') || '(корінь)'} — ${issue.message}`);
+    // Файл може містити один запис або список записів (зручно для зборів).
+    const entries = Array.isArray(raw) ? raw : [raw];
+    const valid: Array<Record<string, unknown>> = [];
+    let broken = false;
+
+    for (const [i, entry] of entries.entries()) {
+      const where = Array.isArray(raw) ? `[${i}]` : '';
+      const parsed = schema.safeParse(entry);
+      if (!parsed.success) {
+        broken = true;
+        for (const issue of parsed.error.issues) {
+          fail(rel, `${where}${issue.path.join('.') || '(корінь)'} — ${issue.message}`);
+        }
+        continue;
       }
-      continue;
+      valid.push(parsed.data as Record<string, unknown>);
     }
-    checked += 1;
+    if (broken) continue;
+    checked += valid.length;
 
-    const data = parsed.data as Record<string, unknown>;
+    for (const data of valid) {
 
-    // 3a. Кожне джерело має існувати в реєстрі (CLAUDE.md §2.2).
-    const ids = collectSourceIds(data);
-    for (const id of ids) {
-      if (!knownSourceIds.has(id)) {
-        fail(rel, `джерело "${id}" відсутнє в document-registry-v0.4.yaml`);
+      // 3a. Кожне джерело має існувати в реєстрі (CLAUDE.md §2.2).
+      for (const id of collectSourceIds(data)) {
+        if (!knownSourceIds.has(id)) {
+          fail(rel, `джерело "${id}" відсутнє в document-registry-v0.4.yaml`);
+        }
       }
-    }
 
-    // 3b. published без юриста — заборонено (CLAUDE.md §2.3).
-    if (data.reviewStatus === 'published' || data.reviewStatus === 'legally_reviewed') {
-      if (!data.reviewer) fail(rel, `статус "${String(data.reviewStatus)}" без поля reviewer`);
-      if (!data.reviewedAt) fail(rel, `статус "${String(data.reviewStatus)}" без дати reviewedAt`);
-    }
+      // 3b. published без юриста — заборонено (CLAUDE.md §2.3).
+      if (data.reviewStatus === 'published' || data.reviewStatus === 'legally_reviewed') {
+        if (!data.reviewer) fail(rel, `статус "${String(data.reviewStatus)}" без поля reviewer`);
+        if (!data.reviewedAt) fail(rel, `статус "${String(data.reviewStatus)}" без дати reviewedAt`);
+      }
 
-    // 3c. Правило, що вже не діє на дату baseline (spec §10).
-    if (baseline && typeof data.validTo === 'string' && data.validTo < baseline) {
-      fail(rel, `validTo (${data.validTo}) раніший за baseline ${baseline}`);
+      // 3c. Правило, що вже не діє на дату baseline (spec §10).
+      if (baseline && typeof data.validTo === 'string' && data.validTo < baseline) {
+        fail(rel, `validTo (${data.validTo}) раніший за baseline ${baseline}`);
+      }
     }
   }
 }

@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: mzv-national-visa-sk
+authority: MZV SR
+title: ŽIADOSŤ O NÁRODNÉ VÍZUM (sk)
+url: https://www.mzv.sk/documents/10182/16274933/002-ziadost-o-narodne-vizum-SK.pdf/d2c0d2c1-c498-176c-7fae-cd1083393266
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: ŽIADOSŤ O NÁRODNÉ VÍZUM, Slovak only, MZV data-controller notice; no form code visible; NOT a
+  Ukrainian/Slovak form — earlier handoff claim of uk/sk form remains unconfirmed
+notes: null
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_form
+snapshotPath: null
+sha256: null

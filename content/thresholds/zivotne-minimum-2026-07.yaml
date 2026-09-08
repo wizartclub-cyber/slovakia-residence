@@ -1,0 +1,17 @@
+# Життєвий мінімум (životné minimum) — базова величина, від якої закон рахує
+# вимоги до фінансового забезпечення. Похідні суми (×12, ×20, ×100) НЕ зберігаються
+# тут: вони обчислюються з baseValue (spec §5A), інакше при зміні мінімуму
+# в даних лишилися б застарілі числа.
+id: zivotne-minimum-adult
+baseValue: 295.22
+unit: EUR/month
+multiplier: null
+formula: null
+validFrom: '2026-07-01'
+validTo: null
+sourceIds:
+  - opatrenie-155-2026
+notes: >-
+  Opatrenie 155/2026 Z. z. — životné minimum pre jednu plnoletú osobu.
+  Множник для кожного маршруту визначає конкретна норма закону; показувати суму
+  без прив'язки до норми заборонено (spec §5A).

@@ -1,0 +1,24 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: slovlex-69-2026
+authority: Slov-Lex
+title: Zákon č. 69/2026 Z. z. o medzinárodnej ochrane
+url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/69/20260612
+pinnedUrl: null
+staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/69/20260612.print.html
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: needs JS; act 69/2026 Zákon o medzinárodnej ochrane…, eff. 12.06.2026
+notes: null
+locale: sk
+lawNumber: 69/2026
+provision: null
+publicationDate: null
+effectiveFrom: 2026-06-12
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: legislation
+snapshotPath: null
+sha256: null

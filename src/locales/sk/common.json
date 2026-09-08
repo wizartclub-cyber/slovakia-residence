@@ -3,8 +3,16 @@
     "title": "Pobyt na Slovensku",
     "subtitle": "Bezplatná príručka zákonných spôsobov vstupu, pobytu a bývania"
   },
-  "nav": { "home": "Domov", "about": "O projekte", "privacy": "Súkromie" },
-  "lang": { "uk": "Українська", "sk": "Slovenčina" },
+  "nav": {
+    "home": "Domov",
+    "sources": "Zdroje",
+    "about": "O projekte",
+    "privacy": "Súkromie"
+  },
+  "lang": {
+    "uk": "Українська",
+    "sk": "Slovenčina"
+  },
   "a11y": {
     "skipToContent": "Preskočiť na hlavný obsah",
     "mainNav": "Hlavné menu",
@@ -55,5 +63,41 @@
     "title": "Stránka sa nenašla",
     "body": "Takáto stránka neexistuje. Adresa je pravdepodobne zadaná s chybou.",
     "home": "Na úvod"
+  },
+  "sources": {
+    "title": "Zdroje",
+    "intro": "Každé pravidlo v tejto príručke sa opiera o zdroj z tohto zoznamu. Vidno tu, kedy sme naposledy overili adresu, či je uložená kópia súboru a či stránka úradu nie je zastaraná.",
+    "countTotal": "Zdrojov spolu: {{count}}",
+    "countSnapshot": "uložená kópia s kontrolným súčtom: {{count}}",
+    "snapshotNote": "Kópia (snímka) s kontrolným súčtom SHA-256 je dôkaz, ktoré presné znenie sme čítali. Kým kópie nie sú vyhotovené, každý zdroj je označený ako neoverený.",
+    "checkedAt": "adresa overená",
+    "effective": "účinnosť",
+    "openEnded": "bez obmedzenia",
+    "linkPinned": "pripnuté znenie",
+    "linkStatic": "tlačová verzia",
+    "linkOriginal": "originál",
+    "noUrl": "úradná adresa zatiaľ chýba — zdroj je zapísaný, ale nepotvrdený",
+    "stale": "stránka je staršia ako zmeny od 15.07.2026",
+    "evidenceLabel": "Čo bolo na tejto adrese vidieť pri kontrole (technický záznam):"
+  },
+  "sourceType": {
+    "legislation": "Zákony",
+    "implementing_regulation": "Vykonávacie predpisy",
+    "eu_law": "Právo EÚ",
+    "official_web_guidance": "Úradné usmernenia orgánov",
+    "administrative_guidance": "Administratívne usmernenia",
+    "official_form": "Úradné tlačivá",
+    "official_fee_schedule": "Sadzobníky poplatkov",
+    "secondary_explanatory_source": "Sekundárne vysvetľujúce zdroje"
+  },
+  "registryStatus": {
+    "fetch_pending": "súbor ešte nie je stiahnutý",
+    "url_verified": "adresa overená",
+    "snapshot_taken": "kópia uložená",
+    "source_verified": "zdroj overený človekom",
+    "legally_reviewed": "skontrolované právnikom",
+    "published": "zverejnené",
+    "superseded": "nahradené",
+    "blocked": "zablokované"
   }
 }

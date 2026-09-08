@@ -1,0 +1,26 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: opatrenie-155-2026
+authority: MPSVR SR / Slov-Lex
+title: Opatrenie č. 155/2026 Z. z. — životné minimum
+url: null
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: null
+notes: Opatrenie 155/2026 Z. z. — zivotne minimum. Required by content/thresholds/zivotne-minimum.yaml (295.22
+  EUR/month from 2026-07-01). Exact Slov-Lex URL NOT verified in this session; owner/lawyer must supply it
+  before a snapshot can be taken.
+locale: sk
+lawNumber: 155/2026
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: null
+sourceType: implementing_regulation
+snapshotPath: null
+sha256: null

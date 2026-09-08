@@ -1,0 +1,24 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: slovlex-404-2011
+authority: Slov-Lex
+title: Zákon č. 404/2011 Z. z. o pobyte cudzincov
+url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/
+pinnedUrl: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/20260715
+staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2011/404/20260715.print.html
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: ezbierky page needs JS; canonical resolves to 20260715 version. FLOATING URL — pin to temporal URL below
+notes: null
+locale: sk
+lawNumber: 404/2011
+provision: null
+publicationDate: null
+effectiveFrom: 2026-07-15
+effectiveTo: 2026-09-30
+checkedAt: 2026-09-07
+sourceType: legislation
+snapshotPath: null
+sha256: null

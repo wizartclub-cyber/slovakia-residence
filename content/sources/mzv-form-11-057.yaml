@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: mzv-form-11-057
+authority: MZV SR / MV SR
+title: T MV SR 11-057 — žiadosť o udelenie pobytu (prechodný, trvalý na 5 rokov, tolerovaný)
+url: https://www.mzv.sk/documents/30297/1912918/Application%2Bfor%2Bthe%2Btemporary%2Bresidence/12f647e7-5f64-4261-a98e-6ce4f895599f
+pinnedUrl: null
+staticUrl: null
+formCode: T MV SR 11-057
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: "T MV SR 11-057; sk/en bilingual; instruction: must be completed by typewriter or block capitals IN
+  SLOVAK; covers temporary, 5-year permanent and tolerated residence"
+notes: null
+locale: sk+en
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_form
+snapshotPath: null
+sha256: null

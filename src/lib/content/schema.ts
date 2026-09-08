@@ -108,7 +108,9 @@ export const DocumentSchema = z
 export const FeeRuleSchema = z
   .object({
     id: nonEmpty,
-    tariffItem: nonEmpty,
+    // Номер позиції тарифу 145/1995. null означає «позицію ще не встановлено»
+    // — вигадувати її не можна (CLAUDE.md §2.2).
+    tariffItem: nonEmpty.nullable(),
     amount: z.number().nonnegative(),
     currency: z.literal('EUR'),
     filingChannel: z.array(nonEmpty).default([]),
@@ -118,9 +120,25 @@ export const FeeRuleSchema = z
     validFrom: isoDate,
     validTo: isoDate.nullable().default(null),
     reviewStatus: reviewStatus.default('draft'),
+    notes: z.string().nullable().default(null),
     sourceIds,
   })
   .strict();
+
+// Реєстр джерел веде власний, детальніший облік перевірки, ніж spec §7:
+// url_verified (адреса відкривається) → snapshot_taken (файл збережено з sha256) →
+// source_verified (людина подивилася файл). Зберігаємо обидва статуси, бо
+// «адреса працює» і «джерело перевірене юристом» — різні речі.
+export const registryStatusValues = [
+  'fetch_pending',
+  'url_verified',
+  'snapshot_taken',
+  'source_verified',
+  'legally_reviewed',
+  'published',
+  'superseded',
+  'blocked',
+] as const;
 
 export const SourceSchema = z
   .object({
@@ -128,6 +146,17 @@ export const SourceSchema = z
     authority: nonEmpty,
     title: nonEmpty,
     url: z.string().url().nullable(),
+    // Slov-Lex віддає «плаваючу» адресу поточної редакції; для цитування потрібна
+    // пінована темпоральна адреса конкретної редакції (spec §2).
+    pinnedUrl: z.string().url().nullable().default(null),
+    staticUrl: z.string().url().nullable().default(null),
+    formCode: nonEmpty.nullable().default(null),
+    registryStatus: z.enum(registryStatusValues),
+    // SOURCE_AUDIT_v0.4 §5: сторінка органу, оновлена до змін від 15.7.2026.
+    potentiallyStale: z.boolean().default(false),
+    // Що саме було видно за адресою на момент перевірки — доказ, а не переказ.
+    evidence: z.string().nullable().default(null),
+    notes: z.string().nullable().default(null),
     locale: nonEmpty.nullable().default(null),
     lawNumber: nonEmpty.nullable().default(null),
     provision: nonEmpty.nullable().default(null),
@@ -171,6 +200,7 @@ export const AuthoritySchema = z
     infoUrl: z.string().url().nullable().default(null),
     // spec §10: білд падає, якщо в органу немає checkedAt або джерела.
     checkedAt: isoDate,
+    notes: z.string().nullable().default(null),
     sourceIds,
   })
   .strict();

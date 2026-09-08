@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: slovlex-145-1995
+authority: Slov-Lex
+title: Zákon č. 145/1995 Z. z. o správnych poplatkoch (položka 24)
+url: https://static.slov-lex.sk/static/SK/ZZ/1995/145/20260901.print.html
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: null
+notes: Act 145/1995 on administrative fees, tariff item 24 — fee baseline (spec section 5). URL copied from
+  spec section 2; NOT independently checked in this session.
+locale: sk
+lawNumber: 145/1995
+provision: null
+publicationDate: null
+effectiveFrom: 2026-09-01
+effectiveTo: null
+checkedAt: null
+sourceType: legislation
+snapshotPath: null
+sha256: null

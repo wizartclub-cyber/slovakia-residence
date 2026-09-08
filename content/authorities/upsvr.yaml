@@ -1,0 +1,16 @@
+id: upsvr
+type: UPSVAR
+officialName: ÚPSVaR — úrad práce, sociálnych vecí a rodiny
+territorialCompetence: null
+filingChannels: []
+bookingUrl: null
+infoUrl: https://www.upsvr.gov.sk/vzory-ziadosti-v-slovenskom-jazyku-a-inych-jazykoch/vzory-ziadosti-pre-oblast-sluzieb-zamestnanosti.html?page_id=13141
+checkedAt: '2026-09-07'
+sourceIds:
+  - upsvr-foreign-employment-forms
+  - upsvr-2026-07-15-changes
+notes: >-
+  Орган у справах зайнятості: підтвердження про можливість заповнення вільного
+  робочого місця, дозволи на роботу, сезонна зайнятість. Джерела ÚPSVaR у реєстрі
+  мають статус fetch_pending (сайт не віддавав файли), тому дані про процедури
+  й строки поки не вносяться.

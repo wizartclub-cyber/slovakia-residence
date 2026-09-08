@@ -1,0 +1,26 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: slovlex-5-2004
+authority: Slov-Lex
+title: Zákon č. 5/2004 Z. z. o službách zamestnanosti
+url: null
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: null
+notes: Act 5/2004 on employment services as amended by 128/2026, needed for the section 21b(4)(f) branch after
+  a national visa. Spec section 2 requires pinning an exact temporal version; no verified URL available — do
+  not guess the temporal path, confirm on slov-lex.sk first.
+locale: sk
+lawNumber: 5/2004
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: null
+sourceType: legislation
+snapshotPath: null
+sha256: null

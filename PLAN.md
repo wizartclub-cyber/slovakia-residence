@@ -16,13 +16,13 @@ DoD = що власник перевіряє руками. Тести — дод
 - [x] Сторінки-заглушки: Home (дисклеймер + стан права), About/Privacy, 404
 **DoD:** ✓ перевірено локально (`pnpm dev` → /slovakia-residence/uk/ і /sk/, `pnpm validate` падає без `sourceIds` і на джерелі поза реєстром). Лишилось після пушу: увімкнути GitHub Pages у Settings → Pages (джерело: GitHub Actions) і відкрити публічний URL.
 
-## Slice 1 — Контент-модель + реєстр джерел  `[ ]`
-- [ ] Конвертер `document-registry-v0.4.yaml` → `content/sources/*.yaml` (id, authority, url, pinnedUrl, sha256 зі snapshot, checkedAt, sourceType, reviewStatus)
-- [ ] `content/thresholds/zivotne-minimum-2026-07.yaml` (295.22, Measure 155/2026) + правило похідних значень
-- [ ] `content/authorities/` : OCP PZ (Bratislava + загальний), zastupiteľský úrad, ÚPSVaR, obec — тільки з полем `checkedAt` і `sourceIds`
-- [ ] `content/fees/` : позиції зі spec §5, кожна з `tariffItem`, `sourceIds`, `validFrom`
-- [ ] Source Library сторінка: список джерел, дата перевірки, статус, посилання
-**DoD:** сторінка «Джерела» показує 20+ записів з датами; `pnpm validate` зелений.
+## Slice 1 — Контент-модель + реєстр джерел  `[x]` (2026-09-08)
+- [x] Конвертер `document-registry-v0.4.yaml` → `content/sources/*.yaml` (`pnpm sources:build`, 26 файлів). sha256 порожні — снапшотів ще немає
+- [x] `content/thresholds/zivotne-minimum-2026-07.yaml` (295.22, Measure 155/2026) + `derivedAmount()` з тестами на ×12/×20/×100
+- [x] `content/authorities/` : OCP PZ (загальний), zastupiteľský úrad, ÚPSVaR, MV SR — з `checkedAt` і `sourceIds`. **obec не внесено** (немає джерела); OCP PZ Bratislava окремо — після снапшотів MV SR
+- [x] `content/fees/` : 25 позицій зі spec §5. У візових `tariffItem: null` — номер позиції тарифу не встановлено
+- [x] Source Library сторінка `/uk/sources`, `/sk/sources`: групування за юридичною силою, дата перевірки, два статуси, посилання
+**DoD:** ✓ сторінка «Джерела» показує 26 записів із датами; `pnpm validate` зелений (56 записів).
 
 ## Slice 2 — Rule engine  `[ ]`
 - [ ] `src/lib/rules/evaluate.ts`: `evaluate(answers: Answers) -> RouteMatch[]` — чисті функції, без React
@@ -65,6 +65,12 @@ DoD = що власник перевіряє руками. Тести — дод
 
 ---
 
+## Борг, що з'явився в Slice 1  `[ ]`
+- `obec` (муніципалітет) як орган — потрібне джерело про hlásenie pobytu.
+- Звільнення від зборів (`exemptions`) — звірити повідомлення IOM із тарифом 145/1995 pol. 24.
+- Умови для трьох сум національної візи (15 / 50 / 90 €) — spec не каже, якій меті відповідає кожна.
+- Джерело права ЄС для шенгенської візи (Візовий кодекс 810/2009) ще не в реєстрі.
+
 ## Відкладено на Release 2
 en-локаль · PDF overlay/AcroForm генерація (spec §6) · Decap CMS для юриста · Cloudflare Pages (headers) · експорт/імпорт стану з шифруванням.
 
@@ -73,6 +79,7 @@ en-локаль · PDF overlay/AcroForm генерація (spec §6) · Decap C
 - Ім'я/контакт юриста для поля `reviewer`.
 - Чи буде посилання на послуги власника (lead magnet) і де саме на сайті.
 - Офіційні URL для трьох джерел без адреси в реєстрі: `opatrenie-155-2026`, `slovlex-5-2004` (пінована темпоральна версія), `minv-hlasenie-pobytu-form`.
+- Назви джерел (`title`) у реєстрі складені нами з наявних доказів — юрист має перевірити їх разом із рештою полів.
 
 ## Вирішено  `[x]`
 - Хостинг: GitHub Pages, репозиторій `wizartclub-cyber/slovakia-residence`, адреса `https://wizartclub-cyber.github.io/slovakia-residence/` (2026-09-08).

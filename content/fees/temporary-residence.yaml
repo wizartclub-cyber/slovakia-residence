@@ -1,0 +1,222 @@
+# Збори за тимчасове проживання (prechodný pobyt).
+# Джерело сум: spec §5 (звірено з тарифом 145/1995 положка 24 і оновленням IOM
+# від 16.07.2026). Це ДОВІДКОВІ позиції, не повний перелік: звільнення від збору
+# і винятки оцінюються окремо. Усі записи мають reviewStatus draft до рев'ю юриста.
+- id: fee-tr-business-first-ocp
+  tariffItem: '145/1995 položka 24'
+  amount: 330
+  currency: EUR
+  filingChannel: [ocp_pz]
+  applicantConditions: []
+  exemptions: []
+  reductionRule: &electronic
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition: >-
+      Знижка діє, тільки якщо електронна подача законно доступна для цієї процедури
+      і дотримано приписаний електронний процес. Підготовка документів онлайн
+      сама по собі права на знижку не дає (spec §5).
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Перше подання, підприємницька діяльність (§22), подача в поліції у справах іноземців.
+  sourceIds: [slovlex-145-1995, iom-fees]
+
+- id: fee-tr-business-first-mission
+  tariffItem: '145/1995 položka 24'
+  amount: 350
+  currency: EUR
+  filingChannel: [diplomatic_mission]
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Те саме, але подача на закордонній установі — сума інша.
+  sourceIds: [slovlex-145-1995, iom-fees]
+
+- id: fee-tr-employment-first
+  tariffItem: '145/1995 položka 24'
+  amount: 250
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Перше подання, працевлаштування (§23).
+  sourceIds: [slovlex-145-1995, iom-fees]
+
+- id: fee-tr-seasonal-first
+  tariffItem: '145/1995 položka 24'
+  amount: 50
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Сезонна зайнятість.
+  sourceIds: [slovlex-145-1995, iom-fees]
+
+- id: fee-tr-special-activity-first
+  tariffItem: '145/1995 položka 24'
+  amount: 140
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: >-
+    Окремі види «особливої діяльності» (§25). Spec §5 не перелічує, які саме
+    підпункти покриває ця сума — уточнити за тарифом перед показом у маршруті.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tr-family-first
+  tariffItem: '145/1995 položka 24'
+  amount: 200
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Возз'єднання родини (§27).
+  sourceIds: [slovlex-145-1995, iom-fees]
+
+- id: fee-tr-armed-forces-civilian-first
+  tariffItem: '145/1995 položka 24'
+  amount: 100
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Цивільний компонент збройних сил (§28).
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tr-blue-card-first
+  tariffItem: '145/1995 položka 24'
+  amount: 250
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Синя карта ЄС (§§37–41), перше подання.
+  sourceIds: [slovlex-145-1995, iom-fees]
+
+- id: fee-tr-business-renewal
+  tariffItem: '145/1995 položka 24'
+  amount: 200
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Обновлення, підприємницька діяльність.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tr-employment-renewal
+  tariffItem: '145/1995 položka 24'
+  amount: 140
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Обновлення, працевлаштування.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tr-seasonal-renewal
+  tariffItem: '145/1995 položka 24'
+  amount: 25
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Обновлення, сезонна зайнятість.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tr-special-activity-renewal
+  tariffItem: '145/1995 položka 24'
+  amount: 50
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Обновлення, окремі види особливої діяльності.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tr-family-renewal
+  tariffItem: '145/1995 položka 24'
+  amount: 100
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Обновлення, возз'єднання родини.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tr-armed-forces-civilian-renewal
+  tariffItem: '145/1995 položka 24'
+  amount: 50
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Обновлення, цивільний компонент збройних сил.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tr-blue-card-renewal
+  tariffItem: '145/1995 položka 24'
+  amount: 140
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: *electronic
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Обновлення синьої карти ЄС.
+  sourceIds: [slovlex-145-1995]

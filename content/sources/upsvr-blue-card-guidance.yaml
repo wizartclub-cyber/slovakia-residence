@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: upsvr-blue-card-guidance
+authority: ÚPSVaR
+title: Modrá karta EÚ — informácie ÚPSVaR pre zamestnávateľa
+url: https://www.upsvr.gov.sk/buxus/generate_page.php?page_id=363520
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: true
+evidence: Blue Card employer guidance; last update predates 15.7.2026 amendment — treat as potentially stale,
+  cross-check against upsvr-2026-07-15-changes
+notes: null
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null

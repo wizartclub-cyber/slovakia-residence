@@ -1,0 +1,80 @@
+# Постійне проживання, толероване перебування, картка проживання.
+# Довідкові суми зі spec §5. Звільнення від збору НЕ внесені: IOM повідомляє про
+# звільнення для осіб до 18 років і подружжя громадян СР при постійному проживанні,
+# але SOURCE_AUDIT_v0.4 §8 вимагає звірити це з тарифом 145/1995 положка 24
+# перед внесенням у поле exemptions.
+- id: fee-permanent-application
+  tariffItem: '145/1995 položka 24'
+  amount: 250
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule:
+    type: electronic_filing
+    percent: 50
+    maxReductionEur: 50
+    condition: >-
+      Знижка діє, тільки якщо електронна подача законно доступна для цієї процедури.
+      IOM окремо згадує суму 200 € при електронній подачі — звірити з тарифом.
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Заява про постійне проживання (довідкова сума).
+  sourceIds: [slovlex-145-1995, iom-fees]
+
+- id: fee-tolerated-first
+  tariffItem: '145/1995 položka 24'
+  amount: 140
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Толероване перебування (§58) — довідкова сума.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-tolerated-extension
+  tariffItem: '145/1995 položka 24'
+  amount: 50
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Продовження толерованого перебування.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-residence-card-standard
+  tariffItem: '145/1995 položka 24'
+  amount: 10
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Видача картки проживання у звичайному строку.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-residence-card-expedited
+  tariffItem: '145/1995 položka 24'
+  amount: 39
+  currency: EUR
+  filingChannel: []
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Прискорена видача картки проживання.
+  sourceIds: [slovlex-145-1995]

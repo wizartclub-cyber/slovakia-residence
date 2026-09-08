@@ -1,0 +1,26 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: slovensko-sk-eservices
+authority: NASES / slovensko.sk
+title: slovensko.sk — elektronické služby (koreňová adresa)
+url: https://www.slovensko.sk/
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: null
+notes: Electronic procedures (PES) referenced in spec section 2 and SOURCE_AUDIT_v0.4. Root URL only.
+  Existence of an electronic service does not establish availability or exclusivity for a given procedure —
+  verify per procedure.
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: null
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null

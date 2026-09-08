@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: slovlex-128-2026
+authority: Slov-Lex
+title: Zákon č. 128/2026 Z. z. — novela (účinnosť 15.7.2026; čl. I bod 62 od 1.10.2026; čl. I bod 67 od
+  spustenia ETIAS)
+url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/128/20260715
+pinnedUrl: null
+staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/128/20260715.print.html
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: "Čl. V: účinnosť 15. júla 2026, okrem čl. I bodu 62 (1. októbra 2026) a čl. I bodu 67 (deň spustenia ETIAS)"
+notes: null
+locale: sk
+lawNumber: 128/2026
+provision: null
+publicationDate: null
+effectiveFrom: 2026-07-15
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: legislation
+snapshotPath: null
+sha256: null

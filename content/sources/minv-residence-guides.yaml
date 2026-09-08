@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-residence-guides
+authority: MV SR
+title: MV SR — portál ministerstva vnútra (koreňová adresa)
+url: https://www.minv.sk/
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: null
+notes: Listed as an official operational source in spec section 2 and as outstanding in SOURCE_AUDIT_v0.4.
+  Root URL only — the specific residence guidance pages still have to be identified and registered separately.
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: null
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null

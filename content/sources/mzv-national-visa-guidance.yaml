@@ -1,0 +1,26 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: mzv-national-visa-guidance
+authority: MZV SR
+title: National visa — usmernenie MZV SR (120 dní na podanie žiadosti o pobyt v SR)
+url: https://www.mzv.sk/en/services/information-for-foreigners/national-visa
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: “for 120 days for submission of a residence permit application in the territory of the Slovak
+  Republic” — page postdates baseline; applicability to be tied to §15(3)(a) of 404/2011 as amended by
+  128/2026 (eff. 15.7.2026), not to the page date
+notes: Confirms 120-day national visa for residence-application submission in Slovakia.
+locale: en
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null

@@ -1,0 +1,24 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: upsvr-foreign-employment-forms
+authority: ÚPSVaR
+title: Vzory žiadostí pre oblasť služieb zamestnanosti — ÚPSVaR
+url: https://www.upsvr.gov.sk/vzory-ziadosti-v-slovenskom-jazyku-a-inych-jazykoch/vzory-ziadosti-pre-oblast-sluzieb-zamestnanosti/zamestnavanie-cudzincov.html?lang=sk&page_id=281037
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: upsvr.gov.sk robots.txt fetch timed out 3× from sandbox; verify from owner machine
+notes: null
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null

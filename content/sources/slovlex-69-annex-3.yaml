@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: slovlex-69-annex-3
+authority: Slov-Lex
+title: Príloha č. 3 – VYHLÁSENIE CUDZINCA
+url: https://static.slov-lex.sk/static/SK/ZZ/2026/69/20260612.print.html
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: static print loads (act name + eff. 12.06.2026 confirmed) but the extracted text was cut before
+  Prílohy — Annex 3 title and §59(3) wording NOT confirmed from sandbox; confirm from snapshot
+notes: Police records the declaration on this official form under §59(3); not a normal download-and-submit workflow.
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: legislation
+snapshotPath: null
+sha256: null

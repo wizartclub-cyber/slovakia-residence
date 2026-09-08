@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-hlasenie-pobytu-form
+authority: MV SR
+title: Hlásenie pobytu — tlačivo MV SR (neoverené)
+url: null
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: null
+notes: Hlasenie pobytu form — post-grant obligation. SOURCE_AUDIT_v0.4 requires retrieving and verifying the
+  actual PDF behind the reported page before registering a downloadable asset. No verified URL yet.
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: null
+sourceType: official_form
+snapshotPath: null
+sha256: null

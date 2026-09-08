@@ -1,0 +1,16 @@
+id: ocp-pz
+type: OCP_PZ
+officialName: Oddelenie cudzineckej polície Policajného zboru
+territorialCompetence: null
+filingChannels: []
+bookingUrl: null
+infoUrl: null
+checkedAt: '2026-09-07'
+sourceIds:
+  - slovlex-404-2011
+  - mzv-residence-master-guidance
+notes: >-
+  Орган, до якого подаються заяви про пробут у Словаччині. Точна офіційна назва
+  конкретного відділення, територіальна компетенція, адреси, запис на прийом і
+  дозволені канали подачі НЕ перевірені за снапшотом — заповнити після знімка
+  404/2011 і сторінок MV SR (minv-residence-guides має лише кореневу адресу).

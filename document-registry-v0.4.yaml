@@ -9,6 +9,7 @@ sourcePriority:
 - older FAQ PDFs / embassy legacy guidance
 resources:
 - id: mzv-residence-master-guidance
+  title: 'Residence of foreign nationals in Slovakia — usmernenie MZV SR'
   type: official_guidance_html
   authority: MZV SR
   url: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
@@ -24,6 +25,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: mzv-form-11-057
+  title: 'T MV SR 11-057 — žiadosť o udelenie pobytu (prechodný, trvalý na 5 rokov, tolerovaný)'
   type: official_form_pdf
   authority: MZV SR / MV SR
   url: https://www.mzv.sk/documents/30297/1912918/Application%2Bfor%2Bthe%2Btemporary%2Bresidence/12f647e7-5f64-4261-a98e-6ce4f895599f
@@ -41,6 +43,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: mzv-form-11-056
+  title: 'T MV SR 11-056 (III/2019) — žiadosť o obnovenie prechodného pobytu, trvalý pobyt na neobmedzený čas, dlhodobý pobyt'
   type: official_form_pdf
   authority: MZV SR / MV SR
   url: https://www.mzv.sk/documents/10182/16461384/004-Application-for-renewal-of-the-temporary-residence-Application-for-permanent-residence-for-an-unlimited-time-long-term-residence.pdf/4e0ef0eb-bc76-db80-b4ac-0f7af22e1daa
@@ -57,6 +60,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: mzv-national-visa-sk
+  title: 'ŽIADOSŤ O NÁRODNÉ VÍZUM (sk)'
   type: official_form_pdf
   authority: MZV SR
   url: https://www.mzv.sk/documents/10182/16274933/002-ziadost-o-narodne-vizum-SK.pdf/d2c0d2c1-c498-176c-7fae-cd1083393266
@@ -72,6 +76,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: mzv-national-visa-en
+  title: 'APPLICATION FOR NATIONAL VISA (en)'
   type: official_form_pdf
   authority: MZV SR
   url: https://www.mzv.sk/documents/10182/16274933/004-ziadost-o-narodne-vizum-EN.pdf/3e457269-c704-45a0-3ec5-5ce02f650af9
@@ -86,6 +91,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: mzv-national-visa-guidance
+  title: 'National visa — usmernenie MZV SR (120 dní na podanie žiadosti o pobyt v SR)'
   type: official_guidance_html
   authority: MZV SR
   url: https://www.mzv.sk/en/services/information-for-foreigners/national-visa
@@ -103,6 +109,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: upsvr-foreign-employment-forms
+  title: 'Vzory žiadostí pre oblasť služieb zamestnanosti — ÚPSVaR'
   type: official_forms_page
   authority: ÚPSVaR
   url: https://www.upsvr.gov.sk/vzory-ziadosti-v-slovenskom-jazyku-a-inych-jazykoch/vzory-ziadosti-pre-oblast-sluzieb-zamestnanosti/zamestnavanie-cudzincov.html?lang=sk&page_id=281037
@@ -116,6 +123,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: upsvr-work-permit-seasonal
+  title: 'Príloha č. 1 — žiadosť o udelenie povolenia na zamestnanie (aj sezónne)'
   type: official_form_doc
   authority: ÚPSVaR
   url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/12_25/Priloha_1-doplnene_sezonne.doc
@@ -128,6 +136,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: upsvr-employment-promise
+  title: 'Príloha č. 7 — prísľub na zamestnanie (obsah nepotvrdený)'
   type: official_form_docx
   authority: ÚPSVaR
   url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/Priloha_7_.docx
@@ -140,6 +149,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: upsvr-accommodation-employer
+  title: 'Príloha č. 8 — potvrdenie zamestnávateľa o poskytnutí ubytovania'
   type: official_form_doc
   authority: ÚPSVaR
   url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/Priloha_8.doc
@@ -153,6 +163,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: upsvr-employer-declaration-70-7
+  title: 'Príloha č. 10 — vyhlásenie zamestnávateľa (obsah nepotvrdený)'
   type: official_form_doc
   authority: ÚPSVaR
   url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/Priloha_10_.doc
@@ -165,6 +176,8 @@ resources:
   snapshot: null
   procedureIds: []
 - id: upsvr-blue-card-guidance
+  title: 'Modrá karta EÚ — informácie ÚPSVaR pre zamestnávateľa'
+  potentiallyStale: true
   type: official_guidance_html
   authority: ÚPSVaR
   url: https://www.upsvr.gov.sk/buxus/generate_page.php?page_id=363520
@@ -180,6 +193,8 @@ resources:
   snapshot: null
   procedureIds: []
 - id: upsvr-vpm-guidance
+  title: 'Nahlásenie voľného pracovného miesta (VPM) — usmernenie ÚPSVaR'
+  potentiallyStale: true
   type: official_guidance_html
   authority: ÚPSVaR
   url: https://www.upsvr.gov.sk/buxus/generate_page.php?page_id=363510
@@ -195,6 +210,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: upsvr-2026-07-15-changes
+  title: 'Legislatívne zmeny v zamestnávaní cudzincov od 15.7.2026 — ÚPSVaR'
   type: official_guidance_html
   authority: ÚPSVaR
   url: https://www.upsvr.gov.sk/sluzby-zamestnanosti/aktuality/legislativne-zmeny-v-zamestnavani-cudzincov-od-15.7.2026.html?page_id=1534308
@@ -208,6 +224,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: slovlex-404-2011
+  title: 'Zákon č. 404/2011 Z. z. o pobyte cudzincov'
   type: statute
   authority: Slov-Lex
   url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/
@@ -226,6 +243,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: slovlex-69-2026
+  title: 'Zákon č. 69/2026 Z. z. o medzinárodnej ochrane'
   type: statute
   authority: Slov-Lex
   url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/69/20260612
@@ -256,6 +274,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: slovlex-128-2026
+  title: 'Zákon č. 128/2026 Z. z. — novela (účinnosť 15.7.2026; čl. I bod 62 od 1.10.2026; čl. I bod 67 od spustenia ETIAS)'
   type: statute_amendment
   authority: Slov-Lex
   url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/128/20260715
@@ -274,6 +293,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: iom-temp-residence
+  title: 'Application for temporary residence — IOM MIC (sekundárny zdroj)'
   type: secondary_guidance
   authority: IOM MIC
   url: https://mic.iom.sk/en/residence/temporary-residence/233-application-for-temporary-residence.html
@@ -289,6 +309,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: iom-fees
+  title: 'Aké vysoké sú správne poplatky pri žiadosti — IOM MIC (sekundárny zdroj)'
   type: secondary_guidance
   authority: IOM MIC
   url: https://mic.iom.sk/en/residence/general-information/226-ake-vysoke-su-spravne-poplatky-pri-ziadosti.html
@@ -305,6 +326,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: opatrenie-155-2026
+  title: 'Opatrenie č. 155/2026 Z. z. — životné minimum'
   type: implementing_regulation
   authority: MPSVR SR / Slov-Lex
   url: null
@@ -318,6 +340,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: slovlex-145-1995
+  title: 'Zákon č. 145/1995 Z. z. o správnych poplatkoch (položka 24)'
   type: statute
   authority: Slov-Lex
   url: https://static.slov-lex.sk/static/SK/ZZ/1995/145/20260901.print.html
@@ -331,6 +354,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: slovlex-5-2004
+  title: 'Zákon č. 5/2004 Z. z. o službách zamestnanosti'
   type: statute
   authority: Slov-Lex
   url: null
@@ -344,6 +368,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: minv-residence-guides
+  title: 'MV SR — portál ministerstva vnútra (koreňová adresa)'
   type: official_guidance_html
   authority: MV SR
   url: https://www.minv.sk/
@@ -356,6 +381,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: slovensko-sk-eservices
+  title: 'slovensko.sk — elektronické služby (koreňová adresa)'
   type: official_guidance_html
   authority: NASES / slovensko.sk
   url: https://www.slovensko.sk/
@@ -368,6 +394,7 @@ resources:
   snapshot: null
   procedureIds: []
 - id: minv-hlasenie-pobytu-form
+  title: 'Hlásenie pobytu — tlačivo MV SR (neoverené)'
   type: official_form_pdf
   authority: MV SR
   url: null

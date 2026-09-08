@@ -1,0 +1,78 @@
+# Візові збори. Позиція тарифу навмисно порожня (null): spec §5 називає для віз
+# «інші застосовні позиції» 145/1995, не вказуючи номер. Вигадувати номер позиції
+# не можна, тому поле лишається порожнім до перевірки за текстом тарифу.
+# Для національної візи spec розрізняє випадки 15 €, 90 € і 50 €, але не каже,
+# якій меті відповідає кожна сума — тому applicantConditions порожні.
+- id: fee-national-visa-15
+  tariffItem: null
+  amount: 15
+  currency: EUR
+  filingChannel: [diplomatic_mission]
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: >-
+    Національна віза, випадок зі збором 15 €. Для яких статутних цілей діє саме ця
+    сума — не встановлено; не показувати в маршруті, доки не визначено умову.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-national-visa-50
+  tariffItem: null
+  amount: 50
+  currency: EUR
+  filingChannel: [diplomatic_mission]
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Національна віза, випадок зі збором 50 € — умова не встановлена.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-national-visa-90
+  tariffItem: null
+  amount: 90
+  currency: EUR
+  filingChannel: [diplomatic_mission]
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Національна віза, випадок зі збором 90 € — умова не встановлена.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-schengen-visa-adult
+  tariffItem: null
+  amount: 90
+  currency: EUR
+  filingChannel: [diplomatic_mission]
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: >-
+    Шенгенська віза, доросла особа — довідкова сума. Регулюється Візовим кодексом
+    (ЄС) 810/2009, а не лише національним тарифом; джерело ЄС ще не в реєстрі.
+  sourceIds: [slovlex-145-1995]
+
+- id: fee-schengen-visa-child-6-12
+  tariffItem: null
+  amount: 45
+  currency: EUR
+  filingChannel: [diplomatic_mission]
+  applicantConditions: []
+  exemptions: []
+  reductionRule: null
+  validFrom: '2026-09-01'
+  validTo: null
+  reviewStatus: draft
+  notes: Шенгенська віза, дитина 6–12 років — довідкова сума.
+  sourceIds: [slovlex-145-1995]

@@ -1,0 +1,26 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: mzv-form-11-056
+authority: MZV SR / MV SR
+title: T MV SR 11-056 (III/2019) — žiadosť o obnovenie prechodného pobytu, trvalý pobyt na neobmedzený čas,
+  dlhodobý pobyt
+url: https://www.mzv.sk/documents/10182/16461384/004-Application-for-renewal-of-the-temporary-residence-Application-for-permanent-residence-for-an-unlimited-time-long-term-residence.pdf/4e0ef0eb-bc76-db80-b4ac-0f7af22e1daa
+pinnedUrl: null
+staticUrl: null
+formCode: T MV SR 11-056
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: T MV SR 11-056 III/2019; renewal of temporary residence, permanent/long-term residence, EU-citizen
+  registration, family-member documents; Slovak completion required per note 2
+notes: null
+locale: sk+en
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_form
+snapshotPath: null
+sha256: null

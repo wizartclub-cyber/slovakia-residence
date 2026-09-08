@@ -1,0 +1,25 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: upsvr-work-permit-seasonal
+authority: ÚPSVaR
+title: Príloha č. 1 — žiadosť o udelenie povolenia na zamestnanie (aj sezónne)
+url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/12_25/Priloha_1-doplnene_sezonne.doc
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: Príloha č. 1 — žiadosť o udelenie povolenia na zamestnanie (standard or seasonal), with applicant
+  instructions
+notes: null
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_form
+snapshotPath: null
+sha256: null

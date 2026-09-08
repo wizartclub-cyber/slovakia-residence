@@ -1,0 +1,24 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: upsvr-employment-promise
+authority: ÚPSVaR
+title: Príloha č. 7 — prísľub na zamestnanie (obsah nepotvrdený)
+url: https://www.upsvr.gov.sk/buxus/docs/SSZ/OISS/CUDZINCI/2025/Priloha_7_.docx
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: robots.txt failure 2×; expected Príloha č. 7 prísľub na zamestnanie — unconfirmed
+notes: null
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_form
+snapshotPath: null
+sha256: null

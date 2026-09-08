@@ -1,0 +1,24 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: upsvr-2026-07-15-changes
+authority: ÚPSVaR
+title: Legislatívne zmeny v zamestnávaní cudzincov od 15.7.2026 — ÚPSVaR
+url: https://www.upsvr.gov.sk/sluzby-zamestnanosti/aktuality/legislativne-zmeny-v-zamestnavani-cudzincov-od-15.7.2026.html?page_id=1534308
+pinnedUrl: null
+staticUrl: null
+formCode: null
+reviewStatus: draft
+registryStatus: fetch_pending
+potentiallyStale: false
+evidence: robots.txt failure 3×; high-priority page, verify first from owner machine
+notes: null
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-07
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null
