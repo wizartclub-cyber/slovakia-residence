@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import { ANSWER_VALUES } from '../rules/domain.ts';
+import type { Condition } from '../rules/types.ts';
 
 // Схеми юридичних даних. Поля — spec §7. Схеми строгі (.strict): невідоме поле у yaml
 // означає помилку, а не мовчазне ігнорування, щоб описка не зникла з очей.
@@ -51,13 +53,69 @@ export const authorityTypeValues = [
 
 const localizedText = z.object({ uk: nonEmpty, sk: nonEmpty }).strict();
 
+// --- умови маршрутів -------------------------------------------------------
+// Мова умов навмисно крихітна: логічні зв'язки, порівняння відповіді та дати.
+// Значення перевіряються за списком дозволених (domain.ts): описка в yaml
+// інакше просто ніколи не спрацювала б, і маршрут тихо зник би з результатів.
+
+const answerField = z.enum(
+  Object.keys(ANSWER_VALUES) as [keyof typeof ANSWER_VALUES, ...Array<keyof typeof ANSWER_VALUES>],
+);
+
+function valueAllowed(field: keyof typeof ANSWER_VALUES, value: string): boolean {
+  return (ANSWER_VALUES[field] as readonly string[]).includes(value);
+}
+
+export const ConditionSchema: z.ZodType<Condition> = z.lazy(() =>
+  z.union([
+    z.object({ all: z.array(ConditionSchema).min(1) }).strict(),
+    z.object({ any: z.array(ConditionSchema).min(1) }).strict(),
+    z.object({ not: ConditionSchema }).strict(),
+    z
+      .object({ field: answerField, equals: nonEmpty })
+      .strict()
+      .refine((c) => valueAllowed(c.field, c.equals), {
+        message: 'значення не входить у список дозволених для цього поля (src/lib/rules/domain.ts)',
+      }),
+    z
+      .object({ field: answerField, in: z.array(nonEmpty).min(1) })
+      .strict()
+      .refine((c) => c.in.every((v) => valueAllowed(c.field, v)), {
+        message: 'значення не входять у список дозволених для цього поля (src/lib/rules/domain.ts)',
+      }),
+    z.object({ onOrAfter: isoDate }).strict(),
+    z.object({ before: isoDate }).strict(),
+  ]),
+);
+
+export const EligibilityRuleSchema = z
+  .object({
+    id: nonEmpty,
+    // require — умова, без якої маршрут не підходить.
+    // exclude — обставина, яка маршрут виключає.
+    effect: z.enum(['require', 'exclude']),
+    when: ConditionSchema,
+    localizedContentKey: nonEmpty.nullable().default(null),
+    sourceIds,
+  })
+  .strict();
+
+export const TransitionRuleSchema = z
+  .object({
+    id: nonEmpty,
+    when: ConditionSchema,
+    localizedContentKey: nonEmpty.nullable().default(null),
+    sourceIds,
+  })
+  .strict();
+
 export const StepSchema = z
   .object({
     id: nonEmpty,
     order: z.number().int().positive(),
     localizedContentKey: nonEmpty,
     prerequisites: z.array(nonEmpty).default([]),
-    conditions: z.array(z.unknown()).default([]),
+    conditions: z.array(ConditionSchema).default([]),
     actions: z.array(z.unknown()).default([]),
     sourceIds: z.array(nonEmpty).default([]),
   })
@@ -75,12 +133,12 @@ export const ProcedureSchema = z
     reviewedAt: isoDate.nullable().default(null),
     reviewer: nonEmpty.nullable().default(null),
     sourceIds,
-    eligibilityRules: z.array(z.unknown()).default([]),
+    eligibilityRules: z.array(EligibilityRuleSchema).default([]),
     steps: z.array(StepSchema).default([]),
     documentIds: z.array(nonEmpty).default([]),
     feeRuleIds: z.array(nonEmpty).default([]),
     authorityIds: z.array(nonEmpty).default([]),
-    transitionRules: z.array(z.unknown()).default([]),
+    transitionRules: z.array(TransitionRuleSchema).default([]),
     relatedProcedureIds: z.array(nonEmpty).default([]),
     openQuestions: z.array(nonEmpty).default([]),
   })

@@ -40,7 +40,7 @@ export default defineConfig({
   plugins: [contentYaml(), react(), relaxCspInDev()],
   build: { target: 'es2022', assetsInlineLimit: 0 },
   test: {
-    include: ['tests/unit/**/*.test.ts'],
+    include: ['tests/{unit,rules}/**/*.test.ts'],
     environment: 'node',
   },
 });

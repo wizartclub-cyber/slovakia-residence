@@ -18,20 +18,34 @@ reviewer: null         # заповнює юрист; без нього publishe
 sourceIds:
   - slovlex-404-2011
   - mzv-residence-master-guidance
+
+# Умови. effect: require — без цього маршрут не підходить; exclude — це його виключає.
+# Дозволені значення полів: src/lib/rules/domain.ts (білд падає на описці).
+# Мова умов: {field, equals} · {field, in: [...]} · {all: []} · {any: []} · {not: {}}
+#            · {onOrAfter: "РРРР-ММ-ДД"} · {before: "РРРР-ММ-ДД"}
 eligibilityRules:
-  - id: third-country
-    when: { citizenshipGroup: third_country }
-  - id: has-job-offer
-    when: { purpose: employment }
-authorityIds: [ocp-pz-bratislava, zastupitelsky-urad]
+  - id: third-country-national
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: proc.B2.rule.thirdCountry
+    sourceIds: [slovlex-404-2011]
+  - id: purpose-employment
+    effect: require
+    when: { field: purpose, equals: employment }
+    localizedContentKey: proc.B2.rule.purpose
+    sourceIds: [slovlex-404-2011]
+
+authorityIds: [ocp-pz, zastupitelsky-urad]
 feeRuleIds: [fee-tr-employment-first]
-documentIds: [form-11-057, passport, criminal-record, accommodation-proof, health-insurance]
+documentIds: []
 steps:
   - id: s1
     order: 1
     localizedContentKey: proc.B2.s1   # текст у locales/uk та locales/sk
     prerequisites: []
     sourceIds: [mzv-residence-master-guidance]
+
+# Перехідні правила: спрацьовують додатково і додають попередження до маршруту.
 transitionRules: []
 relatedProcedureIds: [A3-national-visa-120]
 openQuestions:

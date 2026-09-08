@@ -24,12 +24,12 @@ DoD = що власник перевіряє руками. Тести — дод
 - [x] Source Library сторінка `/uk/sources`, `/sk/sources`: групування за юридичною силою, дата перевірки, два статуси, посилання
 **DoD:** ✓ сторінка «Джерела» показує 26 записів із датами; `pnpm validate` зелений (56 записів).
 
-## Slice 2 — Rule engine  `[ ]`
-- [ ] `src/lib/rules/evaluate.ts`: `evaluate(answers: Answers) -> RouteMatch[]` — чисті функції, без React
-- [ ] `Answers`: citizenshipGroup (EU / third-country / UA-temporary-protection), currentStatus, location (SK / abroad), purpose, family
-- [ ] Табличні тести Vitest `tests/rules/*.table.test.ts`: `answers -> expected route ids` — мінімум 25 кейсів, включно з межами 15.07.2026 / 01.10.2026
-- [ ] Маршрут повертає `status: reviewed | incomplete` — UI зобов'язаний показати це
-**DoD:** `pnpm test` показує ≥25 зелених кейсів; у NOTES.md таблиця «ситуація → маршрути».
+## Slice 2 — Rule engine  `[x]` (2026-09-08)
+- [x] `src/lib/rules/evaluate.ts`: `evaluate(procedures, answers) -> RouteMatch[]` — чисті функції, без React
+- [x] `Answers`: citizenshipGroup, currentStatus, location, purpose, family + обов'язкова `asOfDate`; дозволені значення в `src/lib/rules/domain.ts`
+- [x] Табличні тести `tests/rules/`: 64 кейси (мінімум був 25), включно з межами 15.07.2026, 01.10.2026 і 15.07.2027
+- [x] Маршрут повертає `status: reviewed | incomplete` + `outcome` з п'яти значень — UI зобов'язаний показати обидва
+**DoD:** ✓ `pnpm test` — 147 зелених (64 на движок); таблиця «ситуація → маршрут» у NOTES.md за 2026-09-08.
 
 ## Slice 3 — Route Finder + Results UI  `[ ]`
 - [ ] Покроковий опитувальник (без імен/паспортів), порядок і тексти питань — у `content/ui/finder.yaml`
@@ -64,6 +64,9 @@ DoD = що власник перевіряє руками. Тести — дод
 **DoD:** сайт публічний; усі 6 маршрутів `legally_reviewed`; решта — з бейджем `incomplete`.
 
 ---
+
+## Правило авторства даних (з'ясовано в Slice 2)
+Маршрут, що має покривати справи, розпочаті **до** зміни закону, не може мати `validFrom` = дата зміни: движок такий маршрут на ранішу дату взагалі не оцінює. Потрібні або ранній `validFrom`, або дві версії маршруту (стара і нова) з `validTo`/`validFrom` на межі. Стосується §131n і всіх перехідних випадків у Slice 5.
 
 ## Борг, що з'явився в Slice 1  `[ ]`
 - `obec` (муніципалітет) як орган — потрібне джерело про hlásenie pobytu.
