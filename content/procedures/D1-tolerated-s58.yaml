@@ -110,10 +110,71 @@ steps:
     afterDecision: false
     prerequisites: []
     sourceIds: [slovlex-145-1995]
+  - id: s4-how-to-apply
+    order: 4
+    title:
+      uk: Хто подає заяву і на який строк дають
+      sk: Kto podáva žiadosť a na aký čas sa udeľuje
+    body:
+      uk: >-
+        §59 ods. 1: пробут надають або продовжують на час тривання підстав, але
+        не більше ніж на 180 днів. Заява подається ОСОБИСТО на офіційному бланку
+        в поліції. За жертву торгівлі людьми (§58 ods. 1 písm. c) і за
+        нелегально працевлаштовану особу (§58 ods. 2) заяву подає орган, що веде
+        кримінальне провадження. За того, хто через безпорадність не може подати
+        заяву сам, це може зробити член родини або вповноважена ним особа; за
+        неповнолітнього без супроводу без опікуна — орган соціально-правового
+        захисту дітей.
+      sk: >-
+        §59 ods. 1: pobyt sa udelí alebo predĺži na čas trvania dôvodov, najviac
+        na 180 dní. Žiadosť sa podáva OSOBNE na úradnom tlačive na polícii; za obeť
+        obchodovania s ľuďmi a nelegálne zamestnanú osobu ju podáva orgán činný
+        v trestnom konaní.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s5-stay-during-procedure
+    order: 5
+    title:
+      uk: Доки триває розгляд, ви маєте право лишатися в Словаччині
+      sk: Počas konania máte právo zdržiavať sa na území SR
+    body:
+      uk: >-
+        §59 ods. 14: хто попросив про надання або продовження толерованого
+        перебування, має право перебувати на території Словаччини аж до рішення
+        за цією заявою. Окремо §59 ods. 15: підтвердження про толероване
+        перебування з назвою «DOČASNÉ ÚTOČISKO», видане тому, хто просив
+        тимчасового захисту, чинне 90 днів від видачі.
+      sk: >-
+        §59 ods. 14: kto požiadal o udelenie alebo predĺženie tolerovaného pobytu,
+        je oprávnený zdržiavať sa na území SR až do rozhodnutia. Potvrdenie
+        s názvom „DOČASNÉ ÚTOČISKO“ platí 90 dní od vydania (ods. 15).
+    afterDecision: false
+    prerequisites: [s4-how-to-apply]
+    sourceIds: [slovlex-404-2011]
+  - id: s6-refusal
+    order: 6
+    title:
+      uk: Чотири підстави для відмови — і виняток для найвразливіших
+      sk: Štyri dôvody zamietnutia — a výnimka pre najzraniteľnejších
+    body:
+      uk: >-
+        §59 ods. 12: відмовлять, якщо людина подала неправдиві чи оманливі дані
+        або підроблені чи чужі документи; якщо не виконує умов; якщо є небажаною
+        особою; або якщо не додала документа за ods. 3. АЛЕ §59 ods. 13 прямо
+        каже: перша і третя підстави НЕ застосовуються до знайдених неповнолітніх
+        (§58 ods. 1 písm. a) і жертв торгівлі людьми (písm. c).
+      sk: >-
+        §59 ods. 12: zamietnu pri nepravdivých údajoch alebo falošných dokladoch,
+        pri nesplnení podmienok, pri nežiaducej osobe a pri chýbajúcom doklade.
+        §59 ods. 13 však vylučuje prvý a tretí dôvod pri §58 ods. 1 písm. a) a c).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
 transitionRules: []
-relatedProcedureIds: []
+relatedProcedureIds: [C2-special-permanent-s45a]
 openQuestions:
   - 'Опитувальник не питає про обставини, які тут вирішальні (знайдена неповнолітня особа, жертва торгівлі людьми, нелегальна експлуатація), тому маршрут показується всім громадянам третіх країн без чинного пробуту. Це навмисно широко: краще показати зайве, ніж сховати шлях від людини у складній ситуації.'
-  - 'Підстави відмови за §59 ods. 12 не внесені.'
+  - 'Підстави відмови за §59 ods. 12 внесені кроком 6; решта §59 (ods. 2–11) не прочитана.'
   - 'Права й обов''язки під час толерованого перебування (§59 і далі) не описані.'
   - 'Продовження толерованого перебування описане лише в частині строків.'

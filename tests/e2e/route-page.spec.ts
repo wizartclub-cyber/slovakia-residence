@@ -285,3 +285,10 @@ test('маршрут §23 показує випадки, коли пробут �
   await expect(steps.last()).toContainText('перші 90 днів пробут не потрібен');
   await expect(steps.last()).toContainText('сезонну зайнятість');
 });
+
+test('толероване перебування: право лишатися до рішення і виняток для вразливих', async ({ page }) => {
+  await page.goto('./uk/route/D1-tolerated-s58');
+  const steps = page.locator('.route-page__steps li');
+  await expect(steps.filter({ hasText: 'право лишатися в Словаччині' })).toHaveCount(1);
+  await expect(steps.filter({ hasText: 'НЕ застосовуються до знайдених неповнолітніх' })).toHaveCount(1);
+});
