@@ -1,0 +1,155 @@
+# Джерело: 404/2011 §111 ods. 1 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+# Перелічені всі обов'язки від a) до t) — вибірковий перелік вводив би в оману.
+id: duties-during-stay-s111
+title:
+  uk: Обов'язки під час пробуту (§111 ods. 1)
+  sk: Povinnosti počas pobytu (§111 ods. 1)
+intro:
+  uk: >-
+    Саме за порушення цих обов'язків найчастіше втрачають пробут — і найменш
+    відомий з них останній: треба фактично перебувати в Словаччині більше
+    половини часу наданого пробуту за календарний рік. Зверніть увагу також на
+    строк у три робочі дні для медичного страхування: він рахується від
+    отримання картки, а не від рішення.
+  sk: >-
+    Práve pre porušenie týchto povinností sa najčastejšie stráca pobyt. Najmenej
+    známa je posledná: treba sa skutočne zdržiavať na území SR viac ako polovicu
+    času udeleného pobytu v kalendárnom roku. Všimnite si aj lehotu troch
+    pracovných dní na zdravotné poistenie — počíta sa od prevzatia dokladu.
+items:
+  - id: d-a
+    text:
+      uk: >-
+        письмово повідомити поліцію, що ви понад 180 днів безперервно перебуватимете поза Словаччиною (якщо маєте наданий пробут)
+      sk: >-
+        písomne oznámiť polícii, že sa budete viac ako 180 dní nepretržite zdržiavať mimo územia SR
+  - id: d-b
+    text:
+      uk: >-
+        подавати правдиво і повно всі дані, які вимагає закон
+      sk: >-
+        uvádzať pravdivo a úplne všetky požadované údaje
+  - id: d-c
+    text:
+      uk: >-
+        на вимогу поліцейського довести особу і законність перебування дійсним проїзним документом і документом про пробут
+      sk: >-
+        na požiadanie preukázať totožnosť a oprávnenosť pobytu platným cestovným dokladom a dokladom o pobyte
+  - id: d-d
+    text:
+      uk: >-
+        укласти медичне страхування щонайпізніше протягом ТРЬОХ РОБОЧИХ ДНІВ від отримання документа про пробут і доводити його при перевірці
+      sk: >-
+        uzatvoriť zdravotné poistenie najneskôr do troch pracovných dní od prevzatia dokladu o pobyte
+  - id: d-e
+    text:
+      uk: >-
+        при перевірці доводити фінансове забезпечення пробуту — щонайменше на рівні життєвого мінімуму на кожен місяць пробуту, що лишився, але не більше ніж на рік наперед; для неповнолітнього — половина цієї суми
+      sk: >-
+        pri kontrole preukázať finančné zabezpečenie najmenej vo výške životného minima na každý mesiac zostávajúceho pobytu, najviac na rok dopredu; pri maloletom polovica
+  - id: d-f
+    text:
+      uk: >-
+        якщо надано шенгенську візу — доводити при перевірці кошти на покриття витрат за §6 на кожен день пробуту, що лишився
+      sk: >-
+        pri schengenskom víze preukázať prostriedky podľa §6 na každý deň zostávajúceho pobytu
+  - id: d-g
+    text:
+      uk: >-
+        повідомляти поліцію про зміну імені, прізвища, сімейного стану, громадянства, даних у проїзному документі протягом П'ЯТИ РОБОЧИХ ДНІВ від зміни, а також про обмін проїзного документа
+      sk: >-
+        hlásiť zmenu mena, priezviska, osobného stavu, štátnej príslušnosti a údajov v cestovnom doklade do piatich pracovných dní
+  - id: d-h
+    text:
+      uk: >-
+        берегти видані за цим законом документи від втрати, крадіжки, пошкодження або зловживання
+      sk: >-
+        chrániť doklady pred stratou, krádežou, poškodením alebo zneužitím
+  - id: d-i
+    text:
+      uk: >-
+        повідомити поліцію про втрату, крадіжку або пошкодження проїзного документа чи документів за цим законом протягом П'ЯТИ РОБОЧИХ ДНІВ від дня, коли ви про це дізналися
+      sk: >-
+        ohlásiť stratu, krádež alebo poškodenie dokladov do piatich pracovných dní odo dňa, keď ste sa o tom dozvedeli
+  - id: d-j
+    text:
+      uk: >-
+        з'явитися на виклик у поліцію у зв'язку з провадженням за цим законом
+      sk: >-
+        dostaviť sa na výzvu na policajný útvar
+  - id: d-k
+    text:
+      uk: >-
+        подати проїзний документ на прохання того, хто надає житло
+      sk: >-
+        predložiť cestovný doklad na žiadosť ubytovateľa
+  - id: d-l
+    text:
+      uk: >-
+        підписати заповнений офіційний бланк про заявлення пробуту (hlásenie pobytu)
+      sk: >-
+        podpísať vyplnené úradné tlačivo o hlásení pobytu
+  - id: d-m
+    text:
+      uk: >-
+        надати дані, потрібні для статистичного обстеження про пробут
+      sk: >-
+        poskytnúť údaje potrebné na štatistické zisťovanie
+  - id: d-n
+    text:
+      uk: >-
+        повідомити поліцію протягом ТРЬОХ РОБОЧИХ ДНІВ, що мета, для якої надано пробут, відпала
+      sk: >-
+        oznámiť do troch pracovných dní, že účel pobytu zanikol
+  - id: d-o
+    text:
+      uk: >-
+        на вимогу поліції або закордонної установи пройти зняття біометричних даних
+      sk: >-
+        podrobiť sa snímaniu biometrických údajov
+  - id: d-p
+    text:
+      uk: >-
+        виїхати щонайпізніше в останній день законного пробуту; окремі строки діють після відмови в наданні чи обновленні пробуту або після його скасування
+      sk: >-
+        vycestovať najneskôr posledný deň oprávneného pobytu; osobitné lehoty platia po zamietnutí alebo zrušení pobytu
+  - id: d-q
+    text:
+      uk: >-
+        протягом П'ЯТИ РОБОЧИХ ДНІВ попросити про видачу нового документа про пробут, якщо записи в ньому не відповідають дійсності або документ втрачено чи пошкоджено
+      sk: >-
+        do piatich pracovných dní požiadať o nový doklad o pobyte, ak záznamy nezodpovedajú skutočnosti
+  - id: d-r
+    text:
+      uk: >-
+        невідкладно здати поліції або закордонній установі недійсний документ, а також знайдений документ іншого іноземця
+      sk: >-
+        bezodkladne odovzdať neplatný doklad alebo nájdený doklad iného cudzinca
+  - id: d-s
+    text:
+      uk: >-
+        повідомити поліцію, якщо перебуватимете в межах Словаччини поза місцем наданого пробуту безперервно понад 30 днів
+      sk: >-
+        oznámiť, že sa budete zdržiavať mimo miesta udeleného pobytu nepretržite viac ako 30 dní
+  - id: d-t
+    text:
+      uk: >-
+        перебувати в Словаччині БІЛЬШЕ ПОЛОВИНИ часу наданого тимчасового пробуту в календарному році. Це не стосується дослідників за §26 і тих, хто користується мобільністю в іншій державі-члені. За §36 ods. 1 písm. d) порушення цього обов'язку є підставою СКАСУВАТИ пробут; воно також не діє для §29 і §30 та якщо між наданням пробуту і кінцем календарного року менше ніж 90 днів.
+      sk: >-
+        zdržiavať sa na území SR viac ako polovicu času udeleného prechodného pobytu v kalendárnom roku; neplatí pri §26 a pri mobilite v inom členskom štáte. Porušenie je podľa §36 ods. 1 písm. d) dôvodom na ZRUŠENIE pobytu.
+appliesTo:
+  - B1-business-s22
+  - B10-blue-card-s37
+  - B2-employment-s23
+  - B3-study-s24
+  - B5-research-s26
+  - B6-family-s27
+  - B8-slovak-abroad-s29
+  - B9-longterm-other-state-s30
+  - C1-permanent-s43
+  - C3-permanent-s46
+  - C4-longterm-s52
+  - D1-tolerated-s58
+  - G1-renewal-s34
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

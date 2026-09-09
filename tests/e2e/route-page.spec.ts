@@ -209,3 +209,13 @@ test('сторінка попереджає, хто може бути предс
   // Рішення про надання пробуту оскарженню не підлягає — отже оскаржують відмови.
   await expect(note).toContainText('НАДАННЯ пробуту');
 });
+
+test('перелічені обов\'язки під час пробуту, включно з правилом половини часу', async ({ page }) => {
+  await page.goto(B2);
+  const note = page.locator('section').filter({ hasText: "Обов'язки під час пробуту" }).last();
+
+  // У законі рівно двадцять обов'язків, від a) до t).
+  await expect(note.locator('li')).toHaveCount(20);
+  await expect(note).toContainText('БІЛЬШЕ ПОЛОВИНИ часу');
+  await expect(note).toContainText('ТРЬОХ РОБОЧИХ ДНІВ');
+});
