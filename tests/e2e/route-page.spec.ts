@@ -219,3 +219,16 @@ test('перелічені обов\'язки під час пробуту, вк
   await expect(note).toContainText('БІЛЬШЕ ПОЛОВИНИ часу');
   await expect(note).toContainText('ТРЬОХ РОБОЧИХ ДНІВ');
 });
+
+test('попереджає, що картку видадуть на строк житла, а не пробуту', async ({ page }) => {
+  await page.goto(B2);
+  const note = page.locator('section').filter({ hasText: 'Картка проживання' }).last();
+  await expect(note).toContainText('якщо житло забезпечене на коротший час');
+  await expect(note).toContainText('oprávnenie pracovať');
+});
+
+test('маршрут додаткового захисту пояснює, що статус прирівняний до постійного', async ({ page }) => {
+  await page.goto('./uk/route/E3-subsidiary-protection-s31');
+  await expect(page.getByText('ПОСТІЙНЕ ПРОЖИВАННЯ', { exact: false })).toBeVisible();
+  await expect(page.getByText('це не обов\'язок органу, а його право', { exact: false })).toBeVisible();
+});

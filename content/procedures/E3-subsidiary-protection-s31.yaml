@@ -1,0 +1,145 @@
+# Наповнено з тексту закону 69/2026 §31, §33, §34, §48 (снапшот slovlex-69-2026).
+id: E3-subsidiary-protection-s31
+category: E
+title:
+  uk: Додатковий захист і гуманітарний притулок (69/2026 §31, §33, §34)
+  sk: Doplnková ochrana a humanitárny azyl (69/2026 §31, §33, §34)
+legalBasis:
+  - '69/2026 §31'
+  - '69/2026 §33'
+  - '69/2026 §34'
+  - '69/2026 §48'
+validFrom: '2026-06-12'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-69-2026
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    На невизначений час — і додатковий захист (§31 ods. 2, §33 ods. 4), і
+    гуманітарний притулок (§34 ods. 2).
+  sk: >-
+    Na dobu neurčitú — doplnková ochrana (§31 ods. 2, §33 ods. 4) aj humanitárny
+    azyl (§34 ods. 2).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-purpose-protection
+    effect: require
+    when: { field: purpose, equals: protection }
+    localizedContentKey: null
+    sourceIds: [slovlex-69-2026]
+formSourceIds: []
+authorityIds: [mv-sr]
+feeRuleIds: []
+documentIds: []
+steps:
+  - id: s1-serious-harm
+    order: 1
+    title:
+      uk: Додатковий захист через серйозну несправедливість
+      sk: Doplnková ochrana z dôvodu vážneho bezprávia
+    body:
+      uk: >-
+        §31 ods. 1: міністерство внутрішніх справ надає додатковий захист
+        заявникові, який виконує умови для його надання за окремим приписом,
+        якщо немає підстав для виключення. Захист надається на невизначений час.
+        Це окремий від притулку статус: притулок за §30 стосується
+        переслідування, додатковий захист — серйозної несправедливості.
+      sk: >-
+        §31 ods. 1: ministerstvo vnútra udelí doplnkovú ochranu žiadateľovi, ktorý
+        spĺňa podmienky podľa osobitného predpisu, ak nie sú dôvody na vylúčenie.
+        Udeľuje sa na dobu neurčitú.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s2-family
+    order: 2
+    title:
+      uk: Додатковий захист для возз'єднання родини — три умови
+      sk: Doplnková ochrana na účel zlúčenia rodiny — tri podmienky
+    body:
+      uk: >-
+        §33 ods. 2: (a) возз'єднання відбувається з особою, якій надано додатковий
+        захист через серйозну несправедливість; (b) ця особа заздалегідь письмово
+        погоджується; (c) член родини не має в Словаччині наданого постійного
+        проживання. Захист надається також дитині, народженій жінкою з додатковим
+        захистом на території Словаччини (§33 ods. 3). Повнолітньою неутримуваною
+        дитиною для цієї мети закон вважає особу, яка не здатна подбати про себе
+        через фізичний або психічний стан, пов'язаний із тяжкою тривалою хворобою
+        чи тяжкою інвалідністю (§33 ods. 5).
+      sk: >-
+        §33 ods. 2: (a) zlúčenie s cudzincom s doplnkovou ochranou z dôvodu vážneho
+        bezprávia; (b) jeho predchádzajúci písomný súhlas; (c) rodinný príslušník
+        nemá v SR udelený trvalý pobyt. Ochrana sa udelí aj dieťaťu narodenému
+        cudzinke s doplnkovou ochranou na území SR (§33 ods. 3).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s3-humanitarian
+    order: 3
+    title:
+      uk: Гуманітарний притулок — коли інших підстав не знайдено
+      sk: Humanitárny azyl — keď sa iné dôvody nezistia
+    body:
+      uk: >-
+        §34 ods. 1: міністерство МОЖЕ надати гуманітарний притулок, якщо у
+        провадженні не встановлено підстав за §30–§33. Зверніть увагу на слово
+        «може»: на відміну від решти підстав, це не обов'язок органу, а його
+        право. Надається на невизначений час.
+      sk: >-
+        §34 ods. 1: ministerstvo MÔŽE udeliť humanitárny azyl, ak sa v konaní
+        nezistia dôvody podľa §30 až §33. Na rozdiel od ostatných dôvodov nejde
+        o povinnosť orgánu, ale o jeho možnosť.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s4-status
+    order: 4
+    title:
+      uk: Статус прирівняний до постійного проживання
+      sk: Status je postavený na roveň trvalému pobytu
+    body:
+      uk: >-
+        §48 ods. 1: особа з притулком і особа з наданим додатковим захистом
+        вважаються іноземцем, якому надано ПОСТІЙНЕ ПРОЖИВАННЯ. Поліція видає їм
+        документ про пробут (ods. 2), а міністерство забезпечує ознайомлення з
+        правами й обов'язками (ods. 3). За письмовою заявою міністерство може на
+        необхідний час поселити людину в таборі, де вона відповідно оплачує
+        витрати (ods. 4).
+      sk: >-
+        §48 ods. 1: azylant a cudzinec s doplnkovou ochranou sa považujú za
+        cudzinca, ktorému sa udelil TRVALÝ POBYT. Policajný útvar im vystaví doklad
+        o pobyte (ods. 2).
+    afterDecision: true
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s5-duties
+    order: 5
+    title:
+      uk: Обов'язки після надання захисту
+      sk: Povinnosti po udelení ochrany
+    body:
+      uk: >-
+        §48 ods. 5: співпрацювати з міністерством і компетентними органами щодо
+        інтеграції; дотримуватися внутрішнього порядку табору під час перебування
+        в ньому; невідкладно повідомляти міністерство про набуття громадянства
+        іншої держави, про надання міжнародного захисту іншою державою-членом ЄС
+        і про надання пробуту без часового обмеження в іншій державі.
+      sk: >-
+        §48 ods. 5: spolupracovať pri integrácii; dodržiavať vnútorný poriadok
+        tábora; bezodkladne oznámiť nadobudnutie občianstva iného štátu, udelenie
+        medzinárodnej ochrany iným členským štátom EÚ a udelenie pobytu bez
+        časového obmedzenia v inom štáte.
+    afterDecision: true
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+transitionRules: []
+relatedProcedureIds: [E1-protection-application-s3, E2-asylum-persecution-s30]
+openQuestions:
+  - 'Самі умови надання додаткового захисту закон 69/2026 не перелічує — він посилається на окремий припис, якого в реєстрі немає.'
+  - 'Підстави припинення (§37) і відібрання (§38) додаткового захисту не описані.'
+  - 'Права за §57 (допомога особам із захистом) не описані.'
+  - 'Прочитано §31, §33, §34 і §48; решта закону 69/2026 — ні.'

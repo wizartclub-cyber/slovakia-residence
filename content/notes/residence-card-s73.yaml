@@ -1,0 +1,72 @@
+# Джерело: 404/2011 §73 і §111, 145/1995 položka 24 (снапшоти, прочитано 2026-09-09).
+id: residence-card-s73
+title:
+  uk: 'Картка проживання: строк, позначки, збори (§73)'
+  sk: 'Doklad o pobyte: platnosť, poznámky, poplatky (§73)'
+intro:
+  uk: >-
+    Найважливіше тут — друге правило: строк картки може виявитися коротшим за
+    строк наданого пробуту, якщо договір про житло коротший. Це те, через що
+    люди несподівано опиняються з простроченою карткою при чинному пробуті.
+  sk: >-
+    Najdôležitejšie je druhé pravidlo: platnosť dokladu môže byť kratšia ako
+    udelený pobyt, ak je kratšie zabezpečené ubytovanie.
+items:
+  - id: c-a
+    text:
+      uk: >-
+        Поліція видає документ про пробут протягом 30 днів від надання чи обновлення пробуту, якщо заяву подано в поліції. Якщо заяву подано через електронну послугу — 30 днів рахуються від зняття біометричних даних (§73 ods. 1).
+      sk: >-
+        Policajný útvar vydá doklad o pobyte do 30 dní od udelenia alebo obnovenia pobytu; pri elektronickom podaní od nasnímania biometrických údajov (§73 ods. 1).
+  - id: c-b
+    text:
+      uk: >-
+        УВАГА: строк чинності картки дорівнює строку наданого пробуту — АЛЕ якщо житло забезпечене на коротший час, картку видадуть лише на строк житла (§73 ods. 4). Тобто договір оренди на пів року скорочує картку до пів року, навіть якщо пробут надано на п'ять.
+      sk: >-
+        POZOR: platnosť dokladu zodpovedá času udeleného pobytu, ale ak je ubytovanie zabezpečené na kratší čas, doklad sa vydá len na čas ubytovania (§73 ods. 4).
+  - id: c-c
+    text:
+      uk: >-
+        Картка містить слова «oprávnenie pracovať» (право працювати), якщо це тимчасовий пробут за §24–§27, §29 або §30 (§73 ods. 3). Частиною картки є електронний чип.
+      sk: >-
+        Doklad obsahuje slová „oprávnenie pracovať“, ak ide o pobyt podľa §24 až 27, 29 alebo §30 (§73 ods. 3). Súčasťou je elektronický čip.
+  - id: c-d
+    text:
+      uk: >-
+        У полі «вид пробуту» проставляють: «ICT» — для внутрішньокорпоративного переказу за §23 ods. 5; «Modrá karta EÚ» — для синьої карти; «osoba s dlhodobým pobytom – EÚ» — для довгострокового пробуту за §52 (§73 ods. 5–7).
+      sk: >-
+        V položke „druh pobytu“ sa uvádza „ICT“, „Modrá karta EÚ“ alebo „osoba s dlhodobým pobytom – EÚ“ (§73 ods. 5–7).
+  - id: c-e
+    text:
+      uk: >-
+        Якщо людині надавали міжнародний захист, це зазначають у полі «примітки» разом із державою і датою; поліція перед видачею запитує ту державу, чи захист іще триває (§73 ods. 6, 8, 9).
+      sk: >-
+        Ak bola osobe poskytnutá medzinárodná ochrana, uvedie sa to v položke „poznámky“ spolu so štátom a dátumom (§73 ods. 6, 8, 9).
+  - id: c-f
+    text:
+      uk: >-
+        Збір за видачу картки: 10 € зі звичайною доставкою протягом 30 днів, 39 € протягом двох робочих днів. Заміна втраченої, знищеної, пошкодженої або викраденої — 29 €, прискорено 54 € (145/1995, положка 24 písm. f) і g).
+      sk: >-
+        Poplatok: 10 eur s doručením do 30 dní, 39 eur do dvoch pracovných dní; náhrada za stratený doklad 29 eur, zrýchlene 54 eur (145/1995, položka 24 písm. f) a g).
+  - id: c-g
+    text:
+      uk: >-
+        Про втрату, крадіжку або пошкодження документа треба повідомити поліцію протягом п'яти робочих днів, і в той самий строк попросити новий, якщо записи в ньому не відповідають дійсності (§111 ods. 1 písm. i) і q).
+      sk: >-
+        Stratu, krádež alebo poškodenie treba ohlásiť do piatich pracovných dní a v tej istej lehote požiadať o nový doklad (§111 ods. 1 písm. i) a q).
+appliesTo:
+  - B1-business-s22
+  - B10-blue-card-s37
+  - B2-employment-s23
+  - B3-study-s24
+  - B4-special-activity-s25
+  - B5-research-s26
+  - B6-family-s27
+  - B8-slovak-abroad-s29
+  - B9-longterm-other-state-s30
+  - C1-permanent-s43
+  - C3-permanent-s46
+  - C4-longterm-s52
+  - G1-renewal-s34
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011, slovlex-145-1995]
