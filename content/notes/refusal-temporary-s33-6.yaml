@@ -1,0 +1,111 @@
+# Підстави, з яких поліція ЗОБОВ'ЯЗАНА відмовити в тимчасовому проживанні.
+# Джерело: 404/2011 §33 ods. 6 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+# Перелічені всі п'ятнадцять — вибірковий перелік вводив би в оману.
+id: refusal-temporary-s33-6
+title:
+  uk: Через що відмовляють у тимчасовому проживанні (§33 ods. 6)
+  sk: Prečo sa žiadosť o prechodný pobyt zamietne (§33 ods. 6)
+intro:
+  uk: >-
+    Це не «можуть відмовити», а «відмовлять»: закон формулює ці підстави як
+    обов'язок органу. Перелік повний і поданий у порядку закону.
+  sk: >-
+    Nejde o „môžu zamietnuť“, ale o „zamietnu“: zákon formuluje tieto dôvody ako
+    povinnosť orgánu. Zoznam je úplný a v poradí podľa zákona.
+items:
+  - id: g-a
+    text:
+      uk: >-
+        особа є небажаною особою (nežiaduca osoba)
+      sk: >-
+        štátny príslušník tretej krajiny je nežiaducou osobou
+  - id: g-b
+    text:
+      uk: >-
+        є обґрунтована підозра, що під час перебування особа загрожуватиме безпеці держави, публічному порядку або публічному здоров'ю
+      sk: >-
+        je dôvodné podozrenie, že pri pobyte ohrozí bezpečnosť štátu, verejný poriadok alebo verejné zdravie
+  - id: g-c
+    text:
+      uk: >-
+        особа не виконує умов для надання тимчасового проживання
+      sk: >-
+        nespĺňa podmienky na udelenie prechodného pobytu
+  - id: g-d
+    text:
+      uk: >-
+        особа уклала фіктивний шлюб (účelové manželstvo)
+      sk: >-
+        uzavrel účelové manželstvo
+  - id: g-e
+    text:
+      uk: >-
+        особа подала неправдиві або оманливі дані, підроблені чи змінені документи або документ іншої особи
+      sk: >-
+        uviedol nepravdivé alebo zavádzajúce údaje alebo predložil falošné, pozmenené doklady alebo doklad inej osoby
+  - id: g-f
+    text:
+      uk: >-
+        дані у проїзному документі не відповідають дійсності
+      sk: >-
+        údaje v cestovnom doklade nezodpovedajú skutočnosti
+  - id: g-g
+    text:
+      uk: >-
+        надання тимчасового проживання не відповідає публічному інтересу
+      sk: >-
+        udelenie prechodného pobytu nie je vo verejnom záujme
+  - id: g-h
+    text:
+      uk: >-
+        очевидно, що забезпечене житло не відповідає мінімальним вимогам за окремим приписом
+      sk: >-
+        je zjavné, že zabezpečené ubytovanie nespĺňa minimálne požiadavky podľa osobitného predpisu
+  - id: g-i
+    text:
+      uk: >-
+        є обґрунтована підозра, що учень або студент за §24 ods. 1 písm. a) чи b) не зможе виконувати мету перебування
+      sk: >-
+        existuje dôvodné podozrenie, že osoba podľa §24 ods. 1 písm. a) alebo b) nebude vedieť plniť účel pobytu
+  - id: g-j
+    text:
+      uk: >-
+        особа просить пробут за §22 після того, як попередній пробут за §22 припинився з підстав §35 písm. b) або c), і компанія, від імені якої вона діяла, не сплатила податок за попередній період у розмірі за §34 ods. 6; це не діє, якщо між припиненням і новою заявою минуло понад 12 місяців
+      sk: >-
+        žiada o pobyt podľa §22 po zániku predchádzajúceho pobytu podľa §35 písm. b) alebo c) a spoločnosť nezaplatila daň podľa §34 ods. 6; neplatí, ak uplynulo viac ako 12 mesiacov
+  - id: g-k
+    text:
+      uk: >-
+        особа просить пробут за §23 ods. 4 (сезонна зайнятість), а чинність її проїзного документа коротша за 90 днів
+      sk: >-
+        žiada o pobyt podľa §23 ods. 4 a platnosť cestovného dokladu je kratšia ako 90 dní
+  - id: g-l
+    text:
+      uk: >-
+        особа просить пробут за §23 ods. 4, і є обґрунтована підозра, що після закінчення пробуту вона не покине територію Словаччини
+      sk: >-
+        žiada o pobyt podľa §23 ods. 4 a je dôvodné podozrenie, že po skončení pobytu neopustí územie SR
+  - id: g-m
+    text:
+      uk: >-
+        особа просить пробут за §23 ods. 5 (внутрішньокорпоративний переказ), а роботодавець створений головно щоб полегшувати такі переказ, або вичерпано максимальну тривалість пробуту
+      sk: >-
+        žiada o pobyt podľa §23 ods. 5 a zamestnávateľ bol založený hlavne na uľahčovanie presunov alebo vyčerpal maximálnu dĺžku pobytu
+  - id: g-n
+    text:
+      uk: >-
+        особа просить пробут за §25 ods. 1 písm. d), а спрямування стажування не збігається з отриманою вищою освітою або з поточним навчанням
+      sk: >-
+        žiada o pobyt podľa §25 ods. 1 písm. d) a zameranie stáže sa nezhoduje so vzdelaním alebo štúdiom
+  - id: g-o
+    text:
+      uk: >-
+        особа просить пробут за §25 ods. 1 písm. h) і на день подання заяви молодша за 15 років
+      sk: >-
+        žiada o pobyt podľa §25 ods. 1 písm. h) a v čase podania je mladšia ako 15 rokov
+appliesTo:
+  - B1-business-s22
+  - B2-employment-s23
+  - B6-family-s27
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

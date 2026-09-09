@@ -1,7 +1,15 @@
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { usePageTitle } from '../../app/usePageTitle';
-import { authorityById, documentById, fees, procedureById, sourceById, thresholds } from '../../lib/content';
+import {
+  authorityById,
+  documentById,
+  fees,
+  notesForProcedure,
+  procedureById,
+  sourceById,
+  thresholds,
+} from '../../lib/content';
 import { publicStatus } from '../../lib/content/schema';
 import type { Document, FeeRule, Source } from '../../lib/content/schema';
 import { derivedAmount } from '../../lib/content/thresholds';
@@ -34,6 +42,7 @@ export function RoutePage() {
   const attachments = docs.filter((d) => !d.afterDecision);
   const afterDecisionDocs = docs.filter((d) => d.afterDecision);
   const steps = [...procedure.steps].sort((a, b) => a.order - b.order);
+  const notes = notesForProcedure(procedure.id);
   const stepsBefore = steps.filter((s) => !s.afterDecision);
   const stepsAfter = steps.filter((s) => s.afterDecision);
   const forms = procedure.formSourceIds.map((sid) => sourceById(sid)).filter(isSource);
@@ -155,6 +164,17 @@ export function RoutePage() {
           </>
         )}
       </Section>
+
+      {notes.map((note) => (
+        <Section key={note.id} title={localized(note.title, lang)}>
+          {note.intro && <p>{localized(note.intro, lang)}</p>}
+          <ol className="route-page__grounds">
+            {note.items.map((item) => (
+              <li key={item.id}>{localized(item.text, lang)}</li>
+            ))}
+          </ol>
+        </Section>
+      ))}
 
       <Section title={t('route.authority')}>
         {procedure.authorityIds.map((aid) => {

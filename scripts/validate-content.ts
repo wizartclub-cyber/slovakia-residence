@@ -15,6 +15,7 @@ import type { ZodTypeAny } from 'zod';
 import {
   AuthoritySchema,
   FinderConfigSchema,
+  LegalNoteSchema,
   DocumentSchema,
   FeeRuleSchema,
   ProcedureSchema,
@@ -34,6 +35,7 @@ const SCHEMAS: Record<string, ZodTypeAny> = {
   sources: SourceSchema,
   thresholds: ThresholdSchema,
   authorities: AuthoritySchema,
+  notes: LegalNoteSchema,
 };
 
 const errors: string[] = [];
@@ -50,6 +52,7 @@ const declaredIds: Record<string, Set<string>> = {
 const references: Array<{ file: string; field: string; kind: string; id: string }> = [];
 
 const REFERENCE_FIELDS: Record<string, string> = {
+  appliesTo: 'procedures',
   authorityIds: 'authorities',
   feeRuleIds: 'fees',
   documentIds: 'documents',

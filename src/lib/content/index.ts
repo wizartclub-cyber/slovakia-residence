@@ -11,6 +11,7 @@ import type {
   Document,
   FeeRule,
   FinderConfig,
+  LegalNote,
   Procedure,
   Source,
   Threshold,
@@ -51,6 +52,15 @@ export const finder = finderRaw as FinderConfig;
 export const documents = loadAll<Document>(
   import.meta.glob('../../../content/documents/*.yaml', { eager: true, import: 'default' }),
 ).sort((a, b) => a.id.localeCompare(b.id));
+
+export const legalNotes = loadAll<LegalNote>(
+  import.meta.glob('../../../content/notes/*.yaml', { eager: true, import: 'default' }),
+).sort((a, b) => a.id.localeCompare(b.id));
+
+/** Спільні юридичні примітки, що стосуються цього маршруту. */
+export function notesForProcedure(procedureId: string): LegalNote[] {
+  return legalNotes.filter((n) => n.appliesTo.includes(procedureId));
+}
 
 export function documentById(id: string): Document | undefined {
   return documents.find((d) => d.id === id);

@@ -141,3 +141,20 @@ describe('збори', () => {
     }
   });
 });
+
+describe('спільні юридичні примітки', () => {
+  it('підстави для відмови перелічені повністю — усі 15 із §33 ods. 6', async () => {
+    const { legalNotes } = await import('../../src/lib/content/index.ts');
+    const refusal = legalNotes.find((n) => n.id === 'refusal-temporary-s33-6');
+    expect(refusal?.items.length).toBe(15);
+  });
+
+  it('кожна примітка має джерело і стосується наявних маршрутів', async () => {
+    const { legalNotes, procedures } = await import('../../src/lib/content/index.ts');
+    const ids = new Set(procedures.map((p) => p.id));
+    for (const note of legalNotes) {
+      expect(note.sourceIds.length).toBeGreaterThan(0);
+      for (const target of note.appliesTo) expect(ids.has(target)).toBe(true);
+    }
+  });
+});

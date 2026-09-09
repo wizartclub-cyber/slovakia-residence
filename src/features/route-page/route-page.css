@@ -178,3 +178,11 @@
 .route-page__fee-exemptions li {
   margin-bottom: 6px;
 }
+
+.route-page__grounds {
+  font-size: 14px;
+}
+
+.route-page__grounds li {
+  margin-bottom: 8px;
+}

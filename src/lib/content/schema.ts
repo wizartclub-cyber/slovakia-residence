@@ -344,6 +344,24 @@ export const SiteConfigSchema = z
     message: 'defaultLocale має бути серед locales',
   });
 
+// Спільна юридична примітка, що стосується кількох маршрутів (наприклад,
+// підстави для відмови). Зберігається окремо, щоб не дублювати текст.
+export const LegalNoteSchema = z
+  .object({
+    id: nonEmpty,
+    title: localizedText,
+    intro: localizedTextOptional,
+    items: z
+      .array(z.object({ id: nonEmpty, text: localizedText }).strict())
+      .min(1),
+    appliesTo: z.array(nonEmpty).min(1),
+    reviewStatus: reviewStatus.default('draft'),
+    sourceIds,
+  })
+  .strict();
+
+export type LegalNote = z.infer<typeof LegalNoteSchema>;
+
 export const FinderConfigSchema = z
   .object({
     steps: z

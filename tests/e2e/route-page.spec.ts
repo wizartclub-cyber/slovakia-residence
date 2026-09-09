@@ -153,3 +153,14 @@ test('чеклист словацькою показує ті самі доку�
   await expect(page.getByText('Platný cestovný doklad').first()).toBeVisible();
   await expect(page.getByText('nie starší ako 90 dní').first()).toBeVisible();
 });
+
+test('на сторінці перелічені всі підстави для відмови (§33 ods. 6)', async ({ page }) => {
+  await page.goto(B2);
+
+  const grounds = page.locator('.route-page__grounds li');
+  // У законі рівно п'ятнадцять підстав, від a) до o). Неповний перелік
+  // вводив би в оману, тому число зафіксоване.
+  await expect(grounds).toHaveCount(15);
+  await expect(page.getByText('фіктивний шлюб', { exact: false })).toBeVisible();
+  await expect(page.getByText('Це не «можуть відмовити», а «відмовлять»', { exact: false })).toBeVisible();
+});
