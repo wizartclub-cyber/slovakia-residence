@@ -83,7 +83,16 @@ describe('маршрути', () => {
 
 describe('опитувальник', () => {
   it('не питає нічого, що ідентифікує людину (spec §8)', () => {
-    const allowed = ['citizenshipGroup', 'currentStatus', 'location', 'purpose', 'family'];
+    // Білий список навмисно жорсткий: додати сюди поле можна лише свідомо,
+    // переконавшись, що воно описує СИТУАЦІЮ, а не конкретну людину.
+    const allowed = [
+      'citizenshipGroup',
+      'currentStatus',
+      'location',
+      'purpose',
+      'family',
+      'specialStatus',
+    ];
     for (const step of finder.steps) expect(allowed).toContain(step.field);
   });
 

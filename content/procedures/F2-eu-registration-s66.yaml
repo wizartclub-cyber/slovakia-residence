@@ -1,0 +1,93 @@
+# Наповнено з тексту §65 і §66 (снапшот slovlex-404-2011).
+id: F2-eu-registration-s66
+category: F
+title:
+  uk: Громадянин ЄС — реєстрація перебування понад три місяці (§66)
+  sk: Občan Únie — registrácia pobytu nad tri mesiace (§66)
+legalBasis:
+  - '404/2011 §65'
+  - '404/2011 §66'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds: [slovlex-404-2011]
+conditionsComplete: false
+grantedFor: null
+decisionDeadline: null
+eligibilityRules:
+  - id: r-eu-citizen
+    effect: require
+    when: { field: citizenshipGroup, equals: eu_eea_ch }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-056]
+authorityIds: [ocp-pz]
+feeRuleIds: []
+documentIds: []
+steps:
+  - id: s1-when
+    order: 1
+    title:
+      uk: Подати протягом 30 днів після трьох місяців перебування
+      sk: Podať do 30 dní po uplynutí troch mesiacov
+    body:
+      uk: >-
+        §66 ods. 1: громадянин ЄС, який перебуває в Словаччині довше за три
+        місяці, зобов'язаний просити про реєстрацію перебування. Заява подається
+        на офіційному бланку особисто в поліції або через електронну службу
+        протягом 30 днів від закінчення трьох місяців із дня в'їзду.
+      sk: >-
+        §66 ods. 1: občan Únie, ktorý sa zdržiava dlhšie ako tri mesiace, je
+        povinný požiadať o registráciu pobytu. Žiadosť sa podáva na úradnom tlačive
+        osobne alebo elektronickou službou do 30 dní od uplynutia troch mesiacov.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-grounds
+    order: 2
+    title:
+      uk: Шість підстав для перебування понад три місяці
+      sk: Šesť dôvodov pobytu nad tri mesiace
+    body:
+      uk: >-
+        §65 ods. 1: (a) працевлаштування в Словаччині; (b) самостійна заробіткова
+        діяльність; (c) достатні кошти для себе і родини, щоб не стати тягарем
+        для системи допомоги в матеріальній скруті, плюс медичне страхування в
+        Словаччині; (d) навчання в основній, середній або вищій школі;
+        (e) обґрунтоване припущення, що особа працевлаштується; (f) член родини
+        громадянина ЄС, який виконує умови за підпунктами a)–e).
+      sk: >-
+        §65 ods. 1: (a) zamestnanie v SR; (b) samostatná zárobková činnosť;
+        (c) dostatočné zdroje pre seba a rodinu plus zdravotné poistenie;
+        (d) štúdium na základnej, strednej alebo vysokej škole; (e) predpoklad
+        zamestnania; (f) rodinný príslušník občana Únie podľa písmen a) až e).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-documents
+    order: 3
+    title:
+      uk: Документи залежать від підстави
+      sk: Doklady závisia od dôvodu
+    body:
+      uk: >-
+        §66 ods. 2–4: для працевлаштування — дійсне посвідчення особи або
+        проїзний документ і обіцянка роботодавця чи підтвердження про прийняття
+        на роботу; для самостійної діяльності — документ, що це доводить;
+        для достатніх коштів — окремий перелік за §66 ods. 4.
+      sk: >-
+        §66 ods. 2–4: pri zamestnaní platný preukaz totožnosti alebo cestovný
+        doklad a prísľub či potvrdenie zamestnávateľa; pri samostatnej zárobkovej
+        činnosti doklad o nej; pri dostatočných zdrojoch zoznam podľa §66 ods. 4.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [F1-eu-short-stay-s64, F7-eu-permanent-s67]
+openQuestions:
+  - 'Повний перелік документів за §66 ods. 4 і далі прочитано лише частково.'
+  - 'Збір за реєстрацію не встановлений: у položci 24 тарифу цієї процедури немає.'
+  - 'Бланк 11-056 за описом реєстру покриває реєстрацію громадянина ЄС — підтвердити за самим бланком після зняття копії.'
+  - 'Права членів родини громадянина ЄС, які не є громадянами ЄС, описані окремо в законі й тут не наведені.'

@@ -27,6 +27,14 @@ steps:
       - temporary_protection
       - tolerated_stay
       - international_protection_applicant
+  - id: specialStatus
+    field: specialStatus
+    options:
+      - none
+      - slovak_living_abroad
+      - long_term_resident_other_eu
+      - blue_card_other_state
+      - family_of_eu_citizen
   - id: family
     field: family
     options: [none, spouse_of_sk_citizen, spouse_of_resident, child_of_resident, dependent_relative]

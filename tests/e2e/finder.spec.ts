@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 /** Порядок питань — з content/ui/finder.yaml. */
-const STEP_IDS = ['citizenship', 'location', 'purpose', 'currentStatus', 'family'];
+const STEP_IDS = ['citizenship', 'location', 'purpose', 'currentStatus', 'specialStatus', 'family'];
 
 /** Проходить опитувальник: де є відповідь — обирає її, де немає — пропускає. */
 async function fillFinder(
@@ -45,11 +45,14 @@ test('маршрут із неповними умовами не обіцяє п
   await expect(card.getByText('Умови цього маршруту ще не внесені повністю', { exact: false })).toBeVisible();
 });
 
-test('громадянин ЄС не отримує маршрутів для третіх країн', async ({ page }) => {
+test('громадянин ЄС отримує маршрути за правом ЄС, а не для третіх країн', async ({ page }) => {
   await page.goto('./uk/finder');
   await fillFinder(page, { citizenship: 'eu_eea_ch' }, UK);
 
-  await expect(page.getByText('жоден із наявних маршрутів не підходить', { exact: false })).toBeVisible();
+  const offered = page.locator('.route-card');
+  await expect(offered.filter({ hasText: 'Громадянин ЄС' }).first()).toBeVisible();
+  // Маршрути для третіх країн мають опинитися серед тих, що не підійшли.
+  await expect(offered.filter({ hasText: 'працевлаштування (§23)' })).toHaveCount(0);
   await expect(page.getByRole('button', { name: /Показати, що не підійшло/ })).toBeVisible();
 });
 
@@ -60,7 +63,7 @@ test('перезавантаження стирає відповіді (DoD)', a
 
   await page.reload();
 
-  await expect(page.getByText('Питання 1 з 5')).toBeVisible();
+  await expect(page.getByText(`Питання 1 з ${STEP_IDS.length}`)).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Що вам може підійти' })).toHaveCount(0);
 });
 
@@ -70,7 +73,7 @@ test('кнопка «Очистити все» повертає на перше 
 
   await page.getByRole('button', { name: 'Очистити все і почати спочатку' }).click();
 
-  await expect(page.getByText('Питання 1 з 5')).toBeVisible();
+  await expect(page.getByText(`Питання 1 з ${STEP_IDS.length}`)).toBeVisible();
   await expect(page.locator('#citizenship-third_country')).not.toBeChecked();
 });
 

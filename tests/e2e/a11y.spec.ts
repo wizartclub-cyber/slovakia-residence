@@ -30,7 +30,7 @@ test('результати опитувальника теж доступні', 
   await page.goto('./uk/finder');
   await page.locator('#citizenship-third_country').check();
   await page.getByRole('button', { name: 'Далі' }).click();
-  for (let i = 0; i < 4; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     await page.getByRole('button', { name: 'Не знаю / пропустити' }).click();
   }
 
@@ -50,3 +50,16 @@ function describe(violations: Array<{ id: string; nodes: Array<{ target: unknown
     ),
   );
 }
+
+test('перехід між сторінками оголошується скрінрідеру і переносить фокус', async ({ page }) => {
+  await page.goto('./uk/');
+
+  // Перше завантаження браузер озвучує сам — область оголошень порожня.
+  await expect(page.locator('[role="status"]')).toBeEmpty();
+
+  await page.getByRole('navigation', { name: 'Головне меню' }).getByRole('link', { name: 'Джерела' }).click();
+
+  await expect(page.locator('[role="status"]')).toContainText('Джерела');
+  // Фокус має перейти на заголовок нової сторінки, а не лишитися в меню.
+  await expect(page.locator(':focus')).toHaveText('Джерела');
+});

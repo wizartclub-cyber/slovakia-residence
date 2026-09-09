@@ -41,6 +41,19 @@ export const FAMILY_SITUATIONS = [
   'dependent_relative',
 ] as const;
 
+/**
+ * Особливий статус, який відкриває окремі маршрути. Без цього питання
+ * маршрути §29 і §30 показувалися кожному громадянинові третьої країни,
+ * бо єдиною їхньою умовою було саме громадянство.
+ */
+export const SPECIAL_STATUSES = [
+  'none',
+  'slovak_living_abroad',
+  'long_term_resident_other_eu',
+  'blue_card_other_state',
+  'family_of_eu_citizen',
+] as const;
+
 /** Поле опитувальника → його дозволені значення. */
 export const ANSWER_VALUES = {
   citizenshipGroup: CITIZENSHIP_GROUPS,
@@ -48,6 +61,7 @@ export const ANSWER_VALUES = {
   location: LOCATIONS,
   purpose: PURPOSES,
   family: FAMILY_SITUATIONS,
+  specialStatus: SPECIAL_STATUSES,
 } as const;
 
 export const ANSWER_FIELDS = Object.keys(ANSWER_VALUES) as Array<keyof typeof ANSWER_VALUES>;

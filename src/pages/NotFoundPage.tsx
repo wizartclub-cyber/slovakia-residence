@@ -10,7 +10,7 @@ export function NotFoundPage() {
 
   return (
     <>
-      <h1>{t('notFound.title')}</h1>
+      <h1 tabIndex={-1}>{t('notFound.title')}</h1>
       <p>{t('notFound.body')}</p>
       <p>
         <Link to={`/${lang ?? defaultLocale}/`}>{t('notFound.home')}</Link>

@@ -10,7 +10,7 @@ export function HomePage() {
 
   return (
     <>
-      <h1>{t('home.title')}</h1>
+      <h1 tabIndex={-1}>{t('home.title')}</h1>
       <p>{t('home.intro')}</p>
 
       <p className="home__actions">

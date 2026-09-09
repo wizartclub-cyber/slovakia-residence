@@ -27,7 +27,7 @@ export function RoutePage() {
   if (!procedure) {
     return (
       <>
-        <h1>{t('route.notFound')}</h1>
+        <h1 tabIndex={-1}>{t('route.notFound')}</h1>
         <p>
           <Link to={`/${lang}/finder`}>{t('route.backToFinder')}</Link>
         </p>
@@ -56,7 +56,7 @@ export function RoutePage() {
         <Link to={`/${lang}/finder`}>{t('route.backToFinder')}</Link>
       </p>
 
-      <h1>{title}</h1>
+      <h1 tabIndex={-1}>{title}</h1>
 
       <p className="route-page__badges">
         <span className={`badge badge--${status === 'reviewed' ? 'success' : 'warning'}`}>

@@ -1,0 +1,71 @@
+# Наповнено з тексту §67 (снапшот slovlex-404-2011).
+id: F7-eu-permanent-s67
+category: F
+title:
+  uk: Громадянин ЄС — право на постійне проживання (§67)
+  sk: Občan Únie — právo na trvalý pobyt (§67)
+legalBasis:
+  - '404/2011 §67'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds: [slovlex-404-2011]
+conditionsComplete: false
+grantedFor: null
+decisionDeadline: null
+eligibilityRules:
+  - id: r-eu-citizen
+    effect: require
+    when: { field: citizenshipGroup, equals: eu_eea_ch }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: []
+authorityIds: [ocp-pz]
+feeRuleIds: []
+documentIds: []
+steps:
+  - id: s1-five-years
+    order: 1
+    title:
+      uk: П'ять років законного безперервного перебування
+      sk: Päť rokov oprávneného nepretržitého pobytu
+    body:
+      uk: >-
+        §67 ods. 1: громадянин ЄС має право на постійне проживання, якщо законно
+        і безперервно перебуває в Словаччині п'ять років.
+      sk: >-
+        §67 ods. 1: občan Únie má právo na trvalý pobyt, ak sa na území SR
+        zdržiava oprávnene nepretržite počas piatich rokov.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-earlier
+    order: 2
+    title:
+      uk: Раніше за п'ять років — у трьох випадках
+      sk: Skôr ako po piatich rokoch — v troch prípadoch
+    body:
+      uk: >-
+        §67 ods. 2: (a) працівник або самозайнята особа, яка на момент припинення
+        роботи досягла законного віку для пенсії за віком; (b) працівник, який
+        залишив оплачувану роботу заради дострокової пенсії, якщо працював у
+        Словаччині щонайменше попередні 12 місяців і безперервно перебував понад
+        три роки; (c) працівник або самозайнята особа, яка безперервно перебувала
+        понад два роки і припинила працювати через постійну непрацездатність.
+      sk: >-
+        §67 ods. 2: (a) zamestnanec alebo SZČO, ktorá pri skončení práce dosiahla
+        vek na starobný dôchodok; (b) zamestnanec, ktorý odišiel na predčasný
+        dôchodok po 12 mesiacoch zamestnania a viac ako troch rokoch pobytu;
+        (c) zamestnanec alebo SZČO po viac ako dvoch rokoch pobytu, ktorá prestala
+        pracovať pre trvalú neschopnosť pracovať.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [F2-eu-registration-s66]
+openQuestions:
+  - 'Решта підпунктів §67 ods. 2 і наступні відсеки прочитані лише частково.'
+  - 'Порядок подання заяви і документи за §67 не описані.'
+  - 'Умова безперервності перебування та її переривання не описані.'

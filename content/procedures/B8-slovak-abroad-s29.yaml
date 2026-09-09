@@ -27,6 +27,11 @@ eligibilityRules:
     when: { field: citizenshipGroup, equals: third_country }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
+  - id: r-certificate
+    effect: require
+    when: { field: specialStatus, equals: slovak_living_abroad }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
 formSourceIds: [mzv-form-11-057]
 authorityIds: [ocp-pz, zastupitelsky-urad]
 feeRuleIds: []

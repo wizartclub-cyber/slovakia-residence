@@ -44,7 +44,7 @@ export function FinderPage() {
 
   return (
     <>
-      <h1>{t('finder.title')}</h1>
+      <h1 tabIndex={-1}>{t('finder.title')}</h1>
 
       {!onResults && (
         <>

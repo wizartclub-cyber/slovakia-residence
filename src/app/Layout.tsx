@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, NavLink, Navigate, Outlet, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { RouteAnnouncer } from './RouteAnnouncer';
 import { LegalBaselineNotice } from '../components/LegalBaselineNotice';
 import { defaultLocale, isLocale, site } from '../lib/content/site';
 
@@ -18,6 +19,7 @@ export function Layout() {
 
   return (
     <div className="app">
+      <RouteAnnouncer />
       <a className="skip-link" href="#main">
         {t('a11y.skipToContent')}
       </a>

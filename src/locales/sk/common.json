@@ -123,7 +123,8 @@
       "location": "Kde sa práve nachádzate?",
       "purpose": "Za akým účelom chcete byť na Slovensku?",
       "currentStatus": "Aký je váš právny status teraz?",
-      "family": "Máte rodinnú väzbu na Slovensku?"
+      "family": "Máte rodinnú väzbu na Slovensku?",
+      "specialStatus": "Máte niektorý z týchto osobitných statusov?"
     }
   },
   "answer": {
@@ -163,6 +164,13 @@
       "spouse_of_resident": "Manžel alebo manželka osoby s pobytom v SR",
       "child_of_resident": "Dieťa osoby s pobytom v SR",
       "dependent_relative": "Odkázaný príbuzný"
+    },
+    "specialStatus": {
+      "none": "Žiadny zo zoznamu",
+      "slovak_living_abroad": "Osvedčenie Slováka žijúceho v zahraničí",
+      "long_term_resident_other_eu": "Postavenie osoby s dlhodobým pobytom v inom štáte EÚ",
+      "blue_card_other_state": "Modrá karta EÚ vydaná iným štátom",
+      "family_of_eu_citizen": "Rodinný príslušník občana Únie"
     }
   },
   "results": {

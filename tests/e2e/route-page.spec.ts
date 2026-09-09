@@ -69,7 +69,7 @@ test('з результатів опитувальника можна перей
   await page.goto('./uk/finder');
   await page.locator('#citizenship-third_country').check();
   await page.getByRole('button', { name: 'Далі' }).click();
-  for (let i = 0; i < 4; i += 1) {
+  for (let i = 0; i < 5; i += 1) {
     await page.getByRole('button', { name: 'Не знаю / пропустити' }).click();
   }
   await page.getByRole('link', { name: 'Тимчасове проживання — працевлаштування (§23)' }).click();

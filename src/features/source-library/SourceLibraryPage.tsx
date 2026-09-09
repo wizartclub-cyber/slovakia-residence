@@ -30,7 +30,7 @@ export function SourceLibraryPage() {
 
   return (
     <>
-      <h1>{t('sources.title')}</h1>
+      <h1 tabIndex={-1}>{t('sources.title')}</h1>
       <p>{t('sources.intro')}</p>
 
       <div className="card sources-summary">

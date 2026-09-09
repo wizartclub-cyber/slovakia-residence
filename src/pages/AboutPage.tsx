@@ -7,7 +7,7 @@ export function AboutPage() {
 
   return (
     <>
-      <h1>{t('about.title')}</h1>
+      <h1 tabIndex={-1}>{t('about.title')}</h1>
       <p>{t('about.publisher')}</p>
       <p>{t('about.purpose')}</p>
       <p>{t('about.notAffiliated')}</p>

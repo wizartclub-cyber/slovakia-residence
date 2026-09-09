@@ -31,6 +31,11 @@ eligibilityRules:
     when: { field: citizenshipGroup, equals: third_country }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
+  - id: r-long-term-status
+    effect: require
+    when: { field: specialStatus, equals: long_term_resident_other_eu }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
 formSourceIds: [mzv-form-11-057]
 authorityIds: [ocp-pz, zastupitelsky-urad]
 feeRuleIds: [fee-tr-business-first-ocp, fee-tr-employment-first, fee-tr-special-activity-first, fee-tr-family-first]

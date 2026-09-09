@@ -9,6 +9,7 @@ import type {
   FAMILY_SITUATIONS,
   LOCATIONS,
   PURPOSES,
+  SPECIAL_STATUSES,
 } from './domain';
 
 /** Група громадянства. Визначає, яким правом взагалі регулюється ситуація. */
@@ -26,6 +27,9 @@ export type Purpose = (typeof PURPOSES)[number];
 /** Сімейна ситуація — без імен і документів. */
 export type FamilySituation = (typeof FAMILY_SITUATIONS)[number];
 
+/** Особливий статус, що відкриває окремі маршрути. */
+export type SpecialStatus = (typeof SPECIAL_STATUSES)[number];
+
 /**
  * Відповіді опитувальника. Жодного поля, що ідентифікує людину:
  * ні імені, ні номера паспорта, ні адреси (spec §8).
@@ -41,6 +45,7 @@ export type Answers = {
   location?: LocationAnswer;
   purpose?: Purpose;
   family?: FamilySituation;
+  specialStatus?: SpecialStatus;
 };
 
 export type AnswerField = Exclude<keyof Answers, 'asOfDate'>;

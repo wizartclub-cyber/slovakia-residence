@@ -1,0 +1,76 @@
+# Наповнено з тексту §64 (снапшот slovlex-404-2011).
+id: F1-eu-short-stay-s64
+category: F
+title:
+  uk: Громадянин ЄС — перебування до трьох місяців (§64)
+  sk: Občan Únie — pobyt do troch mesiacov (§64)
+legalBasis:
+  - '404/2011 §64'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds: [slovlex-404-2011]
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    Три місяці від дня в'їзду, без жодних додаткових умов і формальностей —
+    достатньо дійсного посвідчення особи або проїзного документа (§64 ods. 1).
+    Замість них можна подати будь-який інший документ, яким людина достовірно
+    доведе поліції свою особу і громадянство держави-члена.
+  sk: >-
+    Tri mesiace odo dňa vstupu bez ďalších podmienok a formalít — stačí platný
+    preukaz totožnosti alebo cestovný doklad (§64 ods. 1).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-eu-citizen
+    effect: require
+    when: { field: citizenshipGroup, equals: eu_eea_ch }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: []
+authorityIds: [ocp-pz]
+feeRuleIds: []
+documentIds: []
+steps:
+  - id: s1-report
+    order: 1
+    title:
+      uk: Повідомити поліцію протягом 10 робочих днів
+      sk: Nahlásiť pobyt na polícii do 10 pracovných dní
+    body:
+      uk: >-
+        §64 ods. 2: громадянин ЄС зобов'язаний повідомити початок перебування на
+        території Словаччини в поліції протягом десяти робочих днів від дня
+        в'їзду. Це єдина формальність на цьому етапі.
+      sk: >-
+        §64 ods. 2: občan Únie je povinný nahlásiť začiatok pobytu na policajnom
+        útvare do desiatich pracovných dní odo dňa vstupu na územie SR.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-material-need
+    order: 2
+    title:
+      uk: Право зберігається, доки людина не стає тягарем для системи допомоги
+      sk: Právo trvá, kým sa osoba nestane záťažou pre systém pomoci
+    body:
+      uk: >-
+        §64 ods. 3 і 4: право на перебування зберігається, доки громадянин ЄС,
+        який спирається на достатні кошти або навчання (§65 ods. 1 písm. c) чи d),
+        не опиниться в матеріальній скруті. Якщо поліція встановить, що особа
+        стала непропорційним тягарем для системи допомоги в матеріальній скруті,
+        вона попереджає про втрату права на перебування.
+      sk: >-
+        §64 ods. 3 a 4: právo na pobyt zostáva zachované, kým sa občan Únie podľa
+        §65 ods. 1 písm. c) alebo d) nestane osobou v hmotnej núdzi. Ak sa stane
+        neprimeranou záťažou, policajný útvar ho upozorní na stratu práva.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [F2-eu-registration-s66]
+openQuestions:
+  - 'Наслідки невиконання обов''язку повідомити протягом 10 робочих днів не описані.'
+  - 'Правила для членів родини громадянина ЄС, які самі не є громадянами ЄС, тут не описані — це окремий маршрут.'

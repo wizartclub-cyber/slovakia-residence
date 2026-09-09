@@ -7,7 +7,7 @@ export function PrivacyPage() {
 
   return (
     <>
-      <h1>{t('privacy.title')}</h1>
+      <h1 tabIndex={-1}>{t('privacy.title')}</h1>
       <p>{t('privacy.summary')}</p>
 
       <h2>{t('privacy.noStorageTitle')}</h2>

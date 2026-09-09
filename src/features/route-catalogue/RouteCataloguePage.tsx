@@ -19,7 +19,7 @@ export function RouteCataloguePage() {
 
   return (
     <>
-      <h1>{t('catalogue.title')}</h1>
+      <h1 tabIndex={-1}>{t('catalogue.title')}</h1>
       <p>{t('catalogue.intro')}</p>
       <p className="route-page__note">{t('catalogue.coverage', { count: procedures.length })}</p>
 
