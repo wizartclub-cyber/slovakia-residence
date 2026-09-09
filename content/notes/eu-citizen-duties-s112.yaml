@@ -1,0 +1,77 @@
+# Джерело: 404/2011 §112 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: eu-citizen-duties-s112
+title:
+  uk: Обов'язки громадянина ЄС (§112)
+  sk: Povinnosti občana Únie (§112)
+intro:
+  uk: >-
+    Перелік коротший і строки м'якші, ніж для громадян третіх країн: десять робочих днів замість п'яти на повідомлення про зміни й про втрату документів.
+  sk: >-
+    Zoznam je kratší a lehoty miernejšie ako pri občanoch tretích krajín: desať pracovných dní namiesto piatich.
+items:
+  - id: e-a
+    text:
+      uk: >-
+        правдиво і повно подавати всі дані, які вимагає закон
+      sk: >-
+        uvádzať pravdivo a úplne všetky požadované údaje
+  - id: e-b
+    text:
+      uk: >-
+        на вимогу поліції за §65 ods. 5 подати доказ обставини, на підставі якої ви набули або зберігаєте право на пробут
+      sk: >-
+        predložiť dôkaz o skutočnosti, na základe ktorej ste získali alebo máte zachované právo na pobyt
+  - id: e-c
+    text:
+      uk: >-
+        повідомляти поліцію про зміну імені, прізвища, сімейного стану, громадянства, даних у проїзному документі чи посвідченні особи протягом ДЕСЯТИ РОБОЧИХ ДНІВ — це вдвічі довший строк, ніж для громадян третіх країн
+      sk: >-
+        hlásiť zmenu mena, priezviska, osobného stavu, štátnej príslušnosti a údajov v dokladoch do desiatich pracovných dní
+  - id: e-d
+    text:
+      uk: >-
+        берегти документ про пробут від втрати, крадіжки, пошкодження або зловживання
+      sk: >-
+        chrániť doklad o pobyte pred stratou, krádežou, poškodením alebo zneužitím
+  - id: e-e
+    text:
+      uk: >-
+        повідомити про втрату, крадіжку чи пошкодження документа протягом десяти робочих днів від дня, коли ви дізналися
+      sk: >-
+        ohlásiť stratu, krádež alebo poškodenie do desiatich pracovných dní
+  - id: e-f
+    text:
+      uk: >-
+        з'явитися на виклик у поліцію у зв'язку з провадженням
+      sk: >-
+        dostaviť sa na výzvu na policajný útvar
+  - id: e-g
+    text:
+      uk: >-
+        на вимогу поліції пройти зняття біометричних даних для видачі документа про пробут
+      sk: >-
+        podrobiť sa snímaniu biometrických údajov
+  - id: e-h
+    text:
+      uk: >-
+        надати дані для статистичного обстеження про пробут
+      sk: >-
+        poskytnúť údaje na štatistické zisťovanie
+  - id: e-i
+    text:
+      uk: >-
+        подати проїзний документ на прохання того, хто надає житло
+      sk: >-
+        predložiť cestovný doklad na žiadosť ubytovateľa
+  - id: e-j
+    text:
+      uk: >-
+        підписати заповнений офіційний бланк про заявлення пробуту
+      sk: >-
+        podpísať vyplnené úradné tlačivo o hlásení pobytu
+appliesTo:
+  - F1-eu-short-stay-s64
+  - F2-eu-registration-s66
+  - F7-eu-permanent-s67
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

@@ -232,3 +232,18 @@ test('маршрут додаткового захисту пояснює, що 
   await expect(page.getByText('ПОСТІЙНЕ ПРОЖИВАННЯ', { exact: false })).toBeVisible();
   await expect(page.getByText('це не обов\'язок органу, а його право', { exact: false })).toBeVisible();
 });
+
+test('пояснює, що пробут заявляє власник житла, а не сам іноземець', async ({ page }) => {
+  await page.goto(B2);
+  const note = page.locator('section').filter({ hasText: 'Хто заявляє ваш пробут' }).last();
+  await expect(note).toContainText('ТОЙ, ХТО НАДАЄ ЖИТЛО');
+  await expect(note).toContainText("П'ЯТИ ДНІВ");
+  await expect(note).toContainText('РОБОТОДАВЕЦЬ');
+});
+
+test('громадянин ЄС бачить власний, коротший перелік обов\'язків', async ({ page }) => {
+  await page.goto('./uk/route/F2-eu-registration-s66');
+  const note = page.locator('section').filter({ hasText: "Обов'язки громадянина ЄС" }).last();
+  await expect(note.locator('li')).toHaveCount(10);
+  await expect(note).toContainText('ДЕСЯТИ РОБОЧИХ ДНІВ');
+});

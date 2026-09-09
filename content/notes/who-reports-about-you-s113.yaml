@@ -1,0 +1,65 @@
+# Джерело: 404/2011 §113, §115 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: who-reports-about-you-s113
+title:
+  uk: Хто заявляє ваш пробут і хто ще звітує про вас (§113, §115)
+  sk: Kto hlási váš pobyt a kto o vás ešte podáva správy (§113, §115)
+intro:
+  uk: >-
+    Багато хто вважає, що заявити місце проживання має сам іноземець. Насправді це обов'язок того, хто надає житло, і в нього п'ять днів. Водночас про вас окремо звітують роботодавець, школа й управління праці — тому зміна роботи чи припинення навчання стають відомими поліції швидко.
+  sk: >-
+    Mnohí si myslia, že pobyt hlási sám cudzinec. V skutočnosti je to povinnosť ubytovateľa a má na to päť dní. Zároveň o vás podávajú správy zamestnávateľ, škola a úrad práce.
+items:
+  - id: w-a
+    text:
+      uk: >-
+        Заявлення вашого пробуту (hlásenie pobytu) подає ТОЙ, ХТО НАДАЄ ЖИТЛО. Він зобов'язаний перевірити вашу особу, записати в книгу проживаючих ваше громадянство і дату народження, забезпечити заповнення офіційного бланка про заявлення пробуту і доставити його в поліцію протягом П'ЯТИ ДНІВ від поселення — можна й через електронну послугу (§113).
+      sk: >-
+        Hlásenie pobytu podáva UBYTOVATEĽ: overí totožnosť, zapíše do knihy ubytovaných štátnu príslušnosť a dátum narodenia, zabezpečí vyplnenie úradného tlačiva a doručí ho polícii do piatich dní od ubytovania (§113).
+  - id: w-b
+    text:
+      uk: >-
+        Ваш обов'язок у цьому — підписати заповнений бланк і на прохання показати проїзний документ (§111 ods. 1 písm. k) і l). Той, хто надає житло, також зобов'язаний упустити поліцію в приміщення для перевірки.
+      sk: >-
+        Vašou povinnosťou je podpísať vyplnené tlačivo a na žiadosť predložiť cestovný doklad (§111 ods. 1 písm. k) a l).
+  - id: w-c
+    text:
+      uk: >-
+        РОБОТОДАВЕЦЬ протягом ТРЬОХ РОБОЧИХ ДНІВ письмово повідомляє поліцію, якщо ви не стали до роботи або якщо трудові відносини закінчилися — це стосується пробуту за §23 і національної візи за §15 ods. 1 písm. d) (§115 ods. 5).
+      sk: >-
+        ZAMESTNÁVATEĽ do troch pracovných dní písomne oznámi polícii nenastúpenie do zamestnania alebo skončenie pracovného pomeru (§115 ods. 5).
+  - id: w-d
+    text:
+      uk: >-
+        ШКОЛА протягом ДЕСЯТИ РОБОЧИХ ДНІВ письмово повідомляє поліцію про початок, переривання, залишення, виключення або закінчення навчання, якщо ви маєте пробут на навчання. Мовна школа при національній візі за §15 ods. 1 písm. c) — протягом трьох робочих днів (§115 ods. 4).
+      sk: >-
+        ŠKOLA do desiatich pracovných dní oznámi polícii začatie, prerušenie, zanechanie, vylúčenie alebo skončenie štúdia (§115 ods. 4).
+  - id: w-e
+    text:
+      uk: >-
+        УПРАВЛІННЯ ПРАЦІ протягом трьох робочих днів повідомляє поліцію про надання і відібрання дозволу на роботу та про скасування підтвердження про можливість заповнення вільного місця (§115 ods. 1). Кожні три місяці воно також надсилає поліції дані тих, хто звернувся по допомогу в матеріальній скруті (ods. 2).
+      sk: >-
+        ÚRAD PRÁCE do troch pracovných dní oznámi udelenie a odňatie povolenia na zamestnanie a zrušenie potvrdenia o možnosti obsadenia miesta (§115 ods. 1).
+  - id: w-f
+    text:
+      uk: >-
+        Хто знайде проїзний документ іноземця або документ про пробут — зобов'язаний невідкладно здати його в найближчий підрозділ поліції (§115 ods. 6).
+      sk: >-
+        Kto nájde cestovný doklad cudzinca alebo doklad o pobyte, je povinný ho bezodkladne odovzdať najbližšiemu policajnému útvaru (§115 ods. 6).
+appliesTo:
+  - A3-national-visa-120
+  - B1-business-s22
+  - B10-blue-card-s37
+  - B2-employment-s23
+  - B3-study-s24
+  - B4-special-activity-s25
+  - B5-research-s26
+  - B6-family-s27
+  - B8-slovak-abroad-s29
+  - B9-longterm-other-state-s30
+  - C1-permanent-s43
+  - C3-permanent-s46
+  - C4-longterm-s52
+  - D1-tolerated-s58
+  - G1-renewal-s34
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]
