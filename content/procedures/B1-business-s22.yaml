@@ -30,9 +30,12 @@ decisionDeadline:
     Ministerstva hospodárstva SR k podnikateľskému zámeru, ktoré má naň 60 dní
     (§33 ods. 2 a 3).
 eligibilityRules:
+  # Особа з тимчасовим захистом — теж громадянин третьої країни за законом,
+  # тому цей маршрут для неї не закритий. Там, де закон її виключає
+  # (наприклад §52 ods. 2 písm. e), для цього є окреме правило exclude.
   - id: r-third-country
     effect: require
-    when: { field: citizenshipGroup, equals: third_country }
+    when: { field: citizenshipGroup, in: [third_country, ua_temporary_protection] }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
   - id: r-purpose-business

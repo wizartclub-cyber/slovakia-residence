@@ -20,9 +20,12 @@ grantedFor:
   sk: Na päť rokov. Po štyroch rokoch takého pobytu sa otvára §46 — trvalý pobyt na neobmedzený čas.
 decisionDeadline: null
 eligibilityRules:
+  # Особа з тимчасовим захистом — теж громадянин третьої країни за законом,
+  # тому цей маршрут для неї не закритий. Там, де закон її виключає
+  # (наприклад §52 ods. 2 písm. e), для цього є окреме правило exclude.
   - id: r-third-country
     effect: require
-    when: { field: citizenshipGroup, equals: third_country }
+    when: { field: citizenshipGroup, in: [third_country, ua_temporary_protection] }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
   - id: r-family-tie

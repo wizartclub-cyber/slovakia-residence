@@ -322,3 +322,21 @@ describe('справжні маршрути', () => {
     expect(matches.every((m) => m.outcome !== 'eligible')).toBe(true);
   });
 });
+
+describe('особа з тимчасовим захистом', () => {
+  it('бачить звичайні маршрути для третіх країн — вона теж громадянка третьої країни', async () => {
+    const { procedures } = await import('../../src/lib/content/index.ts');
+    const matches = evaluate(
+      procedures,
+      answers({ citizenshipGroup: 'ua_temporary_protection', purpose: 'employment' }),
+    );
+    const employment = matches.find((m) => m.procedureId === 'B2-employment-s23');
+    expect(employment?.outcome).toBe('possible');
+  });
+
+  it('але §52 для неї так і лишається виключеним (§52 ods. 2 písm. e)', async () => {
+    const { procedures } = await import('../../src/lib/content/index.ts');
+    const matches = evaluate(procedures, answers({ citizenshipGroup: 'ua_temporary_protection' }));
+    expect(matches.find((m) => m.procedureId === 'C4-longterm-s52')?.outcome).toBe('excluded');
+  });
+});
