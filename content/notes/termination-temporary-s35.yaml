@@ -1,0 +1,73 @@
+# Джерело: 404/2011 §35 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: termination-temporary-s35
+title:
+  uk: Коли тимчасове проживання припиняється саме (§35)
+  sk: Kedy prechodný pobyt zanikne (§35)
+intro:
+  uk: >-
+    Це відбувається без окремого рішення органу. Перша підстава заскочує людей найчастіше: якщо після надання пробуту не в'їхати до Словаччини протягом 180 днів, він припиняється.
+  sk: >-
+    Deje sa to bez osobitného rozhodnutia. Prvý dôvod prekvapí najčastejšie: ak po udelení pobytu nevstúpite na územie SR do 180 dní, pobyt zanikne.
+items:
+  - id: g-a
+    text:
+      uk: >-
+        особа не в'їхала на територію Словаччини протягом 180 днів від надання пробуту
+      sk: >-
+        štátny príslušník tretej krajiny nevstúpi na územie SR do 180 dní od udelenia prechodného pobytu
+  - id: g-b
+    text:
+      uk: >-
+        особа письмово повідомила поліцію про закінчення перебування
+      sk: >-
+        písomne oznámi policajnému útvaru skončenie pobytu
+  - id: g-c
+    text:
+      uk: >-
+        закінчилася чинність пробуту
+      sk: >-
+        skončila sa platnosť prechodného pobytu
+  - id: g-d
+    text:
+      uk: >-
+        особі призначено покарання у вигляді видворення
+      sk: >-
+        bol uložený trest vyhostenia
+  - id: g-e
+    text:
+      uk: >-
+        особу адміністративно видворено
+      sk: >-
+        bol administratívne vyhostený
+  - id: g-f
+    text:
+      uk: >-
+        особа отримала інший пробут за цим законом або їй надано міжнародний чи додатковий захист
+      sk: >-
+        získal iný pobyt podľa tohto zákona alebo mu bola udelená medzinárodná či doplnková ochrana
+  - id: g-g
+    text:
+      uk: >-
+        особа набула громадянства Словацької Республіки
+      sk: >-
+        nadobudol štátne občianstvo SR
+  - id: g-h
+    text:
+      uk: >-
+        поліція скасувала пробут (див. §36)
+      sk: >-
+        policajný útvar zrušil prechodný pobyt (pozri §36)
+  - id: g-i
+    text:
+      uk: >-
+        особа померла або оголошена померлою
+      sk: >-
+        zomrel alebo bol vyhlásený za mŕtveho
+appliesTo:
+  - B1-business-s22
+  - B2-employment-s23
+  - B3-study-s24
+  - B6-family-s27
+  - G1-renewal-s34
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

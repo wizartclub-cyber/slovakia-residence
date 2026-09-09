@@ -1,0 +1,23 @@
+# Джерело: 404/2011 §34 ods. 5.
+id: tax-income-proof
+officialName: Preukázanie zdaniteľných príjmov za predchádzajúce zdaňovacie obdobie
+title:
+  uk: Підтвердження оподатковуваних доходів за попередній податковий період
+  sk: Preukázanie zdaniteľných príjmov za predchádzajúce zdaňovacie obdobie
+explanation:
+  uk: >-
+    Вимагається при обновленні пробуту підприємця — фізичної особи
+    (§22 ods. 1 písm. a). Конкретний розмір доходу встановлює §34 ods. 5 і
+    наступні — його ще треба перевірити повністю.
+  sk: >-
+    Vyžaduje sa pri obnovení pobytu podnikateľa — fyzickej osoby
+    (§22 ods. 1 písm. a). Konkrétnu výšku ustanovuje §34 ods. 5 a nasl.
+requiredWhen:
+  uk: При обновленні пробуту за §22 ods. 1 písm. a).
+  sk: Pri obnovení pobytu podľa §22 ods. 1 písm. a).
+afterDecision: false
+maxAgeDays: null
+preparationType: obtain_from_authority
+thresholds: []
+reviewStatus: draft
+sourceIds: [slovlex-404-2011]

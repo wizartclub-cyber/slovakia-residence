@@ -1,0 +1,137 @@
+# Наповнено з тексту §34 (снапшот slovlex-404-2011).
+id: G1-renewal-s34
+category: G
+title:
+  uk: Обновлення тимчасового проживання (§34)
+  sk: Obnovenie prechodného pobytu (§34)
+legalBasis:
+  - '404/2011 §34'
+  - '404/2011 §33 ods. 8'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    До трьох років, якщо передбачуваний пробут триватиме щонайменше три роки;
+    до п'яти років для §23, §24 і §27, якщо пробут триватиме щонайменше п'ять
+    років, а також для §29 і §30; дев'ять місяців випускникам і дослідникам
+    (§24 ods. 1 písm. b) та §26), які після навчання чи дослідження хочуть
+    лишитися шукати роботу або почати підприємництво; сезонна зайнятість —
+    щоб разом не перевищити 240 днів за 12 місяців (§34 ods. 1).
+  sk: >-
+    Do troch rokov, ak predpokladaný pobyt potrvá najmenej tri roky; do piatich
+    rokov pri §23, §24 a §27, ako aj pri §29 a §30; deväť mesiacov absolventom a
+    výskumníkom, ktorí chcú zostať hľadať prácu alebo začať podnikať; pri sezónnom
+    zamestnaní tak, aby sa spolu neprekročilo 240 dní za 12 mesiacov (§34 ods. 1).
+decisionDeadline:
+  uk: Ті самі строки, що й для першого подання (§34 ods. 14 із посиланням на §33 ods. 8).
+  sk: Rovnaké lehoty ako pri prvom podaní (§34 ods. 14 s odkazom na §33 ods. 8).
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-has-temporary-residence
+    effect: require
+    when: { field: currentStatus, equals: temporary_residence }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-056]
+authorityIds: [ocp-pz]
+feeRuleIds:
+  - fee-tr-business-renewal
+  - fee-tr-employment-renewal
+  - fee-tr-family-renewal
+documentIds:
+  - travel-document
+  - application-form
+  - health-insurance-renewal
+  - accommodation
+  - tax-income-proof
+steps:
+  - id: s1-deadline
+    order: 1
+    title:
+      uk: Подати НЕ ПІЗНІШЕ останнього дня чинності пробуту
+      sk: Podať NAJNESKÔR v posledný deň platnosti pobytu
+    body:
+      uk: >-
+        Заява подається особисто на офіційному бланку в поліції або через
+        електронну службу, і не пізніше останнього дня чинності пробуту
+        (§34 ods. 2). Для сезонної зайнятості за §23 ods. 4 — щонайменше за
+        30 днів до закінчення. За особу за §27, яка через безпорадність не може
+        подати заяву особисто, це може зробити той, з ким вона возз'єднується.
+      sk: >-
+        Žiadosť sa podáva osobne na úradnom tlačive na policajnom útvare alebo
+        elektronickou službou najneskôr v posledný deň platnosti pobytu
+        (§34 ods. 2). Pri sezónnom zamestnaní podľa §23 ods. 4 najneskôr 30 dní
+        pred skončením platnosti.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-lawful-while-waiting
+    order: 2
+    title:
+      uk: Поки триває розгляд, перебування лишається законним
+      sk: Počas konania sa pobyt považuje za oprávnený
+    body:
+      uk: >-
+        §34 ods. 16: після закінчення чинності пробуту і до рішення про заяву
+        про обновлення перебування на території Словаччини вважається законним.
+        Тобто прострочення картки саме по собі не робить перебування незаконним,
+        якщо заяву подано вчасно.
+      sk: >-
+        §34 ods. 16: po skončení platnosti pobytu až do rozhodnutia o žiadosti
+        o obnovenie sa pobyt považuje za oprávnený.
+    afterDecision: false
+    prerequisites: [s1-deadline]
+    sourceIds: [slovlex-404-2011]
+  - id: s3-missing-documents
+    order: 3
+    title:
+      uk: Якщо документа бракує — 30 днів, щоб донести
+      sk: Ak doklad chýba — 30 dní na doplnenie
+    body:
+      uk: >-
+        §34 ods. 4: якщо до заяви не додано потрібних документів, їх треба
+        донести протягом 30 днів від подання, інакше поліція зупинить
+        провадження, і оскаржити це рішення не можна. У обґрунтованих випадках
+        строк можуть продовжити на 15 днів. Поліція зобов'язана письмово
+        пояснити, чого саме бракує.
+      sk: >-
+        §34 ods. 4: ak k žiadosti nie sú priložené náležitosti, treba ich doplniť
+        do 30 dní od podania, inak policajný útvar konanie zastaví; proti takému
+        rozhodnutiu sa nemožno odvolať. Lehotu možno predĺžiť o 15 dní.
+    afterDecision: false
+    prerequisites: [s1-deadline]
+    sourceIds: [slovlex-404-2011]
+  - id: s4-notification
+    order: 4
+    title:
+      uk: При задоволенні заяви письмового рішення не видають
+      sk: Pri vyhovení sa písomné rozhodnutie nevydáva
+    body:
+      uk: >-
+        §34 ods. 15: якщо заяву задоволено, поліція не видає письмового рішення,
+        а надсилає повідомлення з датою обновлення і датою закінчення чинності
+        пробуту. Повідомлення отримують також самоврядний край і громада за
+        місцем пробуту, а для навчання — ще й школа.
+      sk: >-
+        §34 ods. 15: pri vyhovení sa písomné rozhodnutie nevydáva, zasiela sa
+        oznámenie s dátumom obnovenia a skončenia platnosti pobytu.
+    afterDecision: true
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [B1-business-s22, B2-employment-s23, B3-study-s24, B6-family-s27]
+openQuestions:
+  - 'Розмір оподатковуваних доходів для обновлення пробуту підприємця (§34 ods. 5 і наступні) не внесений — прочитати повністю.'
+  - 'Підстави відмови в обновленні: §33 ods. 6 плюс окремі за §34 ods. 12 і 13 (зокрема — подружжя не ведуть спільного сімейного життя).'
+  - 'Збори прив''язані лише до трьох найчастіших цілей; повний перелік — у položci 24 písm. d).'
+  - 'Мету не треба доводити повторно, якщо обставини за §32 ods. 5 не змінилися (§34 ods. 3 písm. a) — умову не формалізовано.'

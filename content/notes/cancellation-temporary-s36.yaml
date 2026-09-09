@@ -1,0 +1,85 @@
+# Джерело: 404/2011 §36 ods. 1 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: cancellation-temporary-s36
+title:
+  uk: Через що поліція скасовує тимчасове проживання (§36 ods. 1)
+  sk: Prečo policajný útvar zruší prechodný pobyt (§36 ods. 1)
+intro:
+  uk: >-
+    Тут закон теж каже «скасує», а не «може скасувати». Зверніть увагу на підпункт c): не зданий протягом 30 днів медичний висновок — це підстава для скасування пробуту, а не дрібне порушення.
+  sk: >-
+    Aj tu zákon hovorí „zruší“, nie „môže zrušiť“. Všimnite si písmeno c): neodovzdaný lekársky posudok do 30 dní je dôvodom na zrušenie pobytu.
+items:
+  - id: g-a
+    text:
+      uk: >-
+        відпала мета, для якої пробут було надано
+      sk: >-
+        pominul účel, na ktorý bol pobyt udelený
+  - id: g-b
+    text:
+      uk: >-
+        виявлено обставини, які є підставою для відмови за §33 ods. 6 або ods. 7
+      sk: >-
+        zistí skutočnosti, ktoré sú dôvodom na zamietnutie podľa §33 ods. 6 alebo ods. 7
+  - id: g-c
+    text:
+      uk: >-
+        особа не здала медичний висновок за §32 ods. 10 — той самий, що подається протягом 30 днів після отримання картки
+      sk: >-
+        neodovzdal doklad podľa §32 ods. 10 — lekársky posudok do 30 dní od prevzatia dokladu
+  - id: g-d
+    text:
+      uk: >-
+        особа порушила обов'язок за §111 ods. 1 písm. t); це не діє для §29 і §30, а також якщо між наданням пробуту і кінцем календарного року менше ніж 90 днів
+      sk: >-
+        porušil povinnosť podľa §111 ods. 1 písm. t); neplatí pri §29 a §30 ani ak je do konca roka menej ako 90 dní
+  - id: g-e
+    text:
+      uk: >-
+        особа тяжко або повторно порушила обов'язок, встановлений цим законом
+      sk: >-
+        závažným spôsobom alebo opakovane porušil povinnosť podľa tohto zákona
+  - id: g-f
+    text:
+      uk: >-
+        за поданням податкового, митного органу, Соціальної страхової або медичної страхової компанії виявлено, що особа не виконує умову за §111 ods. 10
+      sk: >-
+        na základe podnetu daňového, colného úradu, Sociálnej alebo zdravotnej poisťovne sa zistí nesplnenie podmienky podľa §111 ods. 10
+  - id: g-g
+    text:
+      uk: >-
+        особа з пробутом за §22 (підприємництво) уклала трудові відносини
+      sk: >-
+        osoba s pobytom podľa §22 uzatvorila pracovnoprávny vzťah
+  - id: g-h
+    text:
+      uk: >-
+        особа виконує іншу діяльність, ніж та, для якої надано пробут, якщо §20 ods. 3, §24 ods. 3, §26 ods. 1, §27 ods. 6, §29 ods. 3, §30 ods. 3, §126 ods. 1 або ods. 2 не встановлюють інакше
+      sk: >-
+        vykonáva inú činnosť, než na akú bol pobyt udelený, ak uvedené ustanovenia neustanovujú inak
+  - id: g-i
+    text:
+      uk: >-
+        особа щодо житла або фінансового забезпечення подала неправдиві чи оманливі дані або підроблені документи
+      sk: >-
+        v súvislosti s ubytovaním alebo finančným zabezpečením uviedol nepravdivé údaje alebo predložil falošné doklady
+  - id: g-j
+    text:
+      uk: >-
+        учень або студент за §24 ods. 1 písm. a) чи b) не виконує або не може виконувати мету пробуту
+      sk: >-
+        osoba podľa §24 ods. 1 písm. a) alebo b) neplní alebo nemôže plniť účel pobytu
+  - id: g-k
+    text:
+      uk: >-
+        особа порушила умову за §21 ods. 3 (мета пробуту виконується на території Словаччини)
+      sk: >-
+        porušil podmienku podľa §21 ods. 3
+appliesTo:
+  - B1-business-s22
+  - B2-employment-s23
+  - B3-study-s24
+  - B6-family-s27
+  - G1-renewal-s34
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

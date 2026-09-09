@@ -21,7 +21,8 @@ export function htmlToText(html: string): string {
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'");
-  return text.replace(/[ \t ]+/g, ' ').replace(/ *\n */g, '\n');
+  // \u00a0 — нерозривний пробіл, яким рясніють сторінки Slov-Lex.
+  return text.replace(/[ \t\u00a0]+/g, ' ').replace(/ *\n */g, '\n');
 }
 
 /** Номери статей (§), наявні в тексті закону. */

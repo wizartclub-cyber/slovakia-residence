@@ -1,0 +1,26 @@
+# Джерело: 404/2011 §34 ods. 3 písm. c).
+id: health-insurance-renewal
+officialName: Doklad o zdravotnom poistení počas pobytu
+title:
+  uk: Документ про медичне страхування на час пробуту
+  sk: Doklad o zdravotnom poistení počas pobytu
+explanation:
+  uk: >-
+    При ОБНОВЛЕННІ пробуту страхування додається вже до заяви, а не протягом
+    30 днів після рішення, як при першому поданні.
+  sk: >-
+    Pri OBNOVENÍ pobytu sa poistenie prikladá už k žiadosti, nie do 30 dní po
+    rozhodnutí ako pri prvom podaní.
+requiredWhen:
+  uk: >-
+    Не потрібен тим, хто має пробут за §23 (працевлаштування), §24 (навчання)
+    або §30 ods. 1 písm. b) і c) — §34 ods. 3 písm. c).
+  sk: >-
+    Nevyžaduje sa pri pobyte podľa §23, §24 alebo §30 ods. 1 písm. b) a c)
+    (§34 ods. 3 písm. c).
+afterDecision: false
+maxAgeDays: 90
+preparationType: obtain_from_third_party
+thresholds: []
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

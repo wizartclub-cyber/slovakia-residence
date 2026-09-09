@@ -164,3 +164,18 @@ test('на сторінці перелічені всі підстави для 
   await expect(page.getByText('фіктивний шлюб', { exact: false })).toBeVisible();
   await expect(page.getByText('Це не «можуть відмовити», а «відмовлять»', { exact: false })).toBeVisible();
 });
+
+test('маршрут обновлення пояснює головне: подати вчасно і що буде далі', async ({ page }) => {
+  await page.goto('./uk/route/G1-renewal-s34');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Обновлення тимчасового проживання (§34)');
+  const steps = page.locator('.route-page__steps li');
+  await expect(steps.first()).toContainText('НЕ ПІЗНІШЕ останнього дня');
+  await expect(steps.nth(1)).toContainText('перебування лишається законним');
+});
+
+test('на сторінці видно, коли пробут припиняється і коли його скасовують', async ({ page }) => {
+  await page.goto(B2);
+  await expect(page.getByRole('heading', { name: /припиняється саме/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /скасовує тимчасове проживання/ })).toBeVisible();
+  await expect(page.getByText('не в\'їхала на територію Словаччини протягом 180 днів', { exact: false })).toBeVisible();
+});
