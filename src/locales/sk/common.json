@@ -104,7 +104,40 @@
     "noUrl": "úradná adresa zatiaľ chýba — zdroj je zapísaný, ale nepotvrdený",
     "stale": "stránka je staršia ako zmeny od 15.07.2026",
     "evidenceLabel": "Čo bolo na tejto adrese vidieť pri kontrole (technický záznam):",
-    "checksum": "SHA-256"
+    "checksum": "SHA-256",
+    "legendTitle": "Čo znamenajú značky dôveryhodnosti",
+    "technical": "Technické údaje",
+    "needsCheckCount": "Zdrojov s aspoň jednou nevyhovujúcou značkou: {{count}}",
+    "trust": {
+      "official": {
+        "label": "Oficiálnosť",
+        "hint": "Primárny zdroj je zákon, orgán alebo úradné tlačivo. Sekundárny len naznačuje, kde hľadať.",
+        "good": "oficiálny",
+        "warn": "sekundárny",
+        "bad": "neznámy"
+      },
+      "url": {
+        "label": "Adresa",
+        "hint": "Či existuje úradná adresa a či sme ju otvorili.",
+        "good": "adresa overená",
+        "warn": "adresa bez kontroly",
+        "bad": "úradná adresa chýba"
+      },
+      "snapshot": {
+        "label": "Kópia",
+        "hint": "Či je uložený súbor s kontrolným súčtom.",
+        "good": "kópia uložená",
+        "warn": "kópia čiastočná",
+        "bad": "kópia chýba"
+      },
+      "current": {
+        "label": "Aktuálnosť",
+        "hint": "Či nevieme o tom, že stránka je staršia ako zmeny zákona.",
+        "good": "bez známok zastarania",
+        "warn": "môže byť zastarané",
+        "bad": "zastarané"
+      }
+    }
   },
   "sourceType": {
     "legislation": "Zákony",

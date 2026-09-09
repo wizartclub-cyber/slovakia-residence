@@ -27,6 +27,7 @@ export function SourceLibraryPage() {
   })).filter((g) => g.items.length > 0);
 
   const withSnapshot = sources.filter((s) => s.sha256 !== null).length;
+  const needsCheck = sources.filter((s) => trust(s).some((t) => t.state === 'bad')).length;
 
   return (
     <>
@@ -40,6 +41,19 @@ export function SourceLibraryPage() {
         </p>
         <p className="sources-summary__note">{t('sources.snapshotNote')}</p>
       </div>
+
+      <details className="card legend">
+        <summary>{t('sources.legendTitle')}</summary>
+        <dl className="legend__list">
+          {(['official', 'url', 'snapshot', 'current'] as const).map((key) => (
+            <div key={key}>
+              <dt>{t(`sources.trust.${key}.label`)}</dt>
+              <dd>{t(`sources.trust.${key}.hint`)}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="route-page__note">{t('sources.needsCheckCount', { count: needsCheck })}</p>
+      </details>
 
       {groups.map((group) => (
         <section key={group.type}>
@@ -73,18 +87,18 @@ function SourceCard({ source }: { source: Source }) {
         {source.locale && <span> · {source.locale}</span>}
       </p>
 
+      {/* Чотири незалежні ознаки надійності. Колір ніколи не єдиний носій
+          змісту: у кожної є знак і текст. */}
+      <ul className="trust">
+        {trust(source).map((signal) => (
+          <li key={signal.key} className={`trust__item trust__item--${signal.state}`}>
+            <span aria-hidden="true">{signal.state === 'good' ? '✓' : signal.state === 'bad' ? '✗' : '!'}</span>
+            <span>{t(`sources.trust.${signal.key}.${signal.state}`)}</span>
+          </li>
+        ))}
+      </ul>
+
       <p className="source-card__badges">
-        <span className={`badge badge--${source.registryStatus === 'url_verified' ? 'success' : 'warning'}`}>
-          {t(`registryStatus.${source.registryStatus}`)}
-        </span>
-        {source.potentiallyStale && (
-          <span className="badge badge--warning">{t('sources.stale')}</span>
-        )}
-        {source.sha256 && (
-          <span className="source-card__hash" title={source.sha256}>
-            {t('sources.checksum')}: {source.sha256.slice(0, 12)}…
-          </span>
-        )}
         {source.checkedAt && (
           <span className="source-card__checked">
             {t('sources.checkedAt')}: <time dateTime={source.checkedAt}>{formatDate(source.checkedAt)}</time>
@@ -112,6 +126,23 @@ function SourceCard({ source }: { source: Source }) {
         <p className="source-card__missing">{t('sources.noUrl')}</p>
       )}
 
+      {(source.sha256 || source.evidence) && (
+        <details className="source-card__tech">
+          <summary>{t('sources.technical')}</summary>
+          {source.sha256 && (
+            <p className="source-card__hash">
+              {t('sources.checksum')}: <code>{source.sha256}</code>
+            </p>
+          )}
+          {source.snapshotPath && (
+            <p className="route-page__note">{source.snapshotPath}</p>
+          )}
+          <p className="route-page__note">
+            {t(`registryStatus.${source.registryStatus}`)}
+          </p>
+        </details>
+      )}
+
       {source.evidence && (
         <p className="source-card__evidence">
           <span className="source-card__evidence-label">{t('sources.evidenceLabel')}</span>
@@ -120,6 +151,21 @@ function SourceCard({ source }: { source: Source }) {
       )}
     </li>
   );
+}
+
+type TrustSignal = { key: 'official' | 'url' | 'snapshot' | 'current'; state: 'good' | 'warn' | 'bad' };
+
+/** Чотири ознаки надійності джерела, кожна незалежна від інших. */
+function trust(source: Source): TrustSignal[] {
+  return [
+    {
+      key: 'official',
+      state: source.sourceType === 'secondary_explanatory_source' ? 'warn' : 'good',
+    },
+    { key: 'url', state: source.url === null ? 'bad' : source.checkedAt ? 'good' : 'warn' },
+    { key: 'snapshot', state: source.sha256 ? 'good' : 'bad' },
+    { key: 'current', state: source.potentiallyStale ? 'warn' : 'good' },
+  ];
 }
 
 function formatDate(iso: string): string {

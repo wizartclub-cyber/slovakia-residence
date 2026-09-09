@@ -65,3 +65,33 @@ test('посилання на джерела відкриваються в но�
   await expect(link).toHaveAttribute('target', '_blank');
   await expect(link).toHaveAttribute('rel', /noreferrer/);
 });
+
+test('кожне джерело має чотири незалежні ознаки надійності', async ({ page }) => {
+  await page.goto('./uk/sources');
+  const first = page.locator('.source-card').first();
+  await expect(first.locator('.trust__item')).toHaveCount(4);
+
+  // Колір не єдиний носій змісту: у кожної ознаки є текст.
+  await expect(first.locator('.trust__item').first()).toContainText(/офіційне|вторинне/);
+});
+
+test('джерело без копії позначене як таке, що її не має', async ({ page }) => {
+  await page.goto('./uk/sources');
+  const missing = page.locator('.trust__item--bad', { hasText: 'копії немає' });
+  expect(await missing.count()).toBeGreaterThan(0);
+});
+
+test('контрольна сума схована в технічній секції, а не на першому плані', async ({ page }) => {
+  await page.goto('./uk/sources');
+  await expect(page.locator('.source-card__hash').first()).toBeHidden();
+
+  await page.getByText('Технічні дані').first().click();
+  await expect(page.locator('.source-card__hash').first()).toContainText('SHA-256');
+});
+
+test('є легенда позначок і лічильник джерел, що потребують перевірки', async ({ page }) => {
+  await page.goto('./uk/sources');
+  await page.getByText('Що означають позначки надійності').click();
+  await expect(page.getByText('Первинне джерело — закон', { exact: false })).toBeVisible();
+  await expect(page.getByText('хоча б одна ознака незадовільна', { exact: false })).toBeVisible();
+});
