@@ -75,6 +75,7 @@ items:
         особа порушила умову за §21 ods. 3 (мета пробуту виконується на території Словаччини)
       sk: >-
         porušil podmienku podľa §21 ods. 3
+thresholds: []
 appliesTo:
   - B4-special-activity-s25
   - B5-research-s26

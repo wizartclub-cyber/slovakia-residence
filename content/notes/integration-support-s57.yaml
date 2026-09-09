@@ -1,0 +1,51 @@
+# Джерело: 69/2026 §57 (снапшот slovlex-69-2026, прочитано 2026-09-09).
+# Суми не зберігаються числами: вони обчислюються з життєвого мінімуму (spec §5A).
+id: integration-support-s57
+title:
+  uk: Допомога після надання захисту (69/2026 §57)
+  sk: Podpora po udelení ochrany (69/2026 §57)
+intro:
+  uk: >-
+    Дві виплати, прив'язані до життєвого мінімуму, і два безкоштовні курси.
+    Розмір рахується з чинної суми мінімуму, тому суми нижче — це обчислення,
+    а не переписані числа.
+  sk: >-
+    Dva príspevky viazané na životné minimum a dva bezplatné kurzy. Sumy nižšie
+    sú vypočítané z aktuálnej výšky životného minima.
+items:
+  - id: h-a
+    text:
+      uk: >-
+        Разова допомога: міністерство виплачує особі з притулком або додатковим захистом ОДНОРАЗОВУ допомогу за письмовою заявою (зразок — Додаток №1). Одній людині її можна надати в Словаччині лише один раз. Умова — пройти курс основ культурної орієнтації; вона не діє для осіб молодших за 18 і старших за 65 років. До заяви додається підтвердження про проходження курсу (§57 ods. 1).
+      sk: >-
+        Jednorazový príspevok sa poskytne azylantovi alebo cudzincovi s doplnkovou ochranou na písomnú žiadosť (vzor v prílohe č. 1), a to iba raz. Podmienkou je absolvovanie kurzu základov kultúrnej orientácie; neplatí pre osoby mladšie ako 18 a staršie ako 65 rokov (§57 ods. 1).
+  - id: h-b
+    text:
+      uk: >-
+        Курси: міністерство забезпечує особі з притулком і особі з додатковим захистом курс словацької мови і курс основ культурної орієнтації (§57 ods. 2).
+      sk: >-
+        Ministerstvo zabezpečí kurz slovenského jazyka a kurz základov kultúrnej orientácie (§57 ods. 2).
+  - id: h-c
+    text:
+      uk: >-
+        Інтеграційна допомога виплачується за письмовою заявою (зразок — Додаток №2) протягом ШЕСТИ місяців поспіль від доставлення заяви міністерству. Її надає міністерство, якщо вона не надається через неурядову організацію (§57 ods. 3).
+      sk: >-
+        Integračný príspevok sa poskytuje na písomnú žiadosť (vzor v prílohe č. 2) počas šiestich po sebe nasledujúcich mesiacov od doručenia žiadosti; poskytne ho ministerstvo, ak nie je poskytovaný cez mimovládnu organizáciu (§57 ods. 3).
+thresholds:
+  - thresholdId: zivotne-minimum-adult
+    multiplier: 1.5
+    appliesWhen:
+      uk: Разова допомога, один раз на людину (§57 ods. 1).
+      sk: Jednorazový príspevok, raz na osobu (§57 ods. 1).
+    sourceIds: [slovlex-69-2026]
+  - thresholdId: zivotne-minimum-adult
+    multiplier: 1.75
+    appliesWhen:
+      uk: Інтеграційна допомога, щомісяця протягом шести місяців (§57 ods. 3).
+      sk: Integračný príspevok, mesačne počas šiestich mesiacov (§57 ods. 3).
+    sourceIds: [slovlex-69-2026]
+appliesTo:
+  - E2-asylum-persecution-s30
+  - E3-subsidiary-protection-s31
+reviewStatus: source_verified
+sourceIds: [slovlex-69-2026]

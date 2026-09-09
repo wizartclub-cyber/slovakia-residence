@@ -355,6 +355,8 @@ export const LegalNoteSchema = z
       .array(z.object({ id: nonEmpty, text: localizedText }).strict())
       .min(1),
     appliesTo: z.array(nonEmpty).min(1),
+    // Суми, прив'язані до життєвого мінімуму, обчислюються, а не зберігаються.
+    thresholds: z.array(ThresholdRefSchema).default([]),
     reviewStatus: reviewStatus.default('draft'),
     sourceIds,
   })

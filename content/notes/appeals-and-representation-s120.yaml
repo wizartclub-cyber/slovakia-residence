@@ -61,6 +61,7 @@ items:
         Правові дії у провадженні виконуються виключно в паперовій формі, крім випадків, прямо названих у законі (§120 ods. 1) — зокрема окремих електронних послуг за §33 ods. 9, §34 ods. 15, §48 ods. 3 і §125 ods. 12.
       sk: >-
         Právne úkony sa vykonávajú výlučne v listinnej podobe, okrem prípadov výslovne uvedených v zákone (§120 ods. 1).
+thresholds: []
 appliesTo:
   - C2-special-permanent-s45a
   - B4-special-activity-s25

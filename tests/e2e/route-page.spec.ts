@@ -292,3 +292,21 @@ test('толероване перебування: право лишатися �
   await expect(steps.filter({ hasText: 'право лишатися в Словаччині' })).toHaveCount(1);
   await expect(steps.filter({ hasText: 'НЕ застосовуються до знайдених неповнолітніх' })).toHaveCount(1);
 });
+
+test('допомога після захисту показана обчисленими сумами', async ({ page }) => {
+  await page.goto('./uk/route/E2-asylum-persecution-s30');
+  await page.getByRole('button', { name: /Допомога після надання захисту/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: 'Допомога після надання захисту' });
+
+  // 1,5 × 295.22 = 442.83 і 1,75 × 295.22 = 516.64 — рахується, а не зберігається.
+  await expect(note).toContainText('442.83 EUR');
+  await expect(note).toContainText('516.64 EUR');
+});
+
+test('оскарження у справах тимчасового захисту різко обмежене', async ({ page }) => {
+  await page.goto('./uk/route/E6-temporary-protection-s58');
+  await page.getByRole('button', { name: /Оскарження у справах тимчасового захисту/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: 'Оскарження у справах' });
+  await expect(note).toContainText('НЕ можна подати');
+  await expect(note).toContainText('НЕ має відкладального ефекту');
+});

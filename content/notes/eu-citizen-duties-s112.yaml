@@ -69,6 +69,7 @@ items:
         підписати заповнений офіційний бланк про заявлення пробуту
       sk: >-
         podpísať vyplnené úradné tlačivo o hlásení pobytu
+thresholds: []
 appliesTo:
   - F1-eu-short-stay-s64
   - F2-eu-registration-s66

@@ -54,6 +54,7 @@ items:
         Про втрату, крадіжку або пошкодження документа треба повідомити поліцію протягом п'яти робочих днів, і в той самий строк попросити новий, якщо записи в ньому не відповідають дійсності (§111 ods. 1 písm. i) і q).
       sk: >-
         Stratu, krádež alebo poškodenie treba ohlásiť do piatich pracovných dní a v tej istej lehote požiadať o nový doklad (§111 ods. 1 písm. i) a q).
+thresholds: []
 appliesTo:
   - C2-special-permanent-s45a
   - B1-business-s22

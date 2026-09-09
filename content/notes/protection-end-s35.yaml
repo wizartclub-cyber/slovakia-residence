@@ -1,0 +1,66 @@
+# Джерело: 69/2026 §35–§38 (снапшот slovlex-69-2026, прочитано 2026-09-09).
+id: protection-end-s35
+title:
+  uk: Коли захист припиняється і коли його відбирають (69/2026 §35–§38)
+  sk: Kedy ochrana zanikne a kedy sa odníme (69/2026 §35–§38)
+intro:
+  uk: >-
+    Дві речі тут варто знати заздалегідь. Перша — гарантія: початок провадження
+    про відібрання не позбавляє статусу, захист триває до остаточного рішення.
+    Друга — ризик, про який рідко думають: статус члена родини прив'язаний до
+    статусу основної особи, а притулок для возз'єднання припиняється через шість
+    місяців після розлучення.
+  sk: >-
+    Dve veci treba vedieť dopredu: začatie konania o odňatie status neodníma,
+    ochrana trvá do konečného rozhodnutia; a status rodinného príslušníka je
+    naviazaný na status hlavnej osoby, pričom po rozvode zanikne o šesť mesiacov.
+items:
+  - id: t-a
+    text:
+      uk: >-
+        Притулок припиняється (§35 ods. 1): набуттям громадянства Словаччини; набуттям громадянства іншої держави-члена ЄС; письмовою заявою про відмову від притулку; смертю або оголошенням померлим; відібранням; наданням міжнародного захисту іншою державою-членом. Письмова відмова діє від дня доставлення заяви міністерству (ods. 4).
+      sk: >-
+        Azyl zanikne (§35 ods. 1): nadobudnutím občianstva SR alebo iného členského štátu, písomným vyhlásením o vzdaní sa, smrťou, odňatím alebo udelením ochrany iným členským štátom.
+  - id: t-b
+    text:
+      uk: >-
+        Додатковий захист припиняється з тих самих причин, і ще — наданням притулку через переслідування (§37 ods. 1 písm. f). Тобто перехід на «сильніший» статус автоматично закриває попередній.
+      sk: >-
+        Doplnková ochrana zanikne z rovnakých dôvodov a navyše udelením azylu z dôvodu prenasledovania (§37 ods. 1 písm. f).
+  - id: t-c
+    text:
+      uk: >-
+        НАСЛІДКИ ДЛЯ РОДИНИ. Якщо основна особа набула громадянства Словаччини, у члена родини, якому захист надали для возз'єднання, він припиняється через РІК від того дня (§35 ods. 2, §37 ods. 2). Якщо ж захист основної особи припинився з інших причин — громадянство іншої держави-члена, відмова, відібрання, захист в іншій державі — він припиняється у члена родини ОДРАЗУ (§35 ods. 3, §37 ods. 3).
+      sk: >-
+        DÔSLEDKY PRE RODINU: pri nadobudnutí občianstva SR zanikne ochrana rodinnému príslušníkovi po roku, pri ostatných dôvodoch zaniká zároveň (§35 ods. 2 a 3, §37 ods. 2 a 3).
+  - id: t-d
+    text:
+      uk: >-
+        РОЗЛУЧЕННЯ: притулок, наданий для возз'єднання родини, припиняється через ШІСТЬ МІСЯЦІВ від набрання чинності рішенням про розлучення, якщо не припинився раніше з іншої причини (§35 ods. 6).
+      sk: >-
+        ROZVOD: azyl udelený na účel zlúčenia rodiny zanikne uplynutím šiestich mesiacov od právoplatnosti rozhodnutia o rozvode (§35 ods. 6).
+  - id: t-e
+    text:
+      uk: >-
+        Притулок для возз'єднання родини або гуманітарний припиняється також тоді, коли особі надають інший притулок за цим законом, додатковий захист через серйозну несправедливість або постійне проживання в Словаччині (§35 ods. 5).
+      sk: >-
+        Azyl na účel zlúčenia rodiny alebo humanitárny zanikne aj vtedy, ak sa osobe udelí iný azyl, doplnková ochrana alebo trvalý pobyt v SR (§35 ods. 5).
+  - id: t-f
+    text:
+      uk: >-
+        ВІДІБРАННЯ починає міністерство з ВЛАСНОЇ ініціативи (§36 ods. 1, §38 ods. 1). Гуманітарний притулок можуть відібрати, якщо його підстави відпали і людина може повернутися в країну походження (§36 ods. 4). Притулок для возз'єднання і гуманітарний відбирають також тоді, коли інша держава надала людині пробут без часового обмеження (§36 ods. 3, §38 ods. 3).
+      sk: >-
+        ODŇATIE začína ministerstvo z vlastného podnetu (§36 ods. 1, §38 ods. 1). Humanitárny azyl možno odňať, ak dôvody pominuli a osoba sa môže vrátiť (§36 ods. 4).
+  - id: t-g
+    text:
+      uk: >-
+        ВАЖЛИВА ГАРАНТІЯ: якщо провадження про відібрання почалося, захист ТРИВАЄ аж до остаточного рішення про його відібрання (§36 ods. 5, §38 ods. 4). Початок провадження сам по собі не позбавляє людину статусу.
+      sk: >-
+        DÔLEŽITÁ ZÁRUKA: ak sa začalo konanie o odňatie, ochrana trvá až do konečného rozhodnutia (§36 ods. 5, §38 ods. 4).
+thresholds: []
+appliesTo:
+  - E1-protection-application-s3
+  - E2-asylum-persecution-s30
+  - E3-subsidiary-protection-s31
+reviewStatus: source_verified
+sourceIds: [slovlex-69-2026]

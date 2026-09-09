@@ -75,6 +75,7 @@ items:
         скасування тимчасового захисту міністерством (§65): є підстава для відмови за §63 або захист надано на підставі неправдивих чи підроблених даних про особу
       sk: >-
         zrušenie ministerstvom (§65): existuje dôvod na zamietnutie podľa §63 alebo bolo poskytnuté na základe nepravdivých či falšovaných údajov
+thresholds: []
 appliesTo:
   - E6-temporary-protection-s58
   - E7-temporary-protection-transition

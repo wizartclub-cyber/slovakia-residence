@@ -137,6 +137,7 @@ items:
         перебувати в Словаччині БІЛЬШЕ ПОЛОВИНИ часу наданого тимчасового пробуту в календарному році. Це не стосується дослідників за §26 і тих, хто користується мобільністю в іншій державі-члені. За §36 ods. 1 písm. d) порушення цього обов'язку є підставою СКАСУВАТИ пробут; воно також не діє для §29 і §30 та якщо між наданням пробуту і кінцем календарного року менше ніж 90 днів.
       sk: >-
         zdržiavať sa na území SR viac ako polovicu času udeleného prechodného pobytu v kalendárnom roku; neplatí pri §26 a pri mobilite v inom členskom štáte. Porušenie je podľa §36 ods. 1 písm. d) dôvodom na ZRUŠENIE pobytu.
+thresholds: []
 appliesTo:
   - C2-special-permanent-s45a
   - B4-special-activity-s25

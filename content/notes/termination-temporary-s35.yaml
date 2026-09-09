@@ -63,6 +63,7 @@ items:
         особа померла або оголошена померлою
       sk: >-
         zomrel alebo bol vyhlásený za mŕtveho
+thresholds: []
 appliesTo:
   - B4-special-activity-s25
   - B5-research-s26

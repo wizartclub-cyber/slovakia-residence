@@ -207,6 +207,20 @@ export function RoutePage() {
               count={note.items.length}
             >
               {note.intro && <p>{localized(note.intro, lang)}</p>}
+              {/* Дані з YAML читаються без Zod, тож поля може не бути. */}
+              {(note.thresholds ?? []).map((ref, i) => {
+                const base = thresholds.find((th) => th.id === ref.thresholdId);
+                if (!base) return null;
+                return (
+                  <p key={i} className="checklist__amount">
+                    <strong>{derivedAmount(base.baseValue, ref.multiplier).toFixed(2)} EUR</strong>{' '}
+                    <span className="route-page__note">
+                      ({ref.multiplier} × {base.baseValue.toFixed(2)}) —{' '}
+                      {localized(ref.appliesWhen, lang)}
+                    </span>
+                  </p>
+                );
+              })}
               <ol className="route-page__grounds">
                 {note.items.map((item) => (
                   <li key={item.id}>{localized(item.text, lang)}</li>
@@ -298,7 +312,7 @@ function DocumentItem({ doc, lang }: { doc: Document; lang: string | undefined }
             {t('route.requiredWhen')}: {localized(doc.requiredWhen, lang)}
           </p>
         )}
-        {doc.thresholds.map((ref, i) => {
+        {(doc.thresholds ?? []).map((ref, i) => {
           const base = thresholds.find((th) => th.id === ref.thresholdId);
           if (!base) return null;
           return (

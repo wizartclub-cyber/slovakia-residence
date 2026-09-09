@@ -77,6 +77,7 @@ items:
         Неповнолітні без супроводу, розміщені в закладі соціально-правового захисту дітей, звільнені від значної частини цих правил (§45 ods. 1). Після досягнення повноліття така особа зобов'язана з'явитися в табір протягом ТРЬОХ ДНІВ, якщо цьому не заважають серйозні причини; заклад повідомляє міністерство протягом трьох робочих днів (§45 ods. 2).
       sk: >-
         Maloleté osoby bez sprievodu umiestnené v zariadení sociálnoprávnej ochrany sú z veľkej časti týchto pravidiel vyňaté (§45 ods. 1). Po nadobudnutí plnoletosti sa musia do troch dní dostaviť do pobytového tábora (§45 ods. 2).
+thresholds: []
 appliesTo:
   - E1-protection-application-s3
   - E2-asylum-persecution-s30

@@ -51,6 +51,7 @@ items:
         дані у проїзному документі не відповідають дійсності
       sk: >-
         údaje v cestovnom doklade nezodpovedajú skutočnosti
+thresholds: []
 appliesTo:
   - C1-permanent-s43
   - C3-permanent-s46

@@ -44,6 +44,7 @@ items:
         Незгідний висновок служби надсилають насамперед тоді, коли є відомості, що людина становить безпекову загрозу; такою вважається зокрема присутність у списку санкціонованих осіб (§22 ods. 3).
       sk: >-
         Nesúhlasné stanovisko sa zasiela najmä pri poznatkoch o bezpečnostnom riziku, napríklad ak je osoba na zozname sankcionovaných osôb (§22 ods. 3).
+thresholds: []
 appliesTo:
   - E1-protection-application-s3
   - E2-asylum-persecution-s30

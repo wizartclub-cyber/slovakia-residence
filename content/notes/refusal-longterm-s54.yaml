@@ -33,6 +33,7 @@ items:
         в особи відібрано додатковий захист із підстав за окремим приписом
       sk: >-
         bola odňatá doplnková ochrana z dôvodov podľa osobitného predpisu
+thresholds: []
 appliesTo:
   - C4-longterm-s52
 reviewStatus: source_verified

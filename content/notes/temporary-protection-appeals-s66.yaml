@@ -1,0 +1,38 @@
+# Джерело: 69/2026 §66 (снапшот slovlex-69-2026, прочитано 2026-09-09).
+id: temporary-protection-appeals-s66
+title:
+  uk: Оскарження у справах тимчасового захисту (69/2026 §66)
+  sk: Opravné prostriedky pri dočasnom útočisku (69/2026 §66)
+intro:
+  uk: >-
+    Це найсуворіше обмеження оскарження в усьому законі, і про нього краще знати
+    заздалегідь: звичайних способів оскарження тут немає, а адміністративний
+    позов не зупиняє дію рішення.
+  sk: >-
+    Ide o najprísnejšie obmedzenie opravných prostriedkov v zákone: bežné spôsoby
+    odvolania tu nie sú a správna žaloba nemá odkladný účinok.
+items:
+  - id: a-a
+    text:
+      uk: >-
+        Проти рішення міністерства про зупинення провадження щодо надання тимчасового захисту, про відмову в його наданні і про його скасування НЕ можна подати ні rozklad, ні пропозицію про відновлення провадження, ані переглянути його поза відводним провадженням (§66 ods. 1).
+      sk: >-
+        Proti rozhodnutiu o zastavení konania, zamietnutí žiadosti a zrušení dočasného útočiska nemožno podať rozklad, návrh na obnovu konania ani ho preskúmať mimo odvolacieho konania (§66 ods. 1).
+  - id: a-b
+    text:
+      uk: >-
+        Подання адміністративного позову проти рішення про зупинення провадження НЕ має відкладального ефекту — тобто саме подання позову не зупиняє дію рішення (§66 ods. 1).
+      sk: >-
+        Podanie správnej žaloby proti rozhodnutiu o zastavení konania nemá odkladný účinok (§66 ods. 1).
+  - id: a-c
+    text:
+      uk: >-
+        Частина рішень про зупинення провадження за §62 взагалі не підлягає перегляду адміністративним судом, а деякі з них лише позначаються у справі, без окремого рішення (§66 ods. 1 і 2).
+      sk: >-
+        Časť rozhodnutí o zastavení konania podľa §62 nie je preskúmateľná správnym súdom a niektoré sa iba vyznačia v spise (§66 ods. 1 a 2).
+thresholds: []
+appliesTo:
+  - E6-temporary-protection-s58
+  - E7-temporary-protection-transition
+reviewStatus: source_verified
+sourceIds: [slovlex-69-2026]
