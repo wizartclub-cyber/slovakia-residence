@@ -105,6 +105,7 @@ items:
         žiada o pobyt podľa §25 ods. 1 písm. h) a v čase podania je mladšia ako 15 rokov
 appliesTo:
   - B1-business-s22
+  - B3-study-s24
   - B2-employment-s23
   - B6-family-s27
 reviewStatus: source_verified

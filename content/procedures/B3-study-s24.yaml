@@ -1,0 +1,124 @@
+# Наповнено з тексту §24 (снапшот slovlex-404-2011).
+id: B3-study-s24
+category: B
+title:
+  uk: Тимчасове проживання — навчання (§24)
+  sk: Prechodný pobyt na účel štúdia (§24)
+legalBasis:
+  - '404/2011 §24'
+  - '404/2011 §32'
+  - '404/2011 §33 ods. 8'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: На передбачуваний час навчання, але не більше ніж на шість років (§24 ods. 2).
+  sk: Na predpokladaný čas štúdia, najviac však na šesť rokov (§24 ods. 2).
+decisionDeadline:
+  uk: 90 днів (§33 ods. 8 písm. a).
+  sk: 90 dní (§33 ods. 8 písm. a).
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-purpose-study
+    effect: require
+    when: { field: purpose, equals: study }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: []
+documentIds:
+  - travel-document
+  - application-form
+  - medical-report-after
+steps:
+  - id: s1-who
+    order: 1
+    title:
+      uk: Перевірити, чи ви підпадаєте під одну з трьох категорій
+      sk: Overiť, či patríte do jednej z troch kategórií
+    body:
+      uk: >-
+        §24 ods. 1: (a) учень денної форми середньої школи, молодший за 20 років
+        на день подання заяви — а для надбудовного, кваліфікаційного,
+        спеціалізаційного або вищого фахового навчання молодший за 23 роки;
+        (b) студент вищої школи; (c) особа, яка проходить мовну або фахову
+        підготовку до навчання у вищій школі, організовану вищою школою в СР.
+      sk: >-
+        §24 ods. 1: (a) žiak dennej formy strednej školy mladší ako 20 rokov ku dňu
+        podania žiadosti, pri nadstavbovom, kvalifikačnom, špecializačnom alebo
+        vyššom odbornom štúdiu mladší ako 23 rokov; (b) študent vysokej školy;
+        (c) osoba na jazykovej alebo odbornej príprave na štúdium na vysokej škole
+        organizovanej vysokou školou v SR.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-documents
+    order: 2
+    title:
+      uk: Документ про прийняття на навчання і несудимість не завжди потрібна
+      sk: Doklad o prijatí na štúdium; bezúhonnosť sa nie vždy vyžaduje
+    body:
+      uk: >-
+        Мета доводиться підтвердженням школи про прийняття на навчання або
+        підтвердженням організації, що адміністративно забезпечує програму
+        (§32 ods. 5 písm. c). Документ про несудимість не подають заявники за
+        §24 ods. 1 písm. a) — учні середніх шкіл (§32 ods. 3). Житло теж не
+        потрібне тим, хто навчатиметься у вищій школі (§32 ods. 2 písm. e bod 3).
+      sk: >-
+        Účel sa preukazuje potvrdením školy o prijatí na štúdium alebo potvrdením
+        organizácie zabezpečujúcej program (§32 ods. 5 písm. c). Doklad o
+        bezúhonnosti neprikladajú žiadatelia podľa §24 ods. 1 písm. a)
+        (§32 ods. 3). Ubytovanie sa nevyžaduje pri štúdiu na vysokej škole
+        (§32 ods. 2 písm. e bod 3).
+    afterDecision: false
+    prerequisites: [s1-who]
+    sourceIds: [slovlex-404-2011]
+  - id: s3-business
+    order: 3
+    title:
+      uk: Під час навчання можна займатися підприємництвом
+      sk: Počas štúdia možno podnikať
+    body:
+      uk: >-
+        §24 ods. 3 прямо дозволяє особі з пробутом на навчання займатися
+        підприємницькою діяльністю під час цього пробуту.
+      sk: >-
+        §24 ods. 3 výslovne umožňuje osobe s pobytom na účel štúdia počas tohto
+        pobytu podnikať.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s4-90-days
+    order: 4
+    title:
+      uk: Перші 90 днів пробут на навчання може не вимагатися
+      sk: Prvých 90 dní sa pobyt na štúdium nemusí vyžadovať
+    body:
+      uk: >-
+        §24 ods. 4: пробут на навчання не вимагається протягом 90 днів від початку
+        перебування в СР, якщо особа виконує умови перебування за окремим приписом
+        і виконала обов'язок за §111 ods. 2 písm. a).
+      sk: >-
+        §24 ods. 4: pobyt na účel štúdia sa nevyžaduje do 90 dní od začiatku pobytu
+        na území SR, ak osoba spĺňa podmienky podľa osobitného predpisu a splnila
+        povinnosť podľa §111 ods. 2 písm. a).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [A3-national-visa-120]
+openQuestions:
+  - 'Збір за цю процедуру не встановлений: у položci 24 тарифу окремої суми для навчання немає — перевірити, чи вона входить в інший підпункт.'
+  - 'Підстава відмови §33 ods. 6 písm. i) стосується саме учнів і студентів: обґрунтована підозра, що особа не зможе виконувати мету перебування.'
+  - 'Медичне страхування за §32 ods. 9 для §24 не вимагається — перелік там інший; підтвердити в юриста.'
+  - 'Умови мобільності студента (§36b) окремим маршрутом не описані.'
