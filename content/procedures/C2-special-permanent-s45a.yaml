@@ -1,0 +1,126 @@
+# Наповнено з тексту §45a (снапшот slovlex-404-2011).
+id: C2-special-permanent-s45a
+category: C
+title:
+  uk: Постійне проживання за особливих обставин (§45a)
+  sk: Trvalý pobyt za osobitných okolností (§45a)
+legalBasis:
+  - '404/2011 §45a'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    На п'ять років, і це можна повторювати. Міністерство внутрішніх справ може
+    надати такий пробут навіть без виконання умов, встановлених законом
+    (§45a ods. 1).
+  sk: >-
+    Na päť rokov, aj opakovane. Ministerstvo vnútra ho môže udeliť aj bez splnenia
+    podmienok ustanovených zákonom (§45a ods. 1).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, in: [third_country, ua_temporary_protection] }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: x-already-permanent
+    effect: exclude
+    when: { field: currentStatus, equals: permanent_residence }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [mv-sr, ocp-pz]
+feeRuleIds: [fee-permanent-application]
+documentIds: [travel-document, application-form]
+steps:
+  - id: s1-grounds
+    order: 1
+    title:
+      uk: П'ять підстав, за яких міністерство може надати такий пробут
+      sk: Päť dôvodov, pri ktorých ministerstvo môže tento pobyt udeliť
+    body:
+      uk: >-
+        §45a ods. 1: (a) особі без громадянства; (b) з причин, гідних особливої
+        уваги; (c) повнолітній особі, яка має толероване перебування за
+        §58 ods. 1 písm. a) або отримала додатковий захист як неповнолітня без
+        супроводу і щонайменше три роки навчалася в школі в Словаччині;
+        (d) якщо це потрібно для захисту й допомоги свідкові за окремим приписом;
+        (e) за поданням Словацької інформаційної служби або Військової розвідки
+        з міркувань безпекових інтересів держави.
+      sk: >-
+        §45a ods. 1: (a) osobe bez štátnej príslušnosti; (b) z dôvodov hodných
+        osobitného zreteľa; (c) plnoletej osobe s tolerovaným pobytom podľa
+        §58 ods. 1 písm. a) alebo s doplnkovou ochranou udelenou ako maloletému
+        bez sprievodu, ktorá najmenej tri roky študovala na škole v SR;
+        (d) na ochranu svedka; (e) na návrh SIS alebo Vojenského spravodajstva.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-stateless
+    order: 2
+    title:
+      uk: Хто вважається особою без громадянства і як це довести
+      sk: Kto je osobou bez štátnej príslušnosti a ako to preukázať
+    body:
+      uk: >-
+        §45a ods. 2: це особа, яку жодна держава за своїми законами не вважає
+        своїм громадянином. Для доведення ДОСТАТНЬО показати, що людина не має
+        громадянства держави, у якій народилася; держави, де мала попереднє місце
+        проживання чи пробут; і держави, громадянами якої є її батьки та брати й
+        сестри. Це полегшений стандарт доказування — доводити «весь світ» не треба.
+      sk: >-
+        §45a ods. 2: osoba, ktorú žiadny štát nepovažuje za svojho občana. Na
+        preukázanie POSTAČÍ, ak preukáže, že nemá občianstvo štátu narodenia,
+        predchádzajúceho bydliska a štátu, ktorého občanmi sú rodičia a súrodenci.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-procedure
+    order: 3
+    title:
+      uk: Це не звичайне провадження — рішення приходить як письмове повідомлення
+      sk: Nejde o bežné konanie — prichádza písomné oznámenie
+    body:
+      uk: >-
+        §45a ods. 3: на надання такого пробуту загальний припис про адміністративне
+        провадження НЕ поширюється. Міністерство надсилає письмове повідомлення про
+        те, чи задовольнило заяву. Отже, тут немає звичайного рішення і звичайного
+        оскарження — це важливо розуміти заздалегідь.
+      sk: >-
+        §45a ods. 3: na udeľovanie sa nevzťahuje všeobecný predpis o správnom
+        konaní. Ministerstvo zašle písomné oznámenie o tom, či žiadosti vyhovelo.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s4-cancellation
+    order: 4
+    title:
+      uk: Коли такий пробут скасовують
+      sk: Kedy sa takýto pobyt zruší
+    body:
+      uk: >-
+        §45a ods. 4: пробут за підставами (b), (d) і (e) поліція скасовує на
+        заяву того державного органу, який просив про його надання, і таке рішення
+        оскарженню не підлягає. Пробут за підставою (a) скасовують, якщо виявиться,
+        що особа не є особою без громадянства; за підставами (b) і (c) — із
+        причини за §50 ods. 1 písm. c).
+      sk: >-
+        §45a ods. 4: pobyt podľa písmen b), d) a e) zruší polícia na žiadosť
+        štátneho orgánu, ktorý oň požiadal, bez možnosti odvolania. Pobyt podľa
+        písmena a) sa zruší, ak sa zistí, že nejde o osobu bez štátnej príslušnosti.
+    afterDecision: true
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [C1-permanent-s43, D1-tolerated-s58]
+openQuestions:
+  - '«Причини, гідні особливої уваги» (§45a ods. 1 písm. b) закон не конкретизує — це оцінне поняття, і передбачити результат не можна.'
+  - 'Опитувальник не питає про обставини, які тут вирішальні, тому маршрут показується широко.'
+  - 'Підстава §50 ods. 1 písm. c), за якою скасовують пробут, не прочитана.'
+  - 'Збір: у položci 24 písm. c) сума 250 € стосується заяви про постійне проживання; чи діє вона для §45a — не перевірено.'

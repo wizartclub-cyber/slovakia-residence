@@ -58,6 +58,8 @@ items:
       sk: >-
         Predloženie falošného, neoprávnene vydaného alebo cudzieho dokladu pri hraničnej kontrole je osobitným dôvodom zákazu vstupu na tri až päť rokov (§82 ods. 6).
 appliesTo:
+  - A1-schengen-visa-s16
+  - C2-special-permanent-s45a
   - A3-national-visa-120
   - B1-business-s22
   - B10-blue-card-s37

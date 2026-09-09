@@ -1,0 +1,135 @@
+# Наповнено з тексту §16 (снапшот slovlex-404-2011). Сам візовий режим
+# регулюється правом ЄС (Візовий кодекс), якого в реєстрі ще немає —
+# тут описано лише те, що додає словацький закон.
+id: A1-schengen-visa-s16
+category: A
+title:
+  uk: Шенгенська віза — що додає словацький закон (§16)
+  sk: Schengenské vízum — čo dopĺňa slovenský zákon (§16)
+legalBasis:
+  - '404/2011 §16'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor: null
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, in: [third_country, ua_temporary_protection] }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-abroad
+    effect: require
+    when: { field: location, equals: abroad }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: []
+authorityIds: [zastupitelsky-urad, mv-sr]
+feeRuleIds: [fee-visa-at-border, fee-short-stay-visa-extension]
+documentIds: []
+steps:
+  - id: s1-no-decision
+    order: 1
+    title:
+      uk: Якщо візу дають — рішення не видають, видають візову наліпку
+      sk: Ak vízum udelia, rozhodnutie sa nevydáva — vydá sa vízová nálepka
+    body:
+      uk: >-
+        §16 ods. 2: закордонна установа може надати шенгенську візу лише після
+        попереднього згідного висновку міністерства внутрішніх справ (міністерства
+        можуть домовитися, у яких випадках висновок не потрібен). Якщо заяву
+        задоволено, рішення не видається — замість нього видають візову наліпку.
+      sk: >-
+        §16 ods. 2: zastupiteľský úrad môže udeliť vízum len po predchádzajúcom
+        súhlasnom stanovisku ministerstva vnútra. Ak sa žiadosti vyhovie,
+        rozhodnutie sa nevydáva; namiesto neho sa vydá vízová nálepka.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-invitation
+    order: 2
+    title:
+      uk: Можуть вимагати запрошення, засвідчене поліцією
+      sk: Môžu vyžadovať pozvanie overené políciou
+    body:
+      uk: >-
+        §16 ods. 1: надання шенгенської візи може бути обумовлене запрошенням,
+        засвідченим підрозділом поліції. Хто запрошує іноземця, зобов'язаний
+        відшкодувати майнову шкоду, що виникне державі через недотримання
+        зобов'язання із засвідченого запрошення (§115 ods. 7).
+      sk: >-
+        §16 ods. 1: udelenie víza môže byť podmienené pozvaním overeným policajným
+        útvarom. Pozývajúca osoba je povinná uhradiť majetkovú ujmu štátu pri
+        nedodržaní záväzku z overeného pozvania (§115 ods. 7).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-seasonal
+    order: 3
+    title:
+      uk: Для сезонної зайнятості — чотири обов'язкові документи
+      sk: Pri sezónnom zamestnaní — štyri povinné doklady
+    body:
+      uk: >-
+        §16 ods. 3: письмова обіцянка роботодавця про прийняття на роботу, яка
+        містить реквізити трудового договору, або сам трудовий договір — як
+        документ про мету поїздки; дозвіл на роботу; документ про медичне
+        страхування; документ про житло. Закордонна установа за цими документами
+        оцінює, чи не буде людина під час пробуту залежною від системи допомоги
+        в матеріальній скруті (ods. 4).
+      sk: >-
+        §16 ods. 3: písomný prísľub zamestnávateľa alebo pracovná zmluva,
+        povolenie na zamestnanie, doklad o zdravotnom poistení a doklad o ubytovaní.
+        Úrad posúdi, či osoba nebude odkázaná na pomoc v hmotnej núdzi (ods. 4).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s4-refusal
+    order: 4
+    title:
+      uk: Коли в сезонній візі відмовляють і як оскаржити
+      sk: Kedy sa sezónne vízum zamietne a ako sa odvolať
+    body:
+      uk: >-
+        §16 ods. 6: відмовлять, якщо документів за ods. 3 не подано; якщо
+        виявиться, що документ здобуто шахрайством, підроблено або змінено; або
+        якщо за оцінкою за ods. 4 людина буде залежною від допомоги в матеріальній
+        скруті. Проти рішення про відмову, скасування чи відкликання шенгенської
+        візи можна подати відвід — до того самого органу, що видав рішення,
+        протягом 15 днів від доставлення (§16 ods. 10).
+      sk: >-
+        §16 ods. 6: zamietnu pri chýbajúcich dokladoch, pri podvodne získanom
+        alebo sfalšovanom doklade a pri odkázanosti na pomoc v hmotnej núdzi.
+        Proti zamietnutiu možno podať odvolanie do 15 dní od doručenia
+        (§16 ods. 10).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s5-border-crossing
+    order: 5
+    title:
+      uk: Установа може призначити конкретний пункт перетину кордону
+      sk: Úrad môže určiť konkrétny hraničný priechod
+    body:
+      uk: >-
+        §16 ods. 5: закордонна установа має право визначити іноземцеві
+        прикордонний перехід для в'їзду і записати його у шенгенську візу.
+      sk: >-
+        §16 ods. 5: zastupiteľský úrad je oprávnený určiť hraničný priechod na
+        vstup a zapísať ho do schengenského víza.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [A3-national-visa-120]
+openQuestions:
+  - 'Умови надання шенгенської візи встановлює Візовий кодекс (Регламент ЄС 810/2009), якого в реєстрі немає — тут описано лише доповнення словацького закону.'
+  - 'Збори: 90 € для дорослого і 45 € для дитини 6–12 років зі spec §5 не знайдені в тарифі 145/1995 і лишаються непідтвердженими. Підтверджені лише 90 € за візу на прикордонному переході і 45 € за продовження короткострокової візи (položka 26).'
+  - 'Розрахунок 90/180 днів (маршрут A2 таксономії) не описаний — це право ЄС.'
+  - 'Умови в''їзду за §6 і відмова у в''їзді за §11 не описані.'

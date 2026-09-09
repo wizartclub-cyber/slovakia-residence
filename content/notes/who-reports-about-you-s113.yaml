@@ -46,6 +46,8 @@ items:
       sk: >-
         Kto nájde cestovný doklad cudzinca alebo doklad o pobyte, je povinný ho bezodkladne odovzdať najbližšiemu policajnému útvaru (§115 ods. 6).
 appliesTo:
+  - A1-schengen-visa-s16
+  - C2-special-permanent-s45a
   - A3-national-visa-120
   - B1-business-s22
   - B10-blue-card-s37

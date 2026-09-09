@@ -138,6 +138,7 @@ items:
       sk: >-
         zdržiavať sa na území SR viac ako polovicu času udeleného prechodného pobytu v kalendárnom roku; neplatí pri §26 a pri mobilite v inom členskom štáte. Porušenie je podľa §36 ods. 1 písm. d) dôvodom na ZRUŠENIE pobytu.
 appliesTo:
+  - C2-special-permanent-s45a
   - B4-special-activity-s25
   - B1-business-s22
   - B10-blue-card-s37

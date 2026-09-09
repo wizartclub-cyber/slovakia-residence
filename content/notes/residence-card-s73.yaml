@@ -55,6 +55,7 @@ items:
       sk: >-
         Stratu, krádež alebo poškodenie treba ohlásiť do piatich pracovných dní a v tej istej lehote požiadať o nový doklad (§111 ods. 1 písm. i) a q).
 appliesTo:
+  - C2-special-permanent-s45a
   - B1-business-s22
   - B10-blue-card-s37
   - B2-employment-s23
