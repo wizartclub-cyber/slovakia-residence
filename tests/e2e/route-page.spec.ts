@@ -265,3 +265,16 @@ test('пояснює, що добровільне звернення зніма�
   // Строки заборони — з тексту закону, не з голови.
   await expect(note).toContainText('десять років');
 });
+
+test('заявник про захист бачить свої права і правило однієї заяви', async ({ page }) => {
+  await page.goto('./uk/route/E1-protection-application-s3');
+
+  await page.getByRole('button', { name: /Права й обов'язки заявника/ }).click();
+  const rights = page.locator('.legal-note').filter({ hasText: "Права й обов'язки заявника" });
+  await expect(rights).toContainText("П'ЯТИ РОБОЧИХ ДНІВ");
+  await expect(rights).toContainText('ШІСТЬ років');
+
+  await page.getByRole('button', { name: /Як розглядають заяву/ }).click();
+  const decision = page.locator('.legal-note').filter({ hasText: 'Як розглядають заяву' });
+  await expect(decision).toContainText("ЗОБОВ'ЯЗАНЕ водночас вирішити");
+});

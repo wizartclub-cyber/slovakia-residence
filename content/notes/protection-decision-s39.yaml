@@ -1,0 +1,52 @@
+# Джерело: 69/2026 §22, §27, §39 (снапшот slovlex-69-2026, прочитано 2026-09-09).
+id: protection-decision-s39
+title:
+  uk: Як розглядають заяву про захист (69/2026 §27, §39)
+  sk: Ako sa posudzuje žiadosť o ochranu (69/2026 §27, §39)
+intro:
+  uk: >-
+    Найкорисніше тут — правило §39: подавши одну заяву, ви не мусите окремо
+    просити про кожен вид захисту. Відмовляючи в притулку, міністерство
+    зобов'язане саме перевірити, чи не належить вам додатковий захист і чи немає
+    підстав для возз'єднання родини.
+  sk: >-
+    Najužitočnejšie je pravidlo §39: jednou žiadosťou sú pokryté všetky druhy
+    ochrany. Pri zamietnutí azylu musí ministerstvo samo posúdiť doplnkovú ochranu
+    aj dôvody zlúčenia rodiny.
+items:
+  - id: p-a
+    text:
+      uk: >-
+        Одна заява — усі підстави. Якщо міністерство відмовляє в притулку через переслідування як необґрунтованому, воно ЗОБОВ'ЯЗАНЕ водночас вирішити, чи надати додатковий захист за §31 (§39 ods. 1). Окремо просити про це не треба.
+      sk: >-
+        Jedna žiadosť pokrýva všetky dôvody: pri zamietnutí azylu ministerstvo musí zároveň rozhodnúť, či udelí doplnkovú ochranu podľa §31 (§39 ods. 1).
+  - id: p-b
+    text:
+      uk: >-
+        Так само при відмові в притулку або в додатковому захисті міністерство оцінює й підстави для возз'єднання родини за §32 і §33, причому притулок надає першочергово (§39 ods. 2).
+      sk: >-
+        Rovnako posúdi aj dôvody zlúčenia rodiny podľa §32 a §33, pričom azyl udelí prednostne (§39 ods. 2).
+  - id: p-c
+    text:
+      uk: >-
+        Відмова «як необґрунтована» ухвалюється ЧАСТИНАМИ (§27 ods. 1): окремо щодо притулку через переслідування, окремо щодо додаткового захисту, окремо щодо возз'єднання родини за кожним із цих статусів. Тобто в одному рішенні частина вимог може бути відхилена, а частина — ні.
+      sk: >-
+        Zamietnutie ako neopodstatnenej sa robí po častiach (§27 ods. 1): osobitne k azylu, doplnkovej ochrane a zlúčeniu rodiny pri každom z nich.
+  - id: p-d
+    text:
+      uk: >-
+        Для заявників, старших за 14 років, міністерство запитує висновок Словацької інформаційної служби і Військової розвідки. Вони мають 20 днів від отримання запиту, а в процедурі на кордоні — 7 робочих днів (§22 ods. 2). Це прямо впливає на строк розгляду.
+      sk: >-
+        Pri žiadateľoch nad 14 rokov si ministerstvo vyžiada stanovisko SIS a Vojenského spravodajstva: 20 dní, pri konaní na hraniciach 7 pracovných dní (§22 ods. 2).
+  - id: p-e
+    text:
+      uk: >-
+        Незгідний висновок служби надсилають насамперед тоді, коли є відомості, що людина становить безпекову загрозу; такою вважається зокрема присутність у списку санкціонованих осіб (§22 ods. 3).
+      sk: >-
+        Nesúhlasné stanovisko sa zasiela najmä pri poznatkoch o bezpečnostnom riziku, napríklad ak je osoba na zozname sankcionovaných osôb (§22 ods. 3).
+appliesTo:
+  - E1-protection-application-s3
+  - E2-asylum-persecution-s30
+  - E3-subsidiary-protection-s31
+reviewStatus: source_verified
+sourceIds: [slovlex-69-2026]

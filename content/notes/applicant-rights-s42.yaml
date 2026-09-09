@@ -1,0 +1,86 @@
+# Джерело: 69/2026 §20, §21, §42, §43, §45 (снапшот slovlex-69-2026, 2026-09-09).
+id: applicant-rights-s42
+title:
+  uk: Права й обов'язки заявника про захист (69/2026 §42, §43)
+  sk: Práva a povinnosti žiadateľa o ochranu (69/2026 §42, §43)
+intro:
+  uk: >-
+    Два документи легко переплутати: тимчасове посвідчення заявника видають одразу
+    при реєстрації на 30 днів, а саме посвідчення заявника — протягом п'яти
+    робочих днів від подання заяви, максимум на рік. І головна умова, від якої
+    залежить усе матеріальне забезпечення: воно надається, лише поки людина
+    фактично живе в притулковому закладі.
+    За §68 ці правила відповідно поширюються і на відідента з тимчасовим захистом.
+  sk: >-
+    Dva doklady sa ľahko zamieňajú: dočasný preukaz sa vydáva pri registrácii na
+    30 dní, preukaz žiadateľa do piatich pracovných dní, najviac na rok. Materiálne
+    zabezpečenie sa poskytuje len dovtedy, kým osoba skutočne býva v azylovom
+    zariadení. Podľa §68 sa tieto pravidlá primerane vzťahujú aj na odídenca.
+items:
+  - id: r-a
+    text:
+      uk: >-
+        При реєстрації заяви поліція видає ТИМЧАСОВЕ посвідчення заявника — воно чинне 30 днів (§20 ods. 1).
+      sk: >-
+        Pri registrácii žiadosti vydá polícia DOČASNÝ preukaz žiadateľa s platnosťou 30 dní (§20 ods. 1).
+  - id: r-b
+    text:
+      uk: >-
+        Саме посвідчення заявника міністерство видає протягом П'ЯТИ РОБОЧИХ ДНІВ від подання заяви; строк його чинності визначає міністерство, максимум один рік (§21 ods. 1 і 2).
+      sk: >-
+        Preukaz žiadateľa vydá ministerstvo do piatich pracovných dní od podania žiadosti; platnosť určí ministerstvo najviac na jeden rok (§21 ods. 1 a 2).
+  - id: r-c
+    text:
+      uk: >-
+        Посвідчення заявника вважається документом про особу ЛИШЕ тоді, коли у вас затримали проїзний документ чи інший документ про особу, або якщо ви мали в Словаччині наданий пробут; це в ньому позначають (§21 ods. 1). Посвідчення не видають тим, хто має в Словаччині пробут, і громадянам держав-членів ЄС (ods. 3).
+      sk: >-
+        Preukaz žiadateľa sa považuje za doklad totožnosti len vtedy, ak vám bol zadržaný cestovný doklad alebo ak ste mali v SR udelený pobyt (§21 ods. 1). Nevydáva sa osobám s pobytom v SR ani občanom EÚ (ods. 3).
+  - id: r-d
+    text:
+      uk: >-
+        Заявник має право лишатися на території Словаччини на умовах за окремим приписом (§42 ods. 1).
+      sk: >-
+        Žiadateľ je oprávnený zotrvať na území SR za podmienok podľa osobitného predpisu (§42 ods. 1).
+  - id: r-e
+    text:
+      uk: >-
+        Матеріальні умови приймання — житло, харчування або кошти на нього, базові гігієнічні потреби і кишенькові гроші — надаються, ЯКЩО людина фактично живе в притулковому закладі (§42 ods. 2). Житло, харчування і гігієна безкоштовні; але міністерство може вирішити, що людина з достатніми статками відповідно оплачує витрати — тоді кишенькові гроші й гігієнічні потреби їй не належать (ods. 3).
+      sk: >-
+        Materiálne prijímacie podmienky — ubytovanie, strava, hygienické potreby a vreckové — sa poskytujú, ak žiadateľ skutočne býva v azylovom zariadení (§42 ods. 2). Sú bezplatné, ministerstvo však môže rozhodnúť o úhrade výdavkov (ods. 3).
+  - id: r-f
+    text:
+      uk: >-
+        Кишенькові гроші відбирають (§42 ods. 4), зокрема: якщо людина добровільно виїхала зі Словаччини і була повернена — на три місяці від повернення; якщо йдеться про повторну заяву; якщо людина не співпрацює з міністерством або не виконує визначених процедурних вимог — на три місяці від доставлення рішення; якщо приховала фінансові джерела; якщо тяжко або повторно порушила обов'язки.
+      sk: >-
+        Vreckové sa odníme (§42 ods. 4): po dobrovoľnom opustení územia a návrate na tri mesiace; pri následnej žiadosti; pri nespolupráci na tri mesiace; pri zatajení finančných zdrojov; pri závažnom alebo opakovanom porušení povinností.
+  - id: r-g
+    text:
+      uk: >-
+        Обов'язки одразу після волевиявлення: пройти зняття біометричних даних; дактилоскопічні відбитки беруть у тих, кому виповнилося ШІСТЬ років (§43 ods. 1). Після приходу в притулковий заклад — фотографування (ods. 2).
+      sk: >-
+        Povinnosti po prejave vôle: podrobiť sa odobratiu biometrických údajov; daktyloskopické odtlačky sa odoberajú od šiestich rokov (§43 ods. 1). Po príchode do zariadenia fotografovanie (ods. 2).
+  - id: r-h
+    text:
+      uk: >-
+        Далі (§43 ods. 3): пройти медичний огляд, який міністерство забезпечує без зайвого зволікання після приходу в приймальний табір; перебувати в таборі до повідомлення результату огляду; лишатися в закладі, якщо призначено ізоляцію або карантин; надавати міністерству відомості про фінансовий і майновий стан; відвідувати курс словацької мови, якщо на людину поширюється обов'язкове шкільне навчання.
+      sk: >-
+        Ďalej (§43 ods. 3): podrobiť sa zdravotnej prehliadke, zdržiavať sa v tábore do oznámenia výsledku, dodržať izoláciu alebo karanténu, poskytovať údaje o majetkových pomeroch, navštevovať kurz slovenčiny pri povinnej školskej dochádzke.
+  - id: r-i
+    text:
+      uk: >-
+        І також (§43 ods. 4): співпрацювати з міністерством у провадженні та при наданні матеріальних умов; дотримуватися внутрішнього порядку притулкового закладу; на вимогу органів пред'являти тимчасове посвідчення або посвідчення заявника.
+      sk: >-
+        A tiež (§43 ods. 4): spolupracovať s ministerstvom, dodržiavať vnútorný poriadok zariadenia a preukazovať sa preukazom žiadateľa.
+  - id: r-j
+    text:
+      uk: >-
+        Неповнолітні без супроводу, розміщені в закладі соціально-правового захисту дітей, звільнені від значної частини цих правил (§45 ods. 1). Після досягнення повноліття така особа зобов'язана з'явитися в табір протягом ТРЬОХ ДНІВ, якщо цьому не заважають серйозні причини; заклад повідомляє міністерство протягом трьох робочих днів (§45 ods. 2).
+      sk: >-
+        Maloleté osoby bez sprievodu umiestnené v zariadení sociálnoprávnej ochrany sú z veľkej časti týchto pravidiel vyňaté (§45 ods. 1). Po nadobudnutí plnoletosti sa musia do troch dní dostaviť do pobytového tábora (§45 ods. 2).
+appliesTo:
+  - E1-protection-application-s3
+  - E2-asylum-persecution-s30
+  - E3-subsidiary-protection-s31
+  - E6-temporary-protection-s58
+reviewStatus: source_verified
+sourceIds: [slovlex-69-2026]
