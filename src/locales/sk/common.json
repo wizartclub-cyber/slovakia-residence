@@ -238,7 +238,10 @@
     "maxAge": "nie starší ako {{days}} dní",
     "requiredWhen": "Kedy sa vyžaduje",
     "feeExemptions": "Kto je od poplatku oslobodený",
-    "feeReduction": "Elektronické podanie: {{amount}} EUR."
+    "feeReduction": "Elektronické podanie: {{amount}} EUR.",
+    "legalNotes": "Čo ešte hovorí zákon",
+    "legalNotesHint": "Spoločné pravidlá k tejto ceste: dôvody zamietnutia, povinnosti, strata pobytu. Rozbaľte, čo potrebujete — to sa aj vytlačí.",
+    "legalNoteCount": "{{count}} bodov"
   },
   "catalogue": {
     "title": "Všetky cesty",

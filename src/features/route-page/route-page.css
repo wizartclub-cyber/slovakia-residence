@@ -186,3 +186,55 @@
 .route-page__grounds li {
   margin-bottom: 8px;
 }
+
+.legal-note {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  margin-bottom: 8px;
+}
+
+.legal-note__toggle {
+  font: inherit;
+  font-weight: 600;
+  text-align: start;
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding: 12px 16px;
+  border: 0;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+.legal-note__toggle:hover {
+  background: var(--accent-soft);
+}
+
+.legal-note__toggle::before {
+  content: '▸';
+  color: var(--text-secondary);
+  margin-inline-end: 8px;
+}
+
+.legal-note__toggle[aria-expanded='true']::before {
+  content: '▾';
+}
+
+.legal-note__count {
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.legal-note__body {
+  padding: 0 16px 12px 40px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}

@@ -157,9 +157,9 @@ test('чеклист словацькою показує ті самі доку�
 test('на сторінці перелічені всі підстави для відмови (§33 ods. 6)', async ({ page }) => {
   await page.goto(B2);
 
-  // Приміток на сторінці кілька (відмова, припинення, скасування), тому
-  // рахуємо пункти саме в розділі про відмову.
-  const refusal = page.locator('section').filter({ hasText: 'Через що відмовляють' }).last();
+  // Примітки згорнуті — спершу розгортаємо потрібну.
+  await page.getByRole('button', { name: /Через що відмовляють/ }).click();
+  const refusal = page.locator('.legal-note').filter({ hasText: 'Через що відмовляють' });
   // У законі рівно п'ятнадцять підстав, від a) до o). Неповний перелік
   // вводив би в оману, тому число зафіксоване.
   await expect(refusal.locator('li')).toHaveCount(15);
@@ -177,8 +177,10 @@ test('маршрут обновлення пояснює головне: под�
 
 test('на сторінці видно, коли пробут припиняється і коли його скасовують', async ({ page }) => {
   await page.goto(B2);
-  await expect(page.getByRole('heading', { name: /припиняється саме/ })).toBeVisible();
-  await expect(page.getByRole('heading', { name: /скасовує тимчасове проживання/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: /припиняється саме/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: /скасовує тимчасове проживання/ })).toBeVisible();
+
+  await page.getByRole('button', { name: /припиняється саме/ }).click();
   await expect(page.getByText('не в\'їхала на територію Словаччини протягом 180 днів', { exact: false })).toBeVisible();
 });
 
@@ -197,13 +199,15 @@ test('маршрут тимчасового захисту пояснює жит
 
 test('видно, коли тимчасовий захист припиняється', async ({ page }) => {
   await page.goto('./uk/route/E6-temporary-protection-s58');
-  const note = page.locator('section').filter({ hasText: 'тимчасовий захист припиняється' }).last();
+  await page.getByRole('button', { name: /тимчасовий захист припиняється/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: 'тимчасовий захист припиняється' });
   await expect(note.locator('li')).toHaveCount(10);
 });
 
 test('сторінка попереджає, хто може бути представником', async ({ page }) => {
   await page.goto(B2);
-  const note = page.locator('section').filter({ hasText: 'хто може вас представляти' }).last();
+  await page.getByRole('button', { name: /хто може вас представляти/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: 'хто може вас представляти' });
   await expect(note).toContainText('лише ОДНОГО обраного представника');
   await expect(note).toContainText('бездоганною репутацією');
   // Рішення про надання пробуту оскарженню не підлягає — отже оскаржують відмови.
@@ -212,7 +216,8 @@ test('сторінка попереджає, хто може бути предс
 
 test('перелічені обов\'язки під час пробуту, включно з правилом половини часу', async ({ page }) => {
   await page.goto(B2);
-  const note = page.locator('section').filter({ hasText: "Обов'язки під час пробуту" }).last();
+  await page.getByRole('button', { name: /Обов'язки під час пробуту/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: "Обов'язки під час пробуту" });
 
   // У законі рівно двадцять обов'язків, від a) до t).
   await expect(note.locator('li')).toHaveCount(20);
@@ -222,7 +227,8 @@ test('перелічені обов\'язки під час пробуту, вк
 
 test('попереджає, що картку видадуть на строк житла, а не пробуту', async ({ page }) => {
   await page.goto(B2);
-  const note = page.locator('section').filter({ hasText: 'Картка проживання' }).last();
+  await page.getByRole('button', { name: /Картка проживання/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: 'Картка проживання' });
   await expect(note).toContainText('якщо житло забезпечене на коротший час');
   await expect(note).toContainText('oprávnenie pracovať');
 });
@@ -235,7 +241,8 @@ test('маршрут додаткового захисту пояснює, що 
 
 test('пояснює, що пробут заявляє власник житла, а не сам іноземець', async ({ page }) => {
   await page.goto(B2);
-  const note = page.locator('section').filter({ hasText: 'Хто заявляє ваш пробут' }).last();
+  await page.getByRole('button', { name: /Хто заявляє ваш пробут/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: 'Хто заявляє ваш пробут' });
   await expect(note).toContainText('ТОЙ, ХТО НАДАЄ ЖИТЛО');
   await expect(note).toContainText("П'ЯТИ ДНІВ");
   await expect(note).toContainText('РОБОТОДАВЕЦЬ');
@@ -243,14 +250,16 @@ test('пояснює, що пробут заявляє власник житла
 
 test('громадянин ЄС бачить власний, коротший перелік обов\'язків', async ({ page }) => {
   await page.goto('./uk/route/F2-eu-registration-s66');
-  const note = page.locator('section').filter({ hasText: "Обов'язки громадянина ЄС" }).last();
+  await page.getByRole('button', { name: /Обов'язки громадянина ЄС/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: "Обов'язки громадянина ЄС" });
   await expect(note.locator('li')).toHaveCount(10);
   await expect(note).toContainText('ДЕСЯТИ РОБОЧИХ ДНІВ');
 });
 
 test('пояснює, що добровільне звернення знімає заборону в\'їзду', async ({ page }) => {
   await page.goto(B2);
-  const note = page.locator('section').filter({ hasText: 'Адміністративне видворення' }).last();
+  await page.getByRole('button', { name: /Адміністративне видворення/ }).click();
+  const note = page.locator('.legal-note').filter({ hasText: 'Адміністративне видворення' });
   await expect(note).toContainText('БЕЗ заборони');
   await expect(note).toContainText('асистованого добровільного повернення');
   // Строки заборони — з тексту закону, не з голови.

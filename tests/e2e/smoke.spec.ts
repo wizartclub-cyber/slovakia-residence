@@ -81,8 +81,13 @@ test('сайт працює офлайн після першого завант�
   await page.getByRole('link', { name: 'Тимчасове проживання — працевлаштування (§23)' }).click();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('працевлаштування (§23)');
 
-  const grounds = page.locator('.route-page__grounds li');
-  expect(await grounds.count()).toBeGreaterThan(10);
+  // Чеклист документів і кроки мають бути на місці — увесь контент уже в сторінці.
+  expect(await page.locator('.checklist__item').count()).toBeGreaterThan(3);
+  expect(await page.locator('.route-page__steps li').count()).toBeGreaterThan(3);
+
+  // Згорнута примітка теж має розгортатися офлайн: нічого не довантажується.
+  await page.getByRole('button', { name: /Через що відмовляють/ }).click();
+  await expect(page.locator('.legal-note__body li').first()).toBeVisible();
 
   await context.setOffline(false);
 });

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { usePageTitle } from '../../app/usePageTitle';
@@ -165,17 +166,6 @@ export function RoutePage() {
         )}
       </Section>
 
-      {notes.map((note) => (
-        <Section key={note.id} title={localized(note.title, lang)}>
-          {note.intro && <p>{localized(note.intro, lang)}</p>}
-          <ol className="route-page__grounds">
-            {note.items.map((item) => (
-              <li key={item.id}>{localized(item.text, lang)}</li>
-            ))}
-          </ol>
-        </Section>
-      ))}
-
       <Section title={t('route.authority')}>
         {procedure.authorityIds.map((aid) => {
           const authority = authorityById(aid);
@@ -206,6 +196,27 @@ export function RoutePage() {
         </Section>
       )}
 
+      {notes.length > 0 && (
+        <section className="route-page__section">
+          <h2>{t('route.legalNotes')}</h2>
+          <p className="route-page__note">{t('route.legalNotesHint')}</p>
+          {notes.map((note) => (
+            <CollapsibleNote
+              key={note.id}
+              title={localized(note.title, lang)}
+              count={note.items.length}
+            >
+              {note.intro && <p>{localized(note.intro, lang)}</p>}
+              <ol className="route-page__grounds">
+                {note.items.map((item) => (
+                  <li key={item.id}>{localized(item.text, lang)}</li>
+                ))}
+              </ol>
+            </CollapsibleNote>
+          ))}
+        </section>
+      )}
+
       <Section title={t('route.sources')}>
         <ul className="route-page__sources">
           {allSources.map((source) => (
@@ -228,6 +239,39 @@ export function RoutePage() {
         </ul>
       </Section>
     </article>
+  );
+}
+
+/**
+ * Спільні примітки із закону згорнуті: їх десять, і розгорнуті вони ховали б
+ * головне — кроки, документи і збори — під десятьма екранами тексту.
+ * Друкується те, що людина розгорнула.
+ */
+function CollapsibleNote({
+  title,
+  count,
+  children,
+}: {
+  title: string;
+  count: number;
+  children: React.ReactNode;
+}) {
+  const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="legal-note">
+      <button
+        type="button"
+        className="legal-note__toggle"
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span>{title}</span>
+        <span className="legal-note__count">{t('route.legalNoteCount', { count })}</span>
+      </button>
+      {open && <div className="legal-note__body">{children}</div>}
+    </div>
   );
 }
 
