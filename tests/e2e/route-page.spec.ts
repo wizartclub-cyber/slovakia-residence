@@ -163,7 +163,7 @@ test('на сторінці перелічені всі підстави для 
   // У законі рівно п'ятнадцять підстав, від a) до o). Неповний перелік
   // вводив би в оману, тому число зафіксоване.
   await expect(refusal.locator('li')).toHaveCount(15);
-  await expect(page.getByText('фіктивний шлюб', { exact: false })).toBeVisible();
+  await expect(refusal).toContainText('фіктивний шлюб');
   await expect(page.getByText('Це не «можуть відмовити», а «відмовлять»', { exact: false })).toBeVisible();
 });
 
@@ -246,4 +246,13 @@ test('громадянин ЄС бачить власний, коротший п
   const note = page.locator('section').filter({ hasText: "Обов'язки громадянина ЄС" }).last();
   await expect(note.locator('li')).toHaveCount(10);
   await expect(note).toContainText('ДЕСЯТИ РОБОЧИХ ДНІВ');
+});
+
+test('пояснює, що добровільне звернення знімає заборону в\'їзду', async ({ page }) => {
+  await page.goto(B2);
+  const note = page.locator('section').filter({ hasText: 'Адміністративне видворення' }).last();
+  await expect(note).toContainText('БЕЗ заборони');
+  await expect(note).toContainText('асистованого добровільного повернення');
+  // Строки заборони — з тексту закону, не з голови.
+  await expect(note).toContainText('десять років');
 });

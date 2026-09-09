@@ -1,0 +1,77 @@
+# Джерело: 404/2011 §82 і §83 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: expulsion-and-entry-ban-s82
+title:
+  uk: Адміністративне видворення і заборона в'їзду (§82)
+  sk: Administratívne vyhostenie a zákaz vstupu (§82)
+intro:
+  uk: >-
+    Це найважчі наслідки, передбачені законом, і водночас саме тут є норма, яка
+    може все змінити: при незаконному пробуті добровільне звернення в поліцію
+    з проханням про асистоване добровільне повернення дає рішення БЕЗ заборони
+    в'їзду. Заборона на роки і її відсутність — різниця, яка залежить від того,
+    хто зробив перший крок.
+  sk: >-
+    Ide o najťažšie následky podľa zákona, no práve tu je ustanovenie, ktoré môže
+    všetko zmeniť: pri neoprávnenom pobyte dobrovoľné dostavenie sa na políciu so
+    žiadosťou o asistovaný dobrovoľný návrat znamená rozhodnutie BEZ zákazu vstupu.
+items:
+  - id: m1
+    text:
+      uk: >-
+        ОБОВ'ЯЗКОВЕ видворення (§82 ods. 1): незаконний перетин зовнішнього кордону, умисне уникнення або відмова пройти прикордонний контроль — і незаконний пробут на території Словаччини.
+      sk: >-
+        POVINNÉ vyhostenie (§82 ods. 1): neoprávnené prekročenie vonkajšej hranice alebo neoprávnený pobyt na území SR.
+  - id: m2
+    text:
+      uk: >-
+        МОЖЛИВЕ видворення (§82 ods. 2), шістнадцять підстав: (a) серйозна загроза безпеці держави або публічному порядку; (b) загроза безпеці, порядку чи публічному здоров'ю; (c) остаточний вирок за умисний злочин без покарання у вигляді видворення; (d) порушення приписів про наркотичні й психотропні речовини; (e) подання підробленого чи чужого документа при перевірці; (f) фіктивний шлюб; (g) зрив виконання рішення державного органу; (h) скасування або відкликання візи; (i) неправдиві, неповні чи оманливі дані у провадженні; (j) виконання іншої діяльності, ніж та, для якої надано пробут або візу; (k) дії всупереч міжнародному договору чи рішенню уряду, на підставі яких особа перебуває; (l) відмова достовірно довести свою особу; (m) мета пробуту відпала, а особа не повідомила про це поліцію; (n) невиїзд у строк за §111 ods. 1 písm. p); (o) інше тяжке або повторне порушення загальнообов'язкових приписів; (p) виконання нелегальної роботи протягом попередніх двох років.
+      sk: >-
+        MOŽNÉ vyhostenie (§82 ods. 2), šestnásť dôvodov: od vážnej hrozby pre bezpečnosť cez účelové manželstvo, falošné doklady, výkon inej činnosti, než na akú bol pobyt udelený, až po nelegálnu prácu v predchádzajúcich dvoch rokoch.
+  - id: m3
+    text:
+      uk: >-
+        Строки заборони в'їзду (§82 ods. 3): десять років — за підставою (2)(a); від одного до п'яти років — за §82 ods. 1 і підставами (2)(b)–(i); від одного до трьох років — за (2)(j), (k), (o) і (p); один рік — за (2)(l)–(n). Якщо підстав кілька, застосовують найсуворішу (ods. 7).
+      sk: >-
+        Lehoty zákazu vstupu (§82 ods. 3): desať rokov, jeden až päť rokov, jeden až tri roky alebo jeden rok podľa dôvodu; pri viacerých dôvodoch platí najprísnejšie ustanovenie (ods. 7).
+  - id: m4
+    text:
+      uk: >-
+        НАЙВАЖЛИВІШЕ (§82 ods. 8): якщо йдеться про незаконний пробут і людина ДОБРОВІЛЬНО прийде в поліцію, попросить повернення на батьківщину в межах асистованого добровільного повернення, і міністерство внутрішніх справ на це погодиться — рішення про видворення видадуть БЕЗ заборони в'їзду. Це різниця між забороною на роки і її відсутністю.
+      sk: >-
+        NAJDÔLEŽITEJŠIE (§82 ods. 8): pri neoprávnenom pobyte sa rozhodnutie o vyhostení vydá BEZ zákazu vstupu, ak sa osoba dobrovoľne dostaví na políciu, požiada o asistovaný dobrovoľný návrat a ministerstvo s ním súhlasí.
+  - id: m5
+    text:
+      uk: >-
+        Якщо людина не виїхала у строк, визначений у рішенні про видворення, поліція вирішує про заборону в'їзду на строк за ods. 3 (§82 ods. 5). Заборона починає спливати від дня виконання видворення, виїзду через прикордонний перехід або виїзду в межах асистованого повернення (ods. 9).
+      sk: >-
+        Ak osoba nevycestovala v určenej lehote, policajný útvar rozhodne o zákaze vstupu (§82 ods. 5). Lehota začína plynúť dňom vykonania vyhostenia alebo vycestovania (ods. 9).
+  - id: m6
+    text:
+      uk: >-
+        Проти рішення про адміністративне видворення і проти рішення про заборону в'їзду відвід подати НЕ можна. Рішення виконується після спливу 30 днів від його доставлення (§83 ods. 12).
+      sk: >-
+        Proti rozhodnutiu o administratívnom vyhostení ani o zákaze vstupu nemožno podať odvolanie; vykonateľné je uplynutím 30 dní od doručenia (§83 ods. 12).
+  - id: m7
+    text:
+      uk: >-
+        Подання підробленого, неправомірно виданого або чужого документа під час прикордонного контролю на в'їзді — окрема підстава для заборони в'їзду на три-п'ять років (§82 ods. 6).
+      sk: >-
+        Predloženie falošného, neoprávnene vydaného alebo cudzieho dokladu pri hraničnej kontrole je osobitným dôvodom zákazu vstupu na tri až päť rokov (§82 ods. 6).
+appliesTo:
+  - A3-national-visa-120
+  - B1-business-s22
+  - B10-blue-card-s37
+  - B2-employment-s23
+  - B3-study-s24
+  - B4-special-activity-s25
+  - B5-research-s26
+  - B6-family-s27
+  - B8-slovak-abroad-s29
+  - B9-longterm-other-state-s30
+  - C1-permanent-s43
+  - C3-permanent-s46
+  - C4-longterm-s52
+  - D1-tolerated-s58
+  - G1-renewal-s34
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]
