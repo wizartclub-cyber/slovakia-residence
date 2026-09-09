@@ -1,4 +1,7 @@
 {
+  "env": {
+    "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "0"
+  },
   "permissions": {
     "allow": [
       "Read",
@@ -17,14 +20,9 @@
       "Bash(git commit *)",
       "Bash(ls *)",
       "Bash(cat *)",
-      "Bash(mkdir *)"
-    ],
-    "ask": [
-      "Bash(git push*)",
-      "Bash(pnpm add *)",
-      "Bash(pnpm install *)",
-      "Bash(rm *)",
-      "Bash(curl *)"
+      "Bash(mkdir *)",
+      "Bash(python3 -c \"import json,sys;[print\\(r['url'],'|',r.get\\('title',''\\)[:70]\\) for r in json.load\\(sys.stdin\\).get\\('results',[]\\)]\")",
+      "Bash(grep -oE '\\\\[[^]]{3,110}\\\\]\\\\\\(https://www\\\\.minv\\\\.sk/\\\\?pobyt-cudzinca&subor=[0-9]+\\\\\\)')"
     ],
     "deny": [
       "Read(./.env*)",
@@ -32,9 +30,13 @@
       "Edit(./document-registry-v0.3.yaml)",
       "Bash(git push --force*)",
       "Bash(sudo *)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(pnpm add *)",
+      "Bash(pnpm install *)",
+      "Bash(rm *)",
+      "Bash(curl *)"
     ]
-  },
-  "env": {
-    "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD": "0"
   }
 }

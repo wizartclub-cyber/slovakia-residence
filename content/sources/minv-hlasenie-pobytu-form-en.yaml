@@ -1,14 +1,13 @@
 # ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
 # Правити реєстр, потім `pnpm sources:build`.
-id: mzv-form-11-056
+id: minv-hlasenie-pobytu-form-en
 authority: MV SR
-title: T MV SR 11-056 IV/2025 — žiadosť o obnovenie prechodného pobytu / trvalý pobyt na neobmedzený čas /
-  dlhodobý pobyt (sk+en)
-url: https://www.minv.sk/?pobyt-cudzinca&subor=540981
+title: Hlásenie pobytu / Notice of the stay — tlačivo MV SR (sk+en)
+url: https://www.minv.sk/?hlasenie-pobytu-1&subor=303781
 pinnedUrl: null
 staticUrl: null
-formCode: T MV SR 11-056
-completionLanguage: sk
+formCode: null
+completionLanguage: null
 reviewStatus: draft
 registryStatus: snapshot_taken
 potentiallyStale: false
@@ -24,5 +23,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-09
 sourceType: official_form
-snapshotPath: sources/snapshots/mzv-form-11-056.pdf
-sha256: 9b62527f966851df4672d805bdebce21f94e2b5cf3f4bb980f9179437c8fc620
+snapshotPath: sources/snapshots/minv-hlasenie-pobytu-form-en.pdf
+sha256: d1637937ec6090e6f87ebd5eedef0b27d30a888c13bd2a608d6799d603d33362

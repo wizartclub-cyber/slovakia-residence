@@ -14,12 +14,10 @@ resources:
     at: '2026-09-09'
     by: claude-code
     url: https://www.mzv.sk/sluzby/viza-a-pobyt-na-slovensku/pobyt-na-slovensku
-    note: >-
-      MZV restructured its site; the Slovak page above was read on 2026-09-09 and shows
-      "Aktualizované 16.08.2026". It lists purposes of prechodný pobyt by paragraph
-      (§22–§30) and matches what we already took from the statute. Direct HTTP access is
-      still blocked by Cloudflare (403); the page was readable only through the Exa
-      crawler. Register it as a separate resource once someone can snapshot it.
+    note: MZV restructured its site; the Slovak page above was read on 2026-09-09 and shows "Aktualizované 16.08.2026". It
+      lists purposes of prechodný pobyt by paragraph (§22–§30) and matches what we already took from the statute. Direct HTTP
+      access is still blocked by Cloudflare (403); the page was readable only through the Exa crawler. Register it as a separate
+      resource once someone can snapshot it.
   type: official_guidance_html
   authority: MZV SR
   url: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
@@ -43,56 +41,72 @@ resources:
     ok: false
   procedureIds: []
 - id: mzv-form-11-057
-  title: T MV SR 11-057 — žiadosť o udelenie pobytu (prechodný, trvalý na 5 rokov, tolerovaný)
+  title: T MV SR 11-057 — žiadosť o udelenie prechodného / trvalého (5 rokov) / tolerovaného pobytu (sk+en)
   type: official_form_pdf
-  authority: MZV SR / MV SR
-  url: https://www.mzv.sk/documents/30297/1912918/Application%2Bfor%2Bthe%2Btemporary%2Bresidence/12f647e7-5f64-4261-a98e-6ce4f895599f
+  authority: MV SR
+  url: https://www.minv.sk/?pobyt-cudzinca&subor=540978
   formCode: T MV SR 11-057
-  fillMode: overlay
-  reviewStatus: fetch_pending
+  fillMode: print_and_fill_by_hand
+  reviewStatus: snapshot_taken
   locale: sk+en
   urlCheck:
-    checkedAt: '2026-09-07'
-    result: ok
-    observed: 'T MV SR 11-057; sk/en bilingual; instruction: must be completed by typewriter or block capitals IN SLOVAK;
-      covers temporary, 5-year permanent and tolerated residence'
+    checkedAt: '2026-09-09'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом неможливе:
+      сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із браузера.'
+    listedSize: 1,2 MB
   completionLanguage: sk
-  fillModeNote: overlay assumed; confirm acroFormFields from snapshot before final choice
-  snapshot:
-    retrievedAt: '2026-09-08T21:36:39Z'
-    requestedUrl: https://www.mzv.sk/documents/30297/1912918/Application%2Bfor%2Bthe%2Btemporary%2Bresidence/12f647e7-5f64-4261-a98e-6ce4f895599f
-    httpStatus: 403
-    finalUrl: https://www.mzv.sk/documents/30297/1912918/Application%2Bfor%2Bthe%2Btemporary%2Bresidence/12f647e7-5f64-4261-a98e-6ce4f895599f
-    redirected: false
-    serverMime: text/html; charset=UTF-8
-    serverLastModified: ''
-    ok: false
+  fillModeNote: У PDF немає полів форми (0 acroFormFields) — заповнити на комп'ютері не можна, тільки друкувати. 11-056 навпаки
+    має 49 полів.
   procedureIds: []
+  versionFinding:
+    at: '2026-09-09'
+    by: claude-code
+    note: 'Розбіжність версій: у переліку minv.sk і в назві файлу стоїть IV-2025, а в шапці самого бланка надруковано «T MV
+      SR 11-057 VII/2020». Не виправляв на власний розсуд — юрист має звірити, яка версія чинна.'
+  snapshot:
+    retrievedAt: '2026-09-09T19:34:00Z'
+    requestedUrl: https://www.minv.sk/?pobyt-cudzinca&subor=540978
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 1183617
+    sha256: 74b7529c0885c7a672f2df80cdcb09dbfb4fcf7a8cb6096e17aaf42215f95f2f
+    snapshotPath: sources/snapshots/mzv-form-11-057.pdf
+    pdf:
+      pages: 4
+      acroFormFields: 0
 - id: mzv-form-11-056
-  title: T MV SR 11-056 (III/2019) — žiadosť o obnovenie prechodného pobytu, trvalý pobyt na neobmedzený čas, dlhodobý pobyt
+  title: T MV SR 11-056 IV/2025 — žiadosť o obnovenie prechodného pobytu / trvalý pobyt na neobmedzený čas / dlhodobý pobyt
+    (sk+en)
   type: official_form_pdf
-  authority: MZV SR / MV SR
-  url: https://www.mzv.sk/documents/10182/16461384/004-Application-for-renewal-of-the-temporary-residence-Application-for-permanent-residence-for-an-unlimited-time-long-term-residence.pdf/4e0ef0eb-bc76-db80-b4ac-0f7af22e1daa
+  authority: MV SR
+  url: https://www.minv.sk/?pobyt-cudzinca&subor=540981
   formCode: T MV SR 11-056
-  fillMode: overlay
-  reviewStatus: fetch_pending
+  fillMode: acroform
+  reviewStatus: snapshot_taken
   locale: sk+en
   urlCheck:
-    checkedAt: '2026-09-07'
-    result: ok
-    observed: T MV SR 11-056 III/2019; renewal of temporary residence, permanent/long-term residence, EU-citizen registration,
-      family-member documents; Slovak completion required per note 2
+    checkedAt: '2026-09-09'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом неможливе:
+      сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із браузера.'
+    listedSize: 215,8 kB
   completionLanguage: sk
-  snapshot:
-    retrievedAt: '2026-09-08T21:36:39Z'
-    requestedUrl: https://www.mzv.sk/documents/10182/16461384/004-Application-for-renewal-of-the-temporary-residence-Application-for-permanent-residence-for-an-unlimited-time-long-term-residence.pdf/4e0ef0eb-bc76-db80-b4ac-0f7af22e1daa
-    httpStatus: 403
-    finalUrl: https://www.mzv.sk/documents/10182/16461384/004-Application-for-renewal-of-the-temporary-residence-Application-for-permanent-residence-for-an-unlimited-time-long-term-residence.pdf/4e0ef0eb-bc76-db80-b4ac-0f7af22e1daa
-    redirected: false
-    serverMime: text/html; charset=UTF-8
-    serverLastModified: ''
-    ok: false
   procedureIds: []
+  fillModeNote: PDF має 49 полів форми — можна заповнити на комп'ютері й роздрукувати.
+  snapshot:
+    retrievedAt: '2026-09-09T19:34:00Z'
+    requestedUrl: https://www.minv.sk/?pobyt-cudzinca&subor=540981
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 215783
+    sha256: 9b62527f966851df4672d805bdebce21f94e2b5cf3f4bb980f9179437c8fc620
+    snapshotPath: sources/snapshots/mzv-form-11-056.pdf
+    pdf:
+      pages: 3
+      acroFormFields: 49
 - id: mzv-national-visa-sk
   title: ŽIADOSŤ O NÁRODNÉ VÍZUM (sk)
   type: official_form_pdf
@@ -382,10 +396,9 @@ resources:
   contentChecked:
     at: '2026-09-09'
     by: claude-code
-    scope: '§22, §23, §27, §32, §33 — прочитано у знятому снапшоті'
-    note: >-
-      Дані маршрутів B1, B2, B6 і всіх файлів content/documents узяті з цього тексту.
-      Це НЕ юридична перевірка: юрист має звірити повноту умов і винятків.
+    scope: §22, §23, §27, §32, §33 — прочитано у знятому снапшоті
+    note: 'Дані маршрутів B1, B2, B6 і всіх файлів content/documents узяті з цього тексту. Це НЕ юридична перевірка: юрист
+      має звірити повноту умов і винятків.'
   type: statute
   authority: Slov-Lex
   url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2011/404/
@@ -421,9 +434,8 @@ resources:
   contentChecked:
     at: '2026-09-09'
     by: claude-code
-    scope: '§3, §4, §6, §30, §32 — прочитано у знятому снапшоті (з 91 статті)'
-    note: >-
-      Маршрути E1 і E2 взяті з цього тексту. Це НЕ юридична перевірка.
+    scope: §3, §4, §6, §30, §32 — прочитано у знятому снапшоті (з 91 статті)
+    note: Маршрути E1 і E2 взяті з цього тексту. Це НЕ юридична перевірка.
   type: statute
   authority: Slov-Lex
   url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/69/20260612
@@ -590,9 +602,8 @@ resources:
   contentChecked:
     at: '2026-09-09'
     by: claude-code
-    scope: 'položka 24 (усі підпункти і розділ Oslobodenie), položka 26, §6 ods. 2'
-    note: >-
-      Суми і звільнення у content/fees взяті з цього тексту. Це НЕ юридична перевірка.
+    scope: položka 24 (усі підпункти і розділ Oslobodenie), položka 26, §6 ods. 2
+    note: Суми і звільнення у content/fees взяті з цього тексту. Це НЕ юридична перевірка.
   type: statute
   authority: Slov-Lex
   url: https://static.slov-lex.sk/static/SK/ZZ/1995/145/20260901.print.html
@@ -686,22 +697,35 @@ resources:
     snapshotPath: sources/snapshots/slovensko-sk-eservices.html
   procedureIds: []
 - id: minv-hlasenie-pobytu-form
-  title: Hlásenie pobytu — tlačivo MV SR (neoverené)
+  title: Hlásenie pobytu — tlačivo MV SR (sk)
   type: official_form_pdf
   authority: MV SR
-  url: null
+  url: https://www.minv.sk/?hlasenie-pobytu-1&subor=303780
   priority: medium
-  reviewStatus: fetch_pending
+  reviewStatus: snapshot_taken
   locale: sk
   addedAt: '2026-09-08'
-  addedNote: Hlasenie pobytu form — post-grant obligation. SOURCE_AUDIT_v0.4 requires retrieving and verifying the actual
-    PDF behind the reported page before registering a downloadable asset. No verified URL yet.
-  snapshot:
-    retrievedAt: '2026-09-08T21:36:44Z'
-    requestedUrl: null
-    ok: false
-    error: no url in registry — supply the official URL first
   procedureIds: []
+  urlCheck:
+    checkedAt: '2026-09-09'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом неможливе:
+      сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із браузера.'
+    listedSize: 510,7 kB
+  fillMode: print_and_fill_by_hand
+  notes: Офіційна сторінка пропонує ще версії FRA, GER, HUN, ITA, RUS — не завантажували.
+  snapshot:
+    retrievedAt: '2026-09-09T19:34:00Z'
+    requestedUrl: https://www.minv.sk/?hlasenie-pobytu-1&subor=303780
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 510718
+    sha256: 13398c065aaaca66bc0695e45b9c04d68ed74439c37e469e776499ce52ba61c7
+    snapshotPath: sources/snapshots/minv-hlasenie-pobytu-form.pdf
+    pdf:
+      pages: 1
+      acroFormFields: 0
 - id: minv-hcp-contacts
   title: Kontakty Hraničnej a cudzineckej polície — MV SR
   type: official_guidance_html
@@ -714,18 +738,102 @@ resources:
   urlCheck:
     checkedAt: '2026-09-09'
     result: ok_js_required
-    observed: >-
-      Official contact directory of the Border and Foreign Police. Lists the ÚHCP PP PZ,
-      four regional directorates and 13 oddelenia cudzineckej polície with street
-      addresses, GPS and phone numbers; page states "Upravené dňa: 7. 8. 2025".
-      Page is JavaScript-rendered: a plain HTTP GET returns the site homepage, the
-      content was read through the Jina reader on 2026-09-09.
-  addedNote: >-
-    Джерело адрес підрозділів поліції у справах іноземців. Снапшот НЕ знято:
-    сторінка малюється JavaScript, і download_and_hash.py збереже лише оболонку.
-    Територіальна компетенція підрозділів на цій сторінці не наведена.
+    observed: 'Official contact directory of the Border and Foreign Police. Lists the ÚHCP PP PZ, four regional directorates
+      and 13 oddelenia cudzineckej polície with street addresses, GPS and phone numbers; page states "Upravené dňa: 7. 8.
+      2025". Page is JavaScript-rendered: a plain HTTP GET returns the site homepage, the content was read through the Jina
+      reader on 2026-09-09.'
+  addedNote: 'Джерело адрес підрозділів поліції у справах іноземців. Снапшот НЕ знято: сторінка малюється JavaScript, і download_and_hash.py
+    збереже лише оболонку. Територіальна компетенція підрозділів на цій сторінці не наведена.'
   snapshot: null
   procedureIds: []
+- id: minv-form-11-072
+  type: official_form_pdf
+  authority: MV SR
+  reviewStatus: snapshot_taken
+  procedureIds: []
+  addedAt: '2026-09-09'
+  url: https://www.minv.sk/?pozvanie-cudzinca&subor=451913
+  urlCheck:
+    checkedAt: '2026-09-09'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом неможливе:
+      сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із браузера.'
+    listedSize: 237,7 kB
+  title: T MV SR 11-072 VII/2018 — žiadosť o overenie pozvania (sk+en)
+  locale: sk+en
+  fillMode: acroform
+  fillModeNote: PDF має 43 поля форми.
+  notes: Бланк для того, хто ЗАПРОШУЄ (мешканець СР), а не для іноземця.
+  snapshot:
+    retrievedAt: '2026-09-09T19:34:00Z'
+    requestedUrl: https://www.minv.sk/?pozvanie-cudzinca&subor=451913
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 237657
+    sha256: 1187588d4a67cc38511e493fa07f8f56a89e303cf0cec8534b6affa5fb3e3b0e
+    snapshotPath: sources/snapshots/minv-form-11-072.pdf
+    pdf:
+      pages: 3
+      acroFormFields: 43
+- id: minv-hlasenie-pobytu-form-en
+  type: official_form_pdf
+  authority: MV SR
+  reviewStatus: snapshot_taken
+  procedureIds: []
+  addedAt: '2026-09-09'
+  url: https://www.minv.sk/?hlasenie-pobytu-1&subor=303781
+  urlCheck:
+    checkedAt: '2026-09-09'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом неможливе:
+      сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із браузера.'
+    listedSize: 513,4 kB
+  title: Hlásenie pobytu / Notice of the stay — tlačivo MV SR (sk+en)
+  locale: sk+en
+  fillMode: print_and_fill_by_hand
+  snapshot:
+    retrievedAt: '2026-09-09T19:34:00Z'
+    requestedUrl: https://www.minv.sk/?hlasenie-pobytu-1&subor=303781
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 513390
+    sha256: d1637937ec6090e6f87ebd5eedef0b27d30a888c13bd2a608d6799d603d33362
+    snapshotPath: sources/snapshots/minv-hlasenie-pobytu-form-en.pdf
+    pdf:
+      pages: 1
+      acroFormFields: 0
+- id: minv-hlasenie-pobytu-form-uk
+  type: official_form_pdf
+  authority: MV SR
+  reviewStatus: snapshot_taken
+  procedureIds: []
+  addedAt: '2026-09-09'
+  url: https://www.minv.sk/?hlasenie-pobytu-1&subor=437458
+  urlCheck:
+    checkedAt: '2026-09-09'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом неможливе:
+      сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із браузера.'
+    listedSize: 134,5 kB
+  title: T MV SR 11-060-2 — Hlásenie pobytu / Звіт про проживання (uk)
+  locale: uk
+  fillMode: print_and_fill_by_hand
+  notes: Єдиний офіційний бланк українською, який ми знайшли. Та сама форма у .docx — https://www.minv.sk/?hlasenie-pobytu-1&subor=437457
+    (29,9 kB).
+  snapshot:
+    retrievedAt: '2026-09-09T19:34:00Z'
+    requestedUrl: https://www.minv.sk/?hlasenie-pobytu-1&subor=437458
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 134459
+    sha256: a16109a227d440d7e357ca84a6921c0460b915d6d4a4128c2071677dd12e0ca7
+    snapshotPath: sources/snapshots/minv-hlasenie-pobytu-form-uk.pdf
+    pdf:
+      pages: 1
+      acroFormFields: 0
 baselinePolicy: 'moving: legal baseline = date of last completed legal review; historical editions preserved (decision 2026-09-07)'
 reviewStatusEnum:
 - fetch_pending
@@ -741,4 +849,4 @@ resourceFields:
   snapshot: written by scripts/download_and_hash.py on the owner machine — sha256, bytes, signature, pages
   locale: language(s) of the resource
   procedureIds: to be filled when content/procedures exist
-snapshotRunAt: '2026-09-08T21:44:25Z'
+snapshotRunAt: '2026-09-09T19:34:00Z'

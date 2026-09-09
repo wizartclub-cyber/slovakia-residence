@@ -1,18 +1,19 @@
 # ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
 # Правити реєстр, потім `pnpm sources:build`.
 id: mzv-form-11-057
-authority: MZV SR / MV SR
-title: T MV SR 11-057 — žiadosť o udelenie pobytu (prechodný, trvalý na 5 rokov, tolerovaný)
-url: https://www.mzv.sk/documents/30297/1912918/Application%2Bfor%2Bthe%2Btemporary%2Bresidence/12f647e7-5f64-4261-a98e-6ce4f895599f
+authority: MV SR
+title: T MV SR 11-057 — žiadosť o udelenie prechodného / trvalého (5 rokov) / tolerovaného pobytu (sk+en)
+url: https://www.minv.sk/?pobyt-cudzinca&subor=540978
 pinnedUrl: null
 staticUrl: null
 formCode: T MV SR 11-057
 completionLanguage: sk
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
-evidence: "T MV SR 11-057; sk/en bilingual; instruction: must be completed by typewriter or block capitals IN
-  SLOVAK; covers temporary, 5-year permanent and tolerated residence"
+evidence: "Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом
+  неможливе: сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із
+  браузера."
 notes: null
 locale: sk+en
 lawNumber: null
@@ -20,7 +21,7 @@ provision: null
 publicationDate: null
 effectiveFrom: null
 effectiveTo: null
-checkedAt: 2026-09-07
+checkedAt: 2026-09-09
 sourceType: official_form
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/mzv-form-11-057.pdf
+sha256: 74b7529c0885c7a672f2df80cdcb09dbfb4fcf7a8cb6096e17aaf42215f95f2f

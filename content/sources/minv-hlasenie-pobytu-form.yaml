@@ -2,25 +2,26 @@
 # Правити реєстр, потім `pnpm sources:build`.
 id: minv-hlasenie-pobytu-form
 authority: MV SR
-title: Hlásenie pobytu — tlačivo MV SR (neoverené)
-url: null
+title: Hlásenie pobytu — tlačivo MV SR (sk)
+url: https://www.minv.sk/?hlasenie-pobytu-1&subor=303780
 pinnedUrl: null
 staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
-evidence: null
-notes: Hlasenie pobytu form — post-grant obligation. SOURCE_AUDIT_v0.4 requires retrieving and verifying the
-  actual PDF behind the reported page before registering a downloadable asset. No verified URL yet.
+evidence: "Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом
+  неможливе: сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із
+  браузера."
+notes: Офіційна сторінка пропонує ще версії FRA, GER, HUN, ITA, RUS — не завантажували.
 locale: sk
 lawNumber: null
 provision: null
 publicationDate: null
 effectiveFrom: null
 effectiveTo: null
-checkedAt: null
+checkedAt: 2026-09-09
 sourceType: official_form
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/minv-hlasenie-pobytu-form.pdf
+sha256: 13398c065aaaca66bc0695e45b9c04d68ed74439c37e469e776499ce52ba61c7

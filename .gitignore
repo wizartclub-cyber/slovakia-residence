@@ -19,3 +19,7 @@ sources/snapshots/*
 
 # TypeScript build info
 *.tsbuildinfo
+
+# файли від власника, які ще не мають підтвердженої офіційної адреси
+sources/inbox/*
+!sources/inbox/README.md

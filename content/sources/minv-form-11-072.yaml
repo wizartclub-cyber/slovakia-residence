@@ -1,21 +1,20 @@
 # ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
 # Правити реєстр, потім `pnpm sources:build`.
-id: mzv-form-11-056
+id: minv-form-11-072
 authority: MV SR
-title: T MV SR 11-056 IV/2025 — žiadosť o obnovenie prechodného pobytu / trvalý pobyt na neobmedzený čas /
-  dlhodobý pobyt (sk+en)
-url: https://www.minv.sk/?pobyt-cudzinca&subor=540981
+title: T MV SR 11-072 VII/2018 — žiadosť o overenie pozvania (sk+en)
+url: https://www.minv.sk/?pozvanie-cudzinca&subor=451913
 pinnedUrl: null
 staticUrl: null
-formCode: T MV SR 11-056
-completionLanguage: sk
+formCode: null
+completionLanguage: null
 reviewStatus: draft
 registryStatus: snapshot_taken
 potentiallyStale: false
 evidence: "Розмір файлу збігається з офіційним переліком на minv.sk байт у байт. Пряме завантаження скриптом
   неможливе: сервер віддає програмам HTML-сторінку (52 кБ) замість файлу, тому файл зберіг власник із
   браузера."
-notes: null
+notes: Бланк для того, хто ЗАПРОШУЄ (мешканець СР), а не для іноземця.
 locale: sk+en
 lawNumber: null
 provision: null
@@ -24,5 +23,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-09
 sourceType: official_form
-snapshotPath: sources/snapshots/mzv-form-11-056.pdf
-sha256: 9b62527f966851df4672d805bdebce21f94e2b5cf3f4bb980f9179437c8fc620
+snapshotPath: sources/snapshots/minv-form-11-072.pdf
+sha256: 1187588d4a67cc38511e493fa07f8f56a89e303cf0cec8534b6affa5fb3e3b0e
