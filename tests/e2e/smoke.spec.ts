@@ -69,3 +69,20 @@ test('клавіатура: перше натискання Tab дає поси�
   await page.keyboard.press('Tab');
   await expect(page.locator(':focus')).toHaveText('Перейти до основного змісту');
 });
+
+test('сайт працює офлайн після першого завантаження (spec §6)', async ({ page, context }) => {
+  await page.goto('./uk/');
+  await page.goto('./uk/routes');
+
+  // Обриваємо мережу повністю.
+  await context.setOffline(true);
+
+  // Переходи всередині сайту мають працювати: увесь контент уже в сторінці.
+  await page.getByRole('link', { name: 'Тимчасове проживання — працевлаштування (§23)' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('працевлаштування (§23)');
+
+  const grounds = page.locator('.route-page__grounds li');
+  expect(await grounds.count()).toBeGreaterThan(10);
+
+  await context.setOffline(false);
+});

@@ -32,7 +32,9 @@ test('опитувальник доводить до маршрутів (uk)', a
   await fillFinder(page, { citizenship: 'third_country', purpose: 'employment' }, UK);
 
   await expect(page.getByRole('heading', { name: 'Що вам може підійти' })).toBeVisible();
-  await expect(page.getByText('Тимчасове проживання — працевлаштування (§23)')).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'Тимчасове проживання — працевлаштування (§23)' }),
+  ).toBeVisible();
 });
 
 test('маршрут із неповними умовами не обіцяє придатності', async ({ page }) => {
@@ -112,7 +114,9 @@ test('опитувальник працює словацькою', async ({ page
   );
 
   await expect(page.getByRole('heading', { name: 'Čo pre vás môže prichádzať do úvahy' })).toBeVisible();
-  await expect(page.getByText('Prechodný pobyt na účel zamestnania (§23)')).toBeVisible();
+  await expect(
+    page.getByRole('link', { name: 'Prechodný pobyt na účel zamestnania (§23)' }),
+  ).toBeVisible();
 });
 
 test('варіант відповіді обирається з клавіатури', async ({ page }) => {
@@ -120,4 +124,17 @@ test('варіант відповіді обирається з клавіату
   await page.locator('#citizenship-eu_eea_ch').focus();
   await page.keyboard.press('ArrowDown');
   await expect(page.locator('#citizenship-third_country')).toBeChecked();
+});
+
+test('таблиця порівняння показує строки і суми', async ({ page }) => {
+  await page.goto('./uk/finder');
+  await fillFinder(page, { citizenship: 'third_country', purpose: 'employment', location: 'abroad' }, UK);
+
+  const table = page.locator('.comparison table');
+  await expect(table).toBeVisible();
+  await expect(table.getByRole('columnheader', { name: 'Строк рішення' })).toBeVisible();
+
+  const rows = table.locator('tbody tr');
+  expect(await rows.count()).toBeGreaterThanOrEqual(2);
+  await expect(page.getByText('це не рейтинг', { exact: false })).toBeVisible();
 });

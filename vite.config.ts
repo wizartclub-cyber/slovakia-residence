@@ -38,7 +38,22 @@ function relaxCspInDev(): Plugin {
 export default defineConfig({
   base: '/slovakia-residence/',
   plugins: [contentYaml(), react(), relaxCspInDev()],
-  build: { target: 'es2022', assetsInlineLimit: 0 },
+  build: {
+    target: 'es2022',
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        // Сторінки НЕ ділимо на частини, які довантажуються пізніше: spec §6
+        // вимагає, щоб сайт працював офлайн після першого завантаження, а
+        // відкладений шматок офлайн просто не завантажиться.
+        // Бібліотеки виносимо окремо — вони не змінюються між релізами,
+        // тож браузер не качатиме їх заново щоразу.
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom', 'i18next', 'react-i18next'],
+        },
+      },
+    },
+  },
   test: {
     include: ['tests/{unit,rules}/**/*.test.ts'],
     environment: 'node',

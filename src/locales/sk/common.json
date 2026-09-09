@@ -197,7 +197,10 @@
     "status": {
       "reviewed": "skontrolované právnikom",
       "incomplete": "neskontrolované právnikom"
-    }
+    },
+    "comparisonTitle": "Porovnanie",
+    "comparisonNote": "Sumy sú orientačné a uvedené rozpätím, závisia od spôsobu podania a účelu. Poradie riadkov je rovnaké ako v zozname vyššie — nejde o rebríček.",
+    "comparisonRoute": "Cesta"
   },
   "route": {
     "notFound": "Takáto cesta neexistuje",
