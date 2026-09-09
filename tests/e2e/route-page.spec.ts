@@ -144,7 +144,7 @@ test('суми фінансового забезпечення обчислен�
 test('кроки маршруту показані по порядку', async ({ page }) => {
   await page.goto(B2);
   const steps = page.locator('.route-page__steps li');
-  expect(await steps.count()).toBe(5);
+  expect(await steps.count()).toBe(7);
   await expect(steps.first()).toContainText('Роботодавець отримує підтвердження');
 });
 
@@ -277,4 +277,11 @@ test('заявник про захист бачить свої права і п�
   await page.getByRole('button', { name: /Як розглядають заяву/ }).click();
   const decision = page.locator('.legal-note').filter({ hasText: 'Як розглядають заяву' });
   await expect(decision).toContainText("ЗОБОВ'ЯЗАНЕ водночас вирішити");
+});
+
+test('маршрут §23 показує випадки, коли пробут перші 90 днів не потрібен', async ({ page }) => {
+  await page.goto(B2);
+  const steps = page.locator('.route-page__steps li');
+  await expect(steps.last()).toContainText('перші 90 днів пробут не потрібен');
+  await expect(steps.last()).toContainText('сезонну зайнятість');
 });

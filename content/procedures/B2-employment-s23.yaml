@@ -161,6 +161,54 @@ steps:
     afterDecision: true
     prerequisites: [s5-decision]
     sourceIds: [slovlex-404-2011]
+  - id: s7-ict
+    order: 7
+    title:
+      uk: Внутрішньокорпоративний переказ — окремі строки
+      sk: Vnútropodnikový presun — osobitné lehoty
+    body:
+      uk: >-
+        §23 ods. 5: якщо йдеться про внутрішньокорпоративний переказ, пробут
+        можуть надати не більше ніж на три роки керівному працівникові або
+        фахівцеві і не більше ніж на один рік працівникові-стажисту. У картці
+        проживання в полі «вид пробуту» проставлять «ICT» (§73 ods. 5).
+      sk: >-
+        §23 ods. 5: pri vnútropodnikovom presune sa pobyt udelí najviac na tri roky
+        vedúcemu zamestnancovi alebo odborníkovi a najviac na jeden rok
+        zamestnancovi – stážistovi. V doklade sa uvedie „ICT“ (§73 ods. 5).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s8-no-permit-90-days
+    order: 8
+    title:
+      uk: Сім випадків, коли перші 90 днів пробут не потрібен
+      sk: Sedem prípadov, keď sa prvých 90 dní pobyt nevyžaduje
+    body:
+      uk: >-
+        §23 ods. 6: пробут на працевлаштування не вимагається протягом 90 днів
+        від початку перебування, якщо людина виконує умови перебування за окремим
+        приписом, виконала обов'язок за §111 ods. 2 písm. a) і при цьому:
+        (a) працює для значного іноземного інвестора в Словаччині; (b) відряджена
+        роботодавцем із держави-члена в межах надання послуг; (c) зайнята в
+        міжнародних перевезеннях і відряджена своїм закордонним роботодавцем;
+        (d) за торговим договором забезпечує постачання товару чи послуг і
+        виконує монтаж, гарантійні та ремонтні роботи, налаштування систем,
+        програмування або фахові навчання, якщо відрядження загалом не перевищує
+        90 днів на рік; (e) те саме для компанії, якій надано інвестиційну
+        допомогу, на строк рішення про її схвалення; (f) виконує сезонну
+        зайнятість; (g) проводить фахові навчання для центру підприємницьких
+        послуг, якщо трудові відносини не перевищують 90 днів у календарному році.
+      sk: >-
+        §23 ods. 6: pobyt na účel zamestnania sa nevyžaduje do 90 dní od začiatku
+        pobytu v siedmich prípadoch — práca pre významného zahraničného investora,
+        vyslanie zamestnávateľom z členského štátu, medzinárodná doprava, dodávky
+        tovaru a služieb do 90 dní v roku, dodávky pre spoločnosť s investičnou
+        pomocou, sezónne zamestnanie a odborné školenia pre centrum podnikových
+        služieb do 90 dní.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
 transitionRules: []
 relatedProcedureIds: [A3-national-visa-120]
 openQuestions:
