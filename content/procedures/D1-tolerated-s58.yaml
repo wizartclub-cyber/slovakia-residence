@@ -1,0 +1,116 @@
+# Наповнено з тексту §58 (снапшот slovlex-404-2011).
+id: D1-tolerated-s58
+category: D
+title:
+  uk: Толероване перебування (§58)
+  sk: Tolerovaný pobyt (§58)
+legalBasis:
+  - '404/2011 §58'
+  - '404/2011 §59 ods. 12'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    Для нелегально працевлаштованих в особливо експлуататорських умовах —
+    180 днів із можливістю повторного продовження на 180 днів, аж до
+    остаточного завершення кримінального провадження або поки не буде виплачено
+    заборговану винагороду (§58 ods. 2). Для жертв торгівлі людьми окремо
+    діє строк до 90 днів на роздуми, який можна продовжити на 30 днів
+    (§58 ods. 3).
+  sk: >-
+    Pri nelegálnom zamestnaní za osobitne vykorisťujúcich podmienok 180 dní
+    s opakovaným predĺžením o 180 dní až do právoplatného skončenia trestného
+    konania alebo úhrady dlžnej odmeny (§58 ods. 2). Pri obetiach obchodovania
+    s ľuďmi lehota na rozhodnutie do 90 dní, predĺžiteľná o 30 dní (§58 ods. 3).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: x-already-has-residence
+    effect: exclude
+    when: { field: currentStatus, in: [temporary_residence, permanent_residence] }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [ocp-pz]
+feeRuleIds: [fee-tolerated-first, fee-tolerated-extension]
+documentIds: []
+steps:
+  - id: s1-grounds
+    order: 1
+    title:
+      uk: Чотири підстави, за яких поліція надає толероване перебування
+      sk: Štyri dôvody, pri ktorých policajný útvar udelí tolerovaný pobyt
+    body:
+      uk: >-
+        §58 ods. 1: (a) неповнолітня особа, знайдена на території Словаччини;
+        (b) якщо цього вимагає повага до приватного і сімейного життя і це не
+        загрожує безпеці держави чи публічному порядку — для осіб за §27 ods. 1
+        і §43 ods. 1 písm. a) až d) лише тоді, коли вони не мають дійсного
+        проїзного документа і достовірно доводять свою особу інакше;
+        (c) жертва торгівлі людьми віком від 18 років; (d) якщо це випливає з
+        міжнародних зобов'язань Словаччини.
+      sk: >-
+        §58 ods. 1: (a) maloletá osoba nájdená na území SR; (b) ak to vyžaduje
+        rešpektovanie súkromného a rodinného života a neohrozuje to bezpečnosť
+        štátu ani verejný poriadok; (c) obeť obchodovania s ľuďmi od 18 rokov;
+        (d) ak to vyplýva z medzinárodných záväzkov SR.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-exploited-work
+    order: 2
+    title:
+      uk: Окремий шлях для нелегально працевлаштованих
+      sk: Osobitná cesta pri nelegálnom zamestnaní
+    body:
+      uk: >-
+        §58 ods. 2: за заявою органу, що веде кримінальне провадження, толероване
+        перебування може отримати особа, яку нелегально працевлаштували в
+        особливо експлуататорських умовах, або нелегально працевлаштована
+        неповнолітня особа, якщо її присутність потрібна для кримінального
+        провадження. Орган або вповноважена міністерством особа зобов'язані
+        пояснити людині цю можливість, її умови, права й обов'язки.
+      sk: >-
+        §58 ods. 2: na žiadosť orgánu činného v trestnom konaní môže tolerovaný
+        pobyt získať osoba nelegálne zamestnaná za osobitne vykorisťujúcich
+        podmienok alebo nelegálne zamestnaná maloletá osoba, ak je jej prítomnosť
+        potrebná na trestné konanie.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-fee
+    order: 3
+    title:
+      uk: За частиною підстав збір не стягується
+      sk: Pri časti dôvodov sa poplatok neplatí
+    body:
+      uk: >-
+        Тариф 145/1995, положка 24, Oslobodenie 7: від зборів за підпунктами h)
+        і i) (140 € і 50 €) звільнені ті, хто просить толероване перебування за
+        §58 ods. 1 písm. a) і c) та за §58 ods. 2 — тобто знайдені неповнолітні,
+        жертви торгівлі людьми і нелегально працевлаштовані в експлуататорських
+        умовах. Окремо звільнені всі, молодші за 18 років (Oslobodenie 3).
+      sk: >-
+        Sadzobník 145/1995, položka 24, Oslobodenie 7: od poplatkov podľa písmen
+        h) a i) sú oslobodené osoby žiadajúce o tolerovaný pobyt podľa §58 ods. 1
+        písm. a) a c) a ods. 2. Osobitne sú oslobodené osoby mladšie ako 18 rokov.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-145-1995]
+transitionRules: []
+relatedProcedureIds: []
+openQuestions:
+  - 'Опитувальник не питає про обставини, які тут вирішальні (знайдена неповнолітня особа, жертва торгівлі людьми, нелегальна експлуатація), тому маршрут показується всім громадянам третіх країн без чинного пробуту. Це навмисно широко: краще показати зайве, ніж сховати шлях від людини у складній ситуації.'
+  - 'Підстави відмови за §59 ods. 12 не внесені.'
+  - 'Права й обов''язки під час толерованого перебування (§59 і далі) не описані.'
+  - 'Продовження толерованого перебування описане лише в частині строків.'

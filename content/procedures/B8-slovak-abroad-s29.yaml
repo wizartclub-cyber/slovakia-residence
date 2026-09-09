@@ -1,0 +1,79 @@
+# Наповнено з тексту закону (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: B8-slovak-abroad-s29
+category: B
+title:
+  uk: Тимчасове проживання — словак, що живе за кордоном (§29)
+  sk: Prechodný pobyt Slováka žijúceho v zahraničí (§29)
+legalBasis:
+  - '404/2011 §29'
+  - '404/2011 §33 ods. 7'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    На п'ять років (§29 ods. 2). Особа з таким пробутом може займатися підприємництвом (§29 ods. 3).
+  sk: >-
+    Na päť rokov (§29 ods. 2). Osoba s týmto pobytom môže podnikať (§29 ods. 3).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: []
+documentIds: [travel-document, application-form]
+steps:
+  - id: s1-certificate
+    order: 1
+    title:
+      uk: Основа — посвідчення словака, що живе за кордоном
+      sk: Základom je osvedčenie Slováka žijúceho v zahraničí
+    body:
+      uk: >-
+        Пробут надають тому, хто має видане посвідчення словака, що живе за кордоном, за окремим приписом (§29 ods. 1). Саме посвідчення і доводить мету (§32 ods. 5 písm. p).
+      sk: >-
+        Pobyt sa udelí tomu, kto má vydané osvedčenie Slováka žijúceho v zahraničí (§29 ods. 1). Osvedčenie zároveň preukazuje účel (§32 ods. 5 písm. p).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-fewer-refusals
+    order: 2
+    title:
+      uk: Підстав для відмови тут менше
+      sk: Dôvodov na zamietnutie je tu menej
+    body:
+      uk: >-
+        §33 ods. 7: заяву такої особи можна відхилити лише з підстав §33 ods. 6 písm. a), b), d) až f) і h) — не з усього переліку, що діє для решти маршрутів.
+      sk: >-
+        §33 ods. 7: žiadosť možno zamietnuť len z dôvodov podľa §33 ods. 6 písm. a), b), d) až f) a h).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-no-criminal-record
+    order: 3
+    title:
+      uk: Несудимість інколи не подають
+      sk: Bezúhonnosť sa niekedy neprikladá
+    body:
+      uk: >-
+        §32 ods. 3: документ про несудимість не подає той, хто звертається за пробутом за §29 протягом 60 днів від видачі посвідчення. Документ про житло теж не потрібен (§32 ods. 2 písm. e bod 5).
+      sk: >-
+        §32 ods. 3: doklad o bezúhonnosti neprikladá ten, kto žiada o pobyt podľa §29 do 60 dní od vydania osvedčenia. Doklad o ubytovaní sa tiež nevyžaduje.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: []
+openQuestions:
+  - 'Збору за цю мету в položci 24 тарифу немає.'
+  - 'Умови отримання самого посвідчення словака, що живе за кордоном, регулює інший закон — його в реєстрі немає.'
+  - 'Медичний висновок за §32 ods. 10 для §29 не вимагається — §32 ods. 10 прямо називає §28, §29, §30 і §62 як винятки, тому документа в переліку немає.'

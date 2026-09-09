@@ -1,0 +1,116 @@
+# Наповнено з тексту §37 (снапшот slovlex-404-2011).
+id: B10-blue-card-s37
+category: B
+title:
+  uk: Синя карта ЄС — високваліфікована робота (§37)
+  sk: Modrá karta EÚ — vysokokvalifikované zamestnanie (§37)
+legalBasis:
+  - '404/2011 §37'
+  - '404/2011 §38'
+  - '404/2011 §39 ods. 1'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+  - upsvr-blue-card-guidance
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    На п'ять років. Якщо підтвердження про можливість заповнення вільного
+    робочого місця чинне менше ніж п'ять років, карту надають на строк цього
+    підтвердження плюс 90 днів, але загалом не більше ніж на п'ять років
+    (§37 ods. 2).
+  sk: >-
+    Na päť rokov. Ak je potvrdenie o možnosti obsadenia voľného pracovného miesta
+    platné kratšie, karta sa udelí na čas jeho platnosti predĺžený o 90 dní,
+    najviac však na päť rokov (§37 ods. 2).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-purpose-employment
+    effect: require
+    when: { field: purpose, equals: employment }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [ocp-pz, zastupitelsky-urad, upsvr]
+feeRuleIds: [fee-tr-blue-card-first]
+documentIds:
+  - travel-document
+  - application-form
+  - criminal-record
+  - accommodation
+  - vacancy-confirmation
+  - medical-report-after
+steps:
+  - id: s1-what-it-gives
+    order: 1
+    title:
+      uk: Що дає синя карта
+      sk: Čo modrá karta umožňuje
+    body:
+      uk: >-
+        §37 ods. 1: право в'їхати, перебувати, виконувати високваліфіковану
+        роботу в Словаччині, виїжджати з країни й повертатися протягом строку
+        чинності карти.
+      sk: >-
+        §37 ods. 1: právo vstúpiť, zdržiavať sa, vykonávať vysokokvalifikované
+        zamestnanie na území SR, vycestovať a opätovne vstúpiť počas platnosti karty.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-salary
+    order: 2
+    title:
+      uk: Поріг зарплати прив'язаний до середньої зарплати в економіці
+      sk: Mzdový prah je viazaný na priemernú mzdu v hospodárstve
+    body:
+      uk: >-
+        §37 ods. 3: високваліфікована робота — та, для якої потрібна вища
+        фахова кваліфікація і за яку належить місячна зарплата щонайменше
+        1,2-кратного розміру середньої місячної зарплати працівника в економіці
+        Словаччини, оприлюдненої Статистичним управлінням за календарний рік
+        перед роком подання заяви (для окремих випадків — розміру самої
+        середньої зарплати). Конкретної суми ми не наводимо: її оприлюднює
+        Статистичне управління, і цього джерела в нашому реєстрі поки немає.
+      sk: >-
+        §37 ods. 3: vysokokvalifikované zamestnanie vyžaduje vyššiu odbornú
+        kvalifikáciu a mesačnú mzdu najmenej 1,2-násobku priemernej mesačnej mzdy
+        v hospodárstve SR zverejnenej Štatistickým úradom za predchádzajúci
+        kalendárny rok. Konkrétnu sumu neuvádzame — zdroj zatiaľ nie je v registri.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-vacancy
+    order: 3
+    title:
+      uk: Потрібне підтвердження про робоче місце, що відповідає високій кваліфікації
+      sk: Potrebné je potvrdenie o pracovnom mieste zodpovedajúcom kvalifikácii
+    body:
+      uk: >-
+        Підтвердження про можливість заповнення вільного робочого місця має
+        відповідати саме високваліфікованій роботі (§37 ods. 2). Видає його
+        управління праці; сторінка ÚPSVaR про синю карту в нашому реєстрі
+        позначена як застаріліша за зміни від 15.07.2026.
+      sk: >-
+        Potvrdenie o možnosti obsadenia voľného pracovného miesta musí zodpovedať
+        vysokokvalifikovanému zamestnaniu (§37 ods. 2). Stránka ÚPSVaR o modrej
+        karte je v našom registri označená ako staršia než zmeny od 15.07.2026.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011, upsvr-blue-card-guidance]
+transitionRules: []
+relatedProcedureIds: [B2-employment-s23, C4-longterm-s52]
+openQuestions:
+  - 'Розмір середньої місячної зарплати в економіці СР не внесений: джерела Статистичного управління в реєстрі немає, а вигадувати суму не можна.'
+  - 'Підстави відмови за §39 ods. 1 не внесені.'
+  - 'Умови подання заяви за §38 прочитані лише частково.'
+  - 'Мобільність власника синьої карти між державами-членами (§40, §41) не описана.'
+  - 'Власники синьої карти мають окрему гілку для довгострокового пробуту за §52 ods. 1 písm. c) — два роки як власник карти.'

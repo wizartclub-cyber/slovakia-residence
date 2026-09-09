@@ -1,0 +1,85 @@
+# Наповнено з тексту закону (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: B5-research-s26
+category: B
+title:
+  uk: Тимчасове проживання — дослідження і розробки (§26)
+  sk: Prechodný pobyt na účel výskumu a vývoja (§26)
+legalBasis:
+  - '404/2011 §26'
+  - '404/2011 §32'
+  - '404/2011 §33 ods. 6'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    На час чинності угоди про гостювання (dohoda o hosťovaní), але не більше ніж на два роки (§26 ods. 1). Особа з таким пробутом може займатися підприємництвом.
+  sk: >-
+    Na čas platnosti dohody o hosťovaní, najviac však na dva roky (§26 ods. 1). Osoba s týmto pobytom môže podnikať.
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-purpose-research
+    effect: require
+    when: { field: purpose, equals: research }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: []
+documentIds: [travel-document, application-form, criminal-record, medical-report-after, health-insurance-after]
+steps:
+  - id: s1-hosting
+    order: 1
+    title:
+      uk: Угода про гостювання — основа маршруту
+      sk: Dohoda o hosťovaní je základom tejto cesty
+    body:
+      uk: >-
+        Мета доводиться угодою про гостювання за окремим приписом (§32 ods. 5 písm. m). Строк пробуту дорівнює строку угоди, максимум два роки.
+      sk: >-
+        Účel sa preukazuje dohodou o hosťovaní podľa osobitného predpisu (§32 ods. 5 písm. m). Pobyt sa udelí na čas platnosti dohody, najviac na dva roky.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-90-days
+    order: 2
+    title:
+      uk: Перші 90 днів пробут може не вимагатися
+      sk: Prvých 90 dní sa pobyt nemusí vyžadovať
+    body:
+      uk: >-
+        §26 ods. 2: пробут на дослідження не вимагається протягом 90 днів від початку перебування, якщо особа виконує умови за окремим приписом і обовязок за §111 ods. 2 písm. a).
+      sk: >-
+        §26 ods. 2: pobyt sa nevyžaduje do 90 dní od začiatku pobytu, ak osoba spĺňa podmienky podľa osobitného predpisu a povinnosť podľa §111 ods. 2 písm. a).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-no-accommodation
+    order: 3
+    title:
+      uk: Документ про житло не потрібен
+      sk: Doklad o ubytovaní sa nevyžaduje
+    body:
+      uk: >-
+        §32 ods. 2 písm. e) bod 5 звільняє заявників за §26 від документа про забезпечення житлом. Після рішення діють обовязки: страхування і медичний висновок протягом 30 днів.
+      sk: >-
+        §32 ods. 2 písm. e) bod 5 oslobodzuje žiadateľov podľa §26 od dokladu o ubytovaní. Po rozhodnutí platia povinnosti: poistenie a lekársky posudok do 30 dní.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: []
+openQuestions:
+  - 'Збору за цю мету в položci 24 тарифу немає — перевірити, чи вона входить в інший підпункт.'
+  - 'Мобільність дослідника (§36c) окремим маршрутом не описана.'
+  - 'Після дослідження можна просити обновлення на дев''ять місяців для пошуку роботи або початку підприємництва (§34 ods. 1 písm. b) — див. маршрут обновлення.'

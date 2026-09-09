@@ -1,0 +1,121 @@
+# Наповнено з тексту §30 (снапшот slovlex-404-2011).
+id: B9-longterm-other-state-s30
+category: B
+title:
+  uk: Тимчасове проживання — довгостроковий резидент іншої країни ЄС (§30)
+  sk: Prechodný pobyt osoby s dlhodobým pobytom v inom členskom štáte (§30)
+legalBasis:
+  - '404/2011 §30'
+  - '404/2011 §32'
+  - '404/2011 §33 ods. 6'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    На час, потрібний для досягнення мети, але не більше ніж на п'ять років
+    (§30 ods. 2). Кілька видів діяльності з переліку можна виконувати одночасно
+    (§30 ods. 3).
+  sk: >-
+    Na čas potrebný na dosiahnutie účelu, najviac však na päť rokov (§30 ods. 2).
+    Viaceré činnosti zo zoznamu možno vykonávať súčasne (§30 ods. 3).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: [fee-tr-business-first-ocp, fee-tr-employment-first, fee-tr-special-activity-first, fee-tr-family-first]
+documentIds: [travel-document, application-form, criminal-record, accommodation, health-insurance-after]
+steps:
+  - id: s1-purposes
+    order: 1
+    title:
+      uk: П'ять видів діяльності, під які надають цей пробут
+      sk: Päť činností, na ktoré sa tento pobyt udeľuje
+    body:
+      uk: >-
+        §30 ods. 1: (a) підприємництво в Словаччині; (b) робота за наймом у
+        Словаччині; (c) навчання в школі у Словаччині; (d) діяльність за §25 або
+        §26; (e) член родини за §27 ods. 2 особи з підпунктів a)–d), якщо родина
+        вже існувала в тій державі-члені, яка надала статус довгострокового
+        резидента.
+      sk: >-
+        §30 ods. 1: (a) podnikanie v SR; (b) zamestnanie v SR; (c) štúdium na škole
+        v SR; (d) činnosť podľa §25 alebo §26; (e) rodinný príslušník podľa §27
+        ods. 2 osoby podľa písmen a) až d), ak rodina existovala už v členskom
+        štáte, ktorý priznal postavenie osoby s dlhodobým pobytom.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-documents
+    order: 2
+    title:
+      uk: Мета доводиться документом про довгостроковий пробут плюс документом про діяльність
+      sk: Účel sa preukazuje dokladom o dlhodobom pobyte a dokladom o činnosti
+    body:
+      uk: >-
+        §32 ods. 5 písm. q): документ про довгостроковий пробут, виданий іншою
+        державою-членом, разом із трудовим договором, письмовою обіцянкою
+        роботодавця, підтвердженням школи про прийняття на навчання чи фахову
+        підготовку або іншим документом за підпунктами a) або d)–m).
+        Несудимість за §32 ods. 3 не подають; житло не потрібне, якщо особа
+        навчатиметься у вищій школі або виконуватиме педагогічну чи наукову
+        діяльність (§32 ods. 2 písm. e bod 3).
+      sk: >-
+        §32 ods. 5 písm. q): doklad o dlhodobom pobyte vydaný iným členským štátom
+        spolu s pracovnou zmluvou, písomným prísľubom zamestnávateľa, potvrdením
+        školy o prijatí na štúdium alebo iným dokladom podľa písmen a) alebo d) až
+        m). Bezúhonnosť sa podľa §32 ods. 3 neprikladá.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s3-90-days
+    order: 3
+    title:
+      uk: Перші 90 днів пробут може не вимагатися
+      sk: Prvých 90 dní sa pobyt nemusí vyžadovať
+    body:
+      uk: >-
+        §30 ods. 4: пробут не вимагається протягом 90 днів від початку перебування
+        в Словаччині, якщо особа виконує умови за окремим приписом і обов'язок
+        за §111 ods. 2 písm. a).
+      sk: >-
+        §30 ods. 4: pobyt sa nevyžaduje do 90 dní od začiatku pobytu na území SR,
+        ak osoba spĺňa podmienky podľa osobitného predpisu a povinnosť podľa
+        §111 ods. 2 písm. a).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s4-fee
+    order: 4
+    title:
+      uk: Збір залежить від того, яку діяльність ви обрали
+      sk: Poplatok závisí od zvolenej činnosti
+    body:
+      uk: >-
+        Тариф прямо прирівнює §30 ods. 1 písm. a) до підприємництва (330 €),
+        písm. b) до працевлаштування (250 €), písm. d) до особливої діяльності
+        (140 €) і písm. e) до возз'єднання родини (200 €) — положка 24 písm. a).
+      sk: >-
+        Sadzobník prirovnáva §30 ods. 1 písm. a) k podnikaniu (330 eur), písm. b)
+        k zamestnaniu (250 eur), písm. d) k osobitnej činnosti (140 eur) a písm. e)
+        k zlúčeniu rodiny (200 eur) — položka 24 písm. a).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-145-1995]
+transitionRules: []
+relatedProcedureIds: [C4-longterm-s52]
+openQuestions:
+  - 'Медичний висновок за §32 ods. 10 для §30 не вимагається (§30 прямо названий винятком).'
+  - 'Медичне страхування за §32 ods. 9 для §30 вимагається — але §34 ods. 3 písm. c) звільняє §30 ods. 1 písm. b) і c) при обновленні.'
+  - 'Опитувальник не питає, чи має людина статус довгострокового резидента іншої країни ЄС, тому маршрут показується широко.'
+  - 'Поліція може вимагати документ про несудимість із держави, яка надала статус або пробут (§32 ods. 12).'
