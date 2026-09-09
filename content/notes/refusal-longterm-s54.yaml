@@ -1,0 +1,39 @@
+# Джерело: 404/2011 §54 ods. 2 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: refusal-longterm-s54
+title:
+  uk: Через що відмовляють у довгостроковому пробуті (§54 ods. 2)
+  sk: Prečo sa zamietne žiadosť o dlhodobý pobyt (§54 ods. 2)
+intro:
+  uk: >-
+    Тут лише чотири підстави, і дві з них стосуються тих, у кого відібрали притулок або додатковий захист.
+  sk: >-
+    Sú tu len štyri dôvody, dva z nich sa týkajú osôb, ktorým bol odňatý azyl alebo doplnková ochrana.
+items:
+  - id: g-a
+    text:
+      uk: >-
+        особа не виконує умов для надання довгострокового пробуту
+      sk: >-
+        nespĺňa podmienky na udelenie dlhodobého pobytu
+  - id: g-b
+    text:
+      uk: >-
+        є обґрунтована підозра, що особа загрожуватиме безпеці держави або публічному порядку
+      sk: >-
+        je dôvodné podozrenie, že ohrozí bezpečnosť štátu alebo verejný poriadok
+  - id: g-c
+    text:
+      uk: >-
+        в особи відібрано притулок із підстав за окремим приписом
+      sk: >-
+        bol odňatý azyl z dôvodov podľa osobitného predpisu
+  - id: g-d
+    text:
+      uk: >-
+        в особи відібрано додатковий захист із підстав за окремим приписом
+      sk: >-
+        bola odňatá doplnková ochrana z dôvodov podľa osobitného predpisu
+appliesTo:
+  - C4-longterm-s52
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

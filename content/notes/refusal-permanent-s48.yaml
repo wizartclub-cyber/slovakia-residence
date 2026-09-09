@@ -1,0 +1,58 @@
+# Джерело: 404/2011 §48 ods. 2 (снапшот slovlex-404-2011, прочитано 2026-09-09).
+id: refusal-permanent-s48
+title:
+  uk: Через що відмовляють у постійному пробуті (§48 ods. 2)
+  sk: Prečo sa zamietne žiadosť o trvalý pobyt (§48 ods. 2)
+intro:
+  uk: >-
+    Перелік коротший за той, що діє для тимчасового пробуту, але має власну підставу: якщо йдеться про пробут через шлюб із громадянином СР, шлюб має бути укладений за приписаним порядком.
+  sk: >-
+    Zoznam je kratší ako pri prechodnom pobyte, no má vlastný dôvod: pri pobyte cez manželstvo s občanom SR musí byť manželstvo uzavreté podľa osobitného predpisu.
+items:
+  - id: g-a
+    text:
+      uk: >-
+        особа є небажаною особою (nežiaduca osoba)
+      sk: >-
+        je nežiaducou osobou
+  - id: g-b
+    text:
+      uk: >-
+        є обґрунтована підозра, що під час пробуту особа загрожуватиме безпеці держави, публічному порядку або публічному здоров'ю
+      sk: >-
+        je dôvodné podozrenie, že ohrozí bezpečnosť štátu, verejný poriadok alebo verejné zdravie
+  - id: g-c
+    text:
+      uk: >-
+        особа не виконує умов для надання постійного пробуту
+      sk: >-
+        nespĺňa podmienky na udelenie trvalého pobytu
+  - id: g-d
+    text:
+      uk: >-
+        особа уклала фіктивний шлюб
+      sk: >-
+        uzavrel účelové manželstvo
+  - id: g-e
+    text:
+      uk: >-
+        шлюб не було укладено за окремим приписом — якщо йдеться про заяву за §43 ods. 1 písm. a) або §46 ods. 1 písm. a)
+      sk: >-
+        manželstvo nebolo uzavreté podľa osobitného predpisu, ak ide o žiadosť podľa §43 ods. 1 písm. a) alebo §46 ods. 1 písm. a)
+  - id: g-f
+    text:
+      uk: >-
+        особа подала неправдиві або оманливі дані, підроблені чи змінені документи або документ іншої особи
+      sk: >-
+        uviedol nepravdivé alebo zavádzajúce údaje alebo predložil falošné doklady
+  - id: g-g
+    text:
+      uk: >-
+        дані у проїзному документі не відповідають дійсності
+      sk: >-
+        údaje v cestovnom doklade nezodpovedajú skutočnosti
+appliesTo:
+  - C1-permanent-s43
+  - C3-permanent-s46
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]
