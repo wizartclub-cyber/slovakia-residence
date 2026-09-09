@@ -64,6 +64,11 @@ items:
       sk: >-
         zomrel alebo bol vyhlásený za mŕtveho
 appliesTo:
+  - B4-special-activity-s25
+  - B5-research-s26
+  - B8-slovak-abroad-s29
+  - B9-longterm-other-state-s30
+  - B10-blue-card-s37
   - B1-business-s22
   - B2-employment-s23
   - B3-study-s24

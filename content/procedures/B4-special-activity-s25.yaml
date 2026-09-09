@@ -1,0 +1,150 @@
+# Наповнено з тексту §25 (снапшот slovlex-404-2011).
+id: B4-special-activity-s25
+category: B
+title:
+  uk: Тимчасове проживання — особлива діяльність (§25)
+  sk: Prechodný pobyt na účel osobitnej činnosti (§25)
+legalBasis:
+  - '404/2011 §25'
+  - '404/2011 §32'
+  - '404/2011 §33 ods. 6'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    На час, потрібний для досягнення мети, але не більше ніж на два роки. Для
+    спортивної діяльності — на передбачуваний строк договору про професійне
+    заняття спортом, максимум п'ять років (§25 ods. 2).
+  sk: >-
+    Na čas potrebný na dosiahnutie účelu, najviac dva roky. Pri športovej činnosti
+    na predpokladaný čas zmluvy o profesionálnom vykonávaní športu, najviac päť
+    rokov (§25 ods. 2).
+decisionDeadline:
+  uk: 90 днів (§33 ods. 8 písm. a).
+  sk: 90 dní (§33 ods. 8 písm. a).
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-purpose-special
+    effect: require
+    when: { field: purpose, equals: special_activity }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: [fee-tr-special-activity-first]
+documentIds:
+  - travel-document
+  - application-form
+  - criminal-record
+  - accommodation
+  - medical-report-after
+  - health-insurance-after
+steps:
+  - id: s1-nine-kinds
+    order: 1
+    title:
+      uk: Дев'ять видів діяльності — і жоден із них не підприємництво
+      sk: Deväť druhov činnosti — a žiadny z nich nie je podnikanie
+    body:
+      uk: >-
+        §25 ods. 1 надає цей пробут особі, яка НЕ є підприємцем, для:
+        (a) викладацької діяльності; (b) мистецької діяльності; (c) спортивної
+        діяльності; (d) стажування в межах навчання у вищій школі за межами
+        Словаччини або протягом двох років після його завершення; (e) діяльності
+        за програмами уряду СР або програмами ЄС; (f) виконання зобов'язання СР
+        за міжнародним договором; (g) надання медичної допомоги або супроводу
+        особи, якій вона надається, якщо це потрібно; (h) волонтерської
+        діяльності; (i) діяльності журналіста, акредитованого в Словаччині.
+      sk: >-
+        §25 ods. 1 udeľuje tento pobyt osobe, ktorá NIE JE podnikateľom, na:
+        (a) lektorskú činnosť; (b) umeleckú činnosť; (c) športovú činnosť;
+        (d) stáž v rámci vysokoškolského štúdia mimo SR alebo do dvoch rokov po
+        jeho skončení; (e) činnosť z programov vlády SR alebo EÚ; (f) plnenie
+        záväzku z medzinárodnej zmluvy; (g) poskytnutie zdravotnej starostlivosti
+        alebo sprevádzanie; (h) dobrovoľnícku činnosť; (i) činnosť akreditovaného
+        novinára.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-purpose-documents
+    order: 2
+    title:
+      uk: Для кожного виду діяльності — свій документ про мету
+      sk: Ku každému druhu činnosti patrí iný doklad o účele
+    body:
+      uk: >-
+        §32 ods. 5: викладацька — підтвердження школи або освітньої установи
+        (písm. d); мистецька — підтвердження органу державного управління чи
+        мистецької агенції (písm. e); спортивна — договір про професійне заняття
+        спортом або підтвердження спортивної організації (písm. f); стажування —
+        підтвердження про стажування з описом програми, тривалості, умов
+        розміщення й нагляду, робочого часу і правового зв'язку (písm. g);
+        волонтерство — угода з приймаючою організацією з описом програми,
+        тривалості, умов, часу і фінансового забезпечення (písm. k);
+        журналістика — підтвердження про акредитацію (písm. l).
+      sk: >-
+        §32 ods. 5: lektorská — potvrdenie školy (písm. d); umelecká — potvrdenie
+        orgánu štátnej správy alebo umeleckej agentúry (písm. e); športová —
+        zmluva o profesionálnom vykonávaní športu (písm. f); stáž — potvrdenie
+        o stáži s opisom programu (písm. g); dobrovoľníctvo — dohoda s prijímajúcou
+        organizáciou (písm. k); novinárska — doklad o akreditácii (písm. l).
+    afterDecision: false
+    prerequisites: [s1-nine-kinds]
+    sourceIds: [slovlex-404-2011]
+  - id: s3-interns-volunteers
+    order: 3
+    title:
+      uk: Для стажистів і волонтерів — додаткові вимоги
+      sk: Pri stážistoch a dobrovoľníkoch platia ďalšie požiadavky
+    body:
+      uk: >-
+        Стажист за §25 ods. 1 písm. d) додає зобов'язання приймаючої організації
+        оплатити витрати, пов'язані з адміністративним видворенням, і документ
+        про здобуту вищу освіту або поточне навчання (§32 ods. 2 písm. h) і i).
+        Заяву відхилять, якщо спрямування стажування не збігається з цією освітою
+        (§33 ods. 6 písm. n). Волонтерів за §25 ods. 1 písm. h) молодших за
+        15 років на день подання заяви теж відхилять (písm. o). Документ про
+        житло не потрібен учасникам Європейської волонтерської служби за
+        §25 ods. 1 písm. d) або h) (§32 ods. 2 písm. e bod 4).
+      sk: >-
+        Stážista podľa §25 ods. 1 písm. d) prikladá záväzok prijímajúcej
+        organizácie uhradiť náklady administratívneho vyhostenia a doklad
+        o vysokoškolskom vzdelaní (§32 ods. 2 písm. h a i). Žiadosť sa zamietne,
+        ak sa zameranie stáže nezhoduje so vzdelaním. Dobrovoľníkov mladších ako
+        15 rokov zamietnu (§33 ods. 6 písm. o).
+    afterDecision: false
+    prerequisites: [s2-purpose-documents]
+    sourceIds: [slovlex-404-2011]
+  - id: s4-90-days
+    order: 4
+    title:
+      uk: Перші 90 днів пробут може не вимагатися
+      sk: Prvých 90 dní sa pobyt nemusí vyžadovať
+    body:
+      uk: >-
+        §25 ods. 3: пробут на особливу діяльність не вимагається протягом 90 днів
+        від початку перебування, якщо особа виконує умови за окремим приписом і
+        обов'язок за §111 ods. 2 písm. a).
+      sk: >-
+        §25 ods. 3: pobyt sa nevyžaduje do 90 dní od začiatku pobytu, ak osoba
+        spĺňa podmienky podľa osobitného predpisu a povinnosť podľa §111 ods. 2
+        písm. a).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [B5-research-s26, B3-study-s24]
+openQuestions:
+  - 'Збір 140 € у тарифі стосується лише підвидів a), b), c), d), g), h) та i) — для e) і f) сума не встановлена.'
+  - 'Умова «не є підприємцем» (§25 ods. 1) не формалізована як машинна умова.'
+  - 'Мобільність стажистів і волонтерів між державами-членами не описана.'
