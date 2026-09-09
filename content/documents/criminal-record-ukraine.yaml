@@ -15,6 +15,7 @@ explanation:
 requiredWhen:
   uk: Для заяви про видачу документа про проживання за §131o ods. 4.
   sk: Pre žiadosť o vydanie dokladu o pobyte podľa §131o ods. 4.
+requirement: conditional
 afterDecision: false
 maxAgeDays: 90
 preparationType: obtain_from_authority

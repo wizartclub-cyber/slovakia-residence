@@ -18,6 +18,7 @@ explanation:
 requiredWhen:
   uk: Для тимчасового проживання з метою підприємництва за §22.
   sk: Pre prechodný pobyt na účel podnikania podľa §22.
+requirement: conditional
 maxAgeDays: 90
 preparationType: obtain_from_third_party
 thresholds:

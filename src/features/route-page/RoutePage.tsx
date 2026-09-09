@@ -12,8 +12,9 @@ import {
   thresholds,
 } from '../../lib/content';
 import { publicStatus } from '../../lib/content/schema';
-import type { Document, FeeRule, Source } from '../../lib/content/schema';
+import type { Document, FeeRule, Procedure, Source } from '../../lib/content/schema';
 import { derivedAmount } from '../../lib/content/thresholds';
+import { site } from '../../lib/content/site';
 import './route-page.css';
 
 export function RoutePage() {
@@ -63,9 +64,6 @@ export function RoutePage() {
         <span className={`badge badge--${status === 'reviewed' ? 'success' : 'warning'}`}>
           {t(`results.status.${status}`)}
         </span>
-        {procedure.legalBasis.length > 0 && (
-          <span className="route-page__basis">{procedure.legalBasis.join(' · ')}</span>
-        )}
       </p>
 
       <div className="disclaimer">
@@ -79,24 +77,7 @@ export function RoutePage() {
         </button>
       </p>
 
-      {(procedure.grantedFor || procedure.decisionDeadline) && (
-        <Section title={t('route.keyFacts')}>
-          <dl className="route-page__facts">
-            {procedure.grantedFor && (
-              <div>
-                <dt>{t('route.grantedFor')}</dt>
-                <dd>{localized(procedure.grantedFor, lang)}</dd>
-              </div>
-            )}
-            {procedure.decisionDeadline && (
-              <div>
-                <dt>{t('route.decisionDeadline')}</dt>
-                <dd>{localized(procedure.decisionDeadline, lang)}</dd>
-              </div>
-            )}
-          </dl>
-        </Section>
-      )}
+      <SummaryPanel procedure={procedure} lang={lang} />
 
       <Section title={t('route.steps')}>
         {stepsBefore.length === 0 ? (
@@ -119,11 +100,7 @@ export function RoutePage() {
         ) : (
           <>
             <p className="route-page__note">{t('route.documentsChecklistHint')}</p>
-            <ul className="checklist">
-              {attachments.map((doc) => (
-                <DocumentItem key={doc.id} doc={doc} lang={lang} />
-              ))}
-            </ul>
+            <Checklist docs={attachments} lang={lang} />
           </>
         )}
       </Section>
@@ -137,11 +114,7 @@ export function RoutePage() {
               {step.body && <p>{localized(step.body, lang)}</p>}
             </div>
           ))}
-          <ul className="checklist">
-            {afterDecisionDocs.map((doc) => (
-              <DocumentItem key={doc.id} doc={doc} lang={lang} />
-            ))}
-          </ul>
+          <Checklist docs={afterDecisionDocs} lang={lang} />
         </Section>
       )}
 
@@ -289,22 +262,136 @@ function CollapsibleNote({
   );
 }
 
-function DocumentItem({ doc, lang }: { doc: Document; lang: string | undefined }) {
+/**
+ * «Паспорт процедури»: шість полів, які людина шукає найперше. Значення
+ * беруться з даних маршруту; якщо в даних поля немає — так і написано
+ * «потребує перевірки», а не порожньо і не припущення.
+ */
+function SummaryPanel({ procedure, lang }: { procedure: Procedure; lang: string | undefined }) {
   const { t } = useTranslation();
+  const status = publicStatus(procedure.reviewStatus);
+
+  const authorities = procedure.authorityIds
+    .map((id) => authorityById(id)?.officialName)
+    .filter((n): n is string => n !== undefined);
+
+  const rows: Array<[string, string | null]> = [
+    [t('summary.category'), t(`catalogue.category.${procedure.category}`)],
+    [t('summary.basis'), procedure.legalBasis.join(' · ') || null],
+    [t('route.grantedFor'), procedure.grantedFor ? localized(procedure.grantedFor, lang) : null],
+    [
+      t('route.decisionDeadline'),
+      procedure.decisionDeadline ? localized(procedure.decisionDeadline, lang) : null,
+    ],
+    [t('summary.where'), authorities.length > 0 ? authorities.join(' · ') : null],
+  ];
+
+  return (
+    <section className="summary" aria-labelledby="summary-title">
+      <h2 id="summary-title" className="summary__title">
+        {t('summary.title')}
+      </h2>
+      <dl className="summary__grid">
+        {rows.map(([label, value]) => (
+          <div key={label} className="summary__row">
+            <dt>{label}</dt>
+            <dd className={value === null ? 'summary__unverified' : undefined}>
+              {value ?? `⚠ ${t('summary.needsCheck')}`}
+            </dd>
+          </div>
+        ))}
+        <div className="summary__row">
+          <dt>{t('summary.dataState')}</dt>
+          <dd>
+            <span className={`badge badge--${status === 'reviewed' ? 'success' : 'warning'}`}>
+              {t(`results.status.${status}`)}
+            </span>{' '}
+            <span className="route-page__note">
+              {t('baseline.label')}: {formatDate(site.legalBaseline.date)}
+            </span>
+          </dd>
+        </div>
+      </dl>
+    </section>
+  );
+}
+
+/**
+ * Чеклист із живими чекбоксами. Відмітки живуть ТІЛЬКИ в пам'яті вкладки:
+ * жодного localStorage — це заборонено CLAUDE.md §2.1, і тест це перевіряє.
+ * «Збереженням» лишається друк на папері, тому відмітки видно і при друці.
+ */
+function Checklist({ docs, lang }: { docs: Document[]; lang: string | undefined }) {
+  const { t } = useTranslation();
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
+  const done = docs.filter((d) => checked[d.id]).length;
+
+  return (
+    <>
+      <p className="checklist__progress" role="status" aria-live="polite">
+        {t('route.checklistProgress', { done, total: docs.length })}
+      </p>
+      <ul className="checklist">
+        {docs.map((doc) => (
+          <DocumentItem
+            key={doc.id}
+            doc={doc}
+            lang={lang}
+            checked={checked[doc.id] ?? false}
+            onToggle={() => setChecked((prev) => ({ ...prev, [doc.id]: !prev[doc.id] }))}
+          />
+        ))}
+      </ul>
+      {done > 0 && (
+        <p className="no-print">
+          <button
+            type="button"
+            className="button button--secondary"
+            onClick={() => setChecked({})}
+          >
+            {t('route.checklistReset')}
+          </button>
+        </p>
+      )}
+    </>
+  );
+}
+
+function DocumentItem({
+  doc,
+  lang,
+  checked,
+  onToggle,
+}: {
+  doc: Document;
+  lang: string | undefined;
+  checked: boolean;
+  onToggle: () => void;
+}) {
+  const { t } = useTranslation();
+  const inputId = `doc-${doc.id}`;
 
   return (
     <li className="checklist__item">
-      {/* Порожній квадрат, а не <input>: чеклист має бути придатним для друку. */}
-      <span className="checklist__box" aria-hidden="true" />
+      <input
+        type="checkbox"
+        id={inputId}
+        className="checklist__input"
+        checked={checked}
+        onChange={onToggle}
+      />
       <div>
-        <p className="checklist__title">
+        <label className="checklist__title" htmlFor={inputId}>
           {localized(doc.title, lang)}
+          <span className={`badge badge--${doc.requirement === 'required' ? 'success' : 'warning'}`}>
+            {t(`route.requirement.${doc.requirement ?? 'conditional'}`)}
+          </span>
           {doc.maxAgeDays !== null && (
             <span className="badge badge--warning">
               {t('route.maxAge', { days: doc.maxAgeDays })}
             </span>
           )}
-        </p>
+        </label>
         <p className="route-page__note checklist__official">{doc.officialName}</p>
         {doc.explanation && <p>{localized(doc.explanation, lang)}</p>}
         {doc.requiredWhen && (

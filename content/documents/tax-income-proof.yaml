@@ -15,6 +15,7 @@ explanation:
 requiredWhen:
   uk: При обновленні пробуту за §22 ods. 1 písm. a).
   sk: Pri obnovení pobytu podľa §22 ods. 1 písm. a).
+requirement: conditional
 afterDecision: false
 maxAgeDays: null
 preparationType: obtain_from_authority

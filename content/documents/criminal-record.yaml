@@ -18,6 +18,7 @@ requiredWhen:
     písm. a), §28, §30 a osoby mladšie ako 14 rokov; nevyžaduje sa ani pri zmene
     druhu alebo účelu pobytu, ak bol priložený skôr, a pri §29 do 60 dní od
     vydania osvedčenia Slováka žijúceho v zahraničí.
+requirement: conditional
 maxAgeDays: 90
 preparationType: obtain_from_authority
 thresholds: []

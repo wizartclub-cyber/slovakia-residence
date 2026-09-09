@@ -7,12 +7,12 @@ test('сторінка маршруту відкривається прямою 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Тимчасове проживання — працевлаштування (§23)',
   );
-  await expect(page.getByText('404/2011 §23')).toBeVisible();
+  await expect(page.locator('.summary')).toContainText('404/2011 §23');
 });
 
 test('видно, що маршрут не перевірений юристом і умови неповні', async ({ page }) => {
   await page.goto(B2);
-  await expect(page.getByText('не перевірено юристом')).toBeVisible();
+  await expect(page.getByText('не перевірено юристом').first()).toBeVisible();
   await expect(page.getByText('Умови цього маршруту ще не внесені повністю', { exact: false })).toBeVisible();
 });
 
@@ -97,7 +97,7 @@ test('сторінка маршруту працює словацькою', asyn
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Trvalý pobyt na neobmedzený čas (§46)',
   );
-  await expect(page.getByText('Kam sa podáva')).toBeVisible();
+  await expect(page.getByText('Kam sa podáva').first()).toBeVisible();
 });
 
 test('чеклист документів побудований із закону', async ({ page }) => {
@@ -309,4 +309,50 @@ test('оскарження у справах тимчасового захист
   const note = page.locator('.legal-note').filter({ hasText: 'Оскарження у справах' });
   await expect(note).toContainText('НЕ можна подати');
   await expect(note).toContainText('НЕ має відкладального ефекту');
+});
+
+test('паспорт процедури показує головне одразу під заголовком', async ({ page }) => {
+  await page.goto(B2);
+  const summary = page.locator('.summary');
+  await expect(summary).toContainText('Тип');
+  await expect(summary).toContainText('Тимчасове проживання (третіх країн)');
+  await expect(summary).toContainText('404/2011 §23');
+  await expect(summary).toContainText('не перевірено юристом');
+  await expect(summary).toContainText('01.09.2026');
+});
+
+test('непідтверджене поле в паспорті позначене, а не приховане', async ({ page }) => {
+  // У §46 строк рішення в даних відсутній — має бути «потребує перевірки».
+  await page.goto('./uk/route/C3-permanent-s46');
+  await expect(page.locator('.summary__unverified').first()).toContainText('потребує перевірки');
+});
+
+test('чеклист працює і рахує відмічене, але нічого не зберігає', async ({ page }) => {
+  await page.goto(B2);
+  await expect(page.getByText('Відмічено 0 із 5')).toBeVisible();
+
+  await page.locator('.checklist__input').first().check();
+  await expect(page.getByText('Відмічено 1 із 5')).toBeVisible();
+
+  // Правило CLAUDE.md §2.1: жодних сховищ браузера.
+  const stored = await page.evaluate(() => ({
+    local: window.localStorage.length,
+    session: window.sessionStorage.length,
+  }));
+  expect(stored).toEqual({ local: 0, session: 0 });
+
+  await page.getByRole('button', { name: 'Зняти всі відмітки' }).click();
+  await expect(page.getByText('Відмічено 0 із 5')).toBeVisible();
+
+  // Перезавантаження стирає відмітки — і це чесно, бо ми нічого не зберігаємо.
+  await page.locator('.checklist__input').first().check();
+  await page.reload();
+  await expect(page.getByText('Відмічено 0 із 5')).toBeVisible();
+});
+
+test('кожен документ показує, чи він потрібен завжди', async ({ page }) => {
+  await page.goto(B2);
+  const items = page.locator('.checklist__item');
+  await expect(items.filter({ hasText: 'потрібен завжди' })).toHaveCount(2);
+  await expect(items.filter({ hasText: 'залежить від ситуації' }).first()).toBeVisible();
 });

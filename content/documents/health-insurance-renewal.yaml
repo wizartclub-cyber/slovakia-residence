@@ -18,6 +18,7 @@ requiredWhen:
   sk: >-
     Nevyžaduje sa pri pobyte podľa §23, §24 alebo §30 ods. 1 písm. b) a c)
     (§34 ods. 3 písm. c).
+requirement: conditional
 afterDecision: false
 maxAgeDays: 90
 preparationType: obtain_from_third_party

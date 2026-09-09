@@ -16,6 +16,7 @@ explanation:
 requiredWhen:
   uk: Завжди.
   sk: Vždy.
+requirement: required
 maxAgeDays: null
 preparationType: prepare_locally
 thresholds: []

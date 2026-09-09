@@ -14,6 +14,7 @@ explanation:
 requiredWhen:
   uk: Якщо мета перебування — працевлаштування (§21 ods. 1 písm. b) при переході за §131o.
   sk: Ak je účelom pobytu zamestnanie (§21 ods. 1 písm. b) pri prechode podľa §131o.
+requirement: conditional
 afterDecision: false
 maxAgeDays: 30
 preparationType: obtain_from_authority

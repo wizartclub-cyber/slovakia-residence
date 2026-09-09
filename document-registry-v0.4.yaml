@@ -10,6 +10,16 @@ sourcePriority:
 resources:
 - id: mzv-residence-master-guidance
   title: Residence of foreign nationals in Slovakia — usmernenie MZV SR
+  newUrlFinding:
+    at: '2026-09-09'
+    by: claude-code
+    url: https://www.mzv.sk/sluzby/viza-a-pobyt-na-slovensku/pobyt-na-slovensku
+    note: >-
+      MZV restructured its site; the Slovak page above was read on 2026-09-09 and shows
+      "Aktualizované 16.08.2026". It lists purposes of prechodný pobyt by paragraph
+      (§22–§30) and matches what we already took from the statute. Direct HTTP access is
+      still blocked by Cloudflare (403); the page was readable only through the Exa
+      crawler. Register it as a separate resource once someone can snapshot it.
   type: official_guidance_html
   authority: MZV SR
   url: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia

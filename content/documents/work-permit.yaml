@@ -16,6 +16,7 @@ explanation:
 requiredWhen:
   uk: Для маршруту §23 ods. 2 (не для §23 ods. 1).
   sk: Pre postup podľa §23 ods. 2 (nie pre §23 ods. 1).
+requirement: conditional
 maxAgeDays: 90
 preparationType: obtain_from_third_party
 thresholds: []

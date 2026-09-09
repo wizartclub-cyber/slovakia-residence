@@ -20,6 +20,7 @@ requiredWhen:
   sk: >-
     Každému, komu bol udelený prechodný pobyt, okrem §28, §29, §30 a §62, okrem
     osôb s pobytom v inom členskom štáte a okrem zmeny druhu alebo účelu pobytu.
+requirement: conditional
 afterDecision: true
 maxAgeDays: 30
 preparationType: obtain_from_third_party

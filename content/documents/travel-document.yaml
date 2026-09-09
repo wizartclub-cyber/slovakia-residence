@@ -15,6 +15,7 @@ explanation:
 requiredWhen:
   uk: Завжди, при поданні заяви.
   sk: Vždy, pri podaní žiadosti.
+requirement: required
 maxAgeDays: null
 preparationType: present_original
 thresholds: []

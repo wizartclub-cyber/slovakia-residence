@@ -241,7 +241,14 @@
     "feeReduction": "Elektronické podanie: {{amount}} EUR.",
     "legalNotes": "Čo ešte hovorí zákon",
     "legalNotesHint": "Spoločné pravidlá k tejto ceste: dôvody zamietnutia, povinnosti, strata pobytu. Rozbaľte, čo potrebujete — to sa aj vytlačí.",
-    "legalNoteCount": "{{count}} bodov"
+    "legalNoteCount": "{{count}} bodov",
+    "checklistProgress": "Označené {{done}} z {{total}}",
+    "checklistReset": "Zrušiť všetky značky",
+    "requirement": {
+      "required": "vždy potrebný",
+      "conditional": "závisí od situácie",
+      "exception": "výnimka"
+    }
   },
   "catalogue": {
     "title": "Všetky cesty",
@@ -260,5 +267,13 @@
     "filterPlaceholder": "napr. §23, zamestnanie, rodina",
     "found": "Nájdené: {{count}}",
     "nothing": "Na túto požiadavku sa nič nenašlo. Skúste číslo paragrafu (napr. §46) alebo jedno slovo."
+  },
+  "summary": {
+    "title": "Prehľad konania",
+    "category": "Typ",
+    "basis": "Právny základ",
+    "where": "Kam sa podáva",
+    "dataState": "Stav údajov",
+    "needsCheck": "vyžaduje overenie"
   }
 }

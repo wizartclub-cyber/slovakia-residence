@@ -185,6 +185,9 @@ export const DocumentSchema = z
     maxAgeDays: z.number().int().positive().nullable().default(null),
     // true — це не додаток до заяви, а обов'язок ПІСЛЯ рішення.
     afterDecision: z.boolean().default(false),
+    // required — потрібен завжди; conditional — залежить від підстави чи ситуації;
+    // exception — навпаки, звільняє від іншої вимоги.
+    requirement: z.enum(['required', 'conditional', 'exception']).default('conditional'),
     thresholds: z.array(ThresholdRefSchema).default([]),
     sourceUrl: z.string().url().nullable().default(null),
     formVersion: nonEmpty.nullable().default(null),

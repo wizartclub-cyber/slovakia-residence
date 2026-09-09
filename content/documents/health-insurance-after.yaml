@@ -16,6 +16,7 @@ requiredWhen:
   sk: >-
     Pre žiadateľov podľa §22, §25, §26, §27 a §30. Pre §23 (zamestnanie) túto
     povinnosť §32 ods. 9 neustanovuje.
+requirement: conditional
 afterDecision: true
 maxAgeDays: null
 preparationType: obtain_from_third_party

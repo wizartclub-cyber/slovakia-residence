@@ -6,7 +6,11 @@
       "Bash(git -c user.name=Popov -c user.email=wizartclub@gmail.com commit -q -m 'CI: версія pnpm береться з package.json \\(усунено конфлікт версій\\) *)",
       "Bash(gh api *)",
       "Bash(git -c user.name=Popov -c user.email=wizartclub@gmail.com commit -q -m 'Журнал сесії: результат деплою і виправлення статусів сторінок *)",
-      "Bash(git -c user.name=Popov -c user.email=wizartclub@gmail.com commit -q -m ' *)"
+      "Bash(git -c user.name=Popov -c user.email=wizartclub@gmail.com commit -q -m ' *)",
+      "Bash(python3 -c ' *)",
+      "Read(//tmp/**)",
+      "Bash(grep -oE '\\\\[[^]]{5,90}\\\\]\\\\\\(https://www\\\\.minv\\\\.sk/[^\\)]*\\\\\\)')",
+      "Bash(xxd)"
     ]
   }
 }
