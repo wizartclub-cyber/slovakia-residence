@@ -10,7 +10,8 @@
       "Bash(python3 -c ' *)",
       "Read(//tmp/**)",
       "Bash(grep -oE '\\\\[[^]]{5,90}\\\\]\\\\\\(https://www\\\\.minv\\\\.sk/[^\\)]*\\\\\\)')",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(grep -oE 'href=\"[^\"]{5,90}\"' /tmp/pol.html)"
     ]
   }
 }

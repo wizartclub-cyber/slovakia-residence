@@ -149,6 +149,12 @@ export function RoutePage() {
           return (
             <div key={aid} className="route-page__authority">
               <h3>{authority.officialName}</h3>
+              {authority.address && <p className="route-page__authority-address">{authority.address}</p>}
+              {(authority.phones ?? []).length > 0 && (
+                <p className="route-page__note">
+                  {t('authorities.phone')}: {(authority.phones ?? []).join(' \u00b7 ')}
+                </p>
+              )}
               {authority.infoUrl && (
                 <p>
                   <a href={authority.infoUrl} rel="noreferrer noopener" target="_blank">

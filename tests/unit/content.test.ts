@@ -123,6 +123,29 @@ describe('органи', () => {
   });
 });
 
+describe('органи: адреси', () => {
+  // Рантайм-лоадер не застосовує Zod-дефолти, тож поле може бути й undefined.
+  const withAddress = authorities.filter((a) => a.address != null);
+
+  it('щонайменше 13 підрозділів іноземної поліції мають адресу', () => {
+    expect(withAddress.filter((a) => a.type === 'OCP_PZ').length).toBeGreaterThanOrEqual(13);
+  });
+
+  it.each(withAddress.map((a) => [a.id, a] as const))('%s: координати в межах Словаччини', (_id, a) => {
+    if (a.coordinates == null) return;
+    expect(a.coordinates.lat).toBeGreaterThan(47.7);
+    expect(a.coordinates.lat).toBeLessThan(49.7);
+    expect(a.coordinates.lon).toBeGreaterThan(16.8);
+    expect(a.coordinates.lon).toBeLessThan(22.6);
+  });
+
+  it('телефони записані у міжнародному форматі', () => {
+    for (const a of authorities) {
+      for (const phone of a.phones ?? []) expect(phone).toMatch(/^\+421[\d ]+$/);
+    }
+  });
+});
+
 describe('збори', () => {
   it('усі суми в євро і невід\'ємні', () => {
     for (const f of fees) {

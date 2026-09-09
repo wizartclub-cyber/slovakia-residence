@@ -336,6 +336,15 @@ export const AuthoritySchema = z
     type: z.enum(authorityTypeValues),
     officialName: nonEmpty,
     territorialCompetence: nonEmpty.nullable().default(null),
+    address: nonEmpty.nullable().default(null),
+    // Координати з офіційної сторінки, у форматі «широта, довгота».
+    // null — на сторінці органу їх немає; вигадувати не можна.
+    coordinates: z
+      .object({ lat: z.number(), lon: z.number() })
+      .strict()
+      .nullable()
+      .default(null),
+    phones: z.array(nonEmpty).default([]),
     filingChannels: z.array(nonEmpty).default([]),
     bookingUrl: z.string().url().nullable().default(null),
     infoUrl: z.string().url().nullable().default(null),

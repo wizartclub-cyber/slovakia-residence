@@ -1,0 +1,20 @@
+# Дані з офіційної сторінки MV SR «Kontakty Hraničnej a cudzineckej polície»,
+# прочитаної 2026-09-09. Снапшота немає: сторінка малюється JavaScript.
+id: ocp-pz-kosice
+type: OCP_PZ
+officialName: Oddelenie cudzineckej polície PZ Košice
+territorialCompetence: null
+address: Trieda SNP 35, 040 01 Košice
+coordinates:
+  lat: 48.71505371
+  lon: 21.235499534
+phones: []
+bookingUrl: null
+infoUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+checkedAt: '2026-09-09'
+sourceIds:
+  - minv-hcp-contacts
+notes: >-
+  Територіальна компетенція цього підрозділу на офіційній сторінці контактів НЕ
+  наведена — тобто з наших джерел не видно, кого саме він обслуговує. Перед
+  поїздкою це треба перевірити в самому органі. Запис на прийом теж не описаний.

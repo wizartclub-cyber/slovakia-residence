@@ -394,3 +394,8 @@
   font-size: 13px;
   font-variant-numeric: tabular-nums;
 }
+
+.route-page__authority-address {
+  margin: 0 0 6px;
+  font-weight: 500;
+}

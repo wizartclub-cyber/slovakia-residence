@@ -6,6 +6,7 @@ import { SourceLibraryPage } from '../features/source-library/SourceLibraryPage'
 import { FinderPage } from '../features/route-finder/FinderPage';
 import { RoutePage } from '../features/route-page/RoutePage';
 import { RouteCataloguePage } from '../features/route-catalogue/RouteCataloguePage';
+import { AuthoritiesPage } from '../features/authorities/AuthoritiesPage';
 import { PrivacyPage } from '../pages/PrivacyPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { defaultLocale } from '../lib/content/site';
@@ -19,6 +20,7 @@ export function App() {
           <Route index element={<HomePage />} />
           <Route path="finder" element={<FinderPage />} />
           <Route path="routes" element={<RouteCataloguePage />} />
+          <Route path="authorities" element={<AuthoritiesPage />} />
           <Route path="route/:id" element={<RoutePage />} />
           <Route path="sources" element={<SourceLibraryPage />} />
           <Route path="about" element={<AboutPage />} />

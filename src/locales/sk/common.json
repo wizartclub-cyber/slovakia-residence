@@ -7,6 +7,7 @@
     "home": "Domov",
     "finder": "Nájsť cestu",
     "routes": "Všetky cesty",
+    "authorities": "Orgány",
     "sources": "Zdroje",
     "about": "O projekte",
     "privacy": "Súkromie"
@@ -364,5 +365,23 @@
     "yes": "áno (§73 ods. 3)",
     "unknown": "neurčené",
     "note": "Ide o zoskupenie faktov z údajov, nie o rebríček. Sumy a lehoty sú orientačné a neskontrolované právnikom."
+  },
+  "authorities": {
+    "title": "Orgány",
+    "phone": "Telefón",
+    "showOnMap": "Zobraziť na mape",
+    "officialPage": "Oficiálna stránka",
+    "noAddress": "adresa nie je v našich zdrojoch určená",
+    "intro": "Adresy pochádzajú z oficiálnej stránky kontaktov hraničnej a cudzineckej polície MV SR, čítanej 09.09.2026.",
+    "competenceWarning": "Dôležité: oficiálna stránka kontaktov neuvádza, ktoré oddelenie obsluhuje ktorý okres. Preto nevieme povedať, kam presne máte ísť — pred cestou zavolajte a overte si územnú pôsobnosť aj objednanie termínu.",
+    "type": {
+      "OCP_PZ": "Cudzinecká polícia",
+      "DIPLOMATIC_MISSION": "Zastupiteľské úrady SR",
+      "UPSVAR": "Úrady práce, sociálnych vecí a rodiny",
+      "MINISTRY": "Ministerstvá",
+      "MUNICIPALITY": "Obce",
+      "COURT": "Súdy",
+      "OTHER": "Iné orgány"
+    }
   }
 }

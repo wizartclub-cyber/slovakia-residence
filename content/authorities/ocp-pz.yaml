@@ -4,13 +4,17 @@ officialName: Oddelenie cudzineckej polície Policajného zboru
 territorialCompetence: null
 filingChannels: []
 bookingUrl: null
-infoUrl: null
+infoUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
 checkedAt: '2026-09-07'
+address: null
+coordinates: null
+phones: []
 sourceIds:
   - slovlex-404-2011
   - mzv-residence-master-guidance
+  - minv-hcp-contacts
 notes: >-
-  Орган, до якого подаються заяви про пробут у Словаччині. Точна офіційна назва
-  конкретного відділення, територіальна компетенція, адреси, запис на прийом і
-  дозволені канали подачі НЕ перевірені за снапшотом — заповнити після знімка
-  404/2011 і сторінок MV SR (minv-residence-guides має лише кореневу адресу).
+  Загальний запис про орган. Адреси тринадцяти конкретних підрозділів внесені
+  окремими записами (ocp-pz-bratislava і далі) з офіційної сторінки контактів
+  MV SR, прочитаної 2026-09-09. Територіальна компетенція, запис на прийом і
+  дозволені канали подачі досі не встановлені: на сторінці контактів їх немає.

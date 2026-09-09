@@ -1,0 +1,20 @@
+# Дані з офіційної сторінки MV SR «Kontakty Hraničnej a cudzineckej polície»,
+# прочитаної 2026-09-09. Снапшота немає: сторінка малюється JavaScript.
+id: ocp-pz-zilina
+type: OCP_PZ
+officialName: Oddelenie cudzineckej polície PZ Žilina
+territorialCompetence: null
+address: Janka Kráľa 4, 010 40 Žilina
+coordinates:
+  lat: 49.2193026
+  lon: 18.7506197
+phones: []
+bookingUrl: null
+infoUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+checkedAt: '2026-09-09'
+sourceIds:
+  - minv-hcp-contacts
+notes: >-
+  Територіальна компетенція цього підрозділу на офіційній сторінці контактів НЕ
+  наведена — тобто з наших джерел не видно, кого саме він обслуговує. Перед
+  поїздкою це треба перевірити в самому органі. Запис на прийом теж не описаний.

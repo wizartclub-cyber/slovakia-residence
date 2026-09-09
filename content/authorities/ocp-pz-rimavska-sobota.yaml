@@ -1,0 +1,20 @@
+# Дані з офіційної сторінки MV SR «Kontakty Hraničnej a cudzineckej polície»,
+# прочитаної 2026-09-09. Снапшота немає: сторінка малюється JavaScript.
+id: ocp-pz-rimavska-sobota
+type: OCP_PZ
+officialName: Oddelenie cudzineckej polície PZ Rimavská Sobota
+territorialCompetence: null
+address: Hviezdoslavova 35, 979 01 Rimavská Sobota
+coordinates:
+  lat: 48.3857314
+  lon: 20.0181234
+phones: []
+bookingUrl: null
+infoUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+checkedAt: '2026-09-09'
+sourceIds:
+  - minv-hcp-contacts
+notes: >-
+  Територіальна компетенція цього підрозділу на офіційній сторінці контактів НЕ
+  наведена — тобто з наших джерел не видно, кого саме він обслуговує. Перед
+  поїздкою це треба перевірити в самому органі. Запис на прийом теж не описаний.

@@ -1,0 +1,30 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-hcp-contacts
+authority: MV SR
+title: Kontakty Hraničnej a cudzineckej polície — MV SR
+url: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+pinnedUrl: null
+staticUrl: null
+formCode: null
+completionLanguage: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: 'Official contact directory of the Border and Foreign Police. Lists the ÚHCP PP PZ, four regional
+  directorates and 13 oddelenia cudzineckej polície with street addresses, GPS and phone numbers; page states
+  "Upravené dňa: 7. 8. 2025". Page is JavaScript-rendered: a plain HTTP GET returns the site homepage, the
+  content was read through the Jina reader on 2026-09-09.'
+notes: "Джерело адрес підрозділів поліції у справах іноземців. Снапшот НЕ знято: сторінка малюється
+  JavaScript, і download_and_hash.py збереже лише оболонку. Територіальна компетенція підрозділів на цій
+  сторінці не наведена."
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-09
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null

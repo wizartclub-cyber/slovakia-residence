@@ -702,6 +702,30 @@ resources:
     ok: false
     error: no url in registry — supply the official URL first
   procedureIds: []
+- id: minv-hcp-contacts
+  title: Kontakty Hraničnej a cudzineckej polície — MV SR
+  type: official_guidance_html
+  authority: MV SR
+  url: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+  priority: high
+  reviewStatus: url_verified
+  locale: sk
+  addedAt: '2026-09-09'
+  urlCheck:
+    checkedAt: '2026-09-09'
+    result: ok_js_required
+    observed: >-
+      Official contact directory of the Border and Foreign Police. Lists the ÚHCP PP PZ,
+      four regional directorates and 13 oddelenia cudzineckej polície with street
+      addresses, GPS and phone numbers; page states "Upravené dňa: 7. 8. 2025".
+      Page is JavaScript-rendered: a plain HTTP GET returns the site homepage, the
+      content was read through the Jina reader on 2026-09-09.
+  addedNote: >-
+    Джерело адрес підрозділів поліції у справах іноземців. Снапшот НЕ знято:
+    сторінка малюється JavaScript, і download_and_hash.py збереже лише оболонку.
+    Територіальна компетенція підрозділів на цій сторінці не наведена.
+  snapshot: null
+  procedureIds: []
 baselinePolicy: 'moving: legal baseline = date of last completed legal review; historical editions preserved (decision 2026-09-07)'
 reviewStatusEnum:
 - fetch_pending
