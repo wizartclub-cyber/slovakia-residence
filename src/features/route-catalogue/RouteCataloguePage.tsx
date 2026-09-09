@@ -1,7 +1,7 @@
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { usePageTitle } from '../../app/usePageTitle';
-import { fees, procedures } from '../../lib/content';
+import { documentById, fees, procedures } from '../../lib/content';
 import { site } from '../../lib/content/site';
 import { publicStatus } from '../../lib/content/schema';
 import type { Procedure } from '../../lib/content/schema';
@@ -32,6 +32,20 @@ export function RouteCataloguePage() {
     if (value === '') next.delete(key);
     else next.set(key, value);
     setParams(next, { replace: true });
+  }
+
+  // Порівняння живе в адресі: підбірку можна надіслати посиланням.
+  const compareIds = (params.get('compare') ?? '').split(',').filter(Boolean);
+  const compared = compareIds
+    .map((id) => procedures.find((p) => p.id === id))
+    .filter((p): p is Procedure => p !== undefined)
+    .slice(0, 3);
+
+  function toggleCompare(id: string) {
+    const next = compareIds.includes(id)
+      ? compareIds.filter((x) => x !== id)
+      : [...compareIds, id].slice(0, 3);
+    update('compare', next.join(','));
   }
 
   const needle = query.trim().toLowerCase();
@@ -104,12 +118,24 @@ export function RouteCataloguePage() {
 
       {matches.length === 0 && <p className="card">{t('catalogue.nothing')}</p>}
 
+      {compared.length >= 2 && <ComparisonTable routes={compared} lang={lang} />}
+      {compared.length === 1 && (
+        <p className="route-page__note">{t('compare.pickMore')}</p>
+      )}
+
       {groups.map((group) => (
         <section key={group.category}>
           <h2>{t(`catalogue.category.${group.category}`)}</h2>
           <ul className="catalogue">
             {group.items.map((procedure) => (
-              <RouteCard key={procedure.id} procedure={procedure} lang={lang} />
+              <RouteCard
+                key={procedure.id}
+                procedure={procedure}
+                lang={lang}
+                compared={compareIds.includes(procedure.id)}
+                onCompare={() => toggleCompare(procedure.id)}
+                compareFull={compareIds.length >= 3 && !compareIds.includes(procedure.id)}
+              />
             ))}
           </ul>
         </section>
@@ -118,7 +144,19 @@ export function RouteCataloguePage() {
   );
 }
 
-function RouteCard({ procedure, lang }: { procedure: Procedure; lang: string | undefined }) {
+function RouteCard({
+  procedure,
+  lang,
+  compared,
+  onCompare,
+  compareFull,
+}: {
+  procedure: Procedure;
+  lang: string | undefined;
+  compared: boolean;
+  onCompare: () => void;
+  compareFull: boolean;
+}) {
   const { t } = useTranslation();
   const status = publicStatus(procedure.reviewStatus);
   const routeFees = fees.filter((f) => procedure.feeRuleIds.includes(f.id));
@@ -140,6 +178,13 @@ function RouteCard({ procedure, lang }: { procedure: Procedure; lang: string | u
         <span>{procedure.legalBasis.join(' · ')}</span>
       </p>
 
+      <p className="catalogue__compare no-print">
+        <label>
+          <input type="checkbox" checked={compared} disabled={compareFull} onChange={onCompare} />{' '}
+          {t('compare.add')}
+        </label>
+      </p>
+
       <dl className="catalogue__facts">
         <div>
           <dt>{t('route.decisionDeadline')}</dt>
@@ -158,6 +203,84 @@ function RouteCard({ procedure, lang }: { procedure: Procedure; lang: string | u
       </dl>
     </li>
   );
+}
+
+/** Скільки коштує маршрут: діапазон, бо суми залежать від каналу подання. */
+function feeRange(procedure: Procedure): string | null {
+  const list = fees.filter((f) => procedure.feeRuleIds.includes(f.id));
+  if (list.length === 0) return null;
+  const min = Math.min(...list.map((f) => f.amount));
+  const max = Math.max(...list.map((f) => f.amount));
+  return min === max ? `${min} EUR` : `${min}–${max} EUR`;
+}
+
+/**
+ * Порівняння до трьох маршрутів. Порядок рядків не змінюється залежно від
+ * «вигідності»: це зіставлення фактів, а не рейтинг.
+ */
+function ComparisonTable({ routes, lang }: { routes: Procedure[]; lang: string | undefined }) {
+  const { t } = useTranslation();
+
+  const rows: Array<[string, (p: Procedure) => string]> = [
+    [t('route.grantedFor'), (p) => (p.grantedFor ? firstSentence(localized(p.grantedFor, lang)) : '—')],
+    [
+      t('route.decisionDeadline'),
+      (p) => {
+        const d = p.deadlines?.find((x) => x.phase === 'decision' && x.days !== null);
+        return d ? t('catalogue.days', { days: d.days }) : '—';
+      },
+    ],
+    [t('route.fees'), (p) => feeRange(p) ?? '—'],
+    [t('compare.documents'), (p) => String(p.documentIds.filter((id) => !documentById(id)?.afterDecision).length)],
+    [
+      t('compare.workRight'),
+      (p) => (p.cardStatesWorkRight === true ? t('compare.yes') : t('compare.unknown')),
+    ],
+    [
+      t('compare.afterDecision'),
+      (p) => String(p.documentIds.filter((id) => documentById(id)?.afterDecision).length),
+    ],
+  ];
+
+  return (
+    <section className="comparison" aria-labelledby="compare-title">
+      <h2 id="compare-title">{t('compare.title')}</h2>
+      <div className="comparison__scroll" tabIndex={0} role="region" aria-labelledby="compare-title">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">{t('compare.field')}</th>
+              {routes.map((p) => (
+                <th key={p.id} scope="col">
+                  {lang === 'sk' ? p.title.sk : p.title.uk}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([label, get]) => (
+              <tr key={label}>
+                <th scope="row">{label}</th>
+                {routes.map((p) => (
+                  <td key={p.id}>{get(p)}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="route-page__note">{t('compare.note')}</p>
+    </section>
+  );
+}
+
+function localized(value: { uk: string; sk: string }, lang: string | undefined): string {
+  return lang === 'sk' ? value.sk : value.uk;
+}
+
+function firstSentence(text: string): string {
+  const end = text.indexOf('. ');
+  return end > 0 ? text.slice(0, end + 1) : text;
 }
 
 function formatDate(iso: string): string {

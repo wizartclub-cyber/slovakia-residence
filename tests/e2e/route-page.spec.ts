@@ -377,3 +377,29 @@ test('маршрут §23 показує строк 180 днів на підтв
   await page.goto(B2);
   await expect(page.locator('.deadlines')).toContainText('не більше 180 днів');
 });
+
+test('календар документів рахує локально і нічого не зберігає', async ({ page }) => {
+  await page.goto(B2);
+
+  await page.getByLabel('Коли плануєте подавати заяву?').fill('2026-06-01');
+
+  // 90 днів до 01.06.2026 — це 03.03.2026; 180 днів — 03.12.2025.
+  await expect(page.getByText('Замовляти не раніше 03.03.2026', { exact: false }).first()).toBeVisible();
+  await expect(page.getByText('Замовляти не раніше 03.12.2025', { exact: false })).toBeVisible();
+
+  // Дата — теж дані людини: у сховищах її бути не повинно.
+  const stored = await page.evaluate(() => ({
+    local: window.localStorage.length,
+    session: window.sessionStorage.length,
+  }));
+  expect(stored).toEqual({ local: 0, session: 0 });
+
+  await page.reload();
+  await expect(page.getByText('Замовляти не раніше', { exact: false })).toHaveCount(0);
+});
+
+test('календар прямо каже, що це не юридична гарантія', async ({ page }) => {
+  await page.goto(B2);
+  await expect(page.getByText('не юридична гарантія', { exact: false })).toBeVisible();
+  await expect(page.getByText('нікуди не надсилається', { exact: false })).toBeVisible();
+});

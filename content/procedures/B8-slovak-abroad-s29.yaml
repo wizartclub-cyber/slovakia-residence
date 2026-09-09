@@ -15,6 +15,8 @@ reviewer: null
 sourceIds:
   - slovlex-404-2011
 conditionsComplete: false
+# §73 ods. 3 прямо називає §24–§27, §29 і §30.
+cardStatesWorkRight: true
 grantedFor:
   uk: >-
     На п'ять років (§29 ods. 2). Особа з таким пробутом може займатися підприємництвом (§29 ods. 3).

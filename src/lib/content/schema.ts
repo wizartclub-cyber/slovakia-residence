@@ -144,6 +144,9 @@ export const ProcedureSchema = z
     conditionsComplete: z.boolean().default(false),
     // На який строк надається дозвіл і скільки закон дає органу на рішення —
     // це перше, що питає людина, і воно прямо в законі.
+    // §73 ods. 3: картка проживання містить слова «oprávnenie pracovať»
+    // для пробуту за §24–§27, §29 і §30. null — питання не з'ясоване.
+    cardStatesWorkRight: z.boolean().nullable().default(null),
     grantedFor: localizedTextOptional,
     decisionDeadline: localizedTextOptional,
     // Ключові строки числами — для шкали на сторінці. Кожен має джерело.

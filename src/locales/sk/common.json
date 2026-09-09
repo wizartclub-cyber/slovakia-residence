@@ -347,5 +347,22 @@
       "decision": "Konanie a rozhodnutie",
       "after": "Po prevzatí dokladu"
     }
+  },
+  "planner": {
+    "label": "Kedy plánujete podať žiadosť?",
+    "hint": "Dátum zostáva vo vašom prehliadači a nikam sa neodosiela. Nižšie sa zobrazí, kedy najskôr si vybaviť každý doklad. Ide o jednoduchý výpočet z lehôt v zákone, nie o právnu záruku.",
+    "notBefore": "Vybaviť najskôr {{date}} — inak bude doklad v deň podania starší, než zákon pripúšťa"
+  },
+  "compare": {
+    "title": "Porovnanie ciest",
+    "field": "Ukazovateľ",
+    "add": "Pridať do porovnania",
+    "pickMore": "Označte ešte jednu cestu, aby sa zobrazilo porovnanie (najviac tri).",
+    "documents": "Dokladov k žiadosti",
+    "workRight": "Doklad s právom pracovať",
+    "afterDecision": "Povinností po rozhodnutí",
+    "yes": "áno (§73 ods. 3)",
+    "unknown": "neurčené",
+    "note": "Ide o zoskupenie faktov z údajov, nie o rebríček. Sumy a lehoty sú orientačné a neskontrolované právnikom."
   }
 }

@@ -18,6 +18,8 @@ sourceIds:
   - slovlex-404-2011
   - mzv-residence-master-guidance
 conditionsComplete: false
+# §73 ods. 3 прямо називає §24–§27, §29 і §30.
+cardStatesWorkRight: true
 grantedFor: null
 decisionDeadline:
   uk: 90 днів (§33 ods. 8 písm. a).

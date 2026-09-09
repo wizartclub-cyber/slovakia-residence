@@ -14,6 +14,7 @@ import {
 import { publicStatus } from '../../lib/content/schema';
 import type { Document, FeeRule, Procedure, Source } from '../../lib/content/schema';
 import { derivedAmount } from '../../lib/content/thresholds';
+import { earliestIssueDate } from '../../lib/content/dates';
 import { site } from '../../lib/content/site';
 import './route-page.css';
 
@@ -102,7 +103,7 @@ export function RoutePage() {
         ) : (
           <>
             <p className="route-page__note">{t('route.documentsChecklistHint')}</p>
-            <Checklist docs={attachments} lang={lang} />
+            <Checklist docs={attachments} lang={lang} withPlanner />
           </>
         )}
       </Section>
@@ -360,13 +361,36 @@ function SummaryPanel({ procedure, lang }: { procedure: Procedure; lang: string 
  * жодного localStorage — це заборонено CLAUDE.md §2.1, і тест це перевіряє.
  * «Збереженням» лишається друк на папері, тому відмітки видно і при друці.
  */
-function Checklist({ docs, lang }: { docs: Document[]; lang: string | undefined }) {
+function Checklist({
+  docs,
+  lang,
+  withPlanner = false,
+}: {
+  docs: Document[];
+  lang: string | undefined;
+  withPlanner?: boolean;
+}) {
   const { t } = useTranslation();
   const [checked, setChecked] = useState<Record<string, boolean>>({});
+  const [submission, setSubmission] = useState('');
   const done = docs.filter((d) => checked[d.id]).length;
+  const datedDocs = docs.filter((d) => d.maxAgeDays !== null);
 
   return (
     <>
+      {withPlanner && datedDocs.length > 0 && (
+        <div className="planner no-print">
+          <label htmlFor="planned-submission">{t('planner.label')}</label>
+          <input
+            id="planned-submission"
+            type="date"
+            value={submission}
+            onChange={(e) => setSubmission(e.target.value)}
+          />
+          <p className="route-page__note">{t('planner.hint')}</p>
+        </div>
+      )}
+
       <p className="checklist__progress" role="status" aria-live="polite">
         {t('route.checklistProgress', { done, total: docs.length })}
       </p>
@@ -378,6 +402,7 @@ function Checklist({ docs, lang }: { docs: Document[]; lang: string | undefined 
             lang={lang}
             checked={checked[doc.id] ?? false}
             onToggle={() => setChecked((prev) => ({ ...prev, [doc.id]: !prev[doc.id] }))}
+            submission={withPlanner ? submission : ''}
           />
         ))}
       </ul>
@@ -401,14 +426,18 @@ function DocumentItem({
   lang,
   checked,
   onToggle,
+  submission,
 }: {
   doc: Document;
   lang: string | undefined;
   checked: boolean;
   onToggle: () => void;
+  submission: string;
 }) {
   const { t } = useTranslation();
   const inputId = `doc-${doc.id}`;
+  const earliest =
+    submission && doc.maxAgeDays !== null ? earliestIssueDate(submission, doc.maxAgeDays) : null;
 
   return (
     <li className="checklist__item">
@@ -433,6 +462,11 @@ function DocumentItem({
         </label>
         <p className="route-page__note checklist__official">{doc.officialName}</p>
         {doc.explanation && <p>{localized(doc.explanation, lang)}</p>}
+        {earliest && (
+          <p className="planner__result">
+            {t('planner.notBefore', { date: formatDate(earliest) })}
+          </p>
+        )}
         {doc.requiredWhen && (
           <p className="route-page__note">
             {t('route.requiredWhen')}: {localized(doc.requiredWhen, lang)}

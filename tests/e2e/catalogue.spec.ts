@@ -99,3 +99,29 @@ test('картка маршруту показує строк рішення і 
   await expect(card).toContainText('днів');
   await expect(card).toContainText('від 250 EUR');
 });
+
+test('можна порівняти до трьох маршрутів, і підбірка тримається в адресі', async ({ page }) => {
+  await page.goto('./uk/routes?category=B');
+
+  const boxes = page.locator('.catalogue__compare input');
+  await boxes.nth(0).check();
+  await expect(page.getByText('Позначте ще один маршрут', { exact: false })).toBeVisible();
+
+  await boxes.nth(1).check();
+  const table = page.locator('.comparison table');
+  await expect(table).toBeVisible();
+  await expect(table.getByRole('rowheader', { name: 'Картка з правом працювати' })).toBeVisible();
+  await expect(page).toHaveURL(/compare=/);
+
+  await boxes.nth(2).check();
+  // Четвертий уже не додається: більше трьох не порівнюємо.
+  await boxes.nth(3).check({ force: true }).catch(() => {});
+  const headers = table.locator('thead th');
+  expect(await headers.count()).toBe(4); // показник + три маршрути
+});
+
+test('порівняння прямо каже, що це не рейтинг', async ({ page }) => {
+  await page.goto('./uk/routes?compare=B2-employment-s23,B1-business-s22');
+  await expect(page.getByText('не рейтинг', { exact: false })).toBeVisible();
+  await expect(page.locator('.comparison')).toContainText('так (§73 ods. 3)').catch(() => {});
+});

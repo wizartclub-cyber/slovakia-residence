@@ -16,6 +16,8 @@ reviewer: null
 sourceIds:
   - slovlex-404-2011
 conditionsComplete: false
+# §73 ods. 3 прямо називає §24–§27, §29 і §30.
+cardStatesWorkRight: true
 grantedFor:
   uk: На передбачуваний час навчання, але не більше ніж на шість років (§24 ods. 2).
   sk: Na predpokladaný čas štúdia, najviac však na šesť rokov (§24 ods. 2).

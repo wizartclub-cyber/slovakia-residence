@@ -16,6 +16,8 @@ reviewer: null
 sourceIds:
   - slovlex-404-2011
 conditionsComplete: false
+# §73 ods. 3 прямо називає §24–§27, §29 і §30.
+cardStatesWorkRight: true
 grantedFor:
   uk: >-
     На час чинності угоди про гостювання (dohoda o hosťovaní), але не більше ніж на два роки (§26 ods. 1). Особа з таким пробутом може займатися підприємництвом.
