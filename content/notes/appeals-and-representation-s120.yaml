@@ -1,0 +1,84 @@
+# Джерело: 404/2011 §120, §16, §83, §88, §34 (снапшот slovlex-404-2011, 2026-09-09).
+id: appeals-and-representation-s120
+title:
+  uk: Оскарження рішення і хто може вас представляти (§120)
+  sk: Odvolanie proti rozhodnutiu a kto vás môže zastupovať (§120)
+intro:
+  uk: >-
+    Найважливіше в цьому розділі — останній пункт: представником може бути лише
+    особа з бездоганною репутацією, і водночас лише один. Це прямий захист від
+    посередників, які беруть гроші за «гарантований результат».
+  sk: >-
+    Najdôležitejší je posledný bod: zástupcom môže byť len bezúhonná osoba a
+    súčasne len jeden. Je to priama ochrana pred sprostredkovateľmi, ktorí
+    sľubujú „zaručený výsledok“.
+items:
+  - id: g-a
+    text:
+      uk: >-
+        На провадження за законом про пробут застосовується загальний припис про адміністративне провадження, якщо сам закон не встановлює інакше (§120 ods. 1). Строки оскарження визначає саме той загальний припис — його тексту в наших джерелах немає.
+      sk: >-
+        Na konanie sa vzťahuje všeobecný predpis o správnom konaní, ak zákon neustanovuje inak (§120 ods. 1). Lehoty na odvolanie určuje tento predpis; jeho text medzi našimi zdrojmi nie je.
+  - id: g-b
+    text:
+      uk: >-
+        Оскаржити НЕ можна рішення про НАДАННЯ пробуту: тимчасового, його обновлення, постійного на п'ять років, постійного на необмежений час, а також пробуту дитині, народженій у Словаччині чи в державі-члені (§120 ods. 5). Отже оскарження стосується саме відмов.
+      sk: >-
+        Odvolať sa NEMOŽNO proti rozhodnutiu o UDELENÍ pobytu — prechodného, jeho obnovenia, trvalého na päť rokov, na neobmedzený čas ani pobytu dieťaťa narodeného v SR či v členskom štáte (§120 ods. 5).
+  - id: g-c
+    text:
+      uk: >-
+        Проти рішення про відмову в шенгенській візі, її скасування чи відкликання можна подати відвід — до того самого органу, що видав рішення, протягом 15 днів від його доставлення (§16 ods. 10).
+      sk: >-
+        Proti rozhodnutiu o zamietnutí, zrušení alebo odvolaní schengenského víza možno podať odvolanie na správnom orgáne, ktorý rozhodnutie vydal, v lehote 15 dní od doručenia (§16 ods. 10).
+  - id: g-d
+    text:
+      uk: >-
+        Проти рішення про адміністративне видворення або про заборону в'їзду відвід подати НЕ можна. Таке рішення виконується після спливу 30 днів від доставлення (§83 ods. 12).
+      sk: >-
+        Proti rozhodnutiu o administratívnom vyhostení ani o zákaze vstupu odvolanie podať NEMOŽNO. Vykonateľné je uplynutím 30 dní od doručenia (§83 ods. 12).
+  - id: g-e
+    text:
+      uk: >-
+        Якщо провадження про обновлення пробуту зупинили через недонесені документи, це рішення оскарженню не підлягає (§34 ods. 4). Саме тому важливо вкластися в 30 днів на донесення.
+      sk: >-
+        Ak sa konanie o obnovení pobytu zastaví pre nedoplnené doklady, proti takému rozhodnutiu sa nemožno odvolať (§34 ods. 4).
+  - id: g-f
+    text:
+      uk: >-
+        Проти рішення про затримання, продовження затримання або продовження строку затримання відвід подати не можна (§88 ods. 7).
+      sk: >-
+        Proti rozhodnutiu o zaistení a o jeho predĺžení nemožno podať odvolanie (§88 ods. 7).
+  - id: g-g
+    text:
+      uk: >-
+        У провадженні можна мати лише ОДНОГО обраного представника водночас, і ним може бути тільки особа з бездоганною репутацією. Закон прямо виключає засуджених за корупційні злочини, переправлення людей, торгівлю людьми, зловживання владою посадовою особою, зрив завдання посадовою особою, насильницький перетин державного кордону чи недозволений перетин кордону (§120 ods. 6). Поліція має право запитати витяг із реєстру судимостей представника.
+      sk: >-
+        V konaní možno mať súčasne len JEDNÉHO zvoleného zástupcu a môže ním byť len bezúhonná osoba; zákon vylučuje odsúdených za korupciu, prevádzačstvo, obchodovanie s ľuďmi, zneužitie právomoci verejného činiteľa, marenie úlohy verejným činiteľom a nedovolené prekročenie štátnej hranice (§120 ods. 6).
+  - id: g-h
+    text:
+      uk: >-
+        Правові дії у провадженні виконуються виключно в паперовій формі, крім випадків, прямо названих у законі (§120 ods. 1) — зокрема окремих електронних послуг за §33 ods. 9, §34 ods. 15, §48 ods. 3 і §125 ods. 12.
+      sk: >-
+        Právne úkony sa vykonávajú výlučne v listinnej podobe, okrem prípadov výslovne uvedených v zákone (§120 ods. 1).
+appliesTo:
+  - A3-national-visa-120
+  - B1-business-s22
+  - B10-blue-card-s37
+  - B2-employment-s23
+  - B3-study-s24
+  - B5-research-s26
+  - B6-family-s27
+  - B8-slovak-abroad-s29
+  - B9-longterm-other-state-s30
+  - C1-permanent-s43
+  - C3-permanent-s46
+  - C4-longterm-s52
+  - D1-tolerated-s58
+  - E7-temporary-protection-transition
+  - F1-eu-short-stay-s64
+  - F2-eu-registration-s66
+  - F7-eu-permanent-s67
+  - G1-renewal-s34
+reviewStatus: source_verified
+sourceIds: [slovlex-404-2011]

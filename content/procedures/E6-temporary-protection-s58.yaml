@@ -1,0 +1,172 @@
+# Наповнено з тексту закону 69/2026 §58, §59, §68, §69 (снапшот slovlex-69-2026).
+id: E6-temporary-protection-s58
+category: E
+title:
+  uk: Тимчасовий захист (dočasné útočisko) — як отримати і що він дає (69/2026 §58)
+  sk: Dočasné útočisko — ako ho získať a čo dáva (69/2026 §58)
+legalBasis:
+  - '69/2026 §58'
+  - '69/2026 §59'
+  - '69/2026 §68'
+  - '69/2026 §69'
+validFrom: '2026-06-12'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-69-2026
+  - slovlex-69-annex-3
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    Строк визначає рішення Ради ЄС або уряду Словаччини — саме воно оголошує
+    надання тимчасового захисту, його початок і умови (§58 ods. 2 і 3).
+  sk: >-
+    Čas určuje rozhodnutie Rady EÚ alebo vlády SR, ktoré vyhlasuje poskytovanie
+    dočasného útočiska, jeho začiatok a podmienky (§58 ods. 2 a 3).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-purpose-protection
+    effect: require
+    when: { field: purpose, equals: protection }
+    localizedContentKey: null
+    sourceIds: [slovlex-69-2026]
+  - id: x-not-eu-citizen
+    effect: exclude
+    when: { field: citizenshipGroup, equals: eu_eea_ch }
+    localizedContentKey: null
+    sourceIds: [slovlex-69-2026]
+  - id: x-already-has-residence
+    effect: exclude
+    when: { field: currentStatus, in: [temporary_residence, permanent_residence, temporary_protection] }
+    localizedContentKey: null
+    sourceIds: [slovlex-69-2026]
+formSourceIds: []
+authorityIds: [ocp-pz, mv-sr]
+feeRuleIds: []
+documentIds: []
+steps:
+  - id: s1-when
+    order: 1
+    title:
+      uk: Тимчасовий захист діє лише тоді, коли його оголошено
+      sk: Dočasné útočisko platí len vtedy, keď je vyhlásené
+    body:
+      uk: >-
+        §58 ods. 1: захист надають у разі масового напливу або безпосередньої
+        загрози масового напливу іноземців із третіх країн, щоб захистити їх від
+        збройного конфлікту, ендемічного насильства, наслідків гуманітарної
+        катастрофи або від серйозної загрози систематичного чи загального
+        порушення прав людини. Саме надання оголошує уряд Словаччини — за
+        рішенням Ради ЄС (ods. 2) або без нього (ods. 3), визначаючи початок,
+        умови і кошти.
+      sk: >-
+        §58 ods. 1: útočisko sa poskytuje pri hromadnom príleve alebo bezprostredne
+        hroziacom prílevе cudzincov z tretích krajín na ochranu pred ozbrojeným
+        konfliktom, endemickým násilím, následkami humanitárnej katastrofy alebo
+        pred vážnym ohrozením systematického porušovania ľudských práv.
+        Poskytovanie vyhlasuje vláda SR podľa rozhodnutia Rady EÚ alebo aj bez neho.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s2-declaration
+    order: 2
+    title:
+      uk: Провадження починається заявою в поліції на бланку з Додатку №3
+      sk: Konanie sa začína vyhlásením na polícii na tlačive z prílohy č. 3
+    body:
+      uk: >-
+        §59 ods. 1 і 3: провадження починається заявою іноземця в підрозділі
+        поліції за §3 ods. 1 про те, що він просить тимчасового захисту. Поліція
+        записує заяву на офіційному бланку, зразок якого наведено в Додатку №3
+        до закону, і невідкладно надсилає його міністерству внутрішніх справ.
+        За неповнолітнього заяву подає законний представник або опікун, але сама
+        дитина має бути присутня. Поліція затримує проїзний документ або інший
+        документ про особу і видає про це підтвердження (§59 ods. 4).
+      sk: >-
+        §59 ods. 1 a 3: konanie sa začína vyhlásením cudzinca na policajnom útvare
+        podľa §3 ods. 1. Útvar ho zaznamená na úradnom tlačive, ktorého vzor je
+        v prílohe č. 3, a bezodkladne ho zašle ministerstvu vnútra. Za maloletého
+        podáva vyhlásenie zákonný zástupca, dieťa musí byť prítomné. Útvar zadrží
+        doklad totožnosti a vydá o tom potvrdenie.
+    afterDecision: false
+    prerequisites: [s1-when]
+    sourceIds: [slovlex-69-2026, slovlex-69-annex-3]
+  - id: s3-who-cannot
+    order: 3
+    title:
+      uk: Кому провадження не почнуть
+      sk: Komu sa konanie nezačne
+    body:
+      uk: >-
+        §59 ods. 1 písm. b): провадження не почнеться, якщо заяву робить
+        громадянин держави-члена ЄС, заявник про міжнародний захист, особа з
+        притулком, особа з додатковим захистом, уже наявний відідент, особа з
+        наданим у Словаччині постійним або тимчасовим проживанням, або той, хто
+        вже просить тимчасового захисту. Не почнеться воно й тоді, коли надання
+        захисту взагалі не оголошено (písm. a).
+      sk: >-
+        §59 ods. 1 písm. b): konanie sa nezačne, ak vyhlásenie urobí občan
+        členského štátu EÚ, žiadateľ o medzinárodnú ochranu, azylant, cudzinec
+        s doplnkovou ochranou, odídenec alebo osoba s udeleným trvalým či
+        prechodným pobytom v SR. Nezačne sa ani vtedy, ak poskytovanie nebolo
+        vyhlásené (písm. a).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s4-accommodation
+    order: 4
+    title:
+      uk: Житло в притулковому закладі — 60 днів, для вразливих осіб довше
+      sk: Ubytovanie v azylovom zariadení — 60 dní, pri zraniteľných dlhšie
+    body:
+      uk: >-
+        §68 ods. 2–5: відідента можуть розмістити в притулковому закладі не
+        більше ніж на 60 днів від першого надання тимчасового захисту — або
+        довше, якщо він вразлива особа. Вразливими для цієї мети закон вважає
+        осіб віком від 65 років; одинокого батька або матір, які доглядають
+        дитину до п'яти років (чи особу, якій дитину передано за рішенням суду);
+        і саму таку дитину. Вразлива особа може жити в закладі до шести місяців,
+        і навіть повторно, але письмову заяву про продовження треба подати
+        **щонайменше за 15 днів** до кінця строку.
+      sk: >-
+        §68 ods. 2–5: odídenec môže byť v azylovom zariadení ubytovaný najviac
+        60 dní od prvého poskytnutia útočiska, alebo dlhšie, ak je zraniteľnou
+        osobou: osoba nad 65 rokov, osamelý rodič dieťaťa do piatich rokov alebo
+        také dieťa. Zraniteľná osoba môže byť ubytovaná až šesť mesiacov, aj
+        opakovane; písomnú žiadosť o predĺženie treba podať najneskôr 15 dní pred
+        uplynutím lehoty.
+    afterDecision: true
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s5-allowance
+    order: 5
+    title:
+      uk: Компенсація за житло виплачується через громаду
+      sk: Príspevok za ubytovanie sa poskytuje cez obec
+    body:
+      uk: >-
+        §69 ods. 1 і 2: міністерство внутрішніх справ надає компенсацію за
+        розміщення відідента **через громаду**, у територіальному окрузі якої
+        надається житло. Компенсацію дають за 60 днів від першого надання
+        захисту або якщо особа вразлива: член домогосподарства, якому надається
+        допомога в матеріальній скруті; особа з тяжкою інвалідністю, якій
+        надається дотація гуманітарної допомоги; особа віком від 65 років; один
+        із батьків, що доглядає дитину до п'яти років (або особа, якій дитину
+        передано за рішенням суду); і сама така дитина.
+      sk: >-
+        §69 ods. 1 a 2: ministerstvo poskytuje príspevok za ubytovanie odídenca
+        prostredníctvom obce, v ktorej sa ubytovanie poskytuje — počas 60 dní od
+        prvého poskytnutia útočiska alebo ak je osoba zraniteľná podľa zoznamu
+        v ods. 2.
+    afterDecision: true
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+transitionRules: []
+relatedProcedureIds: [E7-temporary-protection-transition, E1-protection-application-s3]
+openQuestions:
+  - 'Чинне рішення уряду СР про надання тимчасового захисту та його строк у нашому реєстрі відсутні — саме воно визначає, чи діє захист сьогодні і до якої дати.'
+  - 'Прочитано §58, §59, §68 і §69; §60–§63 (співбесіда, зупинення провадження, відмова) і решта §69 не описані.'
+  - 'Права за §42, §43, §45 і §52, на які посилається §68 ods. 1, не внесені.'
+  - 'Розмір компенсації за житло і порядок її виплати (решта §69) не описані.'

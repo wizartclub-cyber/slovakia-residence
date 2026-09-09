@@ -1,0 +1,82 @@
+# Джерело: 69/2026 §64 і §65 (снапшот slovlex-69-2026, прочитано 2026-09-09).
+id: temporary-protection-end-s64
+title:
+  uk: Коли тимчасовий захист припиняється (69/2026 §64, §65)
+  sk: Kedy dočasné útočisko zanikne (69/2026 §64, §65)
+intro:
+  uk: >-
+    Важливо для планування: захист припиняється не лише за рішенням держави, а
+    й через власні дії людини — наприклад, якщо звернутися за міжнародним
+    захистом або отримати пробут. Якщо захист припинився з підстав c)–j),
+    він припиняється і членові родини, якому його надали для возз'єднання
+    (§64 ods. 3).
+  sk: >-
+    Dôležité pri plánovaní: útočisko zanikne nielen rozhodnutím štátu, ale aj
+    vlastným konaním osoby. Ak zaniklo z dôvodov c) až j), zanikne aj rodinnému
+    príslušníkovi, ktorému bolo poskytnuté na účel zlúčenia rodiny (§64 ods. 3).
+items:
+  - id: g-a
+    text:
+      uk: >-
+        минув час, визначений рішенням Ради ЄС або уряду
+      sk: >-
+        uplynutím času určeného rozhodnutím Rady EÚ alebo vlády
+  - id: g-b
+    text:
+      uk: >-
+        смерть відідента або оголошення його померлим
+      sk: >-
+        smrťou odídenca alebo vyhlásením za mŕtveho
+  - id: g-c
+    text:
+      uk: >-
+        відідент звернувся за міжнародним захистом у Словаччині
+      sk: >-
+        odídenec požiadal o udelenie medzinárodnej ochrany v SR
+  - id: g-d
+    text:
+      uk: >-
+        відідентові надано в Словаччині тимчасове або постійне проживання
+      sk: >-
+        odídencovi bol udelený prechodný alebo trvalý pobyt v SR
+  - id: g-e
+    text:
+      uk: >-
+        письмова заява відідента про відмову від тимчасового захисту — захист припиняється днем доставлення заяви міністерству
+      sk: >-
+        písomné vyhlásenie o vzdaní sa útočiska — zaniká dňom doručenia ministerstvu
+  - id: g-f
+    text:
+      uk: >-
+        інша держава-член ЄС надала відідентові міжнародний захист
+      sk: >-
+        iný členský štát EÚ udelil medzinárodnú ochranu
+  - id: g-g
+    text:
+      uk: >-
+        інша держава надала відідентові пробут без часового обмеження
+      sk: >-
+        iný štát udelil pobyt bez časového obmedzenia
+  - id: g-h
+    text:
+      uk: >-
+        інша держава-член ЄС надала відідентові тимчасовий захист
+      sk: >-
+        iný členský štát EÚ poskytol dočasné útočisko
+  - id: g-i
+    text:
+      uk: >-
+        відідент набув громадянства Словаччини або іншої держави-члена ЄС
+      sk: >-
+        odídenec nadobudol občianstvo SR alebo iného členského štátu EÚ
+  - id: g-j
+    text:
+      uk: >-
+        скасування тимчасового захисту міністерством (§65): є підстава для відмови за §63 або захист надано на підставі неправдивих чи підроблених даних про особу
+      sk: >-
+        zrušenie ministerstvom (§65): existuje dôvod na zamietnutie podľa §63 alebo bolo poskytnuté na základe nepravdivých či falšovaných údajov
+appliesTo:
+  - E6-temporary-protection-s58
+  - E7-temporary-protection-transition
+reviewStatus: source_verified
+sourceIds: [slovlex-69-2026]

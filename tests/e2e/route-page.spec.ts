@@ -181,3 +181,31 @@ test('на сторінці видно, коли пробут припиняєт
   await expect(page.getByRole('heading', { name: /скасовує тимчасове проживання/ })).toBeVisible();
   await expect(page.getByText('не в\'їхала на територію Словаччини протягом 180 днів', { exact: false })).toBeVisible();
 });
+
+test('маршрут тимчасового захисту пояснює житло і компенсацію', async ({ page }) => {
+  await page.goto('./uk/route/E6-temporary-protection-s58');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Тимчасовий захист');
+
+  const steps = page.locator('.route-page__steps li');
+  await expect(steps.filter({ hasText: 'Додатку №3' })).toHaveCount(1);
+
+  // Обов'язки й права після надання захисту — окремим розділом.
+  const after = page.locator('section').filter({ hasText: 'Після рішення' }).last();
+  await expect(after).toContainText('60 днів');
+  await expect(after).toContainText('через громаду');
+});
+
+test('видно, коли тимчасовий захист припиняється', async ({ page }) => {
+  await page.goto('./uk/route/E6-temporary-protection-s58');
+  const note = page.locator('section').filter({ hasText: 'тимчасовий захист припиняється' }).last();
+  await expect(note.locator('li')).toHaveCount(10);
+});
+
+test('сторінка попереджає, хто може бути представником', async ({ page }) => {
+  await page.goto(B2);
+  const note = page.locator('section').filter({ hasText: 'хто може вас представляти' }).last();
+  await expect(note).toContainText('лише ОДНОГО обраного представника');
+  await expect(note).toContainText('бездоганною репутацією');
+  // Рішення про надання пробуту оскарженню не підлягає — отже оскаржують відмови.
+  await expect(note).toContainText('НАДАННЯ пробуту');
+});
