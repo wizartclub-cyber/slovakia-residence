@@ -1,0 +1,148 @@
+# Наповнено з тексту §36a–§36d (снапшот slovlex-404-2011).
+id: B11-mobility-s36a
+category: B
+title:
+  uk: Мобільність із дозволу іншої держави ЄС (§36a–§36d)
+  sk: Mobilita z povolenia iného štátu EÚ (§36a–§36d)
+legalBasis:
+  - '404/2011 §36a'
+  - '404/2011 §36b'
+  - '404/2011 §36c'
+  - '404/2011 §36d'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: >-
+    Тут нічого не «надають»: пробут просто НЕ ВИМАГАЄТЬСЯ. Для студента вищої
+    школи — до 360 днів від початку перебування (§36b), для дослідника — до
+    одного року (§36c), для внутрішньокорпоративного переказу — на час
+    погодженої мобільності (§36a).
+  sk: >-
+    Nič sa tu neudeľuje: pobyt sa jednoducho NEVYŽADUJE. Pri študentovi do 360 dní
+    (§36b), pri výskumníkovi do jedného roka (§36c), pri vnútropodnikovom presune
+    počas schválenej mobility (§36a).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, in: [third_country, ua_temporary_protection] }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-permit-from-other-state
+    effect: require
+    when: { field: specialStatus, in: [long_term_resident_other_eu, blue_card_other_state] }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: []
+authorityIds: [mv-sr]
+feeRuleIds: []
+documentIds: [travel-document]
+steps:
+  - id: s1-principle
+    order: 1
+    title:
+      uk: 'Головний принцип: повідомляє приймаюча сторона, а не ви'
+      sk: Hlavná zásada - oznamuje hostiteľský subjekt, nie vy
+    body:
+      uk: >-
+        В усіх чотирьох випадках пробут не вимагається за умови, що приймаюча
+        сторона в Словаччині або в державі-члені ПОВІДОМИЛА міністерство
+        внутрішніх справ про намір скористатися мобільністю ДО вашого приїзду,
+        міністерство не заперечило, і ви не становите загрози безпеці держави,
+        публічному порядку чи публічному здоров'ю.
+      sk: >-
+        Vo všetkých štyroch prípadoch sa pobyt nevyžaduje, ak hostiteľský subjekt
+        oznámil ministerstvu vnútra úmysel uplatňovať mobilitu PRED príchodom,
+        ministerstvo nevznieslo námietku a osoba nepredstavuje hrozbu.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-ict
+    order: 2
+    title:
+      uk: Внутрішньокорпоративний переказ (§36a)
+      sk: Vnútropodnikový presun (§36a)
+    body:
+      uk: >-
+        Потрібен чинний документ про пробут іншої держави-члена з позначкою «ICT»
+        у полі «вид пробуту», і мобільність має відбуватися в того самого
+        роботодавця або в межах тієї самої групи роботодавців, де переказ
+        схвалено. Разом із повідомленням приймаюча сторона надсилає доказ
+        належності до тієї самої групи, документ про виконання умов регульованої
+        професії (якщо вона регульована), чинний проїзний документ і дати початку
+        та кінця мобільності.
+      sk: >-
+        Potrebný je platný doklad o pobyte iného členského štátu s označením „ICT“
+        a mobilita musí prebiehať u toho istého zamestnávateľa alebo v tej istej
+        skupine. K oznámeniu sa prikladá doklad o príslušnosti k skupine, doklad
+        o regulovanom povolaní, cestovný doklad a dátumy mobility.
+    afterDecision: false
+    prerequisites: [s1-principle]
+    sourceIds: [slovlex-404-2011]
+  - id: s3-student
+    order: 3
+    title:
+      uk: Студент вищої школи (§36b) — до 360 днів
+      sk: Študent vysokej školy (§36b) — do 360 dní
+    body:
+      uk: >-
+        Потрібен чинний документ про пробут іншої держави-члена для навчання у
+        вищій школі. Словацька вища школа надсилає повідомлення і докази того, що
+        частина навчання відбувається в межах програми ЄС, урядової чи
+        багатосторонньої програми або угоди між вишами, а також підтвердження про
+        прийняття на навчання, документ про пробут, проїзний документ і дати.
+        Додатково потрібно, щоб сплив строк, у який міністерство могло заперечити.
+      sk: >-
+        Potrebný je platný doklad o pobyte iného členského štátu na účel štúdia.
+        Vysoká škola v SR zašle oznámenie s dokladmi o programe mobility, prijatí
+        na štúdium, doklade o pobyte, cestovnom doklade a dátumoch.
+    afterDecision: false
+    prerequisites: [s1-principle]
+    sourceIds: [slovlex-404-2011]
+  - id: s4-researcher
+    order: 4
+    title:
+      uk: Дослідник (§36c) — до одного року
+      sk: Výskumný pracovník (§36c) — do jedného roka
+    body:
+      uk: >-
+        Потрібен чинний документ про пробут іншої держави-члена для наукової
+        діяльності; повідомляє дослідницька організація в Словаччині, у якій
+        відбуватиметься мобільність.
+      sk: >-
+        Potrebný je platný doklad o pobyte iného členského štátu na účel výskumnej
+        činnosti; oznamuje výskumná organizácia v SR.
+    afterDecision: false
+    prerequisites: [s1-principle]
+    sourceIds: [slovlex-404-2011]
+  - id: s5-family
+    order: 5
+    title:
+      uk: Член родини (§36d) — доки мобільність триває
+      sk: Rodinný príslušník (§36d) — kým mobilita trvá
+    body:
+      uk: >-
+        Членові родини особи за §36a або §36c пробут за §27 ods. 1 písm. a) не
+        вимагається протягом усього часу, поки та особа користується мобільністю
+        в Словаччині. Потрібен чинний документ про пробут іншої держави-члена в
+        єдиному форматі, і повідомлення надсилає та сама приймаюча сторона або
+        дослідницька організація.
+      sk: >-
+        Rodinnému príslušníkovi osoby podľa §36a alebo §36c sa pobyt nevyžaduje
+        počas obdobia, keď táto osoba uplatňuje mobilitu na území SR.
+    afterDecision: false
+    prerequisites: [s1-principle]
+    sourceIds: [slovlex-404-2011]
+transitionRules: []
+relatedProcedureIds: [B2-employment-s23, B3-study-s24, B5-research-s26]
+openQuestions:
+  - 'Строк, у який міністерство може заперечити (§36a–§36c ods. 3), і наслідки заперечення не прочитані.'
+  - 'Опитувальник не питає, чи маєте ви дозвіл іншої держави-члена саме на переказ, навчання чи дослідження — умова спрощена до наявності особливого статусу.'
+  - 'Обов''язки приймаючої сторони і наслідки їх невиконання не описані.'
+  - 'Мобільність власника синьої карти (§40, §41) описується окремо і тут не наведена.'
