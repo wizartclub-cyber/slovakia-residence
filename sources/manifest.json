@@ -259,10 +259,19 @@
     "snapshotPath": "sources/snapshots/iom-fees.html"
   },
   "opatrenie-155-2026": {
-    "retrievedAt": "2026-09-08T21:36:43Z",
-    "requestedUrl": null,
-    "ok": false,
-    "error": "no url in registry — supply the official URL first"
+    "retrievedAt": "2026-09-09T19:43:21Z",
+    "requestedUrl": "https://static.slov-lex.sk/static/SK/ZZ/2026/155/20260701.print.html",
+    "urlField": "staticUrl",
+    "httpStatus": 200,
+    "finalUrl": "https://static.slov-lex.sk/static/SK/ZZ/2026/155/20260701.print.html",
+    "redirected": false,
+    "serverMime": "text/html",
+    "serverLastModified": "",
+    "ok": true,
+    "signature": "html",
+    "bytes": 10697,
+    "sha256": "3b5a0488b56b854d5485e90c92862ebedec8ca328447d2c7b7ab182113e8e2c5",
+    "snapshotPath": "sources/snapshots/opatrenie-155-2026.html"
   },
   "slovlex-145-1995": {
     "retrievedAt": "2026-09-08T21:36:43Z",
@@ -279,10 +288,19 @@
     "snapshotPath": "sources/snapshots/slovlex-145-1995.html"
   },
   "slovlex-5-2004": {
-    "retrievedAt": "2026-09-08T21:36:43Z",
-    "requestedUrl": null,
-    "ok": false,
-    "error": "no url in registry — supply the official URL first"
+    "retrievedAt": "2026-09-09T19:43:21Z",
+    "requestedUrl": "https://static.slov-lex.sk/static/SK/ZZ/2004/5/20260801.print.html",
+    "urlField": "staticUrl",
+    "httpStatus": 200,
+    "finalUrl": "https://static.slov-lex.sk/static/SK/ZZ/2004/5/20260801.print.html",
+    "redirected": false,
+    "serverMime": "text/html",
+    "serverLastModified": "",
+    "ok": true,
+    "signature": "html",
+    "bytes": 1939125,
+    "sha256": "535d674375b748bebab105836d0d428918a3668d634b318b05f5a8b39233a3f2",
+    "snapshotPath": "sources/snapshots/slovlex-5-2004.html"
   },
   "minv-residence-guides": {
     "retrievedAt": "2026-09-08T21:36:43Z",

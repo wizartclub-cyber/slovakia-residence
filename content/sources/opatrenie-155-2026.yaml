@@ -3,15 +3,16 @@
 id: opatrenie-155-2026
 authority: MPSVR SR / Slov-Lex
 title: Opatrenie č. 155/2026 Z. z. — životné minimum
-url: null
-pinnedUrl: null
-staticUrl: null
+url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/155/
+pinnedUrl: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/155/20260701
+staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/155/20260701.print.html
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
-evidence: null
+evidence: "Časová verzia účinná od 01.07.2026. §2: 295,22 eura, 205,96 eura, 134,80 eura. Перше число
+  збігається з baseValue у content/thresholds — тепер підтверджено первинним джерелом."
 notes: Opatrenie 155/2026 Z. z. — zivotne minimum. Required by content/thresholds/zivotne-minimum.yaml (295.22
   EUR/month from 2026-07-01). Exact Slov-Lex URL NOT verified in this session; owner/lawyer must supply it
   before a snapshot can be taken.
@@ -21,7 +22,7 @@ provision: null
 publicationDate: null
 effectiveFrom: null
 effectiveTo: null
-checkedAt: null
+checkedAt: 2026-09-09
 sourceType: implementing_regulation
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/opatrenie-155-2026.html
+sha256: 3b5a0488b56b854d5485e90c92862ebedec8ca328447d2c7b7ab182113e8e2c5

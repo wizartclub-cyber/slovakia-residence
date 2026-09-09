@@ -3,15 +3,16 @@
 id: slovlex-5-2004
 authority: Slov-Lex
 title: Zákon č. 5/2004 Z. z. o službách zamestnanosti
-url: null
-pinnedUrl: null
-staticUrl: null
+url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2004/5/
+pinnedUrl: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2004/5/20260801
+staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2004/5/20260801.print.html
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
-evidence: null
+evidence: Найновіша часова версія — від 01.08.2026 (на 01.09.2026 і 01.10.2026 версій ще немає). Попередня,
+  15.07.2026, діяла лише до 31.07.2026.
 notes: Act 5/2004 on employment services as amended by 128/2026, needed for the section 21b(4)(f) branch after
   a national visa. Spec section 2 requires pinning an exact temporal version; no verified URL available — do
   not guess the temporal path, confirm on slov-lex.sk first.
@@ -21,7 +22,7 @@ provision: null
 publicationDate: null
 effectiveFrom: null
 effectiveTo: null
-checkedAt: null
+checkedAt: 2026-09-09
 sourceType: legislation
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/slovlex-5-2004.html
+sha256: 535d674375b748bebab105836d0d428918a3668d634b318b05f5a8b39233a3f2

@@ -583,20 +583,36 @@ resources:
   title: Opatrenie č. 155/2026 Z. z. — životné minimum
   type: implementing_regulation
   authority: MPSVR SR / Slov-Lex
-  url: null
+  url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/155/
   priority: high
-  reviewStatus: fetch_pending
+  reviewStatus: snapshot_taken
   locale: sk
   addedAt: '2026-09-08'
   addedNote: Opatrenie 155/2026 Z. z. — zivotne minimum. Required by content/thresholds/zivotne-minimum.yaml (295.22 EUR/month
     from 2026-07-01). Exact Slov-Lex URL NOT verified in this session; owner/lawyer must supply it before a snapshot can be
     taken.
   snapshot:
-    retrievedAt: '2026-09-08T21:36:43Z'
-    requestedUrl: null
-    ok: false
-    error: no url in registry — supply the official URL first
+    retrievedAt: '2026-09-09T19:43:21Z'
+    requestedUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/155/20260701.print.html
+    urlField: staticUrl
+    httpStatus: 200
+    finalUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/155/20260701.print.html
+    redirected: false
+    serverMime: text/html
+    serverLastModified: ''
+    ok: true
+    signature: html
+    bytes: 10697
+    sha256: 3b5a0488b56b854d5485e90c92862ebedec8ca328447d2c7b7ab182113e8e2c5
+    snapshotPath: sources/snapshots/opatrenie-155-2026.html
   procedureIds: []
+  pinnedUrl: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/155/20260701
+  staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2026/155/20260701.print.html
+  urlCheck:
+    checkedAt: '2026-09-09'
+    result: ok
+    observed: 'Časová verzia účinná od 01.07.2026. §2: 295,22 eura, 205,96 eura, 134,80 eura. Перше число збігається з baseValue
+      у content/thresholds — тепер підтверджено первинним джерелом.'
 - id: slovlex-145-1995
   title: Zákon č. 145/1995 Z. z. o správnych poplatkoch (položka 24)
   contentChecked:
@@ -632,20 +648,36 @@ resources:
   title: Zákon č. 5/2004 Z. z. o službách zamestnanosti
   type: statute
   authority: Slov-Lex
-  url: null
+  url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2004/5/
   priority: highest
-  reviewStatus: fetch_pending
+  reviewStatus: snapshot_taken
   locale: sk
   addedAt: '2026-09-08'
   addedNote: Act 5/2004 on employment services as amended by 128/2026, needed for the section 21b(4)(f) branch after a national
     visa. Spec section 2 requires pinning an exact temporal version; no verified URL available — do not guess the temporal
     path, confirm on slov-lex.sk first.
   snapshot:
-    retrievedAt: '2026-09-08T21:36:43Z'
-    requestedUrl: null
-    ok: false
-    error: no url in registry — supply the official URL first
+    retrievedAt: '2026-09-09T19:43:21Z'
+    requestedUrl: https://static.slov-lex.sk/static/SK/ZZ/2004/5/20260801.print.html
+    urlField: staticUrl
+    httpStatus: 200
+    finalUrl: https://static.slov-lex.sk/static/SK/ZZ/2004/5/20260801.print.html
+    redirected: false
+    serverMime: text/html
+    serverLastModified: ''
+    ok: true
+    signature: html
+    bytes: 1939125
+    sha256: 535d674375b748bebab105836d0d428918a3668d634b318b05f5a8b39233a3f2
+    snapshotPath: sources/snapshots/slovlex-5-2004.html
   procedureIds: []
+  pinnedUrl: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2004/5/20260801
+  staticUrl: https://static.slov-lex.sk/static/SK/ZZ/2004/5/20260801.print.html
+  urlCheck:
+    checkedAt: '2026-09-09'
+    result: ok
+    observed: Найновіша часова версія — від 01.08.2026 (на 01.09.2026 і 01.10.2026 версій ще немає). Попередня, 15.07.2026,
+      діяла лише до 31.07.2026.
 - id: minv-residence-guides
   title: MV SR — portál ministerstva vnútra (koreňová adresa)
   type: official_guidance_html
@@ -849,4 +881,4 @@ resourceFields:
   snapshot: written by scripts/download_and_hash.py on the owner machine — sha256, bytes, signature, pages
   locale: language(s) of the resource
   procedureIds: to be filled when content/procedures exist
-snapshotRunAt: '2026-09-09T19:34:00Z'
+snapshotRunAt: '2026-09-09T19:43:22Z'
