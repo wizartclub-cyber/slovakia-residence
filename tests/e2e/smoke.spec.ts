@@ -91,3 +91,21 @@ test('сайт працює офлайн після першого завант�
 
   await context.setOffline(false);
 });
+
+test('головна пояснює, як працює довідник, і не обіцяє результату', async ({ page }) => {
+  await page.goto('./uk/');
+  const journey = page.locator('.journey__step');
+  await expect(journey).toHaveCount(4);
+  await expect(journey.first()).toContainText('ні імені, ні паспорта');
+  await expect(journey.last()).toContainText('не гарантуємо результату');
+});
+
+test('карта категорій веде на відфільтрований каталог', async ({ page }) => {
+  await page.goto('./uk/');
+  const cards = page.locator('.category-card');
+  expect(await cards.count()).toBeGreaterThanOrEqual(6);
+
+  await page.getByRole('link', { name: 'Вільний рух громадян ЄС' }).click();
+  await expect(page).toHaveURL(/\/uk\/routes\?category=F$/);
+  await expect(page.locator('.catalogue__item')).toHaveCount(3);
+});

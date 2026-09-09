@@ -52,6 +52,8 @@ test('пошук у каталозі звужує список і оголошу
 
   await expect(page.locator('.catalogue__item')).toHaveCount(1);
   await expect(page.getByText('Знайдено: 1')).toBeVisible();
+  // Фільтр має бути в адресі, щоб посилання можна було надіслати.
+  await expect(page).toHaveURL(/q=%C2%A723|q=§23/);
 });
 
 test('пошук за словом працює обома мовами', async ({ page }) => {
@@ -66,4 +68,34 @@ test('порожній результат пояснює, що робити', as
   await page.goto('./uk/routes');
   await page.getByLabel('Пошук за назвою або статтею закону').fill('щось чого немає');
   await expect(page.getByText('нічого не знайдено', { exact: false })).toBeVisible();
+});
+
+test('фільтри за категорією і групою працюють і зберігаються в адресі', async ({ page }) => {
+  await page.goto('./uk/routes');
+
+  await page.getByLabel('Категорія').selectOption('F');
+  await expect(page).toHaveURL(/category=F/);
+  const items = page.locator('.catalogue__item');
+  expect(await items.count()).toBe(3);
+  await expect(page.getByRole('heading', { level: 2, name: 'Вільний рух громадян ЄС' })).toBeVisible();
+
+  await page.getByLabel('Категорія').selectOption('');
+  await page.getByLabel('Хто ви').selectOption('ua_temporary_protection');
+  await expect(page).toHaveURL(/group=ua_temporary_protection/);
+  expect(await items.count()).toBeGreaterThan(0);
+});
+
+test('відфільтроване посилання відкривається таким самим', async ({ page }) => {
+  await page.goto('./uk/routes?category=C');
+  await expect(page.getByLabel('Категорія')).toHaveValue('C');
+  const items = page.locator('.catalogue__item');
+  expect(await items.count()).toBeGreaterThanOrEqual(3);
+});
+
+test('картка маршруту показує строк рішення і збір «від»', async ({ page }) => {
+  await page.goto('./uk/routes?q=§23');
+  const card = page.locator('.catalogue__item').first();
+  await expect(card).toContainText('Строк рішення');
+  await expect(card).toContainText('днів');
+  await expect(card).toContainText('від 250 EUR');
 });

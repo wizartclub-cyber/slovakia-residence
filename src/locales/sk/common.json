@@ -34,12 +34,33 @@
   "home": {
     "title": "Nájdite svoju zákonnú cestu",
     "intro": "Vyberte svoju situáciu a dostanete postup krok za krokom s odkazmi na zákon, zoznam dokladov, výšku poplatku a úrad, ktorému sa žiadosť podáva.",
-    "statusTitle": "Čo je už opísané",
-    "statusBody": "Deväť ciest z textu zákona: zamestnanie (§23), podnikanie (§22), štúdium (§24), zlúčenie rodiny (§27), trvalý pobyt na päť rokov (§43) a na neobmedzený čas (§46), dlhodobý pobyt EÚ (§52), národné vízum (§15) a prechod z dočasného útočiska (§131o). Pri každej sú kroky, doklady s lehotami, poplatky s oslobodeniami a dôvody zamietnutia.",
+    "statusTitle": "Odkiaľ pochádza obsah",
+    "statusBody": "Každá cesta je napísaná z textu zákona uloženého ako kópia s kontrolným súčtom: zákon o pobyte cudzincov 404/2011, zákon o medzinárodnej ochrane 69/2026 a sadzobník správnych poplatkov 145/1995. Počty ciest v kategóriách sú na kartách vyššie.",
     "sourcesTitle": "Každé tvrdenie má zdroj",
     "sourcesBody": "Zákon nereprodukujeme spamäti. Texty zákonov sú uložené ako kópie s kontrolným súčtom a každý údaj na stránke cesty vedie na svoj zdroj. Žiadnu cestu zatiaľ neskontroloval právnik — je to označené na každej stránke.",
     "cta": "Vyplniť dotazník",
-    "ctaAll": "Zobraziť všetky cesty"
+    "ctaAll": "Zobraziť všetky cesty",
+    "categoriesTitle": "Čo je v príručke opísané",
+    "categoriesIntro": "Cesty sú zoskupené tak, ako ich zoskupuje zákon. Kliknutím na kategóriu zobrazíte všetky konania v nej.",
+    "routeCount": "ciest: {{count}}",
+    "journey": {
+      "answer": {
+        "title": "Odpoviete na 6 otázok",
+        "text": "O situácii, nie o osobe: bez mena, pasu a adresy."
+      },
+      "routes": {
+        "title": "Uvidíte vhodné cesty",
+        "text": "S vysvetlením, prečo práve tieto a čo ešte treba upresniť."
+      },
+      "documents": {
+        "title": "Zozbierate doklady",
+        "text": "Zoznam s lehotami platnosti, ktorý sa dá vytlačiť."
+      },
+      "submit": {
+        "title": "Podávate sami na úrade",
+        "text": "Nepodávame za vás a nezaručujeme výsledok — rozhoduje orgán."
+      }
+    }
   },
   "about": {
     "title": "O projekte",
@@ -269,7 +290,12 @@
     "filterLabel": "Hľadanie podľa názvu alebo paragrafu",
     "filterPlaceholder": "napr. §23, zamestnanie, rodina",
     "found": "Nájdené: {{count}}",
-    "nothing": "Na túto požiadavku sa nič nenašlo. Skúste číslo paragrafu (napr. §46) alebo jedno slovo."
+    "nothing": "Na túto požiadavku sa nič nenašlo. Skúste číslo paragrafu (napr. §46) alebo jedno slovo.",
+    "filterCategory": "Kategória",
+    "filterGroup": "Kto ste",
+    "filterAny": "Akákoľvek",
+    "days": "{{days}} dní",
+    "feeFrom": "od {{amount}} EUR"
   },
   "summary": {
     "title": "Prehľad konania",
