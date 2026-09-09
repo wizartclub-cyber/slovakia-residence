@@ -13,9 +13,12 @@ export function HomePage() {
       <h1>{t('home.title')}</h1>
       <p>{t('home.intro')}</p>
 
-      <p>
+      <p className="home__actions">
         <Link className="button" to={`/${lang}/finder`}>
           {t('home.cta')}
+        </Link>
+        <Link className="button button--secondary" to={`/${lang}/routes`}>
+          {t('home.ctaAll')}
         </Link>
       </p>
 

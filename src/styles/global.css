@@ -311,3 +311,9 @@ a {
   color: var(--text-secondary);
   font-size: 13px;
 }
+
+.home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

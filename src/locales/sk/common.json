@@ -34,11 +34,12 @@
   "home": {
     "title": "Nájdite svoju zákonnú cestu",
     "intro": "Vyberte svoju situáciu a dostanete postup krok za krokom s odkazmi na zákon, zoznam dokladov, výšku poplatku a úrad, ktorému sa žiadosť podáva.",
-    "statusTitle": "Čo je už hotové",
-    "statusBody": "Zatiaľ je zverejnená technická kostra stránky: dva jazyky, upozornenie a právny stav. Dotazník situácie, postupy a zoznamy dokladov pribudnú v ďalších aktualizáciách.",
+    "statusTitle": "Čo je už opísané",
+    "statusBody": "Deväť ciest z textu zákona: zamestnanie (§23), podnikanie (§22), štúdium (§24), zlúčenie rodiny (§27), trvalý pobyt na päť rokov (§43) a na neobmedzený čas (§46), dlhodobý pobyt EÚ (§52), národné vízum (§15) a prechod z dočasného útočiska (§131o). Pri každej sú kroky, doklady s lehotami, poplatky s oslobodeniami a dôvody zamietnutia.",
     "sourcesTitle": "Každé tvrdenie má zdroj",
-    "sourcesBody": "Zákon nereprodukujeme spamäti. Ak pre pravidlo neexistuje úradný zdroj, pole zostáva prázdne a postup je označený ako neúplný.",
-    "cta": "Vyplniť dotazník"
+    "sourcesBody": "Zákon nereprodukujeme spamäti. Texty zákonov sú uložené ako kópie s kontrolným súčtom a každý údaj na stránke cesty vedie na svoj zdroj. Žiadnu cestu zatiaľ neskontroloval právnik — je to označené na každej stránke.",
+    "cta": "Vyplniť dotazník",
+    "ctaAll": "Zobraziť všetky cesty"
   },
   "about": {
     "title": "O projekte",
