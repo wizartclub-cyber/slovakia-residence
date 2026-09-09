@@ -6,6 +6,7 @@
   "nav": {
     "home": "Domov",
     "finder": "Nájsť cestu",
+    "routes": "Všetky cesty",
     "sources": "Zdroje",
     "about": "O projekte",
     "privacy": "Súkromie"
@@ -226,5 +227,19 @@
     "requiredWhen": "Kedy sa vyžaduje",
     "feeExemptions": "Kto je od poplatku oslobodený",
     "feeReduction": "Elektronické podanie: {{amount}} EUR."
+  },
+  "catalogue": {
+    "title": "Všetky cesty",
+    "intro": "Úplný zoznam konaní opísaných v príručke. Každé vedie na stránku s právnym základom, dokladmi a poplatkami.",
+    "coverage": "Zatiaľ opísaných ciest: {{count}}. Nie je to celý zákon: ostatné kategórie ešte prídu.",
+    "category": {
+      "A": "Vstup a krátkodobý pobyt",
+      "B": "Prechodný pobyt (tretie krajiny)",
+      "C": "Trvalý a dlhodobý pobyt",
+      "D": "Tolerovaný pobyt",
+      "E": "Medzinárodná a dočasná ochrana",
+      "F": "Voľný pohyb občanov EÚ",
+      "G": "Administratívne úkony"
+    }
   }
 }

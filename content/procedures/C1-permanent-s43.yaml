@@ -1,0 +1,112 @@
+# Наповнено з тексту §43 (снапшот slovlex-404-2011).
+id: C1-permanent-s43
+category: C
+title:
+  uk: Постійне проживання на п'ять років (§43)
+  sk: Trvalý pobyt na päť rokov (§43)
+legalBasis:
+  - '404/2011 §43'
+  - '404/2011 §48 ods. 2'
+validFrom: '2026-07-15'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-404-2011
+conditionsComplete: false
+grantedFor:
+  uk: На п'ять років. Після чотирьох років такого пробуту відкривається §46 — постійне проживання на необмежений час.
+  sk: Na päť rokov. Po štyroch rokoch takého pobytu sa otvára §46 — trvalý pobyt na neobmedzený čas.
+decisionDeadline: null
+eligibilityRules:
+  - id: r-third-country
+    effect: require
+    when: { field: citizenshipGroup, equals: third_country }
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+  - id: r-family-tie
+    effect: require
+    when:
+      field: family
+      in: [spouse_of_sk_citizen, child_of_resident, dependent_relative]
+    localizedContentKey: null
+    sourceIds: [slovlex-404-2011]
+formSourceIds: [mzv-form-11-057]
+authorityIds: [ocp-pz, zastupitelsky-urad]
+feeRuleIds: [fee-permanent-application]
+documentIds:
+  - travel-document
+  - application-form
+  - civil-status-record
+steps:
+  - id: s1-grounds
+    order: 1
+    title:
+      uk: Перевірити, під яку з підстав §43 ви підпадаєте
+      sk: Overiť, pod ktorý dôvod §43 patríte
+    body:
+      uk: >-
+        §43 ods. 1 знає п'ять підстав: (a) подружжя громадянина СР із постійним
+        проживанням у Словаччині або залежний родич по прямій лінії такого
+        громадянина; (b) неодружена дитина молодша за 18 років, передана в
+        особисту опіку особі, яка є подружжям громадянина СР; (c) неодружена
+        дитина молодша за 18 років особи з постійним проживанням на п'ять років
+        або дитина, передана їй в особисту опіку; (d) неутримувана дитина старша
+        за 18 років, яка не може подбати про себе через тривалий несприятливий
+        стан здоров'я, особи з постійним проживанням; (e) якщо це в інтересах
+        Словацької Республіки.
+      sk: >-
+        §43 ods. 1 pozná päť dôvodov: (a) manžel občana SR s trvalým pobytom na
+        území SR alebo závislý príbuzný v priamom rade takého občana; (b) slobodné
+        dieťa mladšie ako 18 rokov zverené do osobnej starostlivosti manžela občana
+        SR; (c) slobodné dieťa mladšie ako 18 rokov osoby s trvalým pobytom na päť
+        rokov alebo dieťa zverené do jej osobnej starostlivosti; (d) nezaopatrené
+        dieťa staršie ako 18 rokov, ktoré sa o seba nedokáže postarať pre dlhodobo
+        nepriaznivý zdravotný stav; (e) ak je to v záujme SR.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-404-2011]
+  - id: s2-other-parent
+    order: 2
+    title:
+      uk: Для дитини в особистій опіці потрібна згода другого з батьків
+      sk: Pri dieťati v osobnej starostlivosti treba súhlas druhého rodiča
+    body:
+      uk: >-
+        Якщо йдеться про неодружену дитину молодшу за 18 років, передану в
+        особисту опіку, пробут можна надати лише за згодою того з батьків, кому
+        дитину не передано в опіку і хто має право з нею зустрічатися
+        (§43 ods. 2).
+      sk: >-
+        Ak ide o slobodné dieťa mladšie ako 18 rokov zverené do osobnej
+        starostlivosti, pobyt možno udeliť len so súhlasom rodiča, ktorému dieťa
+        nebolo zverené a ktorý má právo stretávať sa s ním (§43 ods. 2).
+    afterDecision: false
+    prerequisites: [s1-grounds]
+    sourceIds: [slovlex-404-2011]
+  - id: s3-fee
+    order: 3
+    title:
+      uk: Подружжя громадянина СР збір за постійне проживання не платить
+      sk: Manžel občana SR poplatok za trvalý pobyt neplatí
+    body:
+      uk: >-
+        Тариф 145/1995, положка 24, Oslobodenie 5: від збору за підпунктом c)
+        (заява про постійне проживання, 250 €) звільнені особи за §43 ods. 1
+        písm. a) — тобто подружжя громадянина СР і залежні родичі по прямій лінії.
+        Окремо звільнені всі, молодші за 18 років (Oslobodenie 3).
+      sk: >-
+        Sadzobník 145/1995, položka 24, Oslobodenie 5: od poplatku podľa písmena c)
+        (žiadosť o trvalý pobyt, 250 eur) sú oslobodené osoby podľa §43 ods. 1
+        písm. a). Osobitne sú oslobodené osoby mladšie ako 18 rokov (Oslobodenie 3).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-145-1995]
+transitionRules: []
+relatedProcedureIds: [C3-permanent-s46, B6-family-s27]
+openQuestions:
+  - 'Перелік документів до заяви за §43 ще не прочитаний (окрема стаття закону).'
+  - 'Підстави відмови за §48 ods. 2 не внесені.'
+  - 'Підстава §43 ods. 1 písm. e) («в інтересах Словацької Республіки») не має чітких умов і як правило не внесена.'
+  - 'Опитувальник не розрізняє подружжя громадянина СР із постійним проживанням і без нього — умову §43 ods. 1 písm. a) перевірити повністю не можна.'

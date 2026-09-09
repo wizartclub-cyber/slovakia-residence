@@ -13,6 +13,8 @@ nav:
     path: ''
   - key: finder
     path: 'finder'
+  - key: routes
+    path: 'routes'
   - key: sources
     path: 'sources'
   - key: about

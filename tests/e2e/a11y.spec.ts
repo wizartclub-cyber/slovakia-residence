@@ -9,7 +9,7 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
 
-const PAGES = ['', 'finder', 'sources', 'about', 'privacy', 'route/B2-employment-s23'];
+const PAGES = ['', 'finder', 'routes', 'sources', 'about', 'privacy', 'route/B2-employment-s23'];
 const LOCALES = ['uk', 'sk'];
 
 for (const locale of LOCALES) {
