@@ -356,3 +356,24 @@ test('кожен документ показує, чи він потрібен �
   await expect(items.filter({ hasText: 'потрібен завжди' })).toHaveCount(2);
   await expect(items.filter({ hasText: 'залежить від ситуації' }).first()).toBeVisible();
 });
+
+test('шкала строків показує етапи і не додає паралельні строки', async ({ page }) => {
+  await page.goto('./uk/route/B1-business-s22');
+  const timeline = page.locator('.deadlines');
+  await expect(timeline).toBeVisible();
+
+  await expect(timeline).toContainText('До подання');
+  await expect(timeline).toContainText('День подання');
+  await expect(timeline).toContainText('Розгляд і рішення');
+  await expect(timeline).toContainText('Після отримання картки');
+
+  // 90 днів поліції і 60 днів міністерства — окремі точки, не «150».
+  await expect(timeline).toContainText('90');
+  await expect(timeline).toContainText('це окремий строк, не додається до 90');
+  await expect(page.getByText('Строки не додаються один до одного', { exact: false })).toBeVisible();
+});
+
+test('маршрут §23 показує строк 180 днів на підтвердження від управління праці', async ({ page }) => {
+  await page.goto(B2);
+  await expect(page.locator('.deadlines')).toContainText('не більше 180 днів');
+});

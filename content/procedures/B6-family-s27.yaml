@@ -22,6 +22,42 @@ grantedFor: null
 decisionDeadline:
   uk: 90 днів (§33 ods. 8 písm. a).
   sk: 90 dní (§33 ods. 8 písm. a).
+deadlines:
+  - id: d-docs-90
+    phase: before
+    days: 90
+    label:
+      uk: Додатки до заяви — не старші за 90 днів (§32 ods. 2)
+      sk: Náležitosti nie staršie ako 90 dní (§32 ods. 2)
+    sourceIds: [slovlex-404-2011]
+  - id: d-submit
+    phase: submission
+    days: null
+    label:
+      uk: День подання заяви
+      sk: Deň podania žiadosti
+    sourceIds: [slovlex-404-2011]
+  - id: d-decision-90
+    phase: decision
+    days: 90
+    label:
+      uk: Рішення — 90 днів (§33 ods. 8 písm. a)
+      sk: Rozhodnutie do 90 dní (§33 ods. 8 písm. a)
+    sourceIds: [slovlex-404-2011]
+  - id: d-insurance-30
+    phase: after
+    days: 30
+    label:
+      uk: Медичне страхування — 30 днів після картки (§32 ods. 9)
+      sk: Zdravotné poistenie do 30 dní (§32 ods. 9)
+    sourceIds: [slovlex-404-2011]
+  - id: d-medical-30
+    phase: after
+    days: 30
+    label:
+      uk: Медичний висновок — 30 днів після картки (§32 ods. 10)
+      sk: Lekársky posudok do 30 dní (§32 ods. 10)
+    sourceIds: [slovlex-404-2011]
 eligibilityRules:
   # Особа з тимчасовим захистом — теж громадянин третьої країни за законом,
   # тому цей маршрут для неї не закритий. Там, де закон її виключає

@@ -125,7 +125,10 @@
       "currentStatus": "Aký je váš právny status teraz?",
       "family": "Máte rodinnú väzbu na Slovensku?",
       "specialStatus": "Máte niektorý z týchto osobitných statusov?"
-    }
+    },
+    "progressLabel": "Otázka {{current}} z {{total}}: {{name}}",
+    "yourSituation": "Vaša situácia — kliknutím zmeníte odpoveď:",
+    "changeThis": "zmeniť túto odpoveď"
   },
   "answer": {
     "citizenshipGroup": {
@@ -275,5 +278,15 @@
     "where": "Kam sa podáva",
     "dataState": "Stav údajov",
     "needsCheck": "vyžaduje overenie"
+  },
+  "deadlines": {
+    "title": "Kľúčové lehoty",
+    "hint": "Lehoty sa nesčítavajú: paralelné sú uvedené osobitne, zákon ich súčet neustanovuje.",
+    "phase": {
+      "before": "Pred podaním",
+      "submission": "Deň podania",
+      "decision": "Konanie a rozhodnutie",
+      "after": "Po prevzatí dokladu"
+    }
   }
 }

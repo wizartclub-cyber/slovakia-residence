@@ -33,6 +33,42 @@ grantedFor:
 decisionDeadline:
   uk: Поліція надсилає повідомлення протягом 60 днів від прийняття заяви (§131o ods. 10).
   sk: Policajný útvar zašle oznámenie do 60 dní od prijatia žiadosti (§131o ods. 10).
+deadlines:
+  - id: d-six-months
+    phase: before
+    days: null
+    label:
+      uk: Мету треба було виконувати щонайменше шість місяців до припинення захисту (§131o ods. 4)
+      sk: Účel sa musel vykonávať najmenej šesť mesiacov (§131o ods. 4)
+    sourceIds: [slovlex-404-2011]
+  - id: d-criminal-90
+    phase: before
+    days: 90
+    label:
+      uk: Український витяг про несудимість — не старший за 90 днів (§131o ods. 7)
+      sk: Ukrajinský výpis z registra trestov nie starší ako 90 dní (§131o ods. 7)
+    sourceIds: [slovlex-404-2011]
+  - id: d-social-30
+    phase: before
+    days: 30
+    label:
+      uk: Довідка Соціальної страхової — не старша за 30 днів (§131o ods. 6)
+      sk: Potvrdenie Sociálnej poisťovne nie staršie ako 30 dní (§131o ods. 6)
+    sourceIds: [slovlex-404-2011]
+  - id: d-submit
+    phase: submission
+    days: null
+    label:
+      uk: День подання заяви — у межах року від припинення захисту (§131o ods. 1)
+      sk: Deň podania — v roku od zániku útočiska (§131o ods. 1)
+    sourceIds: [slovlex-404-2011]
+  - id: d-notice-60
+    phase: decision
+    days: 60
+    label:
+      uk: Повідомлення поліції — протягом 60 днів від прийняття заяви (§131o ods. 10)
+      sk: Oznámenie polície do 60 dní od prijatia žiadosti (§131o ods. 10)
+    sourceIds: [slovlex-404-2011]
 eligibilityRules:
   - id: r-temporary-protection
     effect: require

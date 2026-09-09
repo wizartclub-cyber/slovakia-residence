@@ -297,3 +297,60 @@
 .summary__unverified {
   color: var(--warning);
 }
+
+/* ---------- шкала строків ---------- */
+
+.deadlines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-inline-start: 2px solid var(--line-strong);
+  padding-inline-start: 20px;
+}
+
+.deadlines__phase {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.deadlines__phase::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: -27px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--line-strong);
+}
+
+.deadlines__phase--submission::before {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.deadlines__phase--after::before {
+  background: var(--warning);
+  border-color: var(--warning);
+}
+
+.deadlines__phase-name {
+  margin: 0 0 4px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.deadlines__phase ul {
+  margin: 0;
+  padding-inline-start: 18px;
+  font-size: 14px;
+}
+
+.deadlines__phase li {
+  margin-bottom: 4px;
+}
+
+.deadlines__days {
+  font-variant-numeric: tabular-nums;
+}

@@ -29,6 +29,49 @@ decisionDeadline:
     90 dní (§33 ods. 8 písm. a). Policajný útvar si navyše vyžiada stanovisko
     Ministerstva hospodárstva SR k podnikateľskému zámeru, ktoré má naň 60 dní
     (§33 ods. 2 a 3).
+deadlines:
+  - id: d-docs-90
+    phase: before
+    days: 90
+    label:
+      uk: Додатки до заяви — не старші за 90 днів (§32 ods. 2)
+      sk: Náležitosti nie staršie ako 90 dní (§32 ods. 2)
+    sourceIds: [slovlex-404-2011]
+  - id: d-submit
+    phase: submission
+    days: null
+    label:
+      uk: День подання заяви
+      sk: Deň podania žiadosti
+    sourceIds: [slovlex-404-2011]
+  - id: d-decision-90
+    phase: decision
+    days: 90
+    label:
+      uk: Рішення — 90 днів (§33 ods. 8 písm. a)
+      sk: Rozhodnutie do 90 dní (§33 ods. 8 písm. a)
+    sourceIds: [slovlex-404-2011]
+  - id: d-ministry-60
+    phase: decision
+    days: 60
+    label:
+      uk: Висновок Міністерства господарства щодо бізнес-плану — до 60 днів; це окремий строк, не додається до 90 (§33 ods. 3)
+      sk: Stanovisko ministerstva hospodárstva do 60 dní; ide o samostatnú lehotu (§33 ods. 3)
+    sourceIds: [slovlex-404-2011]
+  - id: d-insurance-30
+    phase: after
+    days: 30
+    label:
+      uk: Медичне страхування — протягом 30 днів після картки (§32 ods. 9)
+      sk: Zdravotné poistenie do 30 dní od prevzatia dokladu (§32 ods. 9)
+    sourceIds: [slovlex-404-2011]
+  - id: d-medical-30
+    phase: after
+    days: 30
+    label:
+      uk: Медичний висновок — протягом 30 днів після картки (§32 ods. 10)
+      sk: Lekársky posudok do 30 dní (§32 ods. 10)
+    sourceIds: [slovlex-404-2011]
 eligibilityRules:
   # Особа з тимчасовим захистом — теж громадянин третьої країни за законом,
   # тому цей маршрут для неї не закритий. Там, де закон її виключає

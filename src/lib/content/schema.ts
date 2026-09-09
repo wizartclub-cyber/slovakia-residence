@@ -146,6 +146,22 @@ export const ProcedureSchema = z
     // це перше, що питає людина, і воно прямо в законі.
     grantedFor: localizedTextOptional,
     decisionDeadline: localizedTextOptional,
+    // Ключові строки числами — для шкали на сторінці. Кожен має джерело.
+    // phase: before — до подання, submission — у день подання,
+    // decision — строк рішення, after — після отримання картки.
+    deadlines: z
+      .array(
+        z
+          .object({
+            id: nonEmpty,
+            phase: z.enum(['before', 'submission', 'decision', 'after']),
+            days: z.number().int().positive().nullable().default(null),
+            label: localizedText,
+            sourceIds,
+          })
+          .strict(),
+      )
+      .default([]),
     eligibilityRules: z.array(EligibilityRuleSchema).default([]),
     steps: z.array(StepSchema).default([]),
     documentIds: z.array(nonEmpty).default([]),

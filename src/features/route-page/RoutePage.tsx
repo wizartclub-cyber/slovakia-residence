@@ -79,6 +79,8 @@ export function RoutePage() {
 
       <SummaryPanel procedure={procedure} lang={lang} />
 
+      <DeadlineTimeline procedure={procedure} lang={lang} />
+
       <Section title={t('route.steps')}>
         {stepsBefore.length === 0 ? (
           <p className="route-page__missing">{t('route.stepsMissing')}</p>
@@ -267,6 +269,43 @@ function CollapsibleNote({
  * беруться з даних маршруту; якщо в даних поля немає — так і написано
  * «потребує перевірки», а не порожньо і не припущення.
  */
+/**
+ * Шкала ключових строків. Строки НЕ додаються один до одного: паралельні
+ * (наприклад 90 днів поліції і 60 днів висновку міністерства) показані як
+ * окремі точки, бо закон не встановлює їхньої суми.
+ */
+function DeadlineTimeline({ procedure, lang }: { procedure: Procedure; lang: string | undefined }) {
+  const { t } = useTranslation();
+  const phases = ['before', 'submission', 'decision', 'after'] as const;
+  const all = procedure.deadlines ?? [];
+  if (all.length === 0) return null;
+
+  return (
+    <Section title={t('deadlines.title')}>
+      <p className="route-page__note">{t('deadlines.hint')}</p>
+      <ol className="deadlines">
+        {phases.map((phase) => {
+          const items = all.filter((d) => d.phase === phase);
+          if (items.length === 0) return null;
+          return (
+            <li key={phase} className={`deadlines__phase deadlines__phase--${phase}`}>
+              <p className="deadlines__phase-name">{t(`deadlines.phase.${phase}`)}</p>
+              <ul>
+                {items.map((d) => (
+                  <li key={d.id}>
+                    {d.days !== null && <strong className="deadlines__days">{d.days} </strong>}
+                    {localized(d.label, lang)}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          );
+        })}
+      </ol>
+    </Section>
+  );
+}
+
 function SummaryPanel({ procedure, lang }: { procedure: Procedure; lang: string | undefined }) {
   const { t } = useTranslation();
   const status = publicStatus(procedure.reviewStatus);

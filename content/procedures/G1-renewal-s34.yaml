@@ -31,6 +31,49 @@ grantedFor:
 decisionDeadline:
   uk: Ті самі строки, що й для першого подання (§34 ods. 14 із посиланням на §33 ods. 8).
   sk: Rovnaké lehoty ako pri prvom podaní (§34 ods. 14 s odkazom na §33 ods. 8).
+deadlines:
+  - id: d-before-expiry
+    phase: before
+    days: null
+    label:
+      uk: Подати НЕ ПІЗНІШЕ останнього дня чинності пробуту (§34 ods. 2)
+      sk: Podať najneskôr v posledný deň platnosti pobytu (§34 ods. 2)
+    sourceIds: [slovlex-404-2011]
+  - id: d-seasonal-30
+    phase: before
+    days: 30
+    label:
+      uk: Для сезонної зайнятості — за 30 днів до кінця чинності (§34 ods. 2)
+      sk: Pri sezónnom zamestnaní 30 dní pred skončením (§34 ods. 2)
+    sourceIds: [slovlex-404-2011]
+  - id: d-docs-90
+    phase: before
+    days: 90
+    label:
+      uk: Додатки — не старші за 90 днів (§34 ods. 3)
+      sk: Náležitosti nie staršie ako 90 dní (§34 ods. 3)
+    sourceIds: [slovlex-404-2011]
+  - id: d-submit
+    phase: submission
+    days: null
+    label:
+      uk: День подання заяви
+      sk: Deň podania žiadosti
+    sourceIds: [slovlex-404-2011]
+  - id: d-complete-30
+    phase: decision
+    days: 30
+    label:
+      uk: Донести відсутні документи — 30 днів від подання, інакше провадження зупинять (§34 ods. 4)
+      sk: Doplniť chýbajúce doklady do 30 dní, inak sa konanie zastaví (§34 ods. 4)
+    sourceIds: [slovlex-404-2011]
+  - id: d-decision
+    phase: decision
+    days: null
+    label:
+      uk: Рішення — у строки за §33 ods. 8 (§34 ods. 14)
+      sk: Rozhodnutie v lehotách podľa §33 ods. 8 (§34 ods. 14)
+    sourceIds: [slovlex-404-2011]
 eligibilityRules:
   # Особа з тимчасовим захистом — теж громадянин третьої країни за законом,
   # тому цей маршрут для неї не закритий. Там, де закон її виключає

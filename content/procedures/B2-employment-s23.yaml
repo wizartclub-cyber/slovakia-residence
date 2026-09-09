@@ -37,6 +37,49 @@ decisionDeadline:
     60 dní odo dňa doručenia žiadosti so všetkými náležitosťami podľa §32 pri
     §23 ods. 1. 30 dní, ak ide o zamestnanie s nedostatkom pracovnej sily.
     Všeobecná lehota 90 dní (§33 ods. 8).
+deadlines:
+  - id: d-vacancy-180
+    phase: before
+    days: 180
+    label:
+      uk: Від видачі підтвердження ÚPSVaR до подання — не більше 180 днів (§32 ods. 1)
+      sk: Od vydania potvrdenia ÚPSVaR do podania najviac 180 dní (§32 ods. 1)
+    sourceIds: [slovlex-404-2011]
+  - id: d-docs-90
+    phase: before
+    days: 90
+    label:
+      uk: Додатки до заяви — не старші за 90 днів (§32 ods. 2)
+      sk: Náležitosti nie staršie ako 90 dní (§32 ods. 2)
+    sourceIds: [slovlex-404-2011]
+  - id: d-submit
+    phase: submission
+    days: null
+    label:
+      uk: День подання заяви
+      sk: Deň podania žiadosti
+    sourceIds: [slovlex-404-2011]
+  - id: d-decision-60
+    phase: decision
+    days: 60
+    label:
+      uk: Рішення за §23 ods. 1 — 60 днів від повної заяви (§33 ods. 8 písm. b)
+      sk: Rozhodnutie pri §23 ods. 1 do 60 dní (§33 ods. 8 písm. b)
+    sourceIds: [slovlex-404-2011]
+  - id: d-decision-30
+    phase: decision
+    days: 30
+    label:
+      uk: 30 днів, якщо це професія з нестачею робочої сили (§33 ods. 8 písm. c)
+      sk: 30 dní pri zamestnaní s nedostatkom pracovnej sily (§33 ods. 8 písm. c)
+    sourceIds: [slovlex-404-2011]
+  - id: d-medical-30
+    phase: after
+    days: 30
+    label:
+      uk: Медичний висновок — протягом 30 днів після отримання картки (§32 ods. 10)
+      sk: Lekársky posudok do 30 dní od prevzatia dokladu (§32 ods. 10)
+    sourceIds: [slovlex-404-2011]
 eligibilityRules:
   # Особа з тимчасовим захистом — теж громадянин третьої країни за законом,
   # тому цей маршрут для неї не закритий. Там, де закон її виключає

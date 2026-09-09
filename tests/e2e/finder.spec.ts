@@ -138,3 +138,34 @@ test('таблиця порівняння показує строки і сум�
   expect(await rows.count()).toBeGreaterThanOrEqual(2);
   await expect(page.getByText('це не рейтинг', { exact: false })).toBeVisible();
 });
+
+test('прогрес доступний скрінрідеру і рухається', async ({ page }) => {
+  await page.goto('./uk/finder');
+  const bar = page.getByRole('progressbar');
+
+  await expect(bar).toHaveAttribute('aria-valuemin', '1');
+  await expect(bar).toHaveAttribute('aria-valuemax', String(STEP_IDS.length));
+  await expect(bar).toHaveAttribute('aria-valuenow', '1');
+
+  await page.locator('#citizenship-third_country').check();
+  await page.getByRole('button', { name: 'Далі' }).click();
+
+  await expect(bar).toHaveAttribute('aria-valuenow', '2');
+});
+
+test('дані відповіді показані як chips і кожну можна змінити', async ({ page }) => {
+  await page.goto('./uk/finder');
+  await page.locator('#citizenship-third_country').check();
+  await page.getByRole('button', { name: 'Далі' }).click();
+  await page.locator('#location-abroad').check();
+  await page.getByRole('button', { name: 'Далі' }).click();
+
+  const chips = page.locator('.chip');
+  await expect(chips).toHaveCount(2);
+  await expect(chips.first()).toContainText('Країна поза ЄС');
+
+  // Клік по chip повертає саме до того питання.
+  await chips.first().click();
+  await expect(page.getByText(`Питання 1 з ${STEP_IDS.length}`)).toBeVisible();
+  await expect(page.locator('#citizenship-third_country')).toBeChecked();
+});

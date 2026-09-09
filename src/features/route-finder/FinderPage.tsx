@@ -52,9 +52,30 @@ export function FinderPage() {
           <p className="finder__privacy">{t('finder.privacyNote')}</p>
 
           <div className="card">
-            <p className="finder__progress">
-              {t('finder.stepOf', { current: step + 1, total })}
-            </p>
+            {/* Смуга прогресу з aria-атрибутами: скрінрідер має знати, де людина
+                в опитувальнику, а не лише читати «Питання 3 з 6». */}
+            <div className="finder__progressbar">
+              <div
+                className="finder__progressbar-track"
+                role="progressbar"
+                aria-valuemin={1}
+                aria-valuemax={total}
+                aria-valuenow={step + 1}
+                aria-label={t('finder.progressLabel', {
+                  current: step + 1,
+                  total,
+                  name: t(`finder.q.${steps[step]!.id}`),
+                })}
+              >
+                <span
+                  className="finder__progressbar-fill"
+                  style={{ inlineSize: `${((step + 1) / total) * 100}%` }}
+                />
+              </div>
+              <p className="finder__progress">{t('finder.stepOf', { current: step + 1, total })}</p>
+            </div>
+
+            <AnswerChips draft={draft} onJump={setStep} />
 
             <QuestionStep
               step={steps[step]!}
@@ -106,6 +127,38 @@ export function FinderPage() {
         </>
       )}
     </>
+  );
+}
+
+/**
+ * Уже дані відповіді як chips. Кожен — кнопка: людина може повернутися саме
+ * до того питання, не проходячи опитувальник спочатку.
+ */
+function AnswerChips({ draft, onJump }: { draft: Draft; onJump: (step: number) => void }) {
+  const { t } = useTranslation();
+  const values = draft as Record<string, string | undefined>;
+  const answered = finder.steps
+    .map((s, index) => ({ step: s, index, value: values[s.field] }))
+    .filter((x) => x.value !== undefined);
+
+  if (answered.length === 0) return null;
+
+  return (
+    <div className="chips">
+      <p className="chips__label">{t('finder.yourSituation')}</p>
+      <ul className="chips__list">
+        {answered.map(({ step, index, value }) => (
+          <li key={step.id}>
+            <button type="button" className="chip" onClick={() => onJump(index)}>
+              <span className="chip__q">{t(`finder.q.${step.id}`)}</span>
+              <span className="chip__a">{t(`answer.${step.field}.${value}`)}</span>
+              <span className="chip__edit" aria-hidden="true">✎</span>
+              <span className="visually-hidden">{t('finder.changeThis')}</span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

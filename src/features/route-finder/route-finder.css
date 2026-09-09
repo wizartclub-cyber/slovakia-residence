@@ -211,3 +211,79 @@
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+
+/* ---------- прогрес і chips ---------- */
+
+.finder__progressbar {
+  margin-bottom: 16px;
+}
+
+.finder__progressbar-track {
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--surface-sunken);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.finder__progressbar-fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  transition: inline-size var(--dur) var(--ease);
+}
+
+.finder__progressbar .finder__progress {
+  margin: 6px 0 0;
+}
+
+.chips {
+  margin-bottom: 20px;
+}
+
+.chips__label {
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.chips__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.chip {
+  font: inherit;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-full);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.chip__q {
+  color: var(--text-secondary);
+}
+
+.chip__a {
+  font-weight: 600;
+}
+
+.chip__edit {
+  color: var(--accent-text);
+}
