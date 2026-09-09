@@ -1,3 +1,5 @@
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { describe, expect, it } from 'vitest';
 import { authorities, fees, finder, procedures, sources, thresholds } from '../../src/lib/content/index.ts';
 
@@ -156,5 +158,18 @@ describe('спільні юридичні примітки', () => {
       expect(note.sourceIds.length).toBeGreaterThan(0);
       for (const target of note.appliesTo) expect(ids.has(target)).toBe(true);
     }
+  });
+});
+
+describe('гейт посилань на закон', () => {
+  it('кожен § із legalBasis існує в збереженій копії закону', () => {
+    // Сам гейт живе в scripts/check-legal-basis.ts і виконується в `pnpm validate`.
+    // Тут перевіряємо, що він узагалі відпрацьовує на поточних даних.
+    const root = fileURLToPath(new URL('../..', import.meta.url));
+    const out = execFileSync(process.execPath, ['scripts/check-legal-basis.ts'], {
+      cwd: root,
+      encoding: 'utf8',
+    });
+    expect(out).toContain('✓');
   });
 });
