@@ -43,3 +43,27 @@ test('кожен маршрут у каталозі позначений як н
     await expect(badges.nth(i)).toHaveText('не перевірено юристом');
   }
 });
+
+test('пошук у каталозі звужує список і оголошує кількість', async ({ page }) => {
+  await page.goto('./uk/routes');
+  await expect(page.locator('.catalogue__item')).toHaveCount(ROUTE_COUNT);
+
+  await page.getByLabel('Пошук за назвою або статтею закону').fill('§23');
+
+  await expect(page.locator('.catalogue__item')).toHaveCount(1);
+  await expect(page.getByText('Знайдено: 1')).toBeVisible();
+});
+
+test('пошук за словом працює обома мовами', async ({ page }) => {
+  await page.goto('./sk/routes');
+  await page.getByLabel('Hľadanie podľa názvu alebo paragrafu').fill('zamestnan');
+  const found = await page.locator('.catalogue__item').count();
+  expect(found).toBeGreaterThanOrEqual(1);
+  expect(found).toBeLessThan(ROUTE_COUNT);
+});
+
+test('порожній результат пояснює, що робити', async ({ page }) => {
+  await page.goto('./uk/routes');
+  await page.getByLabel('Пошук за назвою або статтею закону').fill('щось чого немає');
+  await expect(page.getByText('нічого не знайдено', { exact: false })).toBeVisible();
+});

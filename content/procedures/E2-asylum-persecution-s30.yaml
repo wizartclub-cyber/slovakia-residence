@@ -1,0 +1,97 @@
+# Наповнено з тексту закону 69/2026 §30 і §32 (снапшот slovlex-69-2026).
+id: E2-asylum-persecution-s30
+category: E
+title:
+  uk: Притулок через переслідування і притулок для возз'єднання родини (69/2026 §30, §32)
+  sk: Azyl z dôvodu prenasledovania a azyl na účel zlúčenia rodiny (69/2026 §30, §32)
+legalBasis:
+  - '69/2026 §30'
+  - '69/2026 §32'
+validFrom: '2026-06-12'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-69-2026
+conditionsComplete: false
+grantedFor:
+  uk: Притулок надається на невизначений час (§30 ods. 2, §32 ods. 4).
+  sk: Azyl sa udeľuje na dobu neurčitú (§30 ods. 2, §32 ods. 4).
+decisionDeadline: null
+eligibilityRules:
+  - id: r-purpose-protection
+    effect: require
+    when: { field: purpose, equals: protection }
+    localizedContentKey: null
+    sourceIds: [slovlex-69-2026]
+formSourceIds: []
+authorityIds: [mv-sr]
+feeRuleIds: []
+documentIds: []
+steps:
+  - id: s1-persecution
+    order: 1
+    title:
+      uk: Дві підстави для притулку через переслідування
+      sk: Dva dôvody azylu z dôvodu prenasledovania
+    body:
+      uk: >-
+        §30 ods. 1: міністерство внутрішніх справ надає притулок заявникові,
+        якщо немає підстав для виключення за окремим приписом, і якщо він
+        (a) виконує умови для визнання статусу біженця за окремим приписом або
+        (b) у країні походження переслідується за здійснення політичних прав і
+        свобод.
+      sk: >-
+        §30 ods. 1: ministerstvo vnútra udelí azyl, ak nie sú dôvody na vylúčenie,
+        žiadateľovi, ktorý (a) spĺňa podmienky na priznanie postavenia utečenca
+        alebo (b) je v krajine pôvodu prenasledovaný za uplatňovanie politických
+        práv a slobôd.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s2-family
+    order: 2
+    title:
+      uk: Притулок для возз'єднання родини — три умови
+      sk: Azyl na účel zlúčenia rodiny — tri podmienky
+    body:
+      uk: >-
+        §32 ods. 2: (a) возз'єднання відбувається з особою, якій надано притулок
+        через переслідування; (b) ця особа заздалегідь письмово погоджується на
+        возз'єднання; (c) член родини не має в Словаччині наданого постійного
+        проживання. Окремо §32 ods. 3: притулок надається також дитині,
+        народженій особою з притулком на території Словаччини.
+      sk: >-
+        §32 ods. 2: (a) zlúčenie s azylantom, ktorému bol udelený azyl z dôvodu
+        prenasledovania; (b) azylant so zlúčením vopred písomne súhlasí;
+        (c) rodinný príslušník nemá v SR udelený trvalý pobyt. Podľa §32 ods. 3
+        sa azyl udelí aj dieťaťu narodenému azylantke na území SR.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s3-fee-link
+    order: 3
+    title:
+      uk: Родина особи з притулком звільнена від збору за пробут
+      sk: Rodina azylanta je oslobodená od poplatku za pobyt
+    body:
+      uk: >-
+        Тариф 145/1995, положка 24, Oslobodenie 1: від зборів за першим поданням
+        і обновленням тимчасового проживання звільнені ті, хто просить
+        возз'єднання родини з особою, якій надано притулок, або з іноземцем із
+        додатковим захистом.
+      sk: >-
+        Sadzobník 145/1995, položka 24, Oslobodenie 1: od poplatkov za prvé podanie
+        a obnovenie prechodného pobytu sú oslobodené osoby žiadajúce zlúčenie
+        rodiny s azylantom alebo s cudzincom s doplnkovou ochranou.
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-145-1995]
+transitionRules: []
+relatedProcedureIds: [E1-protection-application-s3]
+openQuestions:
+  - 'Додатковий захист (doplnková ochrana) окремим маршрутом не описаний — це інша стаття закону.'
+  - 'Підстави для виключення із захисту (за окремим приписом) не внесені.'
+  - 'Гуманітарний притулок і решта видів захисту не описані.'
+  - 'Прочитано лише §30 і §32 із 91 статті закону 69/2026.'

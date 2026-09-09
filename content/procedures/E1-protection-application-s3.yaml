@@ -1,0 +1,102 @@
+# Наповнено з тексту закону 69/2026 (снапшот slovlex-69-2026, прочитано 2026-09-09).
+id: E1-protection-application-s3
+category: E
+title:
+  uk: Заява про міжнародний захист — як і де її подати (69/2026 §3, §4, §6)
+  sk: Žiadosť o medzinárodnú ochranu — ako a kde ju podať (69/2026 §3, §4, §6)
+legalBasis:
+  - '69/2026 §3'
+  - '69/2026 §4'
+  - '69/2026 §6'
+validFrom: '2026-06-12'
+validTo: null
+reviewStatus: draft
+reviewedAt: null
+reviewer: null
+sourceIds:
+  - slovlex-69-2026
+conditionsComplete: false
+grantedFor: null
+decisionDeadline: null
+eligibilityRules:
+  - id: r-purpose-protection
+    effect: require
+    when: { field: purpose, equals: protection }
+    localizedContentKey: null
+    sourceIds: [slovlex-69-2026]
+formSourceIds: []
+authorityIds: [ocp-pz, mv-sr]
+feeRuleIds: []
+documentIds: []
+steps:
+  - id: s1-declaration
+    order: 1
+    title:
+      uk: Усе починається з волевиявлення, зробленого особисто
+      sk: Všetko sa začína prejavom vôle urobeným osobne
+    body:
+      uk: >-
+        §3 ods. 1: волевиявлення подати заяву про міжнародний захист іноземець
+        робить ОСОБИСТО в одному з чотирьох місць: у підрозділі поліції на
+        зовнішньому кордоні; у підрозділі поліції у справах перебування
+        іноземців; у підрозділі поліції при притулковому закладі; або в
+        підрозділі поліції в закладі для іноземців, якщо людина в ньому
+        розміщена. Провадження починається саме цим волевиявленням, і поліція
+        записує його на офіційному бланку (§3 ods. 2).
+      sk: >-
+        §3 ods. 1: prejav vôle podať žiadosť urobí cudzinec OSOBNE na policajnom
+        útvare s pôsobnosťou na vonkajšej hranici, na útvare v oblasti pobytu
+        cudzincov, na útvare pri azylovom zariadení alebo na útvare v zariadení
+        pre cudzincov. Konanie sa začína prejavom vôle a útvar ho zaznamená na
+        úradnom tlačive (§3 ods. 2).
+    afterDecision: false
+    prerequisites: []
+    sourceIds: [slovlex-69-2026]
+  - id: s2-registration
+    order: 2
+    title:
+      uk: Реєстрація і затримання документів
+      sk: Registrácia a zadržanie dokladov
+    body:
+      uk: >-
+        §4: реєстрацію заяви поліція зазвичай виконує одразу при волевиявленні.
+        При цьому поліція затримує проїзний документ або інший документ про
+        особу і **видає про це підтвердження** — його треба зберігати. Копії
+        документів разом із документацією поліція невідкладно надсилає
+        міністерству внутрішніх справ.
+      sk: >-
+        §4: registráciu žiadosti vykoná policajný útvar spravidla pri prejave
+        vôle. Zadrží pritom cestovný doklad alebo iný doklad totožnosti a vydá
+        o tom potvrdenie. Kópie zasiela bezodkladne ministerstvu vnútra.
+    afterDecision: false
+    prerequisites: [s1-declaration]
+    sourceIds: [slovlex-69-2026]
+  - id: s3-application
+    order: 3
+    title:
+      uk: Сама заява подається теж особисто, у визначених місцях
+      sk: Samotná žiadosť sa podáva tiež osobne, na určených miestach
+    body:
+      uk: >-
+        §6 ods. 1: заяву подають особисто в підрозділі поліції при притулковому
+        закладі; у закладі для іноземців, якщо людина там розміщена; у підрозділі
+        за місцем слідчого ізолятора чи установи виконання покарань, якщо людина
+        там перебуває; за місцем закладу соціально-правового захисту дітей, якщо
+        заявник неповнолітній і там розміщений; або за місцем стаціонарного
+        медичного закладу, якщо людина на стаціонарному лікуванні.
+      sk: >-
+        §6 ods. 1: žiadosť sa podáva osobne na policajnom útvare pri azylovom
+        zariadení, v zariadení pre cudzincov, podľa miesta ústavu na výkon väzby
+        alebo trestu, podľa miesta zariadenia sociálnoprávnej ochrany detí alebo
+        podľa miesta ústavného zdravotníckeho zariadenia.
+    afterDecision: false
+    prerequisites: [s2-registration]
+    sourceIds: [slovlex-69-2026]
+transitionRules: []
+relatedProcedureIds: [E2-asylum-persecution-s30]
+openQuestions:
+  - 'Прочитано лише §3, §4 і §6 — процедура розгляду, строки, права заявника, розміщення і оскарження ще не описані.'
+  - 'Поучення за §5 (що саме поліція зобов''язана пояснити) не внесене.'
+  - 'Дублінська процедура і процедури на кордоні не описані.'
+  - 'Права неповнолітніх без супроводу (окремі норми) не описані.'
+  - 'Додаток №3 до закону (VYHLÁSENIE CUDZINCA) у реєстрі позначений як непідтверджений.'

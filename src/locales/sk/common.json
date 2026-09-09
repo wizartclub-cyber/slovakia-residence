@@ -249,6 +249,10 @@
       "E": "Medzinárodná a dočasná ochrana",
       "F": "Voľný pohyb občanov EÚ",
       "G": "Administratívne úkony"
-    }
+    },
+    "filterLabel": "Hľadanie podľa názvu alebo paragrafu",
+    "filterPlaceholder": "napr. §23, zamestnanie, rodina",
+    "found": "Nájdené: {{count}}",
+    "nothing": "Na túto požiadavku sa nič nenašlo. Skúste číslo paragrafu (napr. §46) alebo jedno slovo."
   }
 }

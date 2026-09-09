@@ -408,6 +408,12 @@ resources:
   procedureIds: []
 - id: slovlex-69-2026
   title: Zákon č. 69/2026 Z. z. o medzinárodnej ochrane
+  contentChecked:
+    at: '2026-09-09'
+    by: claude-code
+    scope: '§3, §4, §6, §30, §32 — прочитано у знятому снапшоті (з 91 статті)'
+    note: >-
+      Маршрути E1 і E2 взяті з цього тексту. Це НЕ юридична перевірка.
   type: statute
   authority: Slov-Lex
   url: https://www.slov-lex.sk/ezbierky/pravne-predpisy/SK/ZZ/2026/69/20260612

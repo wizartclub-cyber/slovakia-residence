@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { usePageTitle } from '../../app/usePageTitle';
@@ -12,9 +13,18 @@ export function RouteCataloguePage() {
   const { lang } = useParams();
   usePageTitle(t('catalogue.title'));
 
+  const [query, setQuery] = useState('');
+
+  const needle = query.trim().toLowerCase();
+  const matches = procedures.filter((p) => {
+    if (needle === '') return true;
+    const haystack = [p.title.uk, p.title.sk, ...p.legalBasis, p.id].join(' ').toLowerCase();
+    return haystack.includes(needle);
+  });
+
   const groups = CATEGORIES.map((c) => ({
     category: c,
-    items: procedures.filter((p) => p.category === c),
+    items: matches.filter((p) => p.category === c),
   })).filter((g) => g.items.length > 0);
 
   return (
@@ -22,6 +32,26 @@ export function RouteCataloguePage() {
       <h1 tabIndex={-1}>{t('catalogue.title')}</h1>
       <p>{t('catalogue.intro')}</p>
       <p className="route-page__note">{t('catalogue.coverage', { count: procedures.length })}</p>
+
+      <div className="catalogue__search">
+        <label htmlFor="catalogue-filter">{t('catalogue.filterLabel')}</label>
+        <input
+          id="catalogue-filter"
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={t('catalogue.filterPlaceholder')}
+          autoComplete="off"
+        />
+      </div>
+
+      {/* Кількість знайденого читається вголос — інакше людина зі скрінрідером
+          не дізнається, що список змінився під час набирання. */}
+      <p className="route-page__note" role="status" aria-live="polite">
+        {t('catalogue.found', { count: matches.length })}
+      </p>
+
+      {matches.length === 0 && <p className="card">{t('catalogue.nothing')}</p>}
 
       {groups.map((group) => (
         <section key={group.category}>
