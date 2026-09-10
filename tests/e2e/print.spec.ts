@@ -5,7 +5,9 @@ import { fileURLToPath } from 'node:url';
 import { expect, test } from '@playwright/test';
 import { parse } from 'yaml';
 
-const A4 = { format: 'A4' as const, margin: { top: '12mm', bottom: '12mm', left: '12mm', right: '12mm' } };
+// preferCSSPageSize змушує Playwright узяти розмір і поля з @page, тобто
+// друкувати рівно так, як це зробить браузер людини, а не за своїми числами.
+const A4 = { preferCSSPageSize: true };
 
 function routeIds(): string[] {
   const dir = fileURLToPath(new URL('../../content/procedures', import.meta.url));
@@ -33,7 +35,7 @@ test('на сторінці маршруту є вибір: пам\'ятка н�
 
 test('пам\'ятки на екрані немає — вона існує лише для друку', async ({ page }) => {
   await page.goto('./uk/route/B2-employment-s23');
-  await expect(page.locator('.route-memo')).toBeHidden();
+  await expect(page.locator('.memo')).toBeHidden();
 });
 
 test('у режимі пам\'ятки друкується вона, а не сторінка', async ({ page }) => {
@@ -41,11 +43,11 @@ test('у режимі пам\'ятки друкується вона, а не с
   await page.evaluate(() => (document.documentElement.dataset.printMode = 'memo'));
   await page.emulateMedia({ media: 'print' });
 
-  const memo = page.locator('.route-memo');
+  const memo = page.locator('.memo');
   await expect(memo).toBeVisible();
   // Головне з маршруту на аркуші є.
   await expect(memo).toContainText('250.00 EUR');
-  await expect(memo.locator('.route-memo__box')).not.toHaveCount(0);
+  await expect(memo.locator('.memo__box')).not.toHaveCount(0);
   // А сторінка цілком — ні, інакше аркуш був би не один.
   await expect(page.locator('.route-page__full')).toBeHidden();
 });
@@ -55,7 +57,7 @@ test('повний друк лишає сторінку і ховає пам\'я
   await page.evaluate(() => (document.documentElement.dataset.printMode = 'full'));
   await page.emulateMedia({ media: 'print' });
 
-  await expect(page.locator('.route-memo')).toBeHidden();
+  await expect(page.locator('.memo')).toBeHidden();
   await expect(page.locator('.route-page__full')).toBeVisible();
 });
 

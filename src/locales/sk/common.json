@@ -310,8 +310,7 @@
     },
     "saveAsPdfHint": "Otvorí sa okno tlače — vyberte v ňom „Uložiť ako PDF“. Na iPhone: „Zdieľať“ → „Uložiť do Súborov“.",
     "saveMemo": "Uložiť pamätku (1 strana A4)",
-    "printFull": "Vytlačiť celú stránku",
-    "memoDisclaimer": "Toto nie je právne poradenstvo. Aktuálnosť si overte na úrade: zákon sa mohol zmeniť po dátume nižšie."
+    "printFull": "Vytlačiť celú stránku"
   },
   "catalogue": {
     "title": "Všetky cesty",
@@ -396,5 +395,30 @@
     "nothingFound": "Pre túto požiadavku sme nič nenašli. Skúste názov okresu po slovensky.",
     "districts": "Obsluhuje okresy",
     "hours": "Stránkové hodiny"
+  },
+  "memo": {
+    "lede": "Celá cesta na jednej strane: čo pripraviť, kam podať a čo urobiť po rozhodnutí.",
+    "journey": "Vaša cesta",
+    "documents": "Doklady",
+    "thresholds": "Prahy finančného zabezpečenia",
+    "deadlines": "Kľúčové lehoty",
+    "risks": "Pred podaním si overte",
+    "form": "Tlačivo",
+    "electronic": "elektronicky",
+    "notEstablished": "zatiaľ nie je určené",
+    "stepsMissing": "Kroky tejto cesty ešte nie sú opísané.",
+    "documentsMissing": "Úplný zoznam dokladov v príručke ešte nie je určený. Nepoužívajte túto pamätku ako hotový balík na podanie.",
+    "deadlinesNotSummed": "Lehoty sa nesčítavajú: súbežné procesy sú uvedené osobitne.",
+    "notAdvice": "Toto je informačný materiál, nie právne poradenstvo.",
+    "fullRoute": "Úplná cesta, vysvetlenia a zdroje — na stránke na adrese nižšie.",
+    "group": {
+      "required": "Potrebné vždy",
+      "conditional": "Závisí od situácie",
+      "after": "Po prevzatí karty"
+    },
+    "risk": {
+      "conditions": "Podmienky tejto cesty nie sú zapísané úplne — zoznam nižšie nie je vyčerpávajúci.",
+      "checkAtOffice": "Overte si na úrade: územnú pôsobnosť, platnú verziu tlačiva a požiadavky na cudzojazyčné doklady."
+    }
   }
 }

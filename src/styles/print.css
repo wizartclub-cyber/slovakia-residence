@@ -4,9 +4,15 @@
  * а навігація, кнопки й перемикач мови зникають.
  */
 @media print {
+  /* ТЗ пам'ятки вимагає полів 10 мм. @page не можна перемкнути селектором,
+     тому 10 мм — базові, а повний друк добирає своє поле власним відступом. */
   @page {
     size: A4;
-    margin: 16mm 14mm;
+    margin: 10mm;
+  }
+
+  .route-page__full {
+    padding: 6mm 4mm;
   }
 
   body {
@@ -109,10 +115,17 @@
 }
 
 /**
- * Пам'ятка на один аркуш A4. Друкується замість сторінки, коли людина
- * натиснула «Зберегти пам'ятку»; режим лежить в атрибуті на <html>.
+ * Пам'ятка маршруту на один аркуш A4 (ТЗ «26 односторінкових пам'яток»).
+ *
+ * Друкується замість сторінки, коли натиснуто «Зберегти пам'ятку»; режим
+ * лежить в атрибуті data-print-mode на <html>, бо один window.print() має
+ * давати два різні документи.
+ *
+ * ТЗ забороняє опускати основний текст нижче 9pt. Тому щільність береться
+ * не кеглем, а двома колонками і скороченням пояснень до одного речення.
+ * Що не вміщається — лишається на сторінці маршруту, а не зникає.
  */
-.route-memo {
+.memo {
   display: none;
 }
 
@@ -123,98 +136,152 @@
     display: none !important;
   }
 
-  html[data-print-mode='memo'] .route-memo {
+  html[data-print-mode='memo'] .memo {
     display: block;
-    font-size: 8.5pt;
-    line-height: 1.3;
+    font-size: 9pt;
+    line-height: 1.28;
+    color: #000;
   }
 
-  .route-memo__head {
+  html[data-print-mode='memo'] {
+    /* ТЗ §1.1: робоча зона 190 × 277 мм після полів 10 мм. */
+    --memo-margin: 10mm;
+  }
+
+  .memo__head {
     border-bottom: 1.5pt solid #000;
     padding-bottom: 3pt;
-    margin-bottom: 6pt;
+    margin-bottom: 5pt;
   }
 
-  .route-memo__title {
-    font-size: 13pt;
-    margin: 0;
-  }
-
-  .route-memo__basis {
-    margin: 1pt 0 0;
+  .memo__status {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 3pt;
     font-size: 8pt;
+  }
+
+  /* Статус ніколи не переданий лише кольором: поруч завжди знак і слово. */
+  .memo__flag {
+    font-weight: 700;
+  }
+
+  .memo__ok {
+    font-weight: 700;
+  }
+
+  .memo__eyebrow {
+    margin: 0;
+    font-size: 8pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     color: #333;
   }
 
-  .route-memo__facts {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4pt 10pt;
-    margin: 0 0 7pt;
+  .memo__title {
+    font-size: 15pt;
+    line-height: 1.15;
+    margin: 1pt 0 2pt;
   }
 
-  .route-memo__facts dt {
+  .memo__lede,
+  .memo__forms {
+    margin: 0;
+    font-size: 8.5pt;
+    color: #333;
+  }
+
+  .memo__facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 0 0 6pt;
+    border: 0.75pt solid #666;
+  }
+
+  .memo__fact {
+    padding: 3pt 5pt;
+    border-right: 0.75pt solid #666;
+  }
+
+  .memo__fact:last-child {
+    border-right: 0;
+  }
+
+  .memo__fact dt {
     font-size: 7.5pt;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
-    color: #555;
+    letter-spacing: 0.03em;
+    color: #444;
+    margin-bottom: 1pt;
   }
 
-  .route-memo__facts dd {
+  .memo__fact dd {
     margin: 0;
+    font-size: 8.5pt;
   }
 
-  /* Дві колонки — єдиний спосіб умістити дев'ять документів і вісім
-     кроків найважчого маршруту в один аркуш, не ріжучи зміст. */
-  .route-memo__columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 12pt;
-    align-items: start;
-  }
-
-  .route-memo h3 {
-    font-size: 9pt;
-    margin: 0 0 2pt;
-    padding-bottom: 1pt;
-    border-bottom: 0.5pt solid #999;
-  }
-
-  .route-memo__columns > div > h3:not(:first-child) {
-    margin-top: 7pt;
-  }
-
-  .route-memo ul,
-  .route-memo ol {
+  .memo__fee-list {
     margin: 0;
-    padding-left: 0;
+    padding: 0;
     list-style: none;
   }
 
-  .route-memo__plain li {
-    margin-bottom: 2pt;
-    padding-left: 8pt;
-    text-indent: -8pt;
+  /* Дві колонки — єдиний спосіб умістити дев'ять документів і вісім кроків
+     найважчого маршруту, не опускаючи кегль нижче дозволених 9pt. */
+  .memo__columns {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 0 10pt;
+    align-items: start;
   }
 
-  .route-memo ol.route-memo__plain {
-    counter-reset: memo-step;
+  .memo__block-title {
+    margin: 0 0 2pt;
+    padding-bottom: 1pt;
+    font-size: 9pt;
+    font-weight: 700;
+    border-bottom: 0.5pt solid #999;
   }
 
-  .route-memo ol.route-memo__plain li::before {
-    counter-increment: memo-step;
-    content: counter(memo-step) '. ';
-    font-weight: 600;
+  .memo__steps {
+    margin: 0;
+    padding-left: 12pt;
   }
 
-  .route-memo__checklist li {
+  .memo__steps li {
     margin-bottom: 2.5pt;
+    break-inside: avoid;
+  }
+
+  .memo__group {
+    margin-top: 3pt;
+  }
+
+  .memo__group-title {
+    margin: 0 0 1pt;
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #444;
+  }
+
+  .memo__docs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .memo__docs li {
+    margin-bottom: 2pt;
     padding-left: 12pt;
     text-indent: -12pt;
+    break-inside: avoid;
   }
 
   /* Квадратик під ручку: людина відмічає документи, поки їх збирає. */
-  .route-memo__box {
+  .memo__box {
     display: inline-block;
     width: 8pt;
     height: 8pt;
@@ -224,33 +291,82 @@
     text-indent: 0;
   }
 
-  .route-memo__dim {
-    color: #555;
+  .memo__thresholds,
+  .memo__deadlines,
+  .memo__risks {
+    margin-top: 5pt;
+    break-inside: avoid;
   }
 
-  .route-memo__missing {
-    color: #555;
-    font-style: italic;
+  .memo__thresholds ul,
+  .memo__risks ul {
     margin: 0;
+    padding-left: 12pt;
   }
 
-  .route-memo__url {
-    display: block;
-    font-size: 7pt;
+  .memo__thresholds li,
+  .memo__risks li {
+    margin-bottom: 1.5pt;
+  }
+
+  /* Горизонтальна шкала: до подання → подання → рішення → після картки. */
+  .memo__strip {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 0 6pt;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .memo__strip > li {
+    padding-left: 5pt;
+    border-left: 1.5pt solid #000;
+  }
+
+  .memo__phase {
+    margin: 0 0 1pt;
+    font-size: 7.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .memo__phase-item {
+    margin: 0 0 1pt;
+    font-size: 8pt;
+  }
+
+  .memo__strip-note {
+    margin: 2pt 0 0;
+    font-size: 7.5pt;
+  }
+
+  .memo__dim {
     color: #444;
-    word-break: break-all;
-    text-indent: 0;
   }
 
-  .route-memo__foot {
-    margin-top: 7pt;
-    padding-top: 3pt;
+  .memo__missing,
+  .memo__warn {
+    margin: 0;
+    font-style: italic;
+    color: #333;
+  }
+
+  .memo__foot {
+    margin-top: 5pt;
+    padding-top: 2pt;
     border-top: 0.5pt solid #999;
     font-size: 7.5pt;
     color: #333;
   }
 
-  .route-memo__foot p {
+  .memo__foot p {
     margin: 0 0 1pt;
+  }
+
+  .memo__url {
+    word-break: break-all;
   }
 }

@@ -59,7 +59,7 @@ export function RoutePage() {
   return (
     <article className="route-page">
       <RouteMemo
-        attachments={attachments}
+        documents={docs}
         lang={lang}
         procedure={procedure}
         routeFees={routeFees}
