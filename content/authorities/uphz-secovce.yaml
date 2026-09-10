@@ -1,0 +1,19 @@
+# Дані з офіційної сторінки MV SR «Kontakty Hraničnej a cudzineckej polície».
+id: uphz-secovce
+type: DETENTION_PZ
+officialName: Útvar policajného zaistenia pre cudzincov Sečovce
+territorialCompetence: null
+address: null
+coordinates: null
+phones:
+  - '+421 96171 3915'
+districts: []
+officeHours: []
+bookingUrl: null
+infoUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+checkedAt: '2026-09-10'
+sourceIds:
+  - minv-hcp-contacts
+notes: >-
+  Другий центр тримання затриманих іноземців. Вуличної адреси офіційна
+  сторінка не наводить — лише телефон і факс.

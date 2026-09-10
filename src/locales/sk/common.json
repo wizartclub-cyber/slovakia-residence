@@ -372,8 +372,7 @@
     "showOnMap": "Zobraziť na mape",
     "officialPage": "Oficiálna stránka",
     "noAddress": "adresa nie je v našich zdrojoch určená",
-    "intro": "Adresy pochádzajú z oficiálnej stránky kontaktov hraničnej a cudzineckej polície MV SR, čítanej 09.09.2026.",
-    "competenceWarning": "Dôležité: oficiálna stránka kontaktov neuvádza, ktoré oddelenie obsluhuje ktorý okres. Preto nevieme povedať, kam presne máte ísť — pred cestou zavolajte a overte si územnú pôsobnosť aj objednanie termínu.",
+    "intro": "Adresy, okresy a stránkové hodiny pochádzajú z oficiálnej stránky kontaktov hraničnej a cudzineckej polície MV SR.",
     "type": {
       "OCP_PZ": "Cudzinecká polícia",
       "DIPLOMATIC_MISSION": "Zastupiteľské úrady SR",
@@ -381,7 +380,16 @@
       "MINISTRY": "Ministerstvá",
       "MUNICIPALITY": "Obce",
       "COURT": "Súdy",
-      "OTHER": "Iné orgány"
-    }
+      "OTHER": "Iné orgány",
+      "ASYLUM_PZ": "Oddelenie azylu PZ",
+      "DETENTION_PZ": "Útvary policajného zaistenia"
+    },
+    "searchLabel": "Nájdite svoje oddelenie podľa okresu",
+    "searchPlaceholder": "napr. Poprad, Galanta, Zvolen",
+    "searchHint": "Zadajte názov svojho okresu — ukážeme, ktoré oddelenie ho obsluhuje.",
+    "searchResult": "Nájdené orgány: {{count}}",
+    "nothingFound": "Pre túto požiadavku sme nič nenašli. Skúste názov okresu po slovensky.",
+    "districts": "Obsluhuje okresy",
+    "hours": "Stránkové hodiny"
   }
 }

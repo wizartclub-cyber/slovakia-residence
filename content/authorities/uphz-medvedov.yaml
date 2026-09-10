@@ -1,0 +1,20 @@
+# Дані з офіційної сторінки MV SR «Kontakty Hraničnej a cudzineckej polície».
+id: uphz-medvedov
+type: DETENTION_PZ
+officialName: Útvar policajného zaistenia pre cudzincov Medveďov
+territorialCompetence: null
+address: null
+coordinates: null
+phones:
+  - '+421 96111 3960'
+districts: []
+officeHours: []
+bookingUrl: null
+infoUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+checkedAt: '2026-09-10'
+sourceIds:
+  - minv-hcp-contacts
+notes: >-
+  Місце тримання затриманих іноземців. Вуличної адреси офіційна сторінка не
+  наводить — лише телефон і факс. Внесено, бо на цей орган посилається
+  примітка про адміністративне видворення (§82).

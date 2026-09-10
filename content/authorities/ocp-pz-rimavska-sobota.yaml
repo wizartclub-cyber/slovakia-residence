@@ -1,20 +1,32 @@
-# Дані з офіційної сторінки MV SR «Kontakty Hraničnej a cudzineckej polície»,
-# прочитаної 2026-09-09. Снапшота немає: сторінка малюється JavaScript.
+# Дані з офіційної сторінки MV SR «Kontakty Hraničnej a cudzineckej polície».
+# Прочитана через Jina Reader 2026-09-09; копію (друк з браузера) знято 2026-09-10.
 id: ocp-pz-rimavska-sobota
 type: OCP_PZ
 officialName: Oddelenie cudzineckej polície PZ Rimavská Sobota
 territorialCompetence: null
-address: Hviezdoslavova 35, 979 01 Rimavská Sobota
+address: "Hviezdoslavova 35, 979 01 Rimavská Sobota"
 coordinates:
   lat: 48.3857314
   lon: 20.0181234
-phones: []
+phones:
+  - "+421 96168 3205"
+districts:
+  - "Rimavská Sobota"
+  - "Rožňava"
+  - "Lučenec"
+  - "Poltár"
+  - "Revúca"
+  - "Veľký Krtíš"
+officeHours:
+  - "Pondelok: 7:30 – 15:30"
+  - "Utorok: 7:30 – 15:00 — udelenie národného víza, predĺženie víza"
+  - "Streda: 7:30 – 15:30"
+  - "Štvrtok: 7:30 – 14:00 — udelenie národného víza, predĺženie víza; dočasné útočisko: registrácia, žiadosť o vydanie dokladu"
+  - "Piatok: 7:30 – 15:30"
 bookingUrl: null
 infoUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
-checkedAt: '2026-09-09'
+checkedAt: '2026-09-10'
 sourceIds:
   - minv-hcp-contacts
 notes: >-
-  Територіальна компетенція цього підрозділу на офіційній сторінці контактів НЕ
-  наведена — тобто з наших джерел не видно, кого саме він обслуговує. Перед
-  поїздкою це треба перевірити в самому органі. Запис на прийом теж не описаний.
+  Округи — з таблиці «Územná pôsobnosť OCP PZ» на офіційній сторінці контактів; у джерелі трапляються описки в назвах, ми лишили їх як надруковано. Години прийому сторінка наводить спільні для всіх відділів. Запис на прийом не описаний — уточнюйте у відділі. У телефонах наводимо лише номери, позначені в джерелі як телефон, без факсів.

@@ -43,6 +43,8 @@ export const sourceTypeValues = [
 
 export const authorityTypeValues = [
   'OCP_PZ',
+  'ASYLUM_PZ',
+  'DETENTION_PZ',
   'DIPLOMATIC_MISSION',
   'UPSVAR',
   'MUNICIPALITY',
@@ -344,6 +346,11 @@ export const AuthoritySchema = z
       .strict()
       .nullable()
       .default(null),
+    // Округи, які обслуговує орган — рівно так, як їх друкує офіційне джерело.
+    // Порожній масив означає «джерело не публікує перелік», а не «обслуговує всіх».
+    districts: z.array(nonEmpty).default([]),
+    // Години прийому, по рядку на день, зі сторінки органу.
+    officeHours: z.array(nonEmpty).default([]),
     phones: z.array(nonEmpty).default([]),
     filingChannels: z.array(nonEmpty).default([]),
     bookingUrl: z.string().url().nullable().default(null),

@@ -123,12 +123,30 @@ describe('органи', () => {
   });
 });
 
-describe('органи: адреси', () => {
+describe('органи: адреси й округи', () => {
   // Рантайм-лоадер не застосовує Zod-дефолти, тож поле може бути й undefined.
   const withAddress = authorities.filter((a) => a.address != null);
+  const ocp = authorities.filter((a) => a.type === 'OCP_PZ' && (a.districts ?? []).length > 0);
 
   it('щонайменше 13 підрозділів іноземної поліції мають адресу', () => {
     expect(withAddress.filter((a) => a.type === 'OCP_PZ').length).toBeGreaterThanOrEqual(13);
+  });
+
+  it('усі 13 відділів мають перелік округів', () => {
+    expect(ocp.length).toBe(13);
+  });
+
+  it('жоден округ не віднесений до двох відділів одночасно', () => {
+    const seen = new Map<string, string>();
+    for (const a of ocp) {
+      for (const d of a.districts ?? []) {
+        expect(seen.get(d)).toBeUndefined();
+        seen.set(d, a.id);
+      }
+    }
+    // Словаччина має 79 округів; Братислава і Кошице подані групами,
+    // тому рядків менше — перевіряємо лише порядок величини.
+    expect(seen.size).toBeGreaterThanOrEqual(60);
   });
 
   it.each(withAddress.map((a) => [a.id, a] as const))('%s: координати в межах Словаччини', (_id, a) => {
@@ -142,6 +160,12 @@ describe('органи: адреси', () => {
   it('телефони записані у міжнародному форматі', () => {
     for (const a of authorities) {
       for (const phone of a.phones ?? []) expect(phone).toMatch(/^\+421[\d ]+$/);
+    }
+  });
+
+  it('години прийому є в кожного відділу іноземної поліції', () => {
+    for (const a of authorities.filter((x) => x.type === 'OCP_PZ' && x.address != null)) {
+      expect((a.officeHours ?? []).length).toBe(5);
     }
   });
 });

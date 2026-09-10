@@ -789,20 +789,35 @@ resources:
   authority: MV SR
   url: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
   priority: high
-  reviewStatus: url_verified
+  reviewStatus: snapshot_taken
   locale: sk
   addedAt: '2026-09-09'
   urlCheck:
-    checkedAt: '2026-09-09'
-    result: ok_js_required
-    observed: 'Official contact directory of the Border and Foreign Police. Lists the ÚHCP PP PZ, four regional directorates
-      and 13 oddelenia cudzineckej polície with street addresses, GPS and phone numbers; page states "Upravené dňa: 7. 8.
-      2025". Page is JavaScript-rendered: a plain HTTP GET returns the site homepage, the content was read through the Jina
-      reader on 2026-09-09.'
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: Сторінку зберіг власник із браузера друком у PDF (8 стор.). Незалежне читання через Jina Reader і цей друк дали
+      ту саму таблицю територіальної компетенції — два способи, один результат.
   addedNote: 'Джерело адрес підрозділів поліції у справах іноземців. Снапшот НЕ знято: сторінка малюється JavaScript, і download_and_hash.py
     збереже лише оболонку. Територіальна компетенція підрозділів на цій сторінці не наведена.'
-  snapshot: null
   procedureIds: []
+  snapshotFormat: browser_print_pdf
+  correction:
+    at: '2026-09-10'
+    by: claude-code
+    note: 'Виправлення вчорашнього запису. 09.09.2026 я написав, що територіальної компетенції на сторінці немає. Це було
+      хибно: таблиця «Územná pôsobnosť OCP PZ» на сторінці є, я її не побачив. Компетенцію всіх 13 відділів внесено 10.09.2026.'
+  snapshot:
+    retrievedAt: '2026-09-10T17:23:08Z'
+    requestedUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 932962
+    sha256: 65fa5157f6bf64a9d9bff329a9bf02aa5ca5674d73aee05d407f42b9332de99a
+    snapshotPath: sources/snapshots/minv-hcp-contacts.pdf
+    pdf:
+      pages: 8
+      acroFormFields: 0
 - id: minv-form-11-072
   type: official_form_pdf
   authority: MV SR
@@ -1181,4 +1196,4 @@ resourceFields:
   snapshot: written by scripts/download_and_hash.py on the owner machine — sha256, bytes, signature, pages
   locale: language(s) of the resource
   procedureIds: to be filled when content/procedures exist
-snapshotRunAt: '2026-09-10T17:06:17Z'
+snapshotRunAt: '2026-09-10T17:23:08Z'

@@ -1,0 +1,20 @@
+# Дані з офіційної сторінки MV SR «Kontakty Hraničnej a cudzineckej polície».
+id: azyl-pz-humenne
+type: ASYLUM_PZ
+officialName: Oddelenie azylu Policajného zboru Humenné
+territorialCompetence: null
+address: Nemocničná 1, 066 01 Humenné
+coordinates: null
+phones:
+  - '+421 96182 3241'
+districts: []
+officeHours: []
+bookingUrl: null
+infoUrl: https://www.minv.sk/?kontakty-hranicnej-a-cudzineckej-policie
+checkedAt: '2026-09-10'
+sourceIds:
+  - minv-hcp-contacts
+notes: >-
+  Єдиний відділ притулку поліції в переліку контактів. Стосується маршрутів
+  міжнародного захисту. Годин прийому і територіальної компетенції сторінка
+  для нього не наводить. Другий номер на сторінці позначений як факс.
