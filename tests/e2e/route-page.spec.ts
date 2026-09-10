@@ -1,4 +1,13 @@
+import type { Locator, Page } from '@playwright/test';
 import { expect, test } from '@playwright/test';
+
+// Пам'ятка для друку повторює назви документів, органів і строків. Вона
+// схована на екрані, але в DOM є, тому перевірки тексту мають шукати саме
+// у видимому змісті сторінки — інакше вони ловлять невидиму копію.
+function content(page: Page): Locator {
+  return page.locator('.route-page__full');
+}
+
 
 const B2 = './uk/route/B2-employment-s23';
 
@@ -12,13 +21,13 @@ test('сторінка маршруту відкривається прямою 
 
 test('видно, що маршрут не перевірений юристом і умови неповні', async ({ page }) => {
   await page.goto(B2);
-  await expect(page.getByText('не перевірено юристом').first()).toBeVisible();
-  await expect(page.getByText('Умови цього маршруту ще не внесені повністю', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('не перевірено юристом').first()).toBeVisible();
+  await expect(content(page).getByText('Умови цього маршруту ще не внесені повністю', { exact: false })).toBeVisible();
 });
 
 test('блок офіційного бланка попереджає про словацьку мову', async ({ page }) => {
   await page.goto(B2);
-  await expect(page.getByText('T MV SR 11-057', { exact: false }).first()).toBeVisible();
+  await expect(content(page).getByText('T MV SR 11-057', { exact: false }).first()).toBeVisible();
   await expect(page.locator('.route-page__warning').first()).toContainText(
     'заповнюється СЛОВАЦЬКОЮ мовою',
   );
@@ -31,30 +40,30 @@ test('блок офіційного бланка попереджає про с�
 test('збір показано з тарифом, знижкою і звільненнями', async ({ page }) => {
   await page.goto(B2);
 
-  await expect(page.getByText('250.00 EUR')).toBeVisible();
-  await expect(page.getByText('145/1995 položka 24 písm. a) bod 2')).toBeVisible();
-  await expect(page.getByText('Юрист їх ще не перевірив', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('250.00 EUR')).toBeVisible();
+  await expect(content(page).getByText('145/1995 položka 24 písm. a) bod 2')).toBeVisible();
+  await expect(content(page).getByText('Юрист їх ще не перевірив', { exact: false })).toBeVisible();
 
   // Знижка за електронну подачу: 50 % від 250 = 125, але зниження не більше 50 € → 200.
-  await expect(page.getByText('Електронна подача: 200.00 EUR')).toBeVisible();
+  await expect(content(page).getByText('Електронна подача: 200.00 EUR')).toBeVisible();
 
   // Звільнення — головне, заради чого цей блок існує.
-  const exemptions = page.locator('.route-page__fee-exemptions li');
+  const exemptions = content(page).locator('.route-page__fee-exemptions li');
   expect(await exemptions.count()).toBeGreaterThanOrEqual(3);
-  await expect(page.getByText('молодші за 18 років', { exact: false })).toBeVisible();
-  await expect(page.getByText('може відпустити збір', { exact: false }).first()).toBeVisible();
+  await expect(content(page).getByText('молодші за 18 років', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('може відпустити збір', { exact: false }).first()).toBeVisible();
 });
 
 test('маршрут без переліку документів чесно про це каже', async ({ page }) => {
   // У §52 кроки вже описані, а перелік документів ще ні — сторінка це визнає,
   // а не лишає розділ порожнім (порожній розділ читався б як «нічого не треба»).
   await page.goto('./uk/route/C4-longterm-s52');
-  await expect(page.getByText('Перелік документів ще не складено', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('Перелік документів ще не складено', { exact: false })).toBeVisible();
 });
 
 test('виключення §52 для осіб із тимчасовим захистом описане на сторінці', async ({ page }) => {
   await page.goto('./uk/route/C4-longterm-s52');
-  await expect(page.getByText('ВІДІДЕНТІВ', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('ВІДІДЕНТІВ', { exact: false })).toBeVisible();
 });
 
 test('кожне джерело веде на сторінку «Джерела»', async ({ page }) => {
@@ -88,7 +97,7 @@ test('у режимі друку зникає навігація і з\'явля
   await page.emulateMedia({ media: 'print' });
 
   await expect(page.locator('.site-header')).toBeHidden();
-  await expect(page.getByRole('button', { name: 'Роздрукувати' })).toBeHidden();
+  await expect(page.getByRole('button', { name: 'Роздрукувати всю сторінку' })).toBeHidden();
   await expect(page.locator('.route-page__url').first()).toBeVisible();
 });
 
@@ -97,38 +106,38 @@ test('сторінка маршруту працює словацькою', asyn
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Trvalý pobyt na neobmedzený čas (§46)',
   );
-  await expect(page.getByText('Kam sa podáva').first()).toBeVisible();
+  await expect(content(page).getByText('Kam sa podáva').first()).toBeVisible();
 });
 
 test('чеклист документів побудований із закону', async ({ page }) => {
   await page.goto(B2);
 
-  const items = page.locator('.checklist__item');
+  const items = content(page).locator('.checklist__item');
   expect(await items.count()).toBeGreaterThanOrEqual(5);
 
   // Офіційна словацька назва — саме її проситиме орган.
-  await expect(page.getByText('Platný cestovný doklad').first()).toBeVisible();
+  await expect(content(page).getByText('Platný cestovný doklad').first()).toBeVisible();
   await expect(
-    page.getByText('Potvrdenie o možnosti obsadenia voľného pracovného miesta').first(),
+    content(page).getByText('Potvrdenie o možnosti obsadenia voľného pracovného miesta').first(),
   ).toBeVisible();
 
   // Строки давності документів — з §32.
-  await expect(page.getByText('не старший за 90 днів').first()).toBeVisible();
-  await expect(page.getByText('не старший за 180 днів')).toBeVisible();
+  await expect(content(page).getByText('не старший за 90 днів').first()).toBeVisible();
+  await expect(content(page).getByText('не старший за 180 днів')).toBeVisible();
 });
 
 test('видно строк рішення і на який час надають дозвіл', async ({ page }) => {
   await page.goto(B2);
-  await expect(page.getByText('не більше ніж на п\'ять років', { exact: false })).toBeVisible();
-  await expect(page.getByText('60 днів від дня надходження заяви', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('не більше ніж на п\'ять років', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('60 днів від дня надходження заяви', { exact: false })).toBeVisible();
 });
 
 test('обов\'язки після рішення відокремлені від додатків до заяви', async ({ page }) => {
   await page.goto(B2);
-  const after = page.locator('section', { hasText: 'Після рішення' }).last();
+  const after = content(page).locator('section', { hasText: 'Після рішення' }).last();
   await expect(after.locator('.checklist__title')).toContainText('Медичний висновок');
   // Той самий документ не має дублюватися серед додатків до заяви.
-  const attachments = page.locator('section', { hasText: 'Документи' }).first();
+  const attachments = content(page).locator('section', { hasText: 'Документи' }).first();
   await expect(attachments.getByText('Медичний висновок', { exact: false })).toHaveCount(0);
 });
 
@@ -136,9 +145,9 @@ test('суми фінансового забезпечення обчислен�
   await page.goto('./uk/route/B1-business-s22');
 
   // 20 × 295.22 = 5904.40 і 100 × 295.22 = 29522.00 (§32 ods. 7)
-  await expect(page.getByText('5904.40 EUR')).toBeVisible();
-  await expect(page.getByText('29522.00 EUR')).toBeVisible();
-  await expect(page.getByText('20 × 295.22', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('5904.40 EUR')).toBeVisible();
+  await expect(content(page).getByText('29522.00 EUR')).toBeVisible();
+  await expect(content(page).getByText('20 × 295.22', { exact: false })).toBeVisible();
 });
 
 test('кроки маршруту показані по порядку', async ({ page }) => {
@@ -150,8 +159,8 @@ test('кроки маршруту показані по порядку', async (
 
 test('чеклист словацькою показує ті самі документи', async ({ page }) => {
   await page.goto('./sk/route/B2-employment-s23');
-  await expect(page.getByText('Platný cestovný doklad').first()).toBeVisible();
-  await expect(page.getByText('nie starší ako 90 dní').first()).toBeVisible();
+  await expect(content(page).getByText('Platný cestovný doklad').first()).toBeVisible();
+  await expect(content(page).getByText('nie starší ako 90 dní').first()).toBeVisible();
 });
 
 test('на сторінці перелічені всі підстави для відмови (§33 ods. 6)', async ({ page }) => {
@@ -164,7 +173,7 @@ test('на сторінці перелічені всі підстави для 
   // вводив би в оману, тому число зафіксоване.
   await expect(refusal.locator('li')).toHaveCount(15);
   await expect(refusal).toContainText('фіктивний шлюб');
-  await expect(page.getByText('Це не «можуть відмовити», а «відмовлять»', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('Це не «можуть відмовити», а «відмовлять»', { exact: false })).toBeVisible();
 });
 
 test('маршрут обновлення пояснює головне: подати вчасно і що буде далі', async ({ page }) => {
@@ -181,7 +190,7 @@ test('на сторінці видно, коли пробут припиняєт
   await expect(page.getByRole('button', { name: /скасовує тимчасове проживання/ })).toBeVisible();
 
   await page.getByRole('button', { name: /припиняється саме/ }).click();
-  await expect(page.getByText('не в\'їхала на територію Словаччини протягом 180 днів', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('не в\'їхала на територію Словаччини протягом 180 днів', { exact: false })).toBeVisible();
 });
 
 test('маршрут тимчасового захисту пояснює житло і компенсацію', async ({ page }) => {
@@ -235,8 +244,8 @@ test('попереджає, що картку видадуть на строк �
 
 test('маршрут додаткового захисту пояснює, що статус прирівняний до постійного', async ({ page }) => {
   await page.goto('./uk/route/E3-subsidiary-protection-s31');
-  await expect(page.getByText('ПОСТІЙНЕ ПРОЖИВАННЯ', { exact: false })).toBeVisible();
-  await expect(page.getByText('це не обов\'язок органу, а його право', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('ПОСТІЙНЕ ПРОЖИВАННЯ', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('це не обов\'язок органу, а його право', { exact: false })).toBeVisible();
 });
 
 test('пояснює, що пробут заявляє власник житла, а не сам іноземець', async ({ page }) => {
@@ -329,10 +338,10 @@ test('непідтверджене поле в паспорті позначен
 
 test('чеклист працює і рахує відмічене, але нічого не зберігає', async ({ page }) => {
   await page.goto(B2);
-  await expect(page.getByText('Відмічено 0 із 5')).toBeVisible();
+  await expect(content(page).getByText('Відмічено 0 із 5')).toBeVisible();
 
   await page.locator('.checklist__input').first().check();
-  await expect(page.getByText('Відмічено 1 із 5')).toBeVisible();
+  await expect(content(page).getByText('Відмічено 1 із 5')).toBeVisible();
 
   // Правило CLAUDE.md §2.1: жодних сховищ браузера.
   const stored = await page.evaluate(() => ({
@@ -342,17 +351,17 @@ test('чеклист працює і рахує відмічене, але ні�
   expect(stored).toEqual({ local: 0, session: 0 });
 
   await page.getByRole('button', { name: 'Зняти всі відмітки' }).click();
-  await expect(page.getByText('Відмічено 0 із 5')).toBeVisible();
+  await expect(content(page).getByText('Відмічено 0 із 5')).toBeVisible();
 
   // Перезавантаження стирає відмітки — і це чесно, бо ми нічого не зберігаємо.
   await page.locator('.checklist__input').first().check();
   await page.reload();
-  await expect(page.getByText('Відмічено 0 із 5')).toBeVisible();
+  await expect(content(page).getByText('Відмічено 0 із 5')).toBeVisible();
 });
 
 test('кожен документ показує, чи він потрібен завжди', async ({ page }) => {
   await page.goto(B2);
-  const items = page.locator('.checklist__item');
+  const items = content(page).locator('.checklist__item');
   await expect(items.filter({ hasText: 'потрібен завжди' })).toHaveCount(2);
   await expect(items.filter({ hasText: 'залежить від ситуації' }).first()).toBeVisible();
 });
@@ -370,7 +379,7 @@ test('шкала строків показує етапи і не додає п�
   // 90 днів поліції і 60 днів міністерства — окремі точки, не «150».
   await expect(timeline).toContainText('90');
   await expect(timeline).toContainText('це окремий строк, не додається до 90');
-  await expect(page.getByText('Строки не додаються один до одного', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('Строки не додаються один до одного', { exact: false })).toBeVisible();
 });
 
 test('маршрут §23 показує строк 180 днів на підтвердження від управління праці', async ({ page }) => {
@@ -384,8 +393,8 @@ test('календар документів рахує локально і ні�
   await page.getByLabel('Коли плануєте подавати заяву?').fill('2026-06-01');
 
   // 90 днів до 01.06.2026 — це 03.03.2026; 180 днів — 03.12.2025.
-  await expect(page.getByText('Замовляти не раніше 03.03.2026', { exact: false }).first()).toBeVisible();
-  await expect(page.getByText('Замовляти не раніше 03.12.2025', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('Замовляти не раніше 03.03.2026', { exact: false }).first()).toBeVisible();
+  await expect(content(page).getByText('Замовляти не раніше 03.12.2025', { exact: false })).toBeVisible();
 
   // Дата — теж дані людини: у сховищах її бути не повинно.
   const stored = await page.evaluate(() => ({
@@ -395,11 +404,11 @@ test('календар документів рахує локально і ні�
   expect(stored).toEqual({ local: 0, session: 0 });
 
   await page.reload();
-  await expect(page.getByText('Замовляти не раніше', { exact: false })).toHaveCount(0);
+  await expect(content(page).getByText('Замовляти не раніше', { exact: false })).toHaveCount(0);
 });
 
 test('календар прямо каже, що це не юридична гарантія', async ({ page }) => {
   await page.goto(B2);
-  await expect(page.getByText('не юридична гарантія', { exact: false })).toBeVisible();
-  await expect(page.getByText('нікуди не надсилається', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('не юридична гарантія', { exact: false })).toBeVisible();
+  await expect(content(page).getByText('нікуди не надсилається', { exact: false })).toBeVisible();
 });

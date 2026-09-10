@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { RouteMemo } from './RouteMemo';
 import { useTranslation } from 'react-i18next';
 import { usePageTitle } from '../../app/usePageTitle';
 import {
@@ -23,7 +24,9 @@ export function RoutePage() {
   const { t } = useTranslation();
   const procedure = id ? procedureById(id) : undefined;
   const pageTitle = procedure
-    ? (lang === 'sk' ? procedure.title.sk : procedure.title.uk)
+    ? lang === 'sk'
+      ? procedure.title.sk
+      : procedure.title.uk
     : t('route.notFound');
   usePageTitle(pageTitle);
 
@@ -55,192 +58,215 @@ export function RoutePage() {
 
   return (
     <article className="route-page">
-      <p className="route-page__back no-print">
-        <Link to={`/${lang}/finder`}>{t('route.backToFinder')}</Link>
-      </p>
+      <RouteMemo
+        attachments={attachments}
+        lang={lang}
+        procedure={procedure}
+        routeFees={routeFees}
+        title={title}
+      />
 
-      <h1 tabIndex={-1}>{title}</h1>
+      {/* Увесь видимий зміст в одній обгортці: у режимі «пам'ятка» друк
+          ховає її цілком, а не перелічує блоки по одному. */}
+      <div className="route-page__full">
+        <p className="route-page__back no-print">
+          <Link to={`/${lang}/finder`}>{t('route.backToFinder')}</Link>
+        </p>
 
-      <p className="route-page__badges">
-        <span className={`badge badge--${status === 'reviewed' ? 'success' : 'warning'}`}>
-          {t(`results.status.${status}`)}
-        </span>
-      </p>
+        <h1 tabIndex={-1}>{title}</h1>
 
-      <div className="disclaimer">
-        <p>{t('route.disclaimer')}</p>
-        {!procedure.conditionsComplete && <p>{t('route.conditionsIncomplete')}</p>}
-      </div>
+        <p className="route-page__badges">
+          <span className={`badge badge--${status === 'reviewed' ? 'success' : 'warning'}`}>
+            {t(`results.status.${status}`)}
+          </span>
+        </p>
 
-      <div className="no-print route-page__save">
-        <button type="button" className="button" onClick={() => window.print()}>
-          {t('route.saveAsPdf')}
-        </button>
-        <p className="route-page__note">{t('route.saveAsPdfHint')}</p>
-      </div>
+        <div className="disclaimer">
+          <p>{t('route.disclaimer')}</p>
+          {!procedure.conditionsComplete && <p>{t('route.conditionsIncomplete')}</p>}
+        </div>
 
-      {/* На папері не видно, звідки аркуш. Друкуємо адресу сторінки,
+        <div className="no-print route-page__save">
+          <button className="button" onClick={() => printAs('memo')} type="button">
+            {t('route.saveMemo')}
+          </button>
+          <button
+            className="button button--secondary"
+            onClick={() => printAs('full')}
+            type="button"
+          >
+            {t('route.printFull')}
+          </button>
+          <p className="route-page__note">{t('route.saveAsPdfHint')}</p>
+        </div>
+
+        {/* На папері не видно, звідки аркуш. Друкуємо адресу сторінки,
           щоб людина могла повернутися до неї або показати її в органі. */}
-      <p className="print-only route-page__print-source">
-        {typeof window === 'undefined' ? '' : window.location.href}
-      </p>
+        <p className="print-only route-page__print-source">
+          {typeof window === 'undefined' ? '' : window.location.href}
+        </p>
 
-      <SummaryPanel procedure={procedure} lang={lang} />
+        <SummaryPanel procedure={procedure} lang={lang} />
 
-      <DeadlineTimeline procedure={procedure} lang={lang} />
+        <DeadlineTimeline procedure={procedure} lang={lang} />
 
-      <Section title={t('route.steps')}>
-        {stepsBefore.length === 0 ? (
-          <p className="route-page__missing">{t('route.stepsMissing')}</p>
-        ) : (
-          <ol className="route-page__steps">
-            {stepsBefore.map((step) => (
-              <li key={step.id}>
+        <Section title={t('route.steps')}>
+          {stepsBefore.length === 0 ? (
+            <p className="route-page__missing">{t('route.stepsMissing')}</p>
+          ) : (
+            <ol className="route-page__steps">
+              {stepsBefore.map((step) => (
+                <li key={step.id}>
+                  <strong>{localized(step.title, lang)}</strong>
+                  {step.body && <p>{localized(step.body, lang)}</p>}
+                </li>
+              ))}
+            </ol>
+          )}
+        </Section>
+
+        <Section title={t('route.documents')}>
+          {attachments.length === 0 ? (
+            <p className="route-page__missing">{t('route.documentsMissing')}</p>
+          ) : (
+            <>
+              <p className="route-page__note">{t('route.documentsChecklistHint')}</p>
+              <Checklist docs={attachments} lang={lang} withPlanner />
+            </>
+          )}
+        </Section>
+
+        {(afterDecisionDocs.length > 0 || stepsAfter.length > 0) && (
+          <Section title={t('route.afterDecision')}>
+            <p className="route-page__note">{t('route.afterDecisionHint')}</p>
+            {stepsAfter.map((step) => (
+              <div key={step.id} className="route-page__after-step">
                 <strong>{localized(step.title, lang)}</strong>
                 {step.body && <p>{localized(step.body, lang)}</p>}
-              </li>
+              </div>
             ))}
-          </ol>
+            <Checklist docs={afterDecisionDocs} lang={lang} />
+          </Section>
         )}
-      </Section>
 
-      <Section title={t('route.documents')}>
-        {attachments.length === 0 ? (
-          <p className="route-page__missing">{t('route.documentsMissing')}</p>
-        ) : (
-          <>
-            <p className="route-page__note">{t('route.documentsChecklistHint')}</p>
-            <Checklist docs={attachments} lang={lang} withPlanner />
-          </>
-        )}
-      </Section>
-
-      {(afterDecisionDocs.length > 0 || stepsAfter.length > 0) && (
-        <Section title={t('route.afterDecision')}>
-          <p className="route-page__note">{t('route.afterDecisionHint')}</p>
-          {stepsAfter.map((step) => (
-            <div key={step.id} className="route-page__after-step">
-              <strong>{localized(step.title, lang)}</strong>
-              {step.body && <p>{localized(step.body, lang)}</p>}
-            </div>
-          ))}
-          <Checklist docs={afterDecisionDocs} lang={lang} />
+        <Section title={t('route.form')}>
+          {forms.length === 0 ? (
+            <p className="route-page__missing">{t('route.formNone')}</p>
+          ) : (
+            forms.map((form) => <FormBlock key={form.id} form={form} />)
+          )}
         </Section>
-      )}
 
-      <Section title={t('route.form')}>
-        {forms.length === 0 ? (
-          <p className="route-page__missing">{t('route.formNone')}</p>
-        ) : (
-          forms.map((form) => <FormBlock key={form.id} form={form} />)
+        <Section title={t('route.fees')}>
+          {routeFees.length === 0 ? (
+            <p className="route-page__missing">{t('route.feesNone')}</p>
+          ) : (
+            <>
+              <p className="route-page__warning">{t('route.feesWarning')}</p>
+              {routeFees.map((fee) => (
+                <FeeBlock key={fee.id} fee={fee} lang={lang} />
+              ))}
+            </>
+          )}
+        </Section>
+
+        <Section title={t('route.authority')}>
+          {procedure.authorityIds.map((aid) => {
+            const authority = authorityById(aid);
+            if (!authority) return null;
+            return (
+              <div key={aid} className="route-page__authority">
+                <h3>{authority.officialName}</h3>
+                {authority.address && (
+                  <p className="route-page__authority-address">{authority.address}</p>
+                )}
+                {(authority.phones ?? []).length > 0 && (
+                  <p className="route-page__note">
+                    {t('authorities.phone')}: {(authority.phones ?? []).join(' \u00b7 ')}
+                  </p>
+                )}
+                {authority.infoUrl && (
+                  <p>
+                    <a href={authority.infoUrl} rel="noreferrer noopener" target="_blank">
+                      {authority.infoUrl}
+                    </a>
+                  </p>
+                )}
+                {authority.notes && <p className="route-page__note">{authority.notes}</p>}
+              </div>
+            );
+          })}
+        </Section>
+
+        {procedure.openQuestions.length > 0 && (
+          <Section title={t('route.openQuestions')}>
+            <ul className="route-page__open">
+              {procedure.openQuestions.map((q) => (
+                <li key={q}>{q}</li>
+              ))}
+            </ul>
+          </Section>
         )}
-      </Section>
 
-      <Section title={t('route.fees')}>
-        {routeFees.length === 0 ? (
-          <p className="route-page__missing">{t('route.feesNone')}</p>
-        ) : (
-          <>
-            <p className="route-page__warning">{t('route.feesWarning')}</p>
-            {routeFees.map((fee) => (
-              <FeeBlock key={fee.id} fee={fee} lang={lang} />
+        {notes.length > 0 && (
+          <section className="route-page__section route-page__legal-notes">
+            <h2>{t('route.legalNotes')}</h2>
+            <p className="route-page__note">{t('route.legalNotesHint')}</p>
+            {notes.map((note) => (
+              <CollapsibleNote
+                key={note.id}
+                title={localized(note.title, lang)}
+                count={note.items.length}
+              >
+                {note.intro && <p>{localized(note.intro, lang)}</p>}
+                {/* Дані з YAML читаються без Zod, тож поля може не бути. */}
+                {(note.thresholds ?? []).map((ref, i) => {
+                  const base = thresholds.find((th) => th.id === ref.thresholdId);
+                  if (!base) return null;
+                  return (
+                    <p key={i} className="checklist__amount">
+                      <strong>
+                        {derivedAmount(base.baseValue, ref.multiplier).toFixed(2)} EUR
+                      </strong>{' '}
+                      <span className="route-page__note">
+                        ({ref.multiplier} × {base.baseValue.toFixed(2)}) —{' '}
+                        {localized(ref.appliesWhen, lang)}
+                      </span>
+                    </p>
+                  );
+                })}
+                <ol className="route-page__grounds">
+                  {note.items.map((item) => (
+                    <li key={item.id}>{localized(item.text, lang)}</li>
+                  ))}
+                </ol>
+              </CollapsibleNote>
             ))}
-          </>
+          </section>
         )}
-      </Section>
 
-      <Section title={t('route.authority')}>
-        {procedure.authorityIds.map((aid) => {
-          const authority = authorityById(aid);
-          if (!authority) return null;
-          return (
-            <div key={aid} className="route-page__authority">
-              <h3>{authority.officialName}</h3>
-              {authority.address && <p className="route-page__authority-address">{authority.address}</p>}
-              {(authority.phones ?? []).length > 0 && (
-                <p className="route-page__note">
-                  {t('authorities.phone')}: {(authority.phones ?? []).join(' \u00b7 ')}
-                </p>
-              )}
-              {authority.infoUrl && (
-                <p>
-                  <a href={authority.infoUrl} rel="noreferrer noopener" target="_blank">
-                    {authority.infoUrl}
-                  </a>
-                </p>
-              )}
-              {authority.notes && <p className="route-page__note">{authority.notes}</p>}
-            </div>
-          );
-        })}
-      </Section>
-
-      {procedure.openQuestions.length > 0 && (
-        <Section title={t('route.openQuestions')}>
-          <ul className="route-page__open">
-            {procedure.openQuestions.map((q) => (
-              <li key={q}>{q}</li>
+        <Section title={t('route.sources')}>
+          <ul className="route-page__sources">
+            {allSources.map((source) => (
+              <li key={source.id}>
+                <Link to={`/${lang}/sources#${source.id}`}>{source.title}</Link>
+                {source.checkedAt && (
+                  <span className="route-page__note">
+                    {' '}
+                    · {t('sources.checkedAt')}: {formatDate(source.checkedAt)}
+                  </span>
+                )}
+                {/* Для друку адреса має бути видимою: на папері посилання не клікнеш. */}
+                {(source.staticUrl ?? source.pinnedUrl ?? source.url) && (
+                  <span className="print-only route-page__url">
+                    {source.staticUrl ?? source.pinnedUrl ?? source.url}
+                  </span>
+                )}
+              </li>
             ))}
           </ul>
         </Section>
-      )}
-
-      {notes.length > 0 && (
-        <section className="route-page__section route-page__legal-notes">
-          <h2>{t('route.legalNotes')}</h2>
-          <p className="route-page__note">{t('route.legalNotesHint')}</p>
-          {notes.map((note) => (
-            <CollapsibleNote
-              key={note.id}
-              title={localized(note.title, lang)}
-              count={note.items.length}
-            >
-              {note.intro && <p>{localized(note.intro, lang)}</p>}
-              {/* Дані з YAML читаються без Zod, тож поля може не бути. */}
-              {(note.thresholds ?? []).map((ref, i) => {
-                const base = thresholds.find((th) => th.id === ref.thresholdId);
-                if (!base) return null;
-                return (
-                  <p key={i} className="checklist__amount">
-                    <strong>{derivedAmount(base.baseValue, ref.multiplier).toFixed(2)} EUR</strong>{' '}
-                    <span className="route-page__note">
-                      ({ref.multiplier} × {base.baseValue.toFixed(2)}) —{' '}
-                      {localized(ref.appliesWhen, lang)}
-                    </span>
-                  </p>
-                );
-              })}
-              <ol className="route-page__grounds">
-                {note.items.map((item) => (
-                  <li key={item.id}>{localized(item.text, lang)}</li>
-                ))}
-              </ol>
-            </CollapsibleNote>
-          ))}
-        </section>
-      )}
-
-      <Section title={t('route.sources')}>
-        <ul className="route-page__sources">
-          {allSources.map((source) => (
-            <li key={source.id}>
-              <Link to={`/${lang}/sources#${source.id}`}>{source.title}</Link>
-              {source.checkedAt && (
-                <span className="route-page__note">
-                  {' '}
-                  · {t('sources.checkedAt')}: {formatDate(source.checkedAt)}
-                </span>
-              )}
-              {/* Для друку адреса має бути видимою: на папері посилання не клікнеш. */}
-              {(source.staticUrl ?? source.pinnedUrl ?? source.url) && (
-                <span className="print-only route-page__url">
-                  {source.staticUrl ?? source.pinnedUrl ?? source.url}
-                </span>
-              )}
-            </li>
-          ))}
-        </ul>
-      </Section>
+      </div>
     </article>
   );
 }
@@ -318,6 +344,20 @@ function DeadlineTimeline({ procedure, lang }: { procedure: Procedure; lang: str
       </ol>
     </Section>
   );
+}
+
+// Один window.print() має давати два різні аркуші, тому режим друку живе
+// в атрибуті на <html>, а не в стані React: CSS друку читає саме його.
+// afterprint повертає атрибут назад — інакше наступний Ctrl+P надрукував би
+// не те, що людина очікує.
+function printAs(mode: 'memo' | 'full'): void {
+  document.documentElement.dataset.printMode = mode;
+  const reset = () => {
+    delete document.documentElement.dataset.printMode;
+    window.removeEventListener('afterprint', reset);
+  };
+  window.addEventListener('afterprint', reset);
+  window.print();
 }
 
 function SummaryPanel({ procedure, lang }: { procedure: Procedure; lang: string | undefined }) {
@@ -421,11 +461,7 @@ function Checklist({
       </ul>
       {done > 0 && (
         <p className="no-print">
-          <button
-            type="button"
-            className="button button--secondary"
-            onClick={() => setChecked({})}
-          >
+          <button type="button" className="button button--secondary" onClick={() => setChecked({})}>
             {t('route.checklistReset')}
           </button>
         </p>
@@ -464,7 +500,9 @@ function DocumentItem({
       <div>
         <label className="checklist__title" htmlFor={inputId}>
           {localized(doc.title, lang)}
-          <span className={`badge badge--${doc.requirement === 'required' ? 'success' : 'warning'}`}>
+          <span
+            className={`badge badge--${doc.requirement === 'required' ? 'success' : 'warning'}`}
+          >
             {t(`route.requirement.${doc.requirement ?? 'conditional'}`)}
           </span>
           {doc.maxAgeDays !== null && (
@@ -490,11 +528,10 @@ function DocumentItem({
           if (!base) return null;
           return (
             <p key={i} className="checklist__amount">
-              <strong>
-                {derivedAmount(base.baseValue, ref.multiplier).toFixed(2)} EUR
-              </strong>{' '}
+              <strong>{derivedAmount(base.baseValue, ref.multiplier).toFixed(2)} EUR</strong>{' '}
               <span className="route-page__note">
-                ({ref.multiplier} × {base.baseValue.toFixed(2)}) — {localized(ref.appliesWhen, lang)}
+                ({ref.multiplier} × {base.baseValue.toFixed(2)}) —{' '}
+                {localized(ref.appliesWhen, lang)}
               </span>
             </p>
           );

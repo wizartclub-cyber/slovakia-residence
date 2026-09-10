@@ -308,8 +308,10 @@
       "conditional": "závisí od situácie",
       "exception": "výnimka"
     },
-    "saveAsPdf": "Uložiť ako PDF",
-    "saveAsPdfHint": "Otvorí sa okno tlače — vyberte v ňom „Uložiť ako PDF“. Na iPhone: „Zdieľať“ → „Uložiť do Súborov“. Tlačí sa krátka pamätka na 1 – 2 strany, bez časti „Čo ešte hovorí zákon“."
+    "saveAsPdfHint": "Otvorí sa okno tlače — vyberte v ňom „Uložiť ako PDF“. Na iPhone: „Zdieľať“ → „Uložiť do Súborov“.",
+    "saveMemo": "Uložiť pamätku (1 strana A4)",
+    "printFull": "Vytlačiť celú stránku",
+    "memoDisclaimer": "Toto nie je právne poradenstvo. Aktuálnosť si overte na úrade: zákon sa mohol zmeniť po dátume nižšie."
   },
   "catalogue": {
     "title": "Všetky cesty",
