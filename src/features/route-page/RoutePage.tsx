@@ -72,10 +72,17 @@ export function RoutePage() {
         {!procedure.conditionsComplete && <p>{t('route.conditionsIncomplete')}</p>}
       </div>
 
-      <p className="no-print">
+      <div className="no-print route-page__save">
         <button type="button" className="button" onClick={() => window.print()}>
-          {t('route.print')}
+          {t('route.saveAsPdf')}
         </button>
+        <p className="route-page__note">{t('route.saveAsPdfHint')}</p>
+      </div>
+
+      {/* На папері не видно, звідки аркуш. Друкуємо адресу сторінки,
+          щоб людина могла повернутися до неї або показати її в органі. */}
+      <p className="print-only route-page__print-source">
+        {typeof window === 'undefined' ? '' : window.location.href}
       </p>
 
       <SummaryPanel procedure={procedure} lang={lang} />
@@ -179,7 +186,7 @@ export function RoutePage() {
       )}
 
       {notes.length > 0 && (
-        <section className="route-page__section">
+        <section className="route-page__section route-page__legal-notes">
           <h2>{t('route.legalNotes')}</h2>
           <p className="route-page__note">{t('route.legalNotesHint')}</p>
           {notes.map((note) => (

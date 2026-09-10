@@ -11,7 +11,8 @@
 
   body {
     background: #fff;
-    font-size: 11pt;
+    font-size: 10pt;
+    line-height: 1.35;
   }
 
   .site-header,
@@ -35,6 +36,10 @@
     padding: 0;
   }
 
+  p {
+    margin: 0 0 5pt;
+  }
+
   .card,
   .route-page__form,
   .route-page__fee,
@@ -47,17 +52,50 @@
     break-inside: avoid;
   }
 
-  .route-page__section {
-    break-inside: avoid;
+  /* Раніше тут стояло break-inside: avoid на цілій секції. Секція
+     «Документи» вища за аркуш, тому правило не могло виконатись, а браузер
+     все одно починав її з нової сторінки і лишав порожні низи. Тримаємо
+     нерозривними лише картки — блоки, які справді ламати не можна. */
+  .route-page__section > h2 {
+    break-after: avoid;
+  }
+
+  /* Пам'ятка, а не копія сторінки. Розділ «Що ще каже закон» — це десяток
+     згорнутих приміток; на папері вони давали 9 аркушів замість двох, і
+     людина несла в орган пачку, у якій головне губилося. Він лишається на
+     екрані, де його можна розгорнути за потреби. */
+  .route-page__legal-notes {
+    display: none !important;
+  }
+
+  /* Адреса сторінки дрібним рядком під заголовком — щоб аркуш вів назад. */
+  .route-page__print-source {
+    font-size: 8pt;
+    color: #444;
+    word-break: break-all;
+    margin: 0 0 10pt;
+  }
+
+  /* Порожні квадратики чеклиста мають бути видимі на папері: людина
+     відмічає документи ручкою, поки збирає їх. */
+  .checklist input[type='checkbox'] {
+    appearance: none;
+    width: 10pt;
+    height: 10pt;
+    border: 1px solid #333;
+    border-radius: 2px;
+    vertical-align: -1pt;
   }
 
   h1 {
-    font-size: 18pt;
+    font-size: 16pt;
+    margin-bottom: 4pt;
   }
 
   h2 {
-    font-size: 14pt;
-    margin-top: 16pt;
+    font-size: 12.5pt;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
   }
 
   h3 {

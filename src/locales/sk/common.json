@@ -267,7 +267,6 @@
     "backToFinder": "← Späť na dotazník",
     "disclaimer": "Táto stránka opisuje konanie a ukazuje, odkiaľ pochádza každý údaj. Nie je rozhodnutím vo vašej veci a nezaručuje právo na pobyt.",
     "conditionsIncomplete": "Podmienky tejto cesty ešte nie sú zapísané úplne. Nepovažujte zoznam nižšie za úplný — orgán môže vyžadovať viac.",
-    "print": "Vytlačiť",
     "steps": "Kroky",
     "stepsMissing": "Kroky ešte nie sú opísané. Doplníme ich po vyhotovení kópií úradných zdrojov a ich kontrole právnikom.",
     "documents": "Doklady",
@@ -308,7 +307,9 @@
       "required": "vždy potrebný",
       "conditional": "závisí od situácie",
       "exception": "výnimka"
-    }
+    },
+    "saveAsPdf": "Uložiť ako PDF",
+    "saveAsPdfHint": "Otvorí sa okno tlače — vyberte v ňom „Uložiť ako PDF“. Na iPhone: „Zdieľať“ → „Uložiť do Súborov“. Tlačí sa krátka pamätka na 1 – 2 strany, bez časti „Čo ešte hovorí zákon“."
   },
   "catalogue": {
     "title": "Všetky cesty",
