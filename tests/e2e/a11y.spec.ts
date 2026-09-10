@@ -8,6 +8,7 @@
  */
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { openNav } from './nav-helper';
 
 const PAGES = ['', 'finder', 'routes', 'authorities', 'sources', 'about', 'privacy', 'route/B2-employment-s23'];
 const LOCALES = ['uk', 'sk'];
@@ -57,6 +58,7 @@ test('перехід між сторінками оголошується скр
   // Перше завантаження браузер озвучує сам — область оголошень порожня.
   await expect(page.locator('[role="status"]')).toBeEmpty();
 
+  await openNav(page, 'Меню');
   await page.getByRole('navigation', { name: 'Головне меню' }).getByRole('link', { name: 'Джерела' }).click();
 
   await expect(page.locator('[role="status"]')).toContainText('Джерела');

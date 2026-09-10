@@ -139,11 +139,81 @@ a {
   text-decoration: none;
 }
 
+/* Меню. Мобільний вигляд — основний: сім пунктів у рядок на телефоні
+   з'їдали третину екрана, тому до 860px вони ховаються за кнопкою. */
+.site-nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-inline-start: auto;
+  min-height: 44px;
+  padding: 6px 14px 6px 10px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.site-nav-toggle__bars {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.site-nav-toggle__bars::before,
+.site-nav-toggle__bars::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.site-nav-toggle__bars::before {
+  top: -6px;
+}
+
+.site-nav-toggle__bars::after {
+  top: 6px;
+}
+
+/* Розкрите меню — кнопка стає хрестиком. */
+.site-nav-toggle__bars[data-open='true'] {
+  background: transparent;
+}
+
+.site-nav-toggle__bars[data-open='true']::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.site-nav-toggle__bars[data-open='true']::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.site-header__menu {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  order: 3;
+  padding-bottom: 12px;
+}
+
+.site-header__menu[data-open='true'] {
+  display: flex;
+}
+
 .site-nav {
   display: flex;
-  gap: 4px;
-  margin-inline-start: auto;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .site-nav a {
@@ -152,6 +222,34 @@ a {
   text-decoration: none;
   color: var(--text-secondary);
   transition: background var(--dur-fast) var(--ease);
+}
+
+/* На телефоні пункт меню — рядок на всю ширину: промахнутися важче. */
+@media (max-width: 859px) {
+  .site-nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}
+
+@media (min-width: 860px) {
+  .site-nav-toggle {
+    display: none;
+  }
+
+  /* Обгортка зникає з розкладки — nav і перемикач мови стають прямими
+     дітьми шапки, як і були до появи бургера. */
+  .site-header__menu {
+    display: contents;
+  }
+
+  .site-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-inline-start: auto;
+  }
 }
 
 .site-nav a:hover {

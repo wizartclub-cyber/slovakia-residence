@@ -19,7 +19,9 @@
   "a11y": {
     "skipToContent": "Preskočiť na hlavný obsah",
     "mainNav": "Hlavné menu",
-    "language": "Výber jazyka"
+    "language": "Výber jazyka",
+    "openMenu": "Menu",
+    "closeMenu": "Zavrieť"
   },
   "baseline": {
     "label": "Právny stav",

@@ -19,7 +19,9 @@
   "a11y": {
     "skipToContent": "Перейти до основного змісту",
     "mainNav": "Головне меню",
-    "language": "Вибір мови"
+    "language": "Вибір мови",
+    "openMenu": "Меню",
+    "closeMenu": "Закрити"
   },
   "baseline": {
     "label": "Стан права",

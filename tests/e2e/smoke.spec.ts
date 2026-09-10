@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { openNav } from './nav-helper';
 
 test('корінь веде на українську версію', async ({ page }) => {
   await page.goto('./');
@@ -17,6 +18,7 @@ test('перемикач мови міняє адресу і текст, збе�
   await page.goto('./uk/privacy');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Приватність');
 
+  await openNav(page, 'Меню');
   await page.getByRole('group', { name: 'Вибір мови' }).getByText('Slovenčina').click();
 
   await expect(page).toHaveURL(/\/sk\/privacy$/);

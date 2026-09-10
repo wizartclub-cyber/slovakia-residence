@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { expect, test } from '@playwright/test';
 import { parse } from 'yaml';
+import { openNav } from './nav-helper';
 
 test('сторінка «Джерела» показує понад 20 записів із датами перевірки', async ({ page }) => {
   await page.goto('./uk/sources');
@@ -61,6 +62,7 @@ test('джерело зі збереженою копією показує ко�
 
 test('сторінка джерел існує словацькою і доступна з меню', async ({ page }) => {
   await page.goto('./sk/');
+  await openNav(page, 'Menu');
   await page.getByRole('navigation', { name: 'Hlavné menu' }).getByRole('link', { name: 'Zdroje' }).click();
 
   await expect(page).toHaveURL(/\/sk\/sources$/);
