@@ -2,25 +2,28 @@
 # Правити реєстр, потім `pnpm sources:build`.
 id: mzv-residence-master-guidance
 authority: MZV SR
-title: Residence of foreign nationals in Slovakia — usmernenie MZV SR
-url: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
+title: Podmienky pobytu na Slovensku — usmernenie MZV SR (sk)
+url: https://www.mzv.sk/sluzby/viza-a-pobyt-na-slovensku/pobyt-na-slovensku
 pinnedUrl: null
 staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
-evidence: 22 sections incl. fees, documents by purpose (§22–§30, Blue Card), national visa for submitting
-  residence application
-notes: null
-locale: en
+evidence: "Сторінку зберіг власник із браузера друком у PDF, з розгорнутими розділами: 18 сторінок замість 6 у
+  першій спробі. Сторінка сама вказує «Aktualizované 16.08.2026». Містить перелік цілей пробуту, різницю між
+  прechodným і trvalým, і — головне — розділ «Kde môžete podať žiadosť»: коли заяву можна подати на поліції в
+  Словаччині, а коли лише в закордонній установі."
+notes: Розділ про місце подання заяви ще не внесений у дані маршрутів — там є винятки (наприклад, заяву на
+  пробут з метою підприємництва НЕ можна подати на поліції в СР). Потрібна окрема робота.
+locale: sk
 lawNumber: null
 provision: null
 publicationDate: null
 effectiveFrom: null
 effectiveTo: null
-checkedAt: 2026-09-07
+checkedAt: 2026-09-10
 sourceType: official_web_guidance
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/mzv-residence-master-guidance.pdf
+sha256: 016a6cea630ab6aecc531729fa40adbd959e5b95300f59dfa94cc394dd9f3c5c

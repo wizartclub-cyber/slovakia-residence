@@ -11,7 +11,9 @@
       "Read(//tmp/**)",
       "Bash(grep -oE '\\\\[[^]]{5,90}\\\\]\\\\\\(https://www\\\\.minv\\\\.sk/[^\\)]*\\\\\\)')",
       "Bash(xxd)",
-      "Bash(grep -oE 'href=\"[^\"]{5,90}\"' /tmp/pol.html)"
+      "Bash(grep -oE 'href=\"[^\"]{5,90}\"' /tmp/pol.html)",
+      "Bash(python3 -c \"import json,sys;[print\\('  ',r['url'],'|',\\(r.get\\('title'\\) or ''\\)[:60]\\) for r in json.load\\(sys.stdin\\).get\\('results',[]\\)]\")",
+      "Bash(grep -oE '\\\\[[^]]{3,90}\\\\]\\\\\\(https://www\\\\.minv\\\\.sk/\\\\?application-for-national-visa-1&subor=[0-9]+\\\\\\)')"
     ]
   }
 }

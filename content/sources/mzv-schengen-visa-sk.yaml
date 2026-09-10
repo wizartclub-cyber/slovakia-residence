@@ -1,9 +1,9 @@
 # ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
 # Правити реєстр, потім `pnpm sources:build`.
-id: mzv-national-visa-en
+id: mzv-schengen-visa-sk
 authority: MZV SR
-title: APPLICATION FOR NATIONAL VISA (en)
-url: https://www.mzv.sk/documents/10182/16274933/004-ziadost-o-narodne-vizum-EN.pdf/3e457269-c704-45a0-3ec5-5ce02f650af9
+title: Harmonizovaný formulár — ŽIADOSŤ O SCHENGENSKÉ VÍZUM (sk)
+url: https://www.mzv.sk/documents/10182/16274933/001-ziadost-o-schengenske-vizum-SK.pdf/6de2a6dd-895e-6521-bddc-08ad72123efc
 pinnedUrl: null
 staticUrl: null
 formCode: null
@@ -14,8 +14,8 @@ potentiallyStale: false
 evidence: "Розмір файлу збігається з офіційним переліком «Vízové formuláre» на mzv.sk байт у байт (перелік
   датовано 28.02.2025). Пряме завантаження скриптом неможливе: mzv.sk віддає 403 будь-якому клієнту, крім
   справжнього браузера, тому файл зберіг власник."
-notes: null
-locale: en+sk
+notes: Єдиний формуляр на весь Шенген (Vízový kódex, príloha I).
+locale: sk
 lawNumber: null
 provision: null
 publicationDate: null
@@ -23,5 +23,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-10
 sourceType: official_form
-snapshotPath: sources/snapshots/mzv-national-visa-en.pdf
-sha256: 054a7aedff63c21e37c63e7aaf0280d5a058a5fa89604d2f0544560382a75f77
+snapshotPath: sources/snapshots/mzv-schengen-visa-sk.pdf
+sha256: 8c16f925e4e516fb349cbc42cb6ac561d95cee179f876ea45c24bcf1c72aa7d6

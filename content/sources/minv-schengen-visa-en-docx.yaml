@@ -1,0 +1,26 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-schengen-visa-en-docx
+authority: MV SR
+title: Application for Schengen visa — редагований формуляр MV SR (en)
+url: https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza&subor=558669
+pinnedUrl: null
+staticUrl: null
+formCode: null
+completionLanguage: null
+reviewStatus: draft
+registryStatus: snapshot_taken
+potentiallyStale: false
+evidence: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у
+  редагованому форматі, MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+notes: null
+locale: en
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-10
+sourceType: official_form
+snapshotPath: sources/snapshots/minv-schengen-visa-en-docx.docx
+sha256: 8d009b21bcaf5e7abd2543e14dae39ed5abb2b9381d1fa6b6f307e36bae0f4cd

@@ -1,0 +1,26 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-national-visa-en-docx
+authority: MV SR
+title: Application for national visa — редагований формуляр MV SR (en)
+url: https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza&subor=558671
+pinnedUrl: null
+staticUrl: null
+formCode: null
+completionLanguage: null
+reviewStatus: draft
+registryStatus: snapshot_taken
+potentiallyStale: false
+evidence: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у
+  редагованому форматі, MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+notes: null
+locale: en
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-10
+sourceType: official_form
+snapshotPath: sources/snapshots/minv-national-visa-en-docx.docx
+sha256: 1e5d3751771f41e5a3a545eb474d034722b607dbddeefbfb03440e101f161912

@@ -1,9 +1,9 @@
 # ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
 # Правити реєстр, потім `pnpm sources:build`.
-id: mzv-national-visa-guidance
+id: mzv-schengen-visa-guidance
 authority: MZV SR
-title: Národné vízum — usmernenie MZV SR (sk)
-url: https://www.mzv.sk/sluzby/informacie-pre-cudzincov/narodne-vizum
+title: Schengenské vízum — usmernenie MZV SR (sk)
+url: https://www.mzv.sk/sluzby/viza-a-pobyt-na-slovensku/schengenske-vizum
 pinnedUrl: null
 staticUrl: null
 formCode: null
@@ -14,9 +14,7 @@ potentiallyStale: false
 evidence: "Сторінку зберіг власник із браузера друком у PDF. Це НЕ оригінальний HTML з сервера: верстка
   втрачена, контрольна сума описує роздруківку, а не файл сайту. Як доказ слабше за снапшот, але сильніше за
   переказ — саме так це й позначено."
-notes: "Підтверджує строки національної візи: 90 днів на отримання вже наданого пробуту і 120 днів на подання
-  заяви про пробут на території СР. Збір за візу для подання заяви на поліції — 90 eur. Раніше в реєстрі
-  стояла англійська версія цієї ж сторінки; словацька є першоджерелом."
+notes: "Строки розгляду: 15 днів, продовження до 45; для родичів громадян ЄС — до 10 днів."
 locale: sk
 lawNumber: null
 provision: null
@@ -25,5 +23,5 @@ effectiveFrom: null
 effectiveTo: null
 checkedAt: 2026-09-10
 sourceType: official_web_guidance
-snapshotPath: sources/snapshots/mzv-national-visa-guidance.pdf
-sha256: 663286c375f15812ee537d8e79ed94dc2df451437a7f5bc5699d647645dd1b3e
+snapshotPath: sources/snapshots/mzv-schengen-visa-guidance.pdf
+sha256: 68f0de31d5d452fadb6369b2aff61a2902b72d25dc0df051ad786c27b663ead4

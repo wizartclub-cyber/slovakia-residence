@@ -24,10 +24,19 @@ test('джерела згруповані за юридичною силою', a
   await expect(page.getByRole('heading', { level: 2, name: 'Офіційні бланки' })).toBeVisible();
 });
 
-test('джерело без офіційної адреси чесно позначене', async ({ page }) => {
+test('джерело без офіційної адреси позначене — або таких джерел немає', async ({ page }) => {
+  // Станом на 10.09.2026 адресу мають усі 40 джерел, тож позначки може не бути
+  // жодної. Тест стежить за протилежним: якщо джерело без адреси з'явиться,
+  // воно МУСИТЬ бути позначене, а не тихо показане як повноцінне.
+  const dir = fileURLToPath(new URL('../../content/sources', import.meta.url));
+  const withoutUrl = readdirSync(dir).filter((f) => {
+    const data = parse(readFileSync(join(dir, f), 'utf8')) as { url: string | null };
+    return data.url === null;
+  }).length;
+
   await page.goto('./uk/sources');
   const missing = page.getByText('офіційної адреси ще немає', { exact: false });
-  expect(await missing.count()).toBeGreaterThanOrEqual(1);
+  expect(await missing.count()).toBe(withoutUrl);
 });
 
 test('кількість збережених копій відповідає даним', async ({ page }) => {

@@ -29,7 +29,11 @@ eligibilityRules:
     when: { field: location, equals: abroad }
     localizedContentKey: null
     sourceIds: [slovlex-404-2011]
-formSourceIds: []
+formSourceIds:
+  - mzv-schengen-visa-sk
+  - mzv-schengen-visa-en
+  - minv-schengen-visa-sk-docx
+  - minv-schengen-visa-en-docx
 authorityIds: [zastupitelsky-urad, mv-sr]
 feeRuleIds: [fee-visa-at-border, fee-short-stay-visa-extension]
 documentIds: []

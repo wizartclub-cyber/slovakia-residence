@@ -9,10 +9,11 @@ staticUrl: null
 formCode: null
 completionLanguage: null
 reviewStatus: draft
-registryStatus: fetch_pending
+registryStatus: snapshot_taken
 potentiallyStale: false
-evidence: ŽIADOSŤ O NÁRODNÉ VÍZUM, Slovak only, MZV data-controller notice; no form code visible; NOT a
-  Ukrainian/Slovak form — earlier handoff claim of uk/sk form remains unconfirmed
+evidence: "Розмір файлу збігається з офіційним переліком «Vízové formuláre» на mzv.sk байт у байт (перелік
+  датовано 28.02.2025). Пряме завантаження скриптом неможливе: mzv.sk віддає 403 будь-якому клієнту, крім
+  справжнього браузера, тому файл зберіг власник."
 notes: null
 locale: sk
 lawNumber: null
@@ -20,7 +21,7 @@ provision: null
 publicationDate: null
 effectiveFrom: null
 effectiveTo: null
-checkedAt: 2026-09-07
+checkedAt: 2026-09-10
 sourceType: official_form
-snapshotPath: null
-sha256: null
+snapshotPath: sources/snapshots/mzv-national-visa-sk.pdf
+sha256: 06612ecc93a9ecb1ab5ce4e0ca1fea411074894f299ada959341c3b22b2ea76f

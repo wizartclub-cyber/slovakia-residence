@@ -1,0 +1,28 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: mzv-students-guidance
+authority: MZV SR
+title: Zahraniční študenti na Slovensku — usmernenie MZV SR (sk)
+url: https://www.mzv.sk/sluzby/informacie-pre-cudzincov/zahranicni-studenti-na-slovensku
+pinnedUrl: null
+staticUrl: null
+formCode: null
+completionLanguage: null
+reviewStatus: draft
+registryStatus: snapshot_taken
+potentiallyStale: false
+evidence: "Сторінку зберіг власник із браузера друком у PDF. Це НЕ оригінальний HTML з сервера. Описує зміну
+  виду і мети пробуту: заяву треба подати не пізніше останнього дня чинності поточного пробуту, і до рішення
+  пробут вважається законним ЛИШЕ на території Словаччини."
+notes: Тема зміни виду/мети пробуту в довіднику ще не змодельована. Норму треба знайти в 404/2011, а не
+  переписувати з цієї сторінки — вона лише вказує, де шукати.
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-10
+sourceType: official_web_guidance
+snapshotPath: sources/snapshots/mzv-students-guidance.pdf
+sha256: 7822dc5c4977e1ebab1cf99117f1e118e61e04e15687068448c5eacb11a81ddd

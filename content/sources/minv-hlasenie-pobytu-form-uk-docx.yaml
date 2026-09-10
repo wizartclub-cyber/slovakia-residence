@@ -1,0 +1,26 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-hlasenie-pobytu-form-uk-docx
+authority: MV SR
+title: T MV SR 11-060-2 Hlásenie pobytu / Звіт про проживання — редагований формуляр (uk)
+url: https://www.minv.sk/?hlasenie-pobytu-1&subor=437457
+pinnedUrl: null
+staticUrl: null
+formCode: null
+completionLanguage: null
+reviewStatus: draft
+registryStatus: snapshot_taken
+potentiallyStale: false
+evidence: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у
+  редагованому форматі, MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+notes: null
+locale: uk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-10
+sourceType: official_form
+snapshotPath: sources/snapshots/minv-hlasenie-pobytu-form-uk-docx.docx
+sha256: 9956c098dfe225b1bc3f3e2fe9333eb7c455635801e6bf4fab971724456acdc7

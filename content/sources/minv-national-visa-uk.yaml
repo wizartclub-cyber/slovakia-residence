@@ -1,0 +1,27 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-national-visa-uk
+authority: MV SR
+title: Заява на отримання національної візи / Žiadosť o udelenie národného víza (uk+sk)
+url: https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza&subor=212457
+pinnedUrl: null
+staticUrl: null
+formCode: null
+completionLanguage: null
+reviewStatus: draft
+registryStatus: snapshot_taken
+potentiallyStale: false
+evidence: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у
+  редагованому форматі, MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+notes: "Двомовна анкета: українською і словацькою в одному бланку. Заповнювати треба словацькою — український
+  текст лише пояснює поля. На переліку MZV SR української версії немає, вона є тільки на minv.sk."
+locale: uk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-10
+sourceType: official_form
+snapshotPath: sources/snapshots/minv-national-visa-uk.pdf
+sha256: 6fc111cde7a22a93758a3e3a709a9d1ca2dad35a32dad2ac76fb68a659071999

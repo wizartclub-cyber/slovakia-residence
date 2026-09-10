@@ -9,7 +9,7 @@ sourcePriority:
 - older FAQ PDFs / embassy legacy guidance
 resources:
 - id: mzv-residence-master-guidance
-  title: Residence of foreign nationals in Slovakia — usmernenie MZV SR
+  title: Podmienky pobytu na Slovensku — usmernenie MZV SR (sk)
   newUrlFinding:
     at: '2026-09-09'
     by: claude-code
@@ -20,26 +20,34 @@ resources:
       resource once someone can snapshot it.
   type: official_guidance_html
   authority: MZV SR
-  url: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
+  url: https://www.mzv.sk/sluzby/viza-a-pobyt-na-slovensku/pobyt-na-slovensku
   updated: '2026-08-16'
   priority: high
-  reviewStatus: fetch_pending
-  locale: en
+  reviewStatus: snapshot_taken
+  locale: sk
   urlCheck:
-    checkedAt: '2026-09-07'
-    result: ok
-    observedUpdated: '2026-08-16'
-    observed: 22 sections incl. fees, documents by purpose (§22–§30, Blue Card), national visa for submitting residence application
-  snapshot:
-    retrievedAt: '2026-09-08T21:36:38Z'
-    requestedUrl: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
-    httpStatus: 403
-    finalUrl: https://www.mzv.sk/en/web/en/visa-and-services/residence-of-foreign-nationals-in-slovakia
-    redirected: false
-    serverMime: text/html; charset=UTF-8
-    serverLastModified: ''
-    ok: false
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: 'Сторінку зберіг власник із браузера друком у PDF, з розгорнутими розділами: 18 сторінок замість 6 у першій
+      спробі. Сторінка сама вказує «Aktualizované 16.08.2026». Містить перелік цілей пробуту, різницю між прechodným і trvalým,
+      і — головне — розділ «Kde môžete podať žiadosť»: коли заяву можна подати на поліції в Словаччині, а коли лише в закордонній
+      установі.'
   procedureIds: []
+  snapshotFormat: browser_print_pdf
+  notes: Розділ про місце подання заяви ще не внесений у дані маршрутів — там є винятки (наприклад, заяву на пробут з метою
+    підприємництва НЕ можна подати на поліції в СР). Потрібна окрема робота.
+  snapshot:
+    retrievedAt: '2026-09-10T17:06:17Z'
+    requestedUrl: https://www.mzv.sk/sluzby/viza-a-pobyt-na-slovensku/pobyt-na-slovensku
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 286370
+    sha256: 016a6cea630ab6aecc531729fa40adbd959e5b95300f59dfa94cc394dd9f3c5c
+    snapshotPath: sources/snapshots/mzv-residence-master-guidance.pdf
+    pdf:
+      pages: 18
+      acroFormFields: 0
 - id: mzv-form-11-057
   title: T MV SR 11-057 — žiadosť o udelenie prechodného / trvalého (5 rokov) / tolerovaného pobytu (sk+en)
   type: official_form_pdf
@@ -113,73 +121,90 @@ resources:
   authority: MZV SR
   url: https://www.mzv.sk/documents/10182/16274933/002-ziadost-o-narodne-vizum-SK.pdf/d2c0d2c1-c498-176c-7fae-cd1083393266
   pages: null
-  fillMode: overlay
-  reviewStatus: fetch_pending
+  fillMode: print_and_fill_by_hand
+  reviewStatus: snapshot_taken
   locale: sk
   urlCheck:
-    checkedAt: '2026-09-07'
-    result: ok
-    observed: ŽIADOSŤ O NÁRODNÉ VÍZUM, Slovak only, MZV data-controller notice; no form code visible; NOT a Ukrainian/Slovak
-      form — earlier handoff claim of uk/sk form remains unconfirmed
-  snapshot:
-    retrievedAt: '2026-09-08T21:36:39Z'
-    requestedUrl: https://www.mzv.sk/documents/10182/16274933/002-ziadost-o-narodne-vizum-SK.pdf/d2c0d2c1-c498-176c-7fae-cd1083393266
-    httpStatus: 403
-    finalUrl: https://www.mzv.sk/documents/10182/16274933/002-ziadost-o-narodne-vizum-SK.pdf/d2c0d2c1-c498-176c-7fae-cd1083393266
-    redirected: false
-    serverMime: text/html; charset=UTF-8
-    serverLastModified: ''
-    ok: false
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком «Vízové formuláre» на mzv.sk байт у байт (перелік датовано 28.02.2025).
+      Пряме завантаження скриптом неможливе: mzv.sk віддає 403 будь-якому клієнту, крім справжнього браузера, тому файл зберіг
+      власник.'
+    listedSize: 182,4 kB
   procedureIds: []
+  fillModeNote: У PDF немає полів форми — тільки друк і заповнення від руки.
+  snapshot:
+    retrievedAt: '2026-09-10T17:02:39Z'
+    requestedUrl: https://www.mzv.sk/documents/10182/16274933/002-ziadost-o-narodne-vizum-SK.pdf/d2c0d2c1-c498-176c-7fae-cd1083393266
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 182375
+    sha256: 06612ecc93a9ecb1ab5ce4e0ca1fea411074894f299ada959341c3b22b2ea76f
+    snapshotPath: sources/snapshots/mzv-national-visa-sk.pdf
+    pdf:
+      pages: 4
+      acroFormFields: 0
 - id: mzv-national-visa-en
   title: APPLICATION FOR NATIONAL VISA (en)
   type: official_form_pdf
   authority: MZV SR
   url: https://www.mzv.sk/documents/10182/16274933/004-ziadost-o-narodne-vizum-EN.pdf/3e457269-c704-45a0-3ec5-5ce02f650af9
   pages: null
-  fillMode: overlay
-  reviewStatus: fetch_pending
+  fillMode: print_and_fill_by_hand
+  reviewStatus: snapshot_taken
   locale: en+sk
   urlCheck:
-    checkedAt: '2026-09-07'
-    result: ok
-    observed: APPLICATION FOR NATIONAL VISA, English with Slovak parentheticals; no form code visible
-  snapshot:
-    retrievedAt: '2026-09-08T21:36:39Z'
-    requestedUrl: https://www.mzv.sk/documents/10182/16274933/004-ziadost-o-narodne-vizum-EN.pdf/3e457269-c704-45a0-3ec5-5ce02f650af9
-    httpStatus: 403
-    finalUrl: https://www.mzv.sk/documents/10182/16274933/004-ziadost-o-narodne-vizum-EN.pdf/3e457269-c704-45a0-3ec5-5ce02f650af9
-    redirected: false
-    serverMime: text/html; charset=UTF-8
-    serverLastModified: ''
-    ok: false
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком «Vízové formuláre» на mzv.sk байт у байт (перелік датовано 28.02.2025).
+      Пряме завантаження скриптом неможливе: mzv.sk віддає 403 будь-якому клієнту, крім справжнього браузера, тому файл зберіг
+      власник.'
+    listedSize: 177,9 kB
   procedureIds: []
+  fillModeNote: У PDF немає полів форми — тільки друк і заповнення від руки.
+  snapshot:
+    retrievedAt: '2026-09-10T17:02:39Z'
+    requestedUrl: https://www.mzv.sk/documents/10182/16274933/004-ziadost-o-narodne-vizum-EN.pdf/3e457269-c704-45a0-3ec5-5ce02f650af9
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 177947
+    sha256: 054a7aedff63c21e37c63e7aaf0280d5a058a5fa89604d2f0544560382a75f77
+    snapshotPath: sources/snapshots/mzv-national-visa-en.pdf
+    pdf:
+      pages: 4
+      acroFormFields: 0
 - id: mzv-national-visa-guidance
-  title: National visa — usmernenie MZV SR (120 dní na podanie žiadosti o pobyt v SR)
+  title: Národné vízum — usmernenie MZV SR (sk)
   type: official_guidance_html
   authority: MZV SR
-  url: https://www.mzv.sk/en/services/information-for-foreigners/national-visa
+  url: https://www.mzv.sk/sluzby/informacie-pre-cudzincov/narodne-vizum
   updated: '2026-09-03'
-  notes: Confirms 120-day national visa for residence-application submission in Slovakia.
-  reviewStatus: fetch_pending
-  locale: en
+  notes: 'Підтверджує строки національної візи: 90 днів на отримання вже наданого пробуту і 120 днів на подання заяви про
+    пробут на території СР. Збір за візу для подання заяви на поліції — 90 eur. Раніше в реєстрі стояла англійська версія
+    цієї ж сторінки; словацька є першоджерелом.'
+  reviewStatus: snapshot_taken
+  locale: sk
   urlCheck:
-    checkedAt: '2026-09-07'
-    result: ok
-    observedUpdated: '2026-09-03'
-    observed: “for 120 days for submission of a residence permit application in the territory of the Slovak Republic” — page
-      postdates baseline; applicability to be tied to §15(3)(a) of 404/2011 as amended by 128/2026 (eff. 15.7.2026), not to
-      the page date
-  snapshot:
-    retrievedAt: '2026-09-08T21:36:39Z'
-    requestedUrl: https://www.mzv.sk/en/services/information-for-foreigners/national-visa
-    httpStatus: 403
-    finalUrl: https://www.mzv.sk/en/services/information-for-foreigners/national-visa
-    redirected: false
-    serverMime: text/html; charset=UTF-8
-    serverLastModified: ''
-    ok: false
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: 'Сторінку зберіг власник із браузера друком у PDF. Це НЕ оригінальний HTML з сервера: верстка втрачена, контрольна
+      сума описує роздруківку, а не файл сайту. Як доказ слабше за снапшот, але сильніше за переказ — саме так це й позначено.'
   procedureIds: []
+  snapshotFormat: browser_print_pdf
+  snapshot:
+    retrievedAt: '2026-09-10T17:02:39Z'
+    requestedUrl: https://www.mzv.sk/sluzby/informacie-pre-cudzincov/narodne-vizum
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 108187
+    sha256: 663286c375f15812ee537d8e79ed94dc2df451437a7f5bc5699d647645dd1b3e
+    snapshotPath: sources/snapshots/mzv-national-visa-guidance.pdf
+    pdf:
+      pages: 10
+      acroFormFields: 0
 - id: upsvr-foreign-employment-forms
   title: Vzory žiadostí pre oblasť služieb zamestnanosti — ÚPSVaR
   type: official_forms_page
@@ -866,6 +891,281 @@ resources:
     pdf:
       pages: 1
       acroFormFields: 0
+- id: mzv-schengen-visa-sk
+  authority: MZV SR
+  procedureIds: []
+  addedAt: '2026-09-10'
+  url: https://www.mzv.sk/documents/10182/16274933/001-ziadost-o-schengenske-vizum-SK.pdf/6de2a6dd-895e-6521-bddc-08ad72123efc
+  reviewStatus: snapshot_taken
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком «Vízové formuláre» на mzv.sk байт у байт (перелік датовано 28.02.2025).
+      Пряме завантаження скриптом неможливе: mzv.sk віддає 403 будь-якому клієнту, крім справжнього браузера, тому файл зберіг
+      власник.'
+    listedSize: 181,9 kB
+  title: Harmonizovaný formulár — ŽIADOSŤ O SCHENGENSKÉ VÍZUM (sk)
+  type: official_form_pdf
+  locale: sk
+  fillMode: print_and_fill_by_hand
+  fillModeNote: У PDF немає полів форми — тільки друк і заповнення від руки.
+  notes: Єдиний формуляр на весь Шенген (Vízový kódex, príloha I).
+  snapshot:
+    retrievedAt: '2026-09-10T17:02:39Z'
+    requestedUrl: https://www.mzv.sk/documents/10182/16274933/001-ziadost-o-schengenske-vizum-SK.pdf/6de2a6dd-895e-6521-bddc-08ad72123efc
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 181892
+    sha256: 8c16f925e4e516fb349cbc42cb6ac561d95cee179f876ea45c24bcf1c72aa7d6
+    snapshotPath: sources/snapshots/mzv-schengen-visa-sk.pdf
+    pdf:
+      pages: 4
+      acroFormFields: 0
+- id: mzv-schengen-visa-en
+  authority: MZV SR
+  procedureIds: []
+  addedAt: '2026-09-10'
+  url: https://www.mzv.sk/documents/10182/16274933/003-ziadost-o-schengenske-vizum-EN.pdf/9ce08182-c15c-fb4b-25f7-7afdac386b6c
+  reviewStatus: snapshot_taken
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: 'Розмір файлу збігається з офіційним переліком «Vízové formuláre» на mzv.sk байт у байт (перелік датовано 28.02.2025).
+      Пряме завантаження скриптом неможливе: mzv.sk віддає 403 будь-якому клієнту, крім справжнього браузера, тому файл зберіг
+      власник.'
+    listedSize: 175,2 kB
+  title: Harmonised application form — APPLICATION FOR SCHENGEN VISA (en)
+  type: official_form_pdf
+  locale: en
+  fillMode: print_and_fill_by_hand
+  fillModeNote: У PDF немає полів форми — тільки друк і заповнення від руки.
+  notes: Єдиний формуляр на весь Шенген (Vízový kódex, príloha I).
+  snapshot:
+    retrievedAt: '2026-09-10T17:02:39Z'
+    requestedUrl: https://www.mzv.sk/documents/10182/16274933/003-ziadost-o-schengenske-vizum-EN.pdf/9ce08182-c15c-fb4b-25f7-7afdac386b6c
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 175248
+    sha256: 7da3590fbf3134ec9ab343ed1a60f5e12bbd9d741931f9a46108c866015c7139
+    snapshotPath: sources/snapshots/mzv-schengen-visa-en.pdf
+    pdf:
+      pages: 4
+      acroFormFields: 0
+- id: mzv-schengen-visa-guidance
+  authority: MZV SR
+  procedureIds: []
+  addedAt: '2026-09-10'
+  url: https://www.mzv.sk/sluzby/viza-a-pobyt-na-slovensku/schengenske-vizum
+  reviewStatus: snapshot_taken
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: 'Сторінку зберіг власник із браузера друком у PDF. Це НЕ оригінальний HTML з сервера: верстка втрачена, контрольна
+      сума описує роздруківку, а не файл сайту. Як доказ слабше за снапшот, але сильніше за переказ — саме так це й позначено.'
+  title: Schengenské vízum — usmernenie MZV SR (sk)
+  locale: sk
+  type: official_guidance_html
+  snapshotFormat: browser_print_pdf
+  notes: 'Строки розгляду: 15 днів, продовження до 45; для родичів громадян ЄС — до 10 днів.'
+  snapshot:
+    retrievedAt: '2026-09-10T17:02:39Z'
+    requestedUrl: https://www.mzv.sk/sluzby/viza-a-pobyt-na-slovensku/schengenske-vizum
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 172526
+    sha256: 68f0de31d5d452fadb6369b2aff61a2902b72d25dc0df051ad786c27b663ead4
+    snapshotPath: sources/snapshots/mzv-schengen-visa-guidance.pdf
+    pdf:
+      pages: 18
+      acroFormFields: 0
+- id: mzv-students-guidance
+  title: Zahraniční študenti na Slovensku — usmernenie MZV SR (sk)
+  type: official_guidance_html
+  authority: MZV SR
+  url: https://www.mzv.sk/sluzby/informacie-pre-cudzincov/zahranicni-studenti-na-slovensku
+  locale: sk
+  reviewStatus: snapshot_taken
+  snapshotFormat: browser_print_pdf
+  addedAt: '2026-09-10'
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    observed: 'Сторінку зберіг власник із браузера друком у PDF. Це НЕ оригінальний HTML з сервера. Описує зміну виду і мети
+      пробуту: заяву треба подати не пізніше останнього дня чинності поточного пробуту, і до рішення пробут вважається законним
+      ЛИШЕ на території Словаччини.'
+  notes: Тема зміни виду/мети пробуту в довіднику ще не змодельована. Норму треба знайти в 404/2011, а не переписувати з цієї
+    сторінки — вона лише вказує, де шукати.
+  procedureIds: []
+  snapshot:
+    retrievedAt: '2026-09-10T17:03:24Z'
+    requestedUrl: https://www.mzv.sk/sluzby/informacie-pre-cudzincov/zahranicni-studenti-na-slovensku
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 53184
+    sha256: 7822dc5c4977e1ebab1cf99117f1e118e61e04e15687068448c5eacb11a81ddd
+    snapshotPath: sources/snapshots/mzv-students-guidance.pdf
+    pdf:
+      pages: 4
+      acroFormFields: 0
+- id: minv-national-visa-sk-docx
+  title: Žiadosť o národné vízum — редагований формуляр MV SR (sk)
+  type: official_form_docx
+  authority: MV SR
+  url: https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza&subor=558672
+  locale: sk
+  fillMode: editable_document
+  reviewStatus: snapshot_taken
+  addedAt: '2026-09-10'
+  procedureIds: []
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    listedSize: 52,2 kB
+    observed: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у редагованому форматі,
+      MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+  snapshot:
+    retrievedAt: '2026-09-10T17:05:34Z'
+    requestedUrl: https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza&subor=558672
+    obtainedManually: true
+    ok: true
+    signature: docx
+    bytes: 52236
+    sha256: 209cbb0a3bfbb5c6093d67732aad6116d47f768fb682ee8dbbe304bfac862c55
+    snapshotPath: sources/snapshots/minv-national-visa-sk-docx.docx
+- id: minv-national-visa-en-docx
+  title: Application for national visa — редагований формуляр MV SR (en)
+  type: official_form_docx
+  authority: MV SR
+  url: https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza&subor=558671
+  locale: en
+  fillMode: editable_document
+  reviewStatus: snapshot_taken
+  addedAt: '2026-09-10'
+  procedureIds: []
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    listedSize: 51,8 kB
+    observed: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у редагованому форматі,
+      MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+  snapshot:
+    retrievedAt: '2026-09-10T17:05:34Z'
+    requestedUrl: https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza&subor=558671
+    obtainedManually: true
+    ok: true
+    signature: docx
+    bytes: 51779
+    sha256: 1e5d3751771f41e5a3a545eb474d034722b607dbddeefbfb03440e101f161912
+    snapshotPath: sources/snapshots/minv-national-visa-en-docx.docx
+- id: minv-national-visa-uk
+  title: Заява на отримання національної візи / Žiadosť o udelenie národného víza (uk+sk)
+  type: official_form_pdf
+  authority: MV SR
+  url: https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza&subor=212457
+  locale: uk
+  fillMode: print_and_fill_by_hand
+  reviewStatus: snapshot_taken
+  addedAt: '2026-09-10'
+  procedureIds: []
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    listedSize: 505,8 kB
+    observed: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у редагованому форматі,
+      MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+  notes: 'Двомовна анкета: українською і словацькою в одному бланку. Заповнювати треба словацькою — український текст лише
+    пояснює поля. На переліку MZV SR української версії немає, вона є тільки на minv.sk.'
+  snapshot:
+    retrievedAt: '2026-09-10T17:05:34Z'
+    requestedUrl: https://www.minv.sk/?ziadost-o-udelenie-narodneho-viza&subor=212457
+    obtainedManually: true
+    ok: true
+    signature: pdf
+    bytes: 505777
+    sha256: 6fc111cde7a22a93758a3e3a709a9d1ca2dad35a32dad2ac76fb68a659071999
+    snapshotPath: sources/snapshots/minv-national-visa-uk.pdf
+    pdf:
+      pages: 3
+      acroFormFields: 3
+- id: minv-schengen-visa-sk-docx
+  title: Žiadosť o schengenské vízum — редагований формуляр MV SR (sk)
+  type: official_form_docx
+  authority: MV SR
+  url: https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza&subor=558670
+  locale: sk
+  fillMode: editable_document
+  reviewStatus: snapshot_taken
+  addedAt: '2026-09-10'
+  procedureIds: []
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    listedSize: 48,1 kB
+    observed: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у редагованому форматі,
+      MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+  snapshot:
+    retrievedAt: '2026-09-10T17:05:34Z'
+    requestedUrl: https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza&subor=558670
+    obtainedManually: true
+    ok: true
+    signature: docx
+    bytes: 48138
+    sha256: 2daa7abfa7dd39ea0cf2717a89225fdde8156d877fd99c0b5e2eac47fba56cd5
+    snapshotPath: sources/snapshots/minv-schengen-visa-sk-docx.docx
+- id: minv-schengen-visa-en-docx
+  title: Application for Schengen visa — редагований формуляр MV SR (en)
+  type: official_form_docx
+  authority: MV SR
+  url: https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza&subor=558669
+  locale: en
+  fillMode: editable_document
+  reviewStatus: snapshot_taken
+  addedAt: '2026-09-10'
+  procedureIds: []
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    listedSize: 46,8 kB
+    observed: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у редагованому форматі,
+      MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+  snapshot:
+    retrievedAt: '2026-09-10T17:05:34Z'
+    requestedUrl: https://www.minv.sk/?ziadost-o-udelenie-schengenskeho-viza&subor=558669
+    obtainedManually: true
+    ok: true
+    signature: docx
+    bytes: 46844
+    sha256: 8d009b21bcaf5e7abd2543e14dae39ed5abb2b9381d1fa6b6f307e36bae0f4cd
+    snapshotPath: sources/snapshots/minv-schengen-visa-en-docx.docx
+- id: minv-hlasenie-pobytu-form-uk-docx
+  title: T MV SR 11-060-2 Hlásenie pobytu / Звіт про проживання — редагований формуляр (uk)
+  type: official_form_docx
+  authority: MV SR
+  url: https://www.minv.sk/?hlasenie-pobytu-1&subor=437457
+  locale: uk
+  fillMode: editable_document
+  reviewStatus: snapshot_taken
+  addedAt: '2026-09-10'
+  procedureIds: []
+  urlCheck:
+    checkedAt: '2026-09-10'
+    result: ok_manual_download_only
+    listedSize: 29,9 kB
+    observed: Розмір збігається з офіційним переліком на minv.sk байт у байт. MV SR публікує ці анкети у редагованому форматі,
+      MZV SR — ті самі анкети в PDF; обидва джерела офіційні.
+  snapshot:
+    retrievedAt: '2026-09-10T17:05:34Z'
+    requestedUrl: https://www.minv.sk/?hlasenie-pobytu-1&subor=437457
+    obtainedManually: true
+    ok: true
+    signature: docx
+    bytes: 29876
+    sha256: 9956c098dfe225b1bc3f3e2fe9333eb7c455635801e6bf4fab971724456acdc7
+    snapshotPath: sources/snapshots/minv-hlasenie-pobytu-form-uk-docx.docx
 baselinePolicy: 'moving: legal baseline = date of last completed legal review; historical editions preserved (decision 2026-09-07)'
 reviewStatusEnum:
 - fetch_pending
@@ -881,4 +1181,4 @@ resourceFields:
   snapshot: written by scripts/download_and_hash.py on the owner machine — sha256, bytes, signature, pages
   locale: language(s) of the resource
   procedureIds: to be filled when content/procedures exist
-snapshotRunAt: '2026-09-09T19:43:22Z'
+snapshotRunAt: '2026-09-10T17:06:17Z'
