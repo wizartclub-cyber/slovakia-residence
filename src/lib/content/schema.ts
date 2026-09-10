@@ -384,6 +384,40 @@ export const SiteConfigSchema = z
 
 // Спільна юридична примітка, що стосується кількох маршрутів (наприклад,
 // підстави для відмови). Зберігається окремо, щоб не дублювати текст.
+/**
+ * Часте запитання.
+ *
+ * Найважливіше поле — `sourceIds`: відповідь без джерела не публікується
+ * взагалі. Питання, на які ми ще не маємо підтвердженої відповіді, лишаються
+ * в даних зі статусом `draft` і на сайт не потрапляють — краще мовчання,
+ * ніж правдоподібна вигадка, яку людина понесе в орган.
+ *
+ * `caveat` існує для випадків, коли поширене переконання НЕ підтверджується
+ * текстом закону: тоді відповідь прямо це називає, замість обходити мовчанням.
+ */
+export const FaqSchema = z
+  .object({
+    id: nonEmpty,
+    category: z.enum(['start', 'finance', 'rules', 'after']),
+    question: localizedText,
+    shortAnswer: localizedText,
+    // «Що це означає для вас» — практичний висновок, а не переказ норми.
+    meansForYou: localizedTextOptional,
+    // Міні-схема «умова → дія → результат», не більше чотирьох кроків.
+    steps: z.array(localizedText).max(4).default([]),
+    caveat: localizedTextOptional,
+    legalBasis: z.array(nonEmpty).default([]),
+    sourceIds: z.array(nonEmpty).min(1),
+    routeIds: z.array(nonEmpty).default([]),
+    tags: z.array(nonEmpty).default([]),
+    popular: z.boolean().default(false),
+    reviewStatus: reviewStatus,
+    reviewedAt: isoDate.nullable().default(null),
+  })
+  .strict();
+
+export type Faq = z.infer<typeof FaqSchema>;
+
 export const LegalNoteSchema = z
   .object({
     id: nonEmpty,

@@ -7,6 +7,7 @@
     "home": "Domov",
     "finder": "Nájsť cestu",
     "routes": "Všetky cesty",
+    "faq": "Otázky",
     "authorities": "Orgány",
     "sources": "Zdroje",
     "about": "O projekte",
@@ -419,6 +420,32 @@
     "risk": {
       "conditions": "Podmienky tejto cesty nie sú zapísané úplne — zoznam nižšie nie je vyčerpávajúci.",
       "checkAtOffice": "Overte si na úrade: územnú pôsobnosť, platnú verziu tlačiva a požiadavky na cudzojazyčné doklady."
+    }
+  },
+  "faq": {
+    "title": "Časté otázky",
+    "intro": "Zozbierali sme typické otázky z otvorených diskusií a odpovede sme overili s platnými predpismi a oficiálnymi usmerneniami.",
+    "disclaimer": "Všeobecná informácia; rozhodnutie závisí od okolností a praxe príslušného orgánu. Každá odpoveď uvádza normu, o ktorú sa opiera, a dátum overenia.",
+    "searchLabel": "Hľadanie v otázkach a odpovediach",
+    "searchPlaceholder": "napr. doklad, lehoty, účet, práca",
+    "filterLabel": "Filter podľa témy",
+    "found": "Zobrazených otázok: {{count}}",
+    "nothingFound": "Pre túto požiadavku sme nič nenašli. Skúste iné slovo — hľadá sa aj v texte odpovedí.",
+    "meansForYou": "Čo to znamená pre vás",
+    "caveat": "Dôležité upozornenie",
+    "legalBasis": "Právny základ",
+    "sources": "Zdroj",
+    "relatedRoutes": "Súvisiace cesty",
+    "copyLink": "Skopírovať odkaz na odpoveď",
+    "copied": "Odkaz skopírovaný",
+    "drafts": "Ďalšie otázky sú zozbierané, ale odpovede nie sú zverejnené, lebo nemajú potvrdený zdroj: {{count}}",
+    "onRoute": "Časté otázky k tejto ceste",
+    "category": {
+      "all": "Všetky otázky",
+      "start": "Začiatok a doklady",
+      "finance": "Peniaze a poplatky",
+      "rules": "Pravidlá a obmedzenia",
+      "after": "Po rozhodnutí"
     }
   }
 }

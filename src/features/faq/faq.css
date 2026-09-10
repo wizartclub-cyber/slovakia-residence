@@ -1,0 +1,186 @@
+.faq-controls {
+  margin: 20px 0 24px;
+}
+
+.faq-search {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+#faq-search {
+  width: 100%;
+  max-width: 480px;
+  min-height: 44px;
+  padding: 8px 12px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+/* На телефоні фільтри їдуть у горизонтальний scroll, а пошук лишається
+   на місці: інакше вісім кнопок з'їдають екран, як це було з меню. */
+.faq-filters {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.faq-filter {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 8px 16px;
+  font: inherit;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Активний фільтр не позначається кольором тексту: --accent-text на
+   --accent-soft дає контраст 4.24 при потрібних 4.5. Тому звичайний текст,
+   а стан несуть товща рамка і жирність — вони ж працюють і в ч/б. */
+.faq-filter[aria-pressed='true'] {
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  padding: 7px 15px;
+  font-weight: 600;
+}
+
+.faq-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-item__heading {
+  margin: 0;
+  font-size: 15px;
+}
+
+.faq-item__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 14px 4px;
+  font: inherit;
+  font-weight: 500;
+  text-align: start;
+  color: var(--text);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.faq-item__chevron {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--text-secondary);
+  border-bottom: 2px solid var(--text-secondary);
+  transform: rotate(45deg);
+  transform-origin: 70% 70%;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.faq-item__chevron[data-open='true'] {
+  transform: rotate(225deg);
+}
+
+/* 0fr → 1fr замість height: висота не стрибає і верстка не смикається. */
+.faq-item__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur) var(--ease);
+}
+
+.faq-item__panel[data-open='true'] {
+  grid-template-rows: 1fr;
+}
+
+.faq-item__panel-inner {
+  overflow: hidden;
+}
+
+.faq-item__panel[data-open='false'] .faq-item__panel-inner {
+  visibility: hidden;
+}
+
+.faq-item__panel-inner > * {
+  margin-top: 0;
+}
+
+.faq-item__panel[data-open='true'] .faq-item__panel-inner {
+  padding-bottom: 16px;
+}
+
+.faq-item__means,
+.faq-item__caveat {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.faq-item__caveat {
+  border-left: 3px solid var(--warning, #a06000);
+}
+
+.faq-item__steps {
+  margin: 12px 0;
+  padding-left: 22px;
+}
+
+.faq-item__meta {
+  display: grid;
+  gap: 4px 16px;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.faq-item__meta dt {
+  color: var(--text-secondary);
+}
+
+.faq-item__meta dd {
+  margin: 0 0 6px;
+}
+
+.faq-item__copy {
+  min-height: 44px;
+  padding: 8px 14px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.faq-drafts {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item__panel,
+  .faq-item__chevron {
+    transition: none;
+  }
+}

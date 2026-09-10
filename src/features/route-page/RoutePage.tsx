@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { usePageTitle } from '../../app/usePageTitle';
 import {
   authorityById,
+  faqForProcedure,
   documentById,
   fees,
   notesForProcedure,
@@ -18,6 +19,8 @@ import { derivedAmount } from '../../lib/content/thresholds';
 import { earliestIssueDate } from '../../lib/content/dates';
 import { site } from '../../lib/content/site';
 import './route-page.css';
+import { FaqList } from '../faq/FaqList';
+import '../faq/faq.css';
 
 export function RoutePage() {
   const { lang, id } = useParams();
@@ -245,7 +248,9 @@ export function RoutePage() {
           </section>
         )}
 
-        <Section title={t('route.sources')}>
+          <RouteFaq lang={lang} procedureId={procedure.id} />
+
+      <Section title={t('route.sources')}>
           <ul className="route-page__sources">
             {allSources.map((source) => (
               <li key={source.id}>
@@ -358,6 +363,37 @@ function printAs(mode: 'memo' | 'full'): void {
   };
   window.addEventListener('afterprint', reset);
   window.print();
+}
+
+/**
+ * Питання, прив'язані до цього маршруту через routeIds. Показуємо тут, а не
+ * лише на спільній сторінці: людина, яка читає маршрут, не мусить іти шукати,
+ * чи є щось про її випадок.
+ */
+function RouteFaq({ procedureId, lang }: { procedureId: string; lang: string | undefined }) {
+  const { t } = useTranslation();
+  const [openIds, setOpenIds] = useState<Set<string>>(() => new Set());
+  const items = faqForProcedure(procedureId);
+  if (items.length === 0) return null;
+
+  return (
+    <Section title={t('faq.onRoute')}>
+      <FaqList
+        headingLevel={4}
+        items={items}
+        lang={lang}
+        onToggle={(id) =>
+          setOpenIds((prev) => {
+            const next = new Set(prev);
+            if (next.has(id)) next.delete(id);
+            else next.add(id);
+            return next;
+          })
+        }
+        openIds={openIds}
+      />
+    </Section>
+  );
 }
 
 function SummaryPanel({ procedure, lang }: { procedure: Procedure; lang: string | undefined }) {

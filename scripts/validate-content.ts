@@ -22,6 +22,7 @@ import {
   SiteConfigSchema,
   SourceSchema,
   ThresholdSchema,
+  FaqSchema,
 } from '../src/lib/content/schema.ts';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -36,6 +37,7 @@ const SCHEMAS: Record<string, ZodTypeAny> = {
   thresholds: ThresholdSchema,
   authorities: AuthoritySchema,
   notes: LegalNoteSchema,
+  faq: FaqSchema,
 };
 
 const errors: string[] = [];
@@ -57,6 +59,7 @@ const REFERENCE_FIELDS: Record<string, string> = {
   feeRuleIds: 'fees',
   documentIds: 'documents',
   relatedProcedureIds: 'procedures',
+  routeIds: 'procedures',
 };
 
 function walk(dir: string): string[] {
@@ -172,6 +175,17 @@ for (const [folder, schema] of Object.entries(SCHEMAS)) {
           for (const id of value) {
             if (typeof id === 'string') references.push({ file: rel, field, kind, id });
           }
+        }
+      }
+
+      // 3c-bis. FAQ: застаріла відповідь має ламати збірку, а не тихо зникати
+      // з сайту (ТЗ FAQ §3.4). Мовчазне приховування створює ілюзію повноти.
+      if (folder === 'faq') {
+        if (data.reviewStatus === 'superseded' || data.reviewStatus === 'blocked') {
+          fail(rel, `статус «${String(data.reviewStatus)}» — відповідь застаріла, оновіть або приберіть`);
+        }
+        if (data.reviewStatus !== 'draft' && !data.reviewedAt) {
+          fail(rel, 'опублікована відповідь без reviewedAt — ТЗ FAQ §3.4');
         }
       }
 

@@ -1,4 +1,9 @@
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { expect, test } from '@playwright/test';
+import { parse } from 'yaml';
+
+const SITE = fileURLToPath(new URL('../../content/ui/site.yaml', import.meta.url));
 
 const PHONE = { width: 390, height: 844 };
 const DESKTOP = { width: 1280, height: 800 };
@@ -32,7 +37,10 @@ test('кнопка розкриває меню і повідомляє свій 
   const nav = page.getByRole('navigation', { name: 'Головне меню' });
   await expect(nav).toBeVisible();
   await expect(page.getByRole('button', { name: 'Закрити' })).toHaveAttribute('aria-expanded', 'true');
-  await expect(nav.getByRole('link')).toHaveCount(7);
+  // Число беремо з даних: пункти меню задає content/ui/site.yaml, і тест не
+  // має падати щоразу, коли власник додає сторінку.
+  const expected = (parse(readFileSync(SITE, 'utf8')) as { nav: unknown[] }).nav.length;
+  await expect(nav.getByRole('link')).toHaveCount(expected);
 });
 
 test('перехід за посиланням закриває меню', async ({ page }) => {

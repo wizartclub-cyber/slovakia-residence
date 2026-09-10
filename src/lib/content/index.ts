@@ -9,6 +9,7 @@
 import type {
   Authority,
   Document,
+  Faq,
   FeeRule,
   FinderConfig,
   LegalNote,
@@ -58,6 +59,21 @@ export const legalNotes = loadAll<LegalNote>(
 ).sort((a, b) => a.id.localeCompare(b.id));
 
 /** Спільні юридичні примітки, що стосуються цього маршруту. */
+export const faq = loadAll<Faq>(
+  import.meta.glob('../../../content/faq/*.yaml', { eager: true, import: 'default' }),
+);
+
+/**
+ * Опубліковані відповіді. Чернетки на сайт не потрапляють: питання ми знаємо,
+ * але підтвердженої відповіді ще немає, а здогад тут дорожчий за мовчання.
+ * Застарілі (`superseded`, `blocked`) сюди не доходять — на них падає збірка.
+ */
+export const publishedFaq = faq.filter((item) => item.reviewStatus !== 'draft');
+
+export function faqForProcedure(procedureId: string): Faq[] {
+  return publishedFaq.filter((item) => (item.routeIds ?? []).includes(procedureId));
+}
+
 export function notesForProcedure(procedureId: string): LegalNote[] {
   return legalNotes.filter((n) => n.appliesTo.includes(procedureId));
 }

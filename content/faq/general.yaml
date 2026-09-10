@@ -1,0 +1,329 @@
+# Часті запитання.
+#
+# Перелік питань зібраний із відкритих обговорень; ВІДПОВІДІ звірені з текстом
+# закону, а не переписані звідти ж. Там, де поширене переконання законом не
+# підтверджується, це сказано прямо в полі `caveat` — замовчати легше, але
+# людина понесе хибне очікування в орган.
+#
+# Жодна відповідь не публікується без sourceIds і reviewedAt: це перевіряє гейт.
+
+- id: faq-temporary-protection-to-residence
+  category: start
+  question:
+    uk: Чи можна з тимчасового захисту перейти на звичайний пробут?
+    sk: Dá sa z dočasného útočiska prejsť na bežný pobyt?
+  shortAnswer:
+    uk: >-
+      Так. Закон про пробут не забороняє подавати заяву про тимчасовий пробут
+      людині з тимчасовим захистом, і в довіднику такі маршрути позначені
+      окремо — наприклад, підприємництво (§22), працевлаштування (§23),
+      навчання (§24) чи возз'єднання сім'ї (§27).
+    sk: >-
+      Áno. Zákon o pobyte nezakazuje podať žiadosť o prechodný pobyt osobe
+      s dočasným útočiskom; v príručke sú takéto cesty osobitne označené —
+      napríklad podnikanie (§22), zamestnanie (§23), štúdium (§24) alebo
+      zlúčenie rodiny (§27).
+  meansForYou:
+    uk: >-
+      Пройдіть опитувальник і вкажіть тимчасовий захист як поточний статус —
+      побачите саме ті маршрути, які вам відкриті.
+    sk: >-
+      Prejdite dotazník a uveďte dočasné útočisko ako súčasný stav — uvidíte
+      práve tie cesty, ktoré sú vám otvorené.
+  caveat:
+    uk: >-
+      Тимчасовий пробут за §52 ods. 2 písm. e) прямо не надається тому, хто
+      перебуває під тимчасовим захистом — тобто відкриті не всі маршрути.
+    sk: >-
+      Dlhodobý pobyt podľa §52 ods. 2 písm. e) sa osobe pod dočasným útočiskom
+      neudeľuje — nie sú teda otvorené všetky cesty.
+  legalBasis:
+    - 404/2011 §22
+    - 404/2011 §23
+    - 404/2011 §52
+  sourceIds:
+    - slovlex-404-2011
+  routeIds:
+    - B1-business-s22
+    - B2-employment-s23
+    - B3-study-s24
+    - B6-family-s27
+  tags: [тимчасовий захист, прихисток, перехід, пробут, dočasné útočisko]
+  popular: true
+  reviewStatus: source_verified
+  reviewedAt: '2026-09-11'
+
+- id: faq-documents-90-days
+  category: start
+  question:
+    uk: Скільки часу дійсні довідки, які подають до поліції?
+    sk: Ako dlho platia doklady, ktoré sa predkladajú polícii?
+  shortAnswer:
+    uk: >-
+      Додатки до заяви про тимчасовий пробут не можуть бути старші за 90 днів
+      на день подання (§32 ods. 2). Це стосується довідки про несудимість,
+      документа про житло та інших додатків.
+    sk: >-
+      Prílohy k žiadosti o prechodný pobyt nesmú byť staršie ako 90 dní ku dňu
+      podania (§32 ods. 2). Týka sa to výpisu z registra trestov, dokladu
+      o ubytovaní aj ďalších príloh.
+  meansForYou:
+    uk: >-
+      Замовляйте довідки після того, як зібрали решту пакета: 90 днів рахують
+      на день подання, а не на день, коли ви почали готуватися.
+    sk: >-
+      Doklady si vybavte až keď máte zvyšok balíka: 90 dní sa počíta ku dňu
+      podania, nie ku dňu, keď ste začali.
+  caveat:
+    uk: >-
+      Вимог до апостиля і судового перекладу іноземних документів у §32 ми НЕ
+      знайшли. Це не означає, що їх немає — це означає, що ми не маємо джерела
+      і не можемо це стверджувати. Уточніть у відділі, куди подаєте.
+    sk: >-
+      Požiadavky na apostilu a súdny preklad cudzojazyčných dokladov sme v §32
+      NENAŠLI. Neznamená to, že neexistujú — znamená to, že nemáme zdroj.
+      Overte si to na oddelení, kam podávate.
+  legalBasis:
+    - 404/2011 §32
+  sourceIds:
+    - slovlex-404-2011
+  routeIds:
+    - B1-business-s22
+    - B2-employment-s23
+    - B3-study-s24
+  tags: [довідка, несудимість, 90 днів, строк, апостиль, переклад]
+  popular: true
+  reviewStatus: source_verified
+  reviewedAt: '2026-09-11'
+
+- id: faq-after-card-30-days
+  category: after
+  question:
+    uk: Що треба зробити після отримання картки?
+    sk: Čo treba urobiť po prevzatí karty?
+  shortAnswer:
+    uk: >-
+      Протягом 30 днів від отримання картки подати до поліції документ про
+      медичне страхування (§32 ods. 9) і медичний висновок про відсутність
+      хвороби, небезпечної для здоров'я населення (§32 ods. 10). Сам висновок
+      теж має бути не старший за 30 днів.
+    sk: >-
+      Do 30 dní od prevzatia karty predložiť polícii doklad o zdravotnom
+      poistení (§32 ods. 9) a lekársky posudok o tom, že netrpíte chorobou
+      ohrozujúcou verejné zdravie (§32 ods. 10). Posudok sám nesmie byť starší
+      ako 30 dní.
+  steps:
+    - uk: Отримали картку — від цього дня рахуються 30 днів
+      sk: Prevzali ste kartu — od toho dňa plynie 30 dní
+    - uk: Оформили страхування і пройшли медичний огляд
+      sk: Vybavili ste poistenie a absolvovali lekársku prehliadku
+    - uk: Подали обидва документи до відділу іноземної поліції
+      sk: Predložili ste oba doklady oddeleniu cudzineckej polície
+  legalBasis:
+    - 404/2011 §32
+  sourceIds:
+    - slovlex-404-2011
+  routeIds:
+    - B1-business-s22
+    - B2-employment-s23
+    - B3-study-s24
+    - B6-family-s27
+  tags: [після картки, медогляд, страхування, 30 днів]
+  popular: true
+  reviewStatus: source_verified
+  reviewedAt: '2026-09-11'
+
+- id: faq-language-exam
+  category: rules
+  question:
+    uk: Чи потрібно складати іспит зі словацької мови?
+    sk: Musí sa skladať skúška zo slovenského jazyka?
+  shortAnswer:
+    uk: >-
+      Для тимчасового пробуту закон мовного іспиту не вимагає. Він з'являється
+      серед умов довгострокового пробуту: §53 називає успішне складання мовного
+      іспиту за §54 ods. 4, із винятком для тих, хто відповідає §52 ods. 7.
+    sk: >-
+      Pri prechodnom pobyte zákon jazykovú skúšku nevyžaduje. Objavuje sa medzi
+      podmienkami dlhodobého pobytu: §53 uvádza úspešné vykonanie jazykovej
+      skúšky podľa §54 ods. 4, s výnimkou pre osoby podľa §52 ods. 7.
+  caveat:
+    uk: >-
+      Конкретного рівня володіння мовою (наприклад «A2») текст закону не
+      називає — його встановлює окремий підзаконний акт, якого в нашому реєстрі
+      ще немає. Тому рівень ми не наводимо.
+    sk: >-
+      Konkrétnu úroveň jazyka (napríklad „A2“) text zákona neuvádza — určuje ju
+      osobitný predpis, ktorý v našom registri zatiaľ nie je. Úroveň preto
+      neuvádzame.
+  legalBasis:
+    - 404/2011 §53
+    - 404/2011 §54
+    - 404/2011 §52
+  sourceIds:
+    - slovlex-404-2011
+  routeIds:
+    - C4-longterm-s52
+  tags: [іспит, мова, словацька, довгостроковий пробут, a2]
+  reviewStatus: source_verified
+  reviewedAt: '2026-09-11'
+
+- id: faq-absence-from-slovakia
+  category: rules
+  question:
+    uk: Скільки можна бути поза Словаччиною, щоб це не зашкодило?
+    sk: Ako dlho možno byť mimo Slovenska, aby to neuškodilo?
+  shortAnswer:
+    uk: >-
+      Єдиної «дозволеної кількості днів» закон не встановлює. Строки, які ми
+      знайшли, стосуються зарахування часу для довгострокового пробуту (§52):
+      до шести місяців поспіль і не більше десяти місяців сумарно поза
+      територією СР зараховуються, якщо ви повідомили поліцію. Окремо §56
+      дозволяє скасувати довгостроковий пробут тому, хто перебуває поза
+      територією СР понад шість років.
+    sk: >-
+      Zákon neurčuje jediný „povolený počet dní“. Lehoty, ktoré sme našli, sa
+      týkajú započítania času pre dlhodobý pobyt (§52): najviac šesť po sebe
+      nasledujúcich mesiacov a najviac desať mesiacov spolu mimo územia SR sa
+      započítava, ak ste to oznámili polícii. Osobitne §56 umožňuje zrušiť
+      dlhodobý pobyt tomu, kto sa zdržiava mimo územia SR viac ako šesť rokov.
+  caveat:
+    uk: >-
+      Поширене твердження «не можна бути відсутнім понад 180 днів, інакше
+      анулюють» ми в законі не знайшли в такому вигляді. Шість місяців — це
+      правило зарахування часу, а не заборона виїзду.
+    sk: >-
+      Rozšírené tvrdenie „nesmiete chýbať viac ako 180 dní, inak vám pobyt
+      zrušia“ sme v zákone v takejto podobe nenašli. Šesť mesiacov je pravidlo
+      započítania času, nie zákaz vycestovania.
+  legalBasis:
+    - 404/2011 §52
+    - 404/2011 §56
+  sourceIds:
+    - slovlex-404-2011
+  routeIds:
+    - C4-longterm-s52
+  tags: [відсутність, виїзд, дні, пробут, скасування]
+  reviewStatus: source_verified
+  reviewedAt: '2026-09-11'
+
+- id: faq-photo-at-submission
+  category: start
+  question:
+    uk: Чи треба приносити роздруковані фотографії?
+    sk: Treba priniesť vytlačené fotografie?
+  shortAnswer:
+    uk: >-
+      Залежить від того, що ви подаєте. Для заяви про національну візу закон
+      прямо вимагає кольорову фотографію 3 × 3,5 см (§17). У провадженні про
+      пробут поліція знімає біометричні дані, а фотографію 3 × 3,5 см вимагає
+      окремо — від того, у кого біометрію зняти неможливо.
+    sk: >-
+      Závisí od toho, čo podávate. K žiadosti o národné vízum zákon výslovne
+      vyžaduje farebnú fotografiu 3 × 3,5 cm (§17). V konaní o pobyte polícia
+      sníma biometrické údaje a fotografiu 3 × 3,5 cm si vyžiada osobitne — od
+      toho, komu biometriu odobrať nemožno.
+  caveat:
+    uk: >-
+      Тому категоричне «фотографії більше не потрібні» — неточність: для
+      національної візи вони потрібні за законом.
+    sk: >-
+      Kategorické „fotografie už netreba“ je preto nepresné: pri národnom víze
+      ich zákon vyžaduje.
+  legalBasis:
+    - 404/2011 §17
+    - 404/2011 §73
+  sourceIds:
+    - slovlex-404-2011
+  routeIds:
+    - A3-national-visa-120
+  tags: [фото, фотографія, подача, біометрія]
+  reviewStatus: source_verified
+  reviewedAt: '2026-09-11'
+
+- id: faq-family-with-blue-card
+  category: rules
+  question:
+    uk: Чи може сім'я подаватися разом із власником Синьої карти ЄС?
+    sk: Môže rodina podať žiadosť spolu s držiteľom modrej karty EÚ?
+  shortAnswer:
+    uk: >-
+      Так. §31 прямо дозволяє подати заяву про тимчасовий пробут для
+      возз'єднання сім'ї (§27 ods. 1 písm. a) також власникові Синьої карти,
+      з яким людина просить возз'єднання.
+    sk: >-
+      Áno. §31 výslovne umožňuje podať žiadosť o prechodný pobyt na účel
+      zlúčenia rodiny (§27 ods. 1 písm. a) aj držiteľovi modrej karty, s ktorým
+      sa o zlúčenie žiada.
+  legalBasis:
+    - 404/2011 §31
+    - 404/2011 §27
+    - 404/2011 §37
+  sourceIds:
+    - slovlex-404-2011
+  routeIds:
+    - B10-blue-card-s37
+    - B6-family-s27
+  tags: [сім'я, возз'єднання, синя карта, blue card]
+  reviewStatus: source_verified
+  reviewedAt: '2026-09-11'
+
+- id: faq-work-in-other-eu
+  category: rules
+  question:
+    uk: Чи дає словацький пробут право працювати в іншій країні ЄС?
+    sk: Dáva slovenský pobyt právo pracovať v inej krajine EÚ?
+  shortAnswer:
+    uk: Відповідь ще не підтверджена джерелом.
+    sk: Odpoveď zatiaľ nie je potvrdená zdrojom.
+  caveat:
+    uk: >-
+      Це питання регулює право ЄС, а не закон 404/2011. Джерела права ЄС в
+      нашому реєстрі ще немає, тому відповіді ми не даємо.
+    sk: >-
+      Túto otázku upravuje právo EÚ, nie zákon 404/2011. Zdroj práva EÚ v našom
+      registri zatiaľ nie je, preto odpoveď neuvádzame.
+  legalBasis: []
+  sourceIds:
+    - slovlex-404-2011
+  routeIds: []
+  tags: [робота в єс, шенген, кордон, німеччина]
+  reviewStatus: draft
+  reviewedAt: null
+
+- id: faq-fees
+  category: finance
+  question:
+    uk: Скільки коштує подання заяви і чи можна заплатити менше?
+    sk: Koľko stojí podanie žiadosti a dá sa zaplatiť menej?
+  shortAnswer:
+    uk: >-
+      Збір залежить від маршруту і від того, куди подавати: за тимчасовий пробут
+      для підприємництва (§22) тариф 145/1995 положка 24 передбачає 330 € у
+      відділі іноземної поліції. Точні суми для кожного маршруту показані на
+      його сторінці.
+    sk: >-
+      Poplatok závisí od cesty aj od miesta podania: za prechodný pobyt na účel
+      podnikania (§22) sadzobník 145/1995 položka 24 určuje 330 € na oddelení
+      cudzineckej polície. Presné sumy pre každú cestu sú na jej stránke.
+  meansForYou:
+    uk: >-
+      Якщо заяву подано електронними засобами, ставка становить 50 %, але
+      зниження — не більше ніж на 50 €. Знижена ставка діє лише тоді, коли
+      додатки теж в електронній формі (§6 ods. 2 закону 145/1995).
+    sk: >-
+      Ak sa žiadosť podá elektronicky, sadzba je 50 %, zníženie však najviac
+      o 50 €. Znížená sadzba platí len vtedy, ak sú aj prílohy v elektronickej
+      podobe (§6 ods. 2 zákona 145/1995).
+  legalBasis:
+    - 145/1995 položka 24
+    - 145/1995 §6
+  sourceIds:
+    - slovlex-145-1995
+  routeIds:
+    - B1-business-s22
+    - B2-employment-s23
+  tags: [збір, поплаток, ціна, електронно, знижка]
+  popular: true
+  reviewStatus: source_verified
+  reviewedAt: '2026-09-11'
