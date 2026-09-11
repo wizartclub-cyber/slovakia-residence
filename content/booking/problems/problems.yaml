@@ -1,0 +1,178 @@
+# Проблеми в системі резервації. Кожне число — з офіційної сторінки MV SR.
+# Поле `myth` існує для поширених порад, які офіційне джерело спростовує.
+
+- id: p-15-days
+  kind: rules
+  severity: warning
+  situation:
+    uk: Система не дає створити другу резервацію
+    sk: Systém nedovolí vytvoriť druhú rezerváciu
+  cause:
+    uk: >-
+      Для іноземної поліції діє правило: одна конкретна особа може створити лише
+      ОДНУ резервацію на всі локації протягом 15 календарних днів.
+    sk: >-
+      Pre cudzineckú políciu platí: jedna konkrétna osoba si môže vytvoriť len
+      JEDNU rezerváciu na všetky lokality v priebehu 15 kalendárnych dní.
+  whatToDo:
+    uk: >-
+      Не створюйте дубль «про запас» в іншому відділі — правило діє на всі
+      локації разом. Якщо потрібен інший термін, спершу скасуйте наявну
+      резервацію. Наприкінці процесу система сама перевіряє дотримання правил
+      і невідповідну резервацію автоматично скасовує.
+    sk: >-
+      Nevytvárajte duplicitnú rezerváciu „pre istotu“ na inom oddelení — pravidlo
+      platí na všetky lokality spolu. Ak potrebujete iný termín, najprv zrušte
+      existujúcu rezerváciu. Na konci procesu systém sám kontroluje dodržanie
+      pravidiel a nevyhovujúcu rezerváciu automaticky zruší.
+  sourceIds: [minv-booking-rules]
+  checkedAt: '2026-09-11'
+
+- id: p-no-show
+  kind: blocked
+  severity: critical
+  situation:
+    uk: Після пропущеного візиту система блокує нові резервації
+    sk: Po zmeškanej návšteve systém blokuje nové rezervácie
+  cause:
+    uk: >-
+      Блокується той, хто не скористався резервацією і не скасував її вчасно —
+      щонайменше за 12 годин до терміну.
+    sk: >-
+      Zablokuje sa ten, kto nevyužil rezerváciu a včas ju nezrušil — najneskôr
+      12 hodín pred termínom.
+  whatToDo:
+    uk: >-
+      Блокування триває 60 календарних днів від невикористаної резервації.
+      Якщо плани змінилися, скасуйте резервацію за посиланням із листа —
+      воно приходить одразу після бронювання.
+    sk: >-
+      Blokácia trvá 60 kalendárnych dní od nevyužitej rezervácie. Ak sa plány
+      zmenia, zrušte rezerváciu cez odkaz z emailu — príde hneď po rezervovaní.
+  myth:
+    uk: >-
+      Часто радять «скасовувати щонайменше за 24 години». Офіційне правило каже
+      12 годин; орієнтуйтеся на нього, а не на пораду з форуму.
+    sk: >-
+      Často sa radí „zrušiť najneskôr 24 hodín vopred“. Oficiálne pravidlo hovorí
+      12 hodín; riaďte sa ním, nie radou z fóra.
+  sourceIds: [minv-booking-rules]
+  checkedAt: '2026-09-11'
+
+- id: p-repeated-violations
+  kind: blocked
+  severity: critical
+  situation:
+    uk: Заблоковано можливість створювати будь-які резервації
+    sk: Zablokovaná možnosť vytvárať akékoľvek rezervácie
+  cause:
+    uk: >-
+      Якщо оператор виявить, що конкретна особа неодноразово порушує правила
+      резервації, він лишає за собою право заблокувати їй створення будь-яких
+      резервацій на обмежений час.
+    sk: >-
+      Ak prevádzkovateľ zistí, že konkrétna osoba opakovane porušuje pravidlá
+      rezervácie, vyhradzuje si právo zablokovať jej vytváranie akýchkoľvek
+      rezervácií na obmedzený čas.
+  whatToDo:
+    uk: >-
+      Зміна телефону чи пошти не допоможе обійти блокування і сама є порушенням:
+      система визначає особу за іменем, прізвищем, телефоном, електронною поштою
+      або їх поєднанням. Строк цього блокування офіційна сторінка не називає.
+    sk: >-
+      Zmena telefónu či emailu blokáciu neobíde a sama je porušením: systém
+      považuje za osobu meno, priezvisko, telefón, email alebo ich kombináciu.
+      Dĺžku tejto blokácie oficiálna stránka neuvádza.
+  sourceIds: [minv-booking-rules]
+  checkedAt: '2026-09-11'
+
+- id: p-no-slots
+  kind: no-slots
+  severity: warning
+  situation:
+    uk: Немає жодного вільного терміну
+    sk: Nie sú žiadne voľné termíny
+  cause:
+    uk: >-
+      Терміни не лежать у системі заздалегідь — вони вивільняються поступово.
+    sk: >-
+      Termíny nie sú v systéme dopredu — uvoľňujú sa priebežne.
+  whatToDo:
+    uk: >-
+      Вивільнення відбувається щодня від 15:00 з інтервалом 20 хвилин, якщо
+      наступний день є днем прийому, і максимум на 40 календарних днів наперед.
+      Терміни також знову стають доступними, коли хтось скасовує свою резервацію,
+      тож дивитися варто не лише о 15:00.
+    sk: >-
+      Uvoľňovanie prebieha každý deň od 15:00 v 20-minútových intervaloch, ak je
+      nasledujúci deň stránkovým dňom, a maximálne na 40 kalendárnych dní dopredu.
+      Termíny sú znova dostupné aj vtedy, keď niekto svoju rezerváciu zruší.
+  myth:
+    uk: >-
+      Поширена порада «слоти викидають уночі з неділі на понеділок» або «о 7–8
+      ранку» офіційною сторінкою не підтверджується: там названо 15:00 і
+      20-хвилинний інтервал, щодня.
+    sk: >-
+      Rozšírená rada „termíny sa uvoľňujú v noci z nedele na pondelok“ alebo
+      „o 7–8 ráno“ nie je potvrdená: oficiálna stránka uvádza 15:00
+      a 20-minútový interval, každý deň.
+  sourceIds: [minv-booking-ocp]
+  checkedAt: '2026-09-11'
+
+- id: p-exception
+  kind: no-slots
+  severity: info
+  situation:
+    uk: Є вагома причина, через яку чекати термін неможливо
+    sk: Existuje vážny dôvod, pre ktorý nie je možné čakať na termín
+  cause:
+    uk: >-
+      Для обґрунтованих випадків передбачені винятки з резервації.
+    sk: >-
+      Pre odôvodnené prípady sú predvídané výnimky z rezervácie.
+  whatToDo:
+    uk: >-
+      Офіційна сторінка називає як приклади стан здоров'я, особу літнього віку та
+      особу молодшу за 18 років. Винятки розглядають у межах територіальної
+      компетенції відповідного риадительства прикордонної та іноземної поліції —
+      звертатися треба до свого.
+    sk: >-
+      Oficiálna stránka uvádza ako príklady zdravotné dôvody, osobu vyššieho veku
+      a osobu mladšiu ako 18 rokov. Výnimky sa posudzujú v rámci územnej
+      pôsobnosti príslušného riaditeľstva hraničnej a cudzineckej polície.
+  sourceIds: [minv-booking-exceptions]
+  checkedAt: '2026-09-11'
+
+- id: p-post
+  kind: rules
+  severity: critical
+  situation:
+    uk: Радять надіслати документи поштою, бо термін спливає
+    sk: Radia poslať doklady poštou, lebo lehota vyprší
+  cause:
+    uk: >-
+      Поширена порада: якщо вільного терміну немає, надішліть пакет рекомендованим
+      листом, і датою подання вважатиметься дата штемпеля.
+    sk: >-
+      Rozšírená rada: ak nie je voľný termín, pošlite balík doporučeným listom
+      a za dátum podania sa bude považovať dátum pečiatky.
+  whatToDo:
+    uk: >-
+      Ми НЕ можемо це підтвердити і не радимо на це покладатися. Закон 404/2011
+      вимагає подавати заяву особисто (§17, §31, §44, §59), а слова «поштою»
+      в його тексті немає взагалі. Якщо строк спливає — зверніться до свого
+      відділу по виняток і зафіксуйте звернення письмово.
+    sk: >-
+      Toto NEVIEME potvrdiť a neodporúčame sa na to spoliehať. Zákon 404/2011
+      vyžaduje podanie žiadosti osobne (§17, §31, §44, §59) a slovo „poštou“
+      sa v jeho texte vôbec nenachádza. Ak lehota vyprší, obráťte sa na svoje
+      oddelenie so žiadosťou o výnimku a obráťte sa písomne.
+  myth:
+    uk: >-
+      Помилка тут коштує дорого: людина вважає себе такою, що подала заяву, а
+      насправді може опинитися в становищі незаконного перебування.
+    sk: >-
+      Chyba tu stojí draho: človek sa považuje za podávateľa žiadosti, no
+      v skutočnosti sa môže ocitnúť v nelegálnom pobyte.
+  sourceIds: [slovlex-404-2011, minv-booking-exceptions]
+  checkedAt: '2026-09-11'

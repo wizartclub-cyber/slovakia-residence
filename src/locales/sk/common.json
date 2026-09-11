@@ -7,6 +7,7 @@
     "home": "Domov",
     "finder": "Nájsť cestu",
     "routes": "Všetky cesty",
+    "booking": "Objednanie",
     "faq": "Otázky",
     "authorities": "Orgány",
     "sources": "Zdroje",
@@ -446,6 +447,30 @@
       "finance": "Peniaze a poplatky",
       "rules": "Pravidlá a obmedzenia",
       "after": "Po rozhodnutí"
+    }
+  },
+  "booking": {
+    "title": "Objednanie na cudzineckú políciu",
+    "intro": "Krok za krokom k oficiálnemu rezervačnému systému MV SR a rozbor prípadov, keď sa objednať nedarí. Každé pravidlo a číslo pochádza z oficiálnych stránok ministerstva, nie z rád v skupinách.",
+    "disclaimer": "Termíny nerezervujeme a nie sme sprostredkovateľ. Objednanie prebieha výlučne v oficiálnom systéme MV SR cez odkaz nižšie; táto stránka len vysvetľuje, ako funguje.",
+    "openOfficial": "Prejsť na oficiálny systém MV SR",
+    "stepsTitle": "Ako sa objednať",
+    "problemsTitle": "Ak sa objednať nedarí",
+    "filterLabel": "Filter podľa typu problému",
+    "cause": "Prečo to tak je",
+    "whatToDo": "Čo robiť",
+    "myth": "Rozšírená rada, ktorú zdroj nepotvrdzuje",
+    "kind": {
+      "all": "Všetky prípady",
+      "blocked": "Blokácia",
+      "no-slots": "Bez termínov",
+      "rules": "Pravidlá systému",
+      "cancel": "Zrušenie"
+    },
+    "severity": {
+      "critical": "Kriticky",
+      "warning": "Pozor",
+      "info": "Možné riešenie"
     }
   }
 }

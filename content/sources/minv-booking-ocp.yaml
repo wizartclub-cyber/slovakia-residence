@@ -1,0 +1,28 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-booking-ocp
+authority: MV SR
+title: Objednávací systém na OCP PZ — MV SR
+url: https://www.minv.sk/?objednavaci-system-na-ocp
+pinnedUrl: null
+staticUrl: null
+formCode: null
+completionLanguage: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: "Терміни вивільняються щодня від 15:00 з інтервалом 20 хвилин, якщо наступний день є днем прийому,
+  максимум на 40 календарних днів наперед; звільнені чужими скасуваннями терміни теж стають доступними.
+  Неавторизований іноземець бронює на 40 днів наперед, авторизований — на 60. Прочитано через Jina Reader:
+  звичайний запит віддає головну, сторінка малюється JavaScript."
+notes: "Снапшот не знято: скрипт зберіг би лише JS-оболонку. Потрібен друк сторінки з браузера."
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-11
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null

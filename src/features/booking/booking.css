@@ -1,0 +1,107 @@
+.booking-steps,
+.booking-problems {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  counter-reset: booking-step;
+}
+
+.booking-step,
+.booking-problem {
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+
+.booking-step h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.booking-step h3::before {
+  counter-increment: booking-step;
+  content: counter(booking-step) '. ';
+  color: var(--text-secondary);
+}
+
+.booking-step__tip {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.booking-filters {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 16px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.booking-problem__severity {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Колір лише підсилює слово, яке стоїть поруч, і ніколи не несе сенс сам. */
+.booking-problem__severity--critical {
+  color: var(--danger-text, #a4262c);
+}
+
+.booking-problem__severity--warning {
+  color: var(--warning-text, #8a5a00);
+}
+
+.booking-problem__severity--info {
+  color: var(--text-secondary);
+}
+
+.booking-problem h3 {
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+/* На телефоні таблиця «причина / рішення» перетворюється на звичайні
+   абзаци — два стовпці на 360 px дали б горизонтальне прокручування. */
+.booking-problem__grid {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.booking-problem__grid dt {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.booking-problem__grid dd {
+  margin: 0;
+}
+
+.booking-problem__myth {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--warning, #a06000);
+  background: var(--surface);
+}
+
+.booking-source {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 768px) {
+  .booking-problem__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}

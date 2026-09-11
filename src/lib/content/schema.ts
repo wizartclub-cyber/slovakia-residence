@@ -395,6 +395,48 @@ export const SiteConfigSchema = z
  * `caveat` існує для випадків, коли поширене переконання НЕ підтверджується
  * текстом закону: тоді відповідь прямо це називає, замість обходити мовчанням.
  */
+/**
+ * Крок інструкції з бронювання прийому в іноземній поліції.
+ *
+ * Кожен крок і кожне число тут мають походити з офіційних сторінок MV SR.
+ * Народні поради на кшталт «слоти викидають о сьомій ранку» в дані не
+ * потрапляють: офіційна сторінка каже інше, і людина, яка чергуватиме не в той
+ * час, просто змарнує дні.
+ */
+export const BookingStepSchema = z
+  .object({
+    id: nonEmpty,
+    order: z.number().int().positive(),
+    title: localizedText,
+    body: localizedText,
+    tip: localizedTextOptional,
+    sourceIds: z.array(nonEmpty).min(1),
+    checkedAt: isoDate,
+  })
+  .strict();
+
+export type BookingStep = z.infer<typeof BookingStepSchema>;
+
+/** Проблема в системі резервації: ситуація → причина → що робити. */
+export const BookingProblemSchema = z
+  .object({
+    id: nonEmpty,
+    // blocked — доступ або запис заблоковано, no-slots — немає термінів,
+    // rules — обмеження самої системи, cancel — скасування запису.
+    kind: z.enum(['blocked', 'no-slots', 'rules', 'cancel']),
+    severity: z.enum(['critical', 'warning', 'info']),
+    situation: localizedText,
+    cause: localizedText,
+    whatToDo: localizedText,
+    // Поширене переконання, яке офіційне джерело НЕ підтверджує.
+    myth: localizedTextOptional,
+    sourceIds: z.array(nonEmpty).min(1),
+    checkedAt: isoDate,
+  })
+  .strict();
+
+export type BookingProblem = z.infer<typeof BookingProblemSchema>;
+
 export const FaqSchema = z
   .object({
     id: nonEmpty,

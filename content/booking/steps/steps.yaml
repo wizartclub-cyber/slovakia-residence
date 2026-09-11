@@ -1,0 +1,108 @@
+# Кроки бронювання прийому в іноземній поліції.
+# Усі факти — з офіційних сторінок MV SR, прочитаних 11.09.2026.
+
+- id: b1-open
+  order: 1
+  title:
+    uk: Відкрийте офіційну систему резервації MV SR
+    sk: Otvorte oficiálny rezervačný systém MV SR
+  body:
+    uk: >-
+      Система резервації дозволяє домовитися про конкретну дату й час на
+      вибраних послугах відділів поліції. Резервація не підлягає адміністративним
+      зборам — за сам запис платити не треба.
+    sk: >-
+      Rezervačný systém umožňuje dohodnúť si konkrétny dátum a čas na vybraných
+      agendách oddelení policajného zboru. Rezervácia nepodlieha správnym
+      poplatkom — za samotné objednanie sa neplatí.
+  tip:
+    uk: >-
+      Пристрій, з якого ви бронюєте, має передати системі свою IP-адресу —
+      без цього резервація не працює.
+    sk: >-
+      Zariadenie, z ktorého rezervujete, musí systému poskytnúť svoju IP adresu —
+      bez toho rezervácia nefunguje.
+  sourceIds: [minv-booking-rules]
+  checkedAt: '2026-09-11'
+
+- id: b2-situation
+  order: 2
+  title:
+    uk: Оберіть життєву ситуацію
+    sk: Vyberte životnú situáciu
+  body:
+    uk: >-
+      Резервація обов'язкова для вибраних життєвих ситуацій. Після вибору кола
+      ситуацій і конкретної ситуації система покаже відділ іноземної поліції з
+      найближчим доступним терміном.
+    sk: >-
+      Rezervácia je povinná pre vybrané životné situácie. Po označení okruhu
+      a konkrétnej situácie systém zobrazí oddelenie cudzineckej polície
+      s najbližším dostupným termínom.
+  tip:
+    uk: >-
+      Для переходу з тимчасового захисту на пробут за §131o закону 404/2011
+      термін бронюється окремо — офіційна сторінка називає це прямо.
+    sk: >-
+      Pri prechode z dočasného útočiska na pobyt podľa §131o zákona 404/2011 sa
+      termín objednáva osobitne — oficiálna stránka to uvádza výslovne.
+  sourceIds: [minv-booking-ocp]
+  checkedAt: '2026-09-11'
+
+- id: b3-horizon
+  order: 3
+  title:
+    uk: Зрозумійте, наскільки наперед можна записатися
+    sk: Pochopte, ako ďaleko dopredu sa dá objednať
+  body:
+    uk: >-
+      Неавторизований іноземець бронює на 40 днів наперед, авторизований — на 60
+      днів наперед. Це не помилка системи, а різні кола доступності.
+    sk: >-
+      Neautorizovaný cudzinec sa objednáva na 40 dní dopredu, autorizovaný na 60
+      dní dopredu. Nejde o chybu systému, ale o rozdielne okruhy dostupnosti.
+  sourceIds: [minv-booking-ocp]
+  checkedAt: '2026-09-11'
+
+- id: b4-data
+  order: 4
+  title:
+    uk: Внесіть дані тієї людини, яка прийде
+    sk: Zadajte údaje osoby, ktorá príde
+  body:
+    uk: >-
+      Резервацію створює сам іноземець або уповноважена особа — але на конкретні
+      ім'я та прізвище того, хто з'явиться у відділі. Для неповнолітньої дитини
+      без власного дійсного документа можна використати дані законного представника.
+    sk: >-
+      Rezerváciu si vytvára cudzinec alebo splnomocnená osoba — vždy na konkrétne
+      meno a priezvisko toho, kto sa dostaví. Pri maloletom dieťati bez platného
+      dokladu možno použiť údaje zákonného zástupcu.
+  tip:
+    uk: >-
+      Система визначає «конкретну особу» за іменем, прізвищем, номером телефону,
+      адресою електронної пошти або їх поєднанням. Це важливо для правила про
+      15 днів у наступному кроці.
+    sk: >-
+      Systém považuje za „konkrétnu osobu“ údaje o mene, priezvisku, telefónnom
+      čísle, emailovej adrese alebo ich kombinácii. To je dôležité pre pravidlo
+      15 dní v ďalšom kroku.
+  sourceIds: [minv-booking-rules]
+  checkedAt: '2026-09-11'
+
+- id: b5-pin
+  order: 5
+  title:
+    uk: Збережіть PIN-код і дані резервації
+    sk: Uložte si PIN kód a údaje rezervácie
+  body:
+    uk: >-
+      Після створення резервації треба зберегти PIN-код, термін резервації, дату
+      й час її чинності та адресу відділу. У день візиту на сенсорному терміналі
+      у відділі за PIN-кодом друкується талон.
+    sk: >-
+      Po vytvorení rezervácie si treba uchovať PIN kód, termín rezervácie, dátum
+      a čas jej platnosti a adresu oddelenia. V deň návštevy si na dotykovom
+      termináli pomocou PIN kódu vytlačíte lístok.
+  sourceIds: [minv-booking-ocp]
+  checkedAt: '2026-09-11'

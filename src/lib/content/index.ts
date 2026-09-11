@@ -8,6 +8,8 @@
  */
 import type {
   Authority,
+  BookingProblem,
+  BookingStep,
   Document,
   Faq,
   FeeRule,
@@ -69,6 +71,14 @@ export const faq = loadAll<Faq>(
  * Застарілі (`superseded`, `blocked`) сюди не доходять — на них падає збірка.
  */
 export const publishedFaq = faq.filter((item) => item.reviewStatus !== 'draft');
+
+export const bookingSteps = loadAll<BookingStep>(
+  import.meta.glob('../../../content/booking/steps/*.yaml', { eager: true, import: 'default' }),
+).sort((a, b) => a.order - b.order);
+
+export const bookingProblems = loadAll<BookingProblem>(
+  import.meta.glob('../../../content/booking/problems/*.yaml', { eager: true, import: 'default' }),
+);
 
 export function faqForProcedure(procedureId: string): Faq[] {
   return publishedFaq.filter((item) => (item.routeIds ?? []).includes(procedureId));

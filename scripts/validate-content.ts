@@ -23,6 +23,8 @@ import {
   SourceSchema,
   ThresholdSchema,
   FaqSchema,
+  BookingStepSchema,
+  BookingProblemSchema,
 } from '../src/lib/content/schema.ts';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -38,6 +40,8 @@ const SCHEMAS: Record<string, ZodTypeAny> = {
   authorities: AuthoritySchema,
   notes: LegalNoteSchema,
   faq: FaqSchema,
+  'booking/steps': BookingStepSchema,
+  'booking/problems': BookingProblemSchema,
 };
 
 const errors: string[] = [];

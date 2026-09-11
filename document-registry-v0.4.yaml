@@ -1181,6 +1181,56 @@ resources:
     bytes: 29876
     sha256: 9956c098dfe225b1bc3f3e2fe9333eb7c455635801e6bf4fab971724456acdc7
     snapshotPath: sources/snapshots/minv-hlasenie-pobytu-form-uk-docx.docx
+- id: minv-booking-rules
+  title: Všeobecné pravidlá rezervačného systému MV SR
+  type: official_guidance_html
+  authority: MV SR
+  url: https://www.minv.sk/?vseobecne-pravidla-rezervacneho-systemu-mv-sr
+  locale: sk
+  reviewStatus: url_verified
+  addedAt: '2026-09-11'
+  urlCheck:
+    checkedAt: '2026-09-11'
+    result: ok_js_required
+    observed: 'Правила системи резервації. Для іноземної поліції: одна резервація на всі локації протягом 15 календарних днів;
+      блокування на 60 календарних днів за невикористану резервацію, не скасовану щонайменше за 12 годин; особа визначається
+      за іменем, прізвищем, телефоном, електронною поштою або їх поєднанням. Прочитано через Jina Reader: звичайний запит
+      віддає головну, сторінка малюється JavaScript.'
+  notes: 'Снапшот не знято: скрипт зберіг би лише JS-оболонку. Потрібен друк сторінки з браузера.'
+  procedureIds: []
+- id: minv-booking-ocp
+  title: Objednávací systém na OCP PZ — MV SR
+  type: official_guidance_html
+  authority: MV SR
+  url: https://www.minv.sk/?objednavaci-system-na-ocp
+  locale: sk
+  reviewStatus: url_verified
+  addedAt: '2026-09-11'
+  urlCheck:
+    checkedAt: '2026-09-11'
+    result: ok_js_required
+    observed: 'Терміни вивільняються щодня від 15:00 з інтервалом 20 хвилин, якщо наступний день є днем прийому, максимум
+      на 40 календарних днів наперед; звільнені чужими скасуваннями терміни теж стають доступними. Неавторизований іноземець
+      бронює на 40 днів наперед, авторизований — на 60. Прочитано через Jina Reader: звичайний запит віддає головну, сторінка
+      малюється JavaScript.'
+  notes: 'Снапшот не знято: скрипт зберіг би лише JS-оболонку. Потрібен друк сторінки з браузера.'
+  procedureIds: []
+- id: minv-booking-exceptions
+  title: Objednávací systém — výnimky (MV SR)
+  type: official_guidance_html
+  authority: MV SR
+  url: https://www.minv.sk/?objednavaci-system-vynimky
+  locale: sk
+  reviewStatus: url_verified
+  addedAt: '2026-09-11'
+  urlCheck:
+    checkedAt: '2026-09-11'
+    result: ok_js_required
+    observed: 'Винятки з резервації в обґрунтованих випадках (стан здоров''я, літня особа, особа молодша за 18 років) у межах
+      територіальної компетенції відповідного риадительства. Прочитано через Jina Reader: звичайний запит віддає головну,
+      сторінка малюється JavaScript.'
+  notes: 'Снапшот не знято: скрипт зберіг би лише JS-оболонку. Потрібен друк сторінки з браузера.'
+  procedureIds: []
 baselinePolicy: 'moving: legal baseline = date of last completed legal review; historical editions preserved (decision 2026-09-07)'
 reviewStatusEnum:
 - fetch_pending

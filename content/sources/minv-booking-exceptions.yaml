@@ -1,0 +1,27 @@
+# ЗГЕНЕРОВАНО з document-registry-v0.4.yaml — не редагувати руками.
+# Правити реєстр, потім `pnpm sources:build`.
+id: minv-booking-exceptions
+authority: MV SR
+title: Objednávací systém — výnimky (MV SR)
+url: https://www.minv.sk/?objednavaci-system-vynimky
+pinnedUrl: null
+staticUrl: null
+formCode: null
+completionLanguage: null
+reviewStatus: draft
+registryStatus: url_verified
+potentiallyStale: false
+evidence: "Винятки з резервації в обґрунтованих випадках (стан здоров'я, літня особа, особа молодша за 18
+  років) у межах територіальної компетенції відповідного риадительства. Прочитано через Jina Reader: звичайний
+  запит віддає головну, сторінка малюється JavaScript."
+notes: "Снапшот не знято: скрипт зберіг би лише JS-оболонку. Потрібен друк сторінки з браузера."
+locale: sk
+lawNumber: null
+provision: null
+publicationDate: null
+effectiveFrom: null
+effectiveTo: null
+checkedAt: 2026-09-11
+sourceType: official_web_guidance
+snapshotPath: null
+sha256: null
